@@ -18,6 +18,10 @@
 		743031FB2742A26900B7657B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F62742A26900B7657B /* NotoSansKR-Bold.otf */; };
 		743031FC2742A26900B7657B /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F72742A26900B7657B /* NotoSansKR-Medium.otf */; };
 		743031FD2742A26900B7657B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F82742A26900B7657B /* Montserrat-Bold.ttf */; };
+		743031FF2742B8EB00B7657B /* LoginHowToCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743031FE2742B8EB00B7657B /* LoginHowToCallViewController.swift */; };
+		743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032022742C22A00B7657B /* KakaoLoginRequest.swift */; };
+		743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032042742C23C00B7657B /* KakaoLoginResponse.swift */; };
+		743032072742C24C00B7657B /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032062742C24C00B7657B /* KakaoLoginDataManager.swift */; };
 		74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B5FC2742671400AFD7BF /* AppDelegate.swift */; };
 		74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B5FE2742671400AFD7BF /* SceneDelegate.swift */; };
 		74C1B6012742671400AFD7BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B6002742671400AFD7BF /* ViewController.swift */; };
@@ -43,6 +47,10 @@
 		743031F62742A26900B7657B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		743031F72742A26900B7657B /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		743031F82742A26900B7657B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		743031FE2742B8EB00B7657B /* LoginHowToCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHowToCallViewController.swift; sourceTree = "<group>"; };
+		743032022742C22A00B7657B /* KakaoLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequest.swift; sourceTree = "<group>"; };
+		743032042742C23C00B7657B /* KakaoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginResponse.swift; sourceTree = "<group>"; };
+		743032062742C24C00B7657B /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
 		74C1B5F92742671400AFD7BF /* MackDuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackDuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C1B5FC2742671400AFD7BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74C1B5FE2742671400AFD7BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +103,9 @@
 			children = (
 				74C1B6022742671400AFD7BF /* LoginStoryboard.storyboard */,
 				743031E2274281AB00B7657B /* LoginViewController.swift */,
+				743031FE2742B8EB00B7657B /* LoginHowToCallViewController.swift */,
+				743032002742C11B00B7657B /* KakaoLoginEntity */,
+				743032012742C14300B7657B /* SignUpEntity */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -133,6 +144,23 @@
 				743031EF2742A25E00B7657B /* GmarketSansMedium.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		743032002742C11B00B7657B /* KakaoLoginEntity */ = {
+			isa = PBXGroup;
+			children = (
+				743032022742C22A00B7657B /* KakaoLoginRequest.swift */,
+				743032042742C23C00B7657B /* KakaoLoginResponse.swift */,
+				743032062742C24C00B7657B /* KakaoLoginDataManager.swift */,
+			);
+			path = KakaoLoginEntity;
+			sourceTree = "<group>";
+		};
+		743032012742C14300B7657B /* SignUpEntity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUpEntity;
 			sourceTree = "<group>";
 		};
 		74C1B5F02742671400AFD7BF = {
@@ -328,14 +356,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				743031FF2742B8EB00B7657B /* LoginHowToCallViewController.swift in Sources */,
 				743031E3274281AB00B7657B /* LoginViewController.swift in Sources */,
 				74C1B6072742671400AFD7BF /* MackDuck.xcdatamodeld in Sources */,
+				743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */,
 				74C1B6012742671400AFD7BF /* ViewController.swift in Sources */,
 				74C1B61727426F1200AFD7BF /* Constant.swift in Sources */,
+				743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */,
 				74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */,
 				74C1B61C27426F7E00AFD7BF /* String.swift in Sources */,
 				74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */,
 				74C1B61A27426F5100AFD7BF /* Color.swift in Sources */,
+				743032072742C24C00B7657B /* KakaoLoginDataManager.swift in Sources */,
 				743031DC274270DE00B7657B /* jwtToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
