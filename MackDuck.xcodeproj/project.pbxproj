@@ -7,25 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FA54F34B7E9D36E586B9623 /* Pods_MackDuck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C25B540D7C8FF090DA3027E /* Pods_MackDuck.framework */; };
+		743031DC274270DE00B7657B /* jwtToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743031DB274270DE00B7657B /* jwtToken.swift */; };
+		743031E3274281AB00B7657B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743031E2274281AB00B7657B /* LoginViewController.swift */; };
+		743031F12742A25E00B7657B /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031EE2742A25D00B7657B /* GmarketSansLight.otf */; };
+		743031F22742A25E00B7657B /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031EF2742A25E00B7657B /* GmarketSansMedium.otf */; };
+		743031F32742A25E00B7657B /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F02742A25E00B7657B /* GmarketSansBold.otf */; };
+		743031F92742A26900B7657B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F42742A26800B7657B /* Montserrat-Regular.ttf */; };
+		743031FA2742A26900B7657B /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F52742A26800B7657B /* NotoSansKR-Regular.otf */; };
+		743031FB2742A26900B7657B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F62742A26900B7657B /* NotoSansKR-Bold.otf */; };
+		743031FC2742A26900B7657B /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F72742A26900B7657B /* NotoSansKR-Medium.otf */; };
+		743031FD2742A26900B7657B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 743031F82742A26900B7657B /* Montserrat-Bold.ttf */; };
 		74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B5FC2742671400AFD7BF /* AppDelegate.swift */; };
 		74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B5FE2742671400AFD7BF /* SceneDelegate.swift */; };
 		74C1B6012742671400AFD7BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B6002742671400AFD7BF /* ViewController.swift */; };
-		74C1B6042742671400AFD7BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C1B6022742671400AFD7BF /* Main.storyboard */; };
+		74C1B6042742671400AFD7BF /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C1B6022742671400AFD7BF /* LoginStoryboard.storyboard */; };
 		74C1B6072742671400AFD7BF /* MackDuck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B6052742671400AFD7BF /* MackDuck.xcdatamodeld */; };
 		74C1B6092742671600AFD7BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74C1B6082742671600AFD7BF /* Assets.xcassets */; };
 		74C1B60C2742671600AFD7BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C1B60A2742671600AFD7BF /* LaunchScreen.storyboard */; };
+		74C1B61727426F1200AFD7BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61627426F1200AFD7BF /* Constant.swift */; };
+		74C1B61A27426F5100AFD7BF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61927426F5100AFD7BF /* Color.swift */; };
+		74C1B61C27426F7E00AFD7BF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61B27426F7E00AFD7BF /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C25B540D7C8FF090DA3027E /* Pods_MackDuck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MackDuck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		27850282F683B342079493F0 /* Pods-MackDuck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackDuck.release.xcconfig"; path = "Target Support Files/Pods-MackDuck/Pods-MackDuck.release.xcconfig"; sourceTree = "<group>"; };
+		743031DB274270DE00B7657B /* jwtToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jwtToken.swift; sourceTree = "<group>"; };
+		743031E2274281AB00B7657B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		743031EE2742A25D00B7657B /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
+		743031EF2742A25E00B7657B /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
+		743031F02742A25E00B7657B /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
+		743031F42742A26800B7657B /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		743031F52742A26800B7657B /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		743031F62742A26900B7657B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		743031F72742A26900B7657B /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		743031F82742A26900B7657B /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		74C1B5F92742671400AFD7BF /* MackDuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackDuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C1B5FC2742671400AFD7BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74C1B5FE2742671400AFD7BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		74C1B6002742671400AFD7BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		74C1B6032742671400AFD7BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		74C1B6032742671400AFD7BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		74C1B6062742671400AFD7BF /* MackDuck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MackDuck.xcdatamodel; sourceTree = "<group>"; };
 		74C1B6082742671600AFD7BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74C1B60B2742671600AFD7BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74C1B60D2742671600AFD7BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74C1B61627426F1200AFD7BF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		74C1B61927426F5100AFD7BF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		74C1B61B27426F7E00AFD7BF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D7AABEFCB9CD09A5833E0A93 /* Pods-MackDuck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackDuck.debug.xcconfig"; path = "Target Support Files/Pods-MackDuck/Pods-MackDuck.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +63,85 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FA54F34B7E9D36E586B9623 /* Pods_MackDuck.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CB58F50B39A9702FD9EBF82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C25B540D7C8FF090DA3027E /* Pods_MackDuck.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		743031DD274272B800B7657B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				74C1B6002742671400AFD7BF /* ViewController.swift */,
+				743031DE274272DB00B7657B /* Login */,
+				743031E0274273AF00B7657B /* Home */,
+				743031E1274273DB00B7657B /* Refrigerator */,
+				743031DF2742738600B7657B /* MyPage */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		743031DE274272DB00B7657B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				74C1B6022742671400AFD7BF /* LoginStoryboard.storyboard */,
+				743031E2274281AB00B7657B /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		743031DF2742738600B7657B /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		743031E0274273AF00B7657B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		743031E1274273DB00B7657B /* Refrigerator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Refrigerator;
+			sourceTree = "<group>";
+		};
+		743031E427429F5900B7657B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				743031F82742A26900B7657B /* Montserrat-Bold.ttf */,
+				743031F42742A26800B7657B /* Montserrat-Regular.ttf */,
+				743031F62742A26900B7657B /* NotoSansKR-Bold.otf */,
+				743031F72742A26900B7657B /* NotoSansKR-Medium.otf */,
+				743031F52742A26800B7657B /* NotoSansKR-Regular.otf */,
+				743031F02742A25E00B7657B /* GmarketSansBold.otf */,
+				743031EE2742A25D00B7657B /* GmarketSansLight.otf */,
+				743031EF2742A25E00B7657B /* GmarketSansMedium.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		74C1B5F02742671400AFD7BF = {
 			isa = PBXGroup;
 			children = (
 				74C1B5FB2742671400AFD7BF /* MackDuck */,
 				74C1B5FA2742671400AFD7BF /* Products */,
+				9A2E0D22973E0B2A07E26D6A /* Pods */,
+				0CB58F50B39A9702FD9EBF82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +156,53 @@
 		74C1B5FB2742671400AFD7BF /* MackDuck */ = {
 			isa = PBXGroup;
 			children = (
+				74C1B61327426E5A00AFD7BF /* Configuration */,
+				743031DD274272B800B7657B /* Sources */,
 				74C1B5FC2742671400AFD7BF /* AppDelegate.swift */,
 				74C1B5FE2742671400AFD7BF /* SceneDelegate.swift */,
-				74C1B6002742671400AFD7BF /* ViewController.swift */,
-				74C1B6022742671400AFD7BF /* Main.storyboard */,
 				74C1B6082742671600AFD7BF /* Assets.xcassets */,
 				74C1B60A2742671600AFD7BF /* LaunchScreen.storyboard */,
 				74C1B60D2742671600AFD7BF /* Info.plist */,
 				74C1B6052742671400AFD7BF /* MackDuck.xcdatamodeld */,
 			);
 			path = MackDuck;
+			sourceTree = "<group>";
+		};
+		74C1B61327426E5A00AFD7BF /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				74C1B61627426F1200AFD7BF /* Constant.swift */,
+				743031E427429F5900B7657B /* Font */,
+				74C1B61827426F2800AFD7BF /* Extension */,
+				74C1B61D2742704300AFD7BF /* Secret */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		74C1B61827426F2800AFD7BF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				74C1B61927426F5100AFD7BF /* Color.swift */,
+				74C1B61B27426F7E00AFD7BF /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		74C1B61D2742704300AFD7BF /* Secret */ = {
+			isa = PBXGroup;
+			children = (
+				743031DB274270DE00B7657B /* jwtToken.swift */,
+			);
+			path = Secret;
+			sourceTree = "<group>";
+		};
+		9A2E0D22973E0B2A07E26D6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7AABEFCB9CD09A5833E0A93 /* Pods-MackDuck.debug.xcconfig */,
+				27850282F683B342079493F0 /* Pods-MackDuck.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74C1B6102742671600AFD7BF /* Build configuration list for PBXNativeTarget "MackDuck" */;
 			buildPhases = (
+				FC508504F319DE35B2C938FE /* [CP] Check Pods Manifest.lock */,
 				74C1B5F52742671400AFD7BF /* Sources */,
 				74C1B5F62742671400AFD7BF /* Frameworks */,
 				74C1B5F72742671400AFD7BF /* Resources */,
+				0EF2C7E50F63EBF388D06BFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,34 +266,89 @@
 			buildActionMask = 2147483647;
 			files = (
 				74C1B60C2742671600AFD7BF /* LaunchScreen.storyboard in Resources */,
+				743031F32742A25E00B7657B /* GmarketSansBold.otf in Resources */,
+				743031FC2742A26900B7657B /* NotoSansKR-Medium.otf in Resources */,
+				743031F92742A26900B7657B /* Montserrat-Regular.ttf in Resources */,
 				74C1B6092742671600AFD7BF /* Assets.xcassets in Resources */,
-				74C1B6042742671400AFD7BF /* Main.storyboard in Resources */,
+				743031FB2742A26900B7657B /* NotoSansKR-Bold.otf in Resources */,
+				74C1B6042742671400AFD7BF /* LoginStoryboard.storyboard in Resources */,
+				743031F12742A25E00B7657B /* GmarketSansLight.otf in Resources */,
+				743031FA2742A26900B7657B /* NotoSansKR-Regular.otf in Resources */,
+				743031FD2742A26900B7657B /* Montserrat-Bold.ttf in Resources */,
+				743031F22742A25E00B7657B /* GmarketSansMedium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EF2C7E50F63EBF388D06BFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MackDuck/Pods-MackDuck-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MackDuck/Pods-MackDuck-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MackDuck/Pods-MackDuck-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC508504F319DE35B2C938FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MackDuck-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		74C1B5F52742671400AFD7BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				743031E3274281AB00B7657B /* LoginViewController.swift in Sources */,
 				74C1B6072742671400AFD7BF /* MackDuck.xcdatamodeld in Sources */,
 				74C1B6012742671400AFD7BF /* ViewController.swift in Sources */,
+				74C1B61727426F1200AFD7BF /* Constant.swift in Sources */,
 				74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */,
+				74C1B61C27426F7E00AFD7BF /* String.swift in Sources */,
 				74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */,
+				74C1B61A27426F5100AFD7BF /* Color.swift in Sources */,
+				743031DC274270DE00B7657B /* jwtToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		74C1B6022742671400AFD7BF /* Main.storyboard */ = {
+		74C1B6022742671400AFD7BF /* LoginStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				74C1B6032742671400AFD7BF /* Base */,
 			);
-			name = Main.storyboard;
+			name = LoginStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		74C1B60A2742671600AFD7BF /* LaunchScreen.storyboard */ = {
@@ -288,6 +480,7 @@
 		};
 		74C1B6112742671600AFD7BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7AABEFCB9CD09A5833E0A93 /* Pods-MackDuck.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,7 +491,7 @@
 				INFOPLIST_FILE = MackDuck/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LoginStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -316,6 +509,7 @@
 		};
 		74C1B6122742671600AFD7BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27850282F683B342079493F0 /* Pods-MackDuck.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,7 +520,7 @@
 				INFOPLIST_FILE = MackDuck/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LoginStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
