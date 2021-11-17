@@ -94,13 +94,73 @@
                     <view key="view" contentMode="scaleToFill" id="4Zj-hr-cKO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="공백없이 한글 6자 이하로 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KG3-EQ-ixQ">
+                                <rect key="frame" x="20" y="191" width="374" height="67"/>
+                                <color key="backgroundColor" red="0.1335714757" green="0.1335714757" blue="0.1335714757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떻게 불러드릴까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvI-BC-nrC">
+                                <rect key="frame" x="20" y="94" width="215.5" height="87"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nlR-fV-l9l">
+                                <rect key="frame" x="20" y="755" width="374" height="67"/>
+                                <color key="backgroundColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53725492949999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다음">
+                                    <fontDescription key="titleFontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapNextButton:" destination="Q5h-aR-2Lk" eventType="touchUpInside" id="mmx-xY-A4G"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ccV-fM-daK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VvI-BC-nrC" firstAttribute="width" secondItem="4Zj-hr-cKO" secondAttribute="width" multiplier="0.52" id="9WA-Tl-Cr3"/>
+                            <constraint firstItem="KG3-EQ-ixQ" firstAttribute="height" secondItem="4Zj-hr-cKO" secondAttribute="height" multiplier="0.075" id="AjK-S6-BnA"/>
+                            <constraint firstItem="nlR-fV-l9l" firstAttribute="height" secondItem="4Zj-hr-cKO" secondAttribute="height" multiplier="0.075" id="Gfg-oz-XRm"/>
+                            <constraint firstItem="ccV-fM-daK" firstAttribute="bottom" secondItem="nlR-fV-l9l" secondAttribute="bottom" constant="40" id="KZz-bN-P7X"/>
+                            <constraint firstItem="KG3-EQ-ixQ" firstAttribute="top" secondItem="VvI-BC-nrC" secondAttribute="bottom" constant="10" id="Nwp-GG-d1a"/>
+                            <constraint firstItem="nlR-fV-l9l" firstAttribute="leading" secondItem="ccV-fM-daK" secondAttribute="leading" constant="20" id="Qgo-1b-L0h"/>
+                            <constraint firstItem="ccV-fM-daK" firstAttribute="trailing" secondItem="KG3-EQ-ixQ" secondAttribute="trailing" constant="20" id="dXi-L5-SNa"/>
+                            <constraint firstItem="VvI-BC-nrC" firstAttribute="leading" secondItem="ccV-fM-daK" secondAttribute="leading" constant="20" id="da3-sN-E1B"/>
+                            <constraint firstItem="VvI-BC-nrC" firstAttribute="top" secondItem="ccV-fM-daK" secondAttribute="top" constant="50" id="ea0-6Y-ijJ"/>
+                            <constraint firstItem="ccV-fM-daK" firstAttribute="trailing" secondItem="nlR-fV-l9l" secondAttribute="trailing" constant="20" id="mIJ-zF-e4n"/>
+                            <constraint firstItem="KG3-EQ-ixQ" firstAttribute="leading" secondItem="ccV-fM-daK" secondAttribute="leading" constant="20" id="oYD-qv-R9e"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainTitle" destination="VvI-BC-nrC" id="Ver-fy-rzr"/>
+                        <outlet property="nextButton" destination="nlR-fV-l9l" id="MSl-mY-0n8"/>
+                        <outlet property="nicknameTF" destination="KG3-EQ-ixQ" id="8D8-mh-nAF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCt-DU-4Sh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="977" y="116"/>
+        </scene>
+        <!--Privacy Setting View Controller-->
+        <scene sceneID="rPp-Be-3Er">
+            <objects>
+                <viewController storyboardIdentifier="PrivacySettingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="z7n-MA-ovd" customClass="PrivacySettingViewController" customModule="MackDuck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tzB-ge-tHd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0nP-qU-qLB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="thg-xN-cyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="116"/>
         </scene>
     </scenes>
     <resources>

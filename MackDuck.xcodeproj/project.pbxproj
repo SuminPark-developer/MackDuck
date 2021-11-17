@@ -22,6 +22,13 @@
 		743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032022742C22A00B7657B /* KakaoLoginRequest.swift */; };
 		743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032042742C23C00B7657B /* KakaoLoginResponse.swift */; };
 		743032072742C24C00B7657B /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032062742C24C00B7657B /* KakaoLoginDataManager.swift */; };
+		747561B92743E4D20015BFC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561B82743E4D20015BFC9 /* UITextField.swift */; };
+		747561BE2744D6760015BFC9 /* NicknameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561BD2744D6760015BFC9 /* NicknameDataManager.swift */; };
+		747561C22744D6910015BFC9 /* NicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561C12744D6910015BFC9 /* NicknameResponse.swift */; };
+		747561C7274525FE0015BFC9 /* PrivacySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561C6274525FE0015BFC9 /* PrivacySettingViewController.swift */; };
+		747561CE274526750015BFC9 /* PrivacySettingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561CD274526750015BFC9 /* PrivacySettingDataManager.swift */; };
+		747561D02745268B0015BFC9 /* PrivacySettingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561CF2745268B0015BFC9 /* PrivacySettingRequest.swift */; };
+		747561D2274526970015BFC9 /* PrivacySettingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561D1274526970015BFC9 /* PrivacySettingResponse.swift */; };
 		74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B5FC2742671400AFD7BF /* AppDelegate.swift */; };
 		74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B5FE2742671400AFD7BF /* SceneDelegate.swift */; };
 		74C1B6012742671400AFD7BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B6002742671400AFD7BF /* ViewController.swift */; };
@@ -32,6 +39,8 @@
 		74C1B61727426F1200AFD7BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61627426F1200AFD7BF /* Constant.swift */; };
 		74C1B61A27426F5100AFD7BF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61927426F5100AFD7BF /* Color.swift */; };
 		74C1B61C27426F7E00AFD7BF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61B27426F7E00AFD7BF /* String.swift */; };
+		74E730022743B4AF00697460 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E730012743B4AF00697460 /* HomeStoryboard.storyboard */; };
+		74E730042743B4C100697460 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E730032743B4C100697460 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +60,13 @@
 		743032022742C22A00B7657B /* KakaoLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequest.swift; sourceTree = "<group>"; };
 		743032042742C23C00B7657B /* KakaoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginResponse.swift; sourceTree = "<group>"; };
 		743032062742C24C00B7657B /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
+		747561B82743E4D20015BFC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		747561BD2744D6760015BFC9 /* NicknameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameDataManager.swift; sourceTree = "<group>"; };
+		747561C12744D6910015BFC9 /* NicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameResponse.swift; sourceTree = "<group>"; };
+		747561C6274525FE0015BFC9 /* PrivacySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettingViewController.swift; sourceTree = "<group>"; };
+		747561CD274526750015BFC9 /* PrivacySettingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettingDataManager.swift; sourceTree = "<group>"; };
+		747561CF2745268B0015BFC9 /* PrivacySettingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettingRequest.swift; sourceTree = "<group>"; };
+		747561D1274526970015BFC9 /* PrivacySettingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySettingResponse.swift; sourceTree = "<group>"; };
 		74C1B5F92742671400AFD7BF /* MackDuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MackDuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C1B5FC2742671400AFD7BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74C1B5FE2742671400AFD7BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +79,8 @@
 		74C1B61627426F1200AFD7BF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		74C1B61927426F5100AFD7BF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		74C1B61B27426F7E00AFD7BF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		74E730012743B4AF00697460 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
+		74E730032743B4C100697460 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D7AABEFCB9CD09A5833E0A93 /* Pods-MackDuck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackDuck.debug.xcconfig"; path = "Target Support Files/Pods-MackDuck/Pods-MackDuck.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,10 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				74C1B6022742671400AFD7BF /* LoginStoryboard.storyboard */,
-				743031E2274281AB00B7657B /* LoginViewController.swift */,
-				743031FE2742B8EB00B7657B /* LoginHowToCallViewController.swift */,
-				743032002742C11B00B7657B /* KakaoLoginEntity */,
-				743032012742C14300B7657B /* SignUpEntity */,
+				747561BC2744D64A0015BFC9 /* KakaoLogin */,
+				747561BA2744D56E0015BFC9 /* Nickname */,
+				747561C52745255D0015BFC9 /* PrivacySetting */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -120,6 +137,9 @@
 		743031E0274273AF00B7657B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				74E730012743B4AF00697460 /* HomeStoryboard.storyboard */,
+				74E730032743B4C100697460 /* HomeViewController.swift */,
+				74E72FFE2743B44400697460 /* HomeEntity */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -156,11 +176,50 @@
 			path = KakaoLoginEntity;
 			sourceTree = "<group>";
 		};
-		743032012742C14300B7657B /* SignUpEntity */ = {
+		747561BA2744D56E0015BFC9 /* Nickname */ = {
 			isa = PBXGroup;
 			children = (
+				743031FE2742B8EB00B7657B /* LoginHowToCallViewController.swift */,
+				747561BB2744D6280015BFC9 /* NicknameEntity */,
 			);
-			path = SignUpEntity;
+			path = Nickname;
+			sourceTree = "<group>";
+		};
+		747561BB2744D6280015BFC9 /* NicknameEntity */ = {
+			isa = PBXGroup;
+			children = (
+				747561C12744D6910015BFC9 /* NicknameResponse.swift */,
+				747561BD2744D6760015BFC9 /* NicknameDataManager.swift */,
+			);
+			path = NicknameEntity;
+			sourceTree = "<group>";
+		};
+		747561BC2744D64A0015BFC9 /* KakaoLogin */ = {
+			isa = PBXGroup;
+			children = (
+				743031E2274281AB00B7657B /* LoginViewController.swift */,
+				743032002742C11B00B7657B /* KakaoLoginEntity */,
+			);
+			path = KakaoLogin;
+			sourceTree = "<group>";
+		};
+		747561C52745255D0015BFC9 /* PrivacySetting */ = {
+			isa = PBXGroup;
+			children = (
+				747561C6274525FE0015BFC9 /* PrivacySettingViewController.swift */,
+				747561C8274526240015BFC9 /* PrivacySettingEntity */,
+			);
+			path = PrivacySetting;
+			sourceTree = "<group>";
+		};
+		747561C8274526240015BFC9 /* PrivacySettingEntity */ = {
+			isa = PBXGroup;
+			children = (
+				747561CF2745268B0015BFC9 /* PrivacySettingRequest.swift */,
+				747561D1274526970015BFC9 /* PrivacySettingResponse.swift */,
+				747561CD274526750015BFC9 /* PrivacySettingDataManager.swift */,
+			);
+			path = PrivacySettingEntity;
 			sourceTree = "<group>";
 		};
 		74C1B5F02742671400AFD7BF = {
@@ -212,6 +271,7 @@
 			children = (
 				74C1B61927426F5100AFD7BF /* Color.swift */,
 				74C1B61B27426F7E00AFD7BF /* String.swift */,
+				747561B82743E4D20015BFC9 /* UITextField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,6 +282,13 @@
 				743031DB274270DE00B7657B /* jwtToken.swift */,
 			);
 			path = Secret;
+			sourceTree = "<group>";
+		};
+		74E72FFE2743B44400697460 /* HomeEntity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeEntity;
 			sourceTree = "<group>";
 		};
 		9A2E0D22973E0B2A07E26D6A /* Pods */ = {
@@ -295,6 +362,7 @@
 			files = (
 				74C1B60C2742671600AFD7BF /* LaunchScreen.storyboard in Resources */,
 				743031F32742A25E00B7657B /* GmarketSansBold.otf in Resources */,
+				74E730022743B4AF00697460 /* HomeStoryboard.storyboard in Resources */,
 				743031FC2742A26900B7657B /* NotoSansKR-Medium.otf in Resources */,
 				743031F92742A26900B7657B /* Montserrat-Regular.ttf in Resources */,
 				74C1B6092742671600AFD7BF /* Assets.xcassets in Resources */,
@@ -360,15 +428,23 @@
 				743031E3274281AB00B7657B /* LoginViewController.swift in Sources */,
 				74C1B6072742671400AFD7BF /* MackDuck.xcdatamodeld in Sources */,
 				743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */,
+				747561C7274525FE0015BFC9 /* PrivacySettingViewController.swift in Sources */,
+				747561CE274526750015BFC9 /* PrivacySettingDataManager.swift in Sources */,
+				747561D2274526970015BFC9 /* PrivacySettingResponse.swift in Sources */,
 				74C1B6012742671400AFD7BF /* ViewController.swift in Sources */,
+				747561D02745268B0015BFC9 /* PrivacySettingRequest.swift in Sources */,
+				74E730042743B4C100697460 /* HomeViewController.swift in Sources */,
 				74C1B61727426F1200AFD7BF /* Constant.swift in Sources */,
 				743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */,
 				74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */,
 				74C1B61C27426F7E00AFD7BF /* String.swift in Sources */,
 				74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */,
+				747561B92743E4D20015BFC9 /* UITextField.swift in Sources */,
 				74C1B61A27426F5100AFD7BF /* Color.swift in Sources */,
+				747561C22744D6910015BFC9 /* NicknameResponse.swift in Sources */,
 				743032072742C24C00B7657B /* KakaoLoginDataManager.swift in Sources */,
 				743031DC274270DE00B7657B /* jwtToken.swift in Sources */,
+				747561BE2744D6760015BFC9 /* NicknameDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

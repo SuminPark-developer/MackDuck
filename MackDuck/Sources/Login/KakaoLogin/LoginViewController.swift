@@ -102,18 +102,30 @@ extension LoginViewController {
         print("nickname 값 : \(result.result!.nickname)")
         print("kakaoId 값 : \(result.result!.kakaoId)")
         
-        // TODO: - 여기부터!
-        // kakaoId값이 있으면 -> 신규 가입
-        // 없으면 -> 재로그인 나눠줘야함.
+        
+        if result.result!.kakaoId != nil { // kakaoId값이 있으면 -> 신규 가입.
+            // 닉네임 설정 페이지로 이동.
+            let goHowToCall = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+            let howToCallVC = goHowToCall.instantiateViewController(withIdentifier: "LoginHowToCallVC")
+            howToCallVC.modalPresentationStyle = .overFullScreen
+            self.present(howToCallVC, animated: true, completion: nil)
+        }
+        
+        else { // kakaoId값이 없으면 -> 재로그인.
+            // Home - Home 페이지로 이동.
+            let goHome = UIStoryboard(name: "HomeStoryboard", bundle: nil)
+            let goHomeVC = goHome.instantiateViewController(withIdentifier: "HomeVC")
+            goHomeVC.modalPresentationStyle = .overFullScreen
+            self.present(goHomeVC, animated: true, completion: nil)
+        }
+        
+        
+        
         
         // jwt 토큰값 UserDefaults에 저장.
 //        UserDefaults.standard.setValue(jwt, forKey: "jwtToken")
         
-        // 닉네임 설정 페이지로 이동.
-        let goHowToCall = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-        let howToCallVC = goHowToCall.instantiateViewController(withIdentifier: "LoginHowToCallVC")
-        howToCallVC.modalPresentationStyle = .overFullScreen
-        self.present(howToCallVC, animated: true, completion: nil)
+        
         
     }
 

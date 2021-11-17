@@ -25,8 +25,7 @@ class KakaoLoginDataManager {
                         delegate.didSuccessKakaoLogin(response) // LoginViewController의 didSuccessKakaoLogin메서드 호출.
                         print("Kakao로그인 성공")
                     }
-                    // 실패했을 때
-                    else {
+                    else { // 실패했을 때
                         switch response.code {
                         case 2024: delegate.failedToRequest(message: "accessToken을 입력해주세요.", code: 2024)
                         case 2026: delegate.failedToRequest(message: "유효하지 않은 accessToken입니다.", code: 2026)
