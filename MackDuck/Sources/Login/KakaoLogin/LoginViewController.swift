@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
                     _ = oauthToken
                     
                     print(oauthToken!)
-                    print(oauthToken?.accessToken)
+//                    print(oauthToken?.accessToken)
                     
                     let input = KakaoLoginRequest(accessToken: oauthToken!.accessToken)
                     self.dataManager.postKakaoLogInInfo(input, delegate: self)
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
                     _ = oauthToken
                     
                     print(oauthToken!)
-                    print(oauthToken?.accessToken)
+//                    print(oauthToken?.accessToken)
                     
                     let input = KakaoLoginRequest(accessToken: oauthToken!.accessToken)
                     self.dataManager.postKakaoLogInInfo(input, delegate: self)

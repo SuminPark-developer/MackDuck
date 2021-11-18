@@ -36,13 +36,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 로그인하고 100개 이상의 맥주 정보를 얻으세요!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-f0-SCo">
-                                <rect key="frame" x="20" y="234.5" width="186.5" height="35"/>
+                                <rect key="frame" x="20" y="191" width="331" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간편 로그인으로 모든 맥주 정보를 즐기세요!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-5V-wWl">
-                                <rect key="frame" x="20" y="94" width="215.5" height="130.5"/>
+                                <rect key="frame" x="20" y="94" width="331" height="87"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -63,13 +63,13 @@
                             <constraint firstItem="8t9-2M-qL0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3O4-Og-Hju"/>
                             <constraint firstItem="WsI-sx-gjA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EIY-6m-C0E"/>
                             <constraint firstItem="8t9-2M-qL0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.075" id="IfS-y7-ems"/>
-                            <constraint firstItem="Oef-5V-wWl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.52" id="VvL-b0-Lg5"/>
+                            <constraint firstItem="Oef-5V-wWl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="VvL-b0-Lg5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8t9-2M-qL0" secondAttribute="trailing" constant="20" id="Yn5-65-V4L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WsI-sx-gjA" secondAttribute="trailing" constant="20" id="Zzq-sp-gBX"/>
                             <constraint firstItem="Oef-5V-wWl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="b42-wf-fvI"/>
                             <constraint firstItem="qar-f0-SCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eXf-P3-cHC"/>
                             <constraint firstItem="WsI-sx-gjA" firstAttribute="top" secondItem="8t9-2M-qL0" secondAttribute="bottom" constant="16" id="h0e-ap-g1U"/>
-                            <constraint firstItem="qar-f0-SCo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.45" id="klX-c7-ps3"/>
+                            <constraint firstItem="qar-f0-SCo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="klX-c7-ps3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WsI-sx-gjA" secondAttribute="bottom" constant="40" id="knk-8I-zKf"/>
                             <constraint firstItem="qar-f0-SCo" firstAttribute="top" secondItem="Oef-5V-wWl" secondAttribute="bottom" constant="10" id="mbr-1m-EX4"/>
                             <constraint firstItem="WsI-sx-gjA" firstAttribute="height" secondItem="8t9-2M-qL0" secondAttribute="height" id="mrB-e0-IwN"/>
@@ -96,14 +96,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="공백없이 한글 6자 이하로 입력해주세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KG3-EQ-ixQ">
-                                <rect key="frame" x="20" y="191" width="374" height="67"/>
+                                <rect key="frame" x="20" y="147.5" width="374" height="67"/>
                                 <color key="backgroundColor" red="0.1335714757" green="0.1335714757" blue="0.1335714757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떻게 불러드릴까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvI-BC-nrC">
-                                <rect key="frame" x="20" y="94" width="215.5" height="87"/>
+                                <rect key="frame" x="20" y="94" width="331" height="43.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@
                         <viewLayoutGuide key="safeArea" id="ccV-fM-daK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VvI-BC-nrC" firstAttribute="width" secondItem="4Zj-hr-cKO" secondAttribute="width" multiplier="0.52" id="9WA-Tl-Cr3"/>
+                            <constraint firstItem="VvI-BC-nrC" firstAttribute="width" secondItem="4Zj-hr-cKO" secondAttribute="width" multiplier="0.8" id="9WA-Tl-Cr3"/>
                             <constraint firstItem="KG3-EQ-ixQ" firstAttribute="height" secondItem="4Zj-hr-cKO" secondAttribute="height" multiplier="0.075" id="AjK-S6-BnA"/>
                             <constraint firstItem="nlR-fV-l9l" firstAttribute="height" secondItem="4Zj-hr-cKO" secondAttribute="height" multiplier="0.075" id="Gfg-oz-XRm"/>
                             <constraint firstItem="ccV-fM-daK" firstAttribute="bottom" secondItem="nlR-fV-l9l" secondAttribute="bottom" constant="40" id="KZz-bN-P7X"/>
@@ -154,18 +154,616 @@
                     <view key="view" contentMode="scaleToFill" id="tzB-ge-tHd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCf-X0-ze4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="Bi2-WD-dek">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="Tv7-vu-tx0">
+                                            <color key="tintColor" red="0.42352938649999999" green="0.42352938649999999" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="didTabBackButton:" destination="z7n-MA-ovd" id="V40-6m-qTl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vi9-VL-l6G">
+                                <rect key="frame" x="20" y="755" width="374" height="67"/>
+                                <color key="backgroundColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53725492949999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="가입 완료">
+                                    <fontDescription key="titleFontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapNextButton:" destination="Q5h-aR-2Lk" eventType="touchUpInside" id="zZB-sO-5j4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인 정보를 선택하면 끝!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-bK-i84">
+                                <rect key="frame" x="20" y="94" width="312.5" height="43.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1F-Jq-d6f">
+                                <rect key="frame" x="20" y="157.5" width="374" height="577.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWZ-wB-Mt6">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="1100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="S7m-Gi-nE4">
+                                                <rect key="frame" x="10" y="50" width="283.5" height="24"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="privacyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ymO-bY-hfL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aka-zN-L8D">
+                                                        <rect key="frame" x="29" y="0.0" width="69.5" height="24"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  *내 정보는 마이페이지에서 수정 가능해요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-ig-kbT">
+                                                        <rect key="frame" x="103.5" y="0.0" width="180" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="10"/>
+                                                        <color key="textColor" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dq-qg-1LK">
+                                                <rect key="frame" x="10" y="116" width="33" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDR-w9-TX5">
+                                                <rect key="frame" x="10" y="179.5" width="33" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="취향*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qG-OB-aCV">
+                                                <rect key="frame" x="10" y="285" width="33" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ch2-eg-Qz1">
+                                                <rect key="frame" x="73" y="109" width="291" height="288"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-hw-Zgn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="291" height="33"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-sF-MLf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
+                                                                <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="남성">
+                                                                    <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                </buttonConfiguration>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="selectedSexOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="PAC-Hx-vcn"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLD-VI-rGW">
+                                                                <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
+                                                                <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="여성">
+                                                                    <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                </buttonConfiguration>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="15"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="selectedSexOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="u8B-ib-Ma1"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezh-Sf-ESv">
+                                                                <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
+                                                                <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                                    <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="53G-Bk-UgC">
+                                                        <rect key="frame" x="0.0" y="63" width="291" height="76"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cWP-kj-KQo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="33"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lie-Ma-opg">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="20대">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="VOm-q9-ef5"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moN-jf-KoR">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="30대">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="14"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="fkf-CJ-1Bz"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMS-0Q-u7v">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="40대">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="Nb8-Av-TV0"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hfW-i1-iIm">
+                                                                <rect key="frame" x="0.0" y="43" width="291" height="33"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ef-4l-QaV">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="50대">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="aDT-qB-9q4"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl5-jY-YeV">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="60대">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="9sR-Ro-j2f"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-pv-HJs">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="70대">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="f6I-QE-Vis"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Dx-J8-Pup">
+                                                        <rect key="frame" x="0.0" y="169" width="291" height="119"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dMd-am-FLX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="33"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKZ-Km-LFe">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="라거">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="g2m-B3-nee"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-73-GA8">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="필스너">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="p9s-my-scn"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j0-Pl-Qak">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="둔켈">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="Emq-Vt-Zng"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NuZ-AD-rrZ">
+                                                                <rect key="frame" x="0.0" y="43" width="291" height="33"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-5H-Bm8">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="에일">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="TpB-DC-SRA"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-nO-92T">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="IPA">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="ntI-V1-2Gs"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViO-Jc-WkD">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="밀맥주">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="NVw-po-YxQ"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qoe-TN-AgL">
+                                                                <rect key="frame" x="0.0" y="86" width="291" height="33"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRb-UA-NxN">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="스타우트">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="tbv-1X-s6k"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCf-tf-wlZ">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="포터">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="1"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" red="0.34117650989999998" green="0.34117650989999998" blue="0.34117650989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="15"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="hGo-PA-lME"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAz-5O-dyd">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
+                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
+                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        </buttonConfiguration>
+                                                                    </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCO-Pu-BeH">
+                                                <rect key="frame" x="20" y="442" width="334" height="60"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privacyBeerButton" translatesAutoresizingMaskIntoConstraints="NO" id="ghN-Ey-xHJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SC4-KU-lNr">
+                                                        <rect key="frame" x="159.5" y="13" width="164.5" height="34.5"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="chevron.forward" catalog="system" title="맥주 종류를 모를땐?!  ">
+                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="ghN-Ey-xHJ" firstAttribute="leading" secondItem="hCO-Pu-BeH" secondAttribute="leading" id="3Og-Fq-8B9"/>
+                                                    <constraint firstAttribute="height" constant="60" id="40y-IK-U3C"/>
+                                                    <constraint firstItem="SC4-KU-lNr" firstAttribute="centerY" secondItem="ghN-Ey-xHJ" secondAttribute="centerY" id="RGM-mn-I3o"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SC4-KU-lNr" secondAttribute="trailing" constant="10" id="VNd-SW-8bD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ghN-Ey-xHJ" secondAttribute="trailing" id="bOa-AW-Zlt"/>
+                                                    <constraint firstItem="ghN-Ey-xHJ" firstAttribute="top" secondItem="hCO-Pu-BeH" secondAttribute="top" id="tyV-TP-d7c"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ghN-Ey-xHJ" secondAttribute="bottom" id="zMb-3v-zDK"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Ch2-eg-Qz1" secondAttribute="trailing" constant="10" id="3Nb-Tu-R2l"/>
+                                            <constraint firstItem="Ch2-eg-Qz1" firstAttribute="leading" secondItem="6Dq-qg-1LK" secondAttribute="trailing" constant="30" id="7ab-tc-H2G"/>
+                                            <constraint firstItem="hCO-Pu-BeH" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="20" id="FJ5-mG-pMb"/>
+                                            <constraint firstItem="9qG-OB-aCV" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="10" id="Fas-Fi-6D3"/>
+                                            <constraint firstItem="Ch2-eg-Qz1" firstAttribute="top" secondItem="S7m-Gi-nE4" secondAttribute="bottom" constant="35" id="Kbu-3P-st0"/>
+                                            <constraint firstAttribute="height" constant="1100" id="P5Y-z3-wKd"/>
+                                            <constraint firstItem="9qG-OB-aCV" firstAttribute="top" secondItem="PDR-w9-TX5" secondAttribute="bottom" constant="85" id="S7v-4b-Dx8"/>
+                                            <constraint firstAttribute="trailing" secondItem="hCO-Pu-BeH" secondAttribute="trailing" constant="20" id="VRy-Ex-oJ1"/>
+                                            <constraint firstItem="6Dq-qg-1LK" firstAttribute="top" secondItem="S7m-Gi-nE4" secondAttribute="bottom" constant="42" id="ZwC-Xr-Vxb"/>
+                                            <constraint firstItem="S7m-Gi-nE4" firstAttribute="top" secondItem="NWZ-wB-Mt6" secondAttribute="top" constant="50" id="aYs-Jt-81h"/>
+                                            <constraint firstItem="6Dq-qg-1LK" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="10" id="f9j-ZO-eWS"/>
+                                            <constraint firstItem="hCO-Pu-BeH" firstAttribute="top" secondItem="Ch2-eg-Qz1" secondAttribute="bottom" constant="45" id="flC-qA-k1y"/>
+                                            <constraint firstItem="PDR-w9-TX5" firstAttribute="top" secondItem="6Dq-qg-1LK" secondAttribute="bottom" constant="43" id="mfK-sD-47e"/>
+                                            <constraint firstItem="PDR-w9-TX5" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="10" id="mjP-6L-8uT"/>
+                                            <constraint firstItem="S7m-Gi-nE4" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="10" id="nnh-Dm-iHM"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="NWZ-wB-Mt6" firstAttribute="trailing" secondItem="ZCF-pE-juz" secondAttribute="trailing" constant="374" id="5Re-fm-BwW"/>
+                                    <constraint firstItem="NWZ-wB-Mt6" firstAttribute="leading" secondItem="ZCF-pE-juz" secondAttribute="leading" id="5kt-cH-2SI"/>
+                                    <constraint firstItem="NWZ-wB-Mt6" firstAttribute="width" secondItem="V6y-xL-wdH" secondAttribute="width" id="mCp-A0-XeX"/>
+                                    <constraint firstItem="NWZ-wB-Mt6" firstAttribute="top" secondItem="ZCF-pE-juz" secondAttribute="top" id="pDM-89-fZo"/>
+                                    <constraint firstItem="NWZ-wB-Mt6" firstAttribute="bottom" secondItem="ZCF-pE-juz" secondAttribute="bottom" constant="571" id="qoD-V4-Ddb"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ZCF-pE-juz"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="V6y-xL-wdH"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0nP-qU-qLB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j1F-Jq-d6f" firstAttribute="leading" secondItem="0nP-qU-qLB" secondAttribute="leading" constant="20" id="11h-nh-JIj"/>
+                            <constraint firstItem="vi9-VL-l6G" firstAttribute="height" secondItem="tzB-ge-tHd" secondAttribute="height" multiplier="0.075" id="3PE-Ve-jtp"/>
+                            <constraint firstItem="vi9-VL-l6G" firstAttribute="top" secondItem="j1F-Jq-d6f" secondAttribute="bottom" constant="20" id="AXH-aH-FcL"/>
+                            <constraint firstItem="MCf-X0-ze4" firstAttribute="top" secondItem="0nP-qU-qLB" secondAttribute="top" id="Cqd-3b-yt3"/>
+                            <constraint firstItem="0nP-qU-qLB" firstAttribute="trailing" secondItem="j1F-Jq-d6f" secondAttribute="trailing" constant="20" id="Ewq-Fr-1b0"/>
+                            <constraint firstItem="MCf-X0-ze4" firstAttribute="leading" secondItem="0nP-qU-qLB" secondAttribute="leading" id="GAw-H3-tmB"/>
+                            <constraint firstItem="3Ss-bK-i84" firstAttribute="leading" secondItem="0nP-qU-qLB" secondAttribute="leading" constant="20" id="cjB-0z-rMe"/>
+                            <constraint firstItem="vi9-VL-l6G" firstAttribute="leading" secondItem="0nP-qU-qLB" secondAttribute="leading" constant="20" id="hhp-nD-rUA"/>
+                            <constraint firstItem="j1F-Jq-d6f" firstAttribute="top" secondItem="3Ss-bK-i84" secondAttribute="bottom" constant="20" id="mYf-q0-7RY"/>
+                            <constraint firstItem="0nP-qU-qLB" firstAttribute="bottom" secondItem="vi9-VL-l6G" secondAttribute="bottom" constant="40" id="pcN-3r-whG"/>
+                            <constraint firstItem="0nP-qU-qLB" firstAttribute="trailing" secondItem="vi9-VL-l6G" secondAttribute="trailing" constant="20" id="qh8-g6-FoO"/>
+                            <constraint firstItem="3Ss-bK-i84" firstAttribute="top" secondItem="0nP-qU-qLB" secondAttribute="top" constant="50" id="rPF-KF-jz6"/>
+                            <constraint firstItem="MCf-X0-ze4" firstAttribute="trailing" secondItem="0nP-qU-qLB" secondAttribute="trailing" id="vLF-hR-7lb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ageBtn1" destination="lie-Ma-opg" id="vZQ-ZA-Ksd"/>
+                        <outlet property="ageBtn2" destination="moN-jf-KoR" id="pUf-5P-raX"/>
+                        <outlet property="ageBtn3" destination="ZMS-0Q-u7v" id="7Ak-r3-Fav"/>
+                        <outlet property="ageBtn4" destination="1ef-4l-QaV" id="awe-TW-ZIh"/>
+                        <outlet property="ageBtn5" destination="gl5-jY-YeV" id="gvJ-4V-EAD"/>
+                        <outlet property="ageBtn6" destination="9zy-pv-HJs" id="7Do-mc-Tun"/>
+                        <outlet property="mainTitle" destination="3Ss-bK-i84" id="V5b-Rf-aA4"/>
+                        <outlet property="navigationBar" destination="MCf-X0-ze4" id="HBj-GR-Nj2"/>
+                        <outlet property="sexBtn1" destination="dCw-sF-MLf" id="418-hn-Mgj"/>
+                        <outlet property="sexBtn2" destination="xLD-VI-rGW" id="3hp-ND-gfe"/>
+                        <outlet property="signUpButton" destination="vi9-VL-l6G" id="RWc-x8-TUd"/>
+                        <outlet property="tasteBtn1" destination="ZKZ-Km-LFe" id="YyO-7u-tC0"/>
+                        <outlet property="tasteBtn2" destination="xhh-73-GA8" id="bWB-sy-4pZ"/>
+                        <outlet property="tasteBtn3" destination="5j0-Pl-Qak" id="jXv-8T-ud1"/>
+                        <outlet property="tasteBtn4" destination="ezu-5H-Bm8" id="TI8-4v-9DN"/>
+                        <outlet property="tasteBtn5" destination="Jkx-nO-92T" id="IYo-vS-sdK"/>
+                        <outlet property="tasteBtn6" destination="ViO-Jc-WkD" id="fvl-qb-PFT"/>
+                        <outlet property="tasteBtn7" destination="YRb-UA-NxN" id="vyU-3I-xQJ"/>
+                        <outlet property="tasteBtn8" destination="vCf-tf-wlZ" id="XW8-3K-bXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thg-xN-cyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1803" y="116"/>
+            <point key="canvasLocation" x="1802.8985507246377" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>
         <image name="appleLogo" width="20" height="20"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="kakaoLogo" width="20" height="20"/>
+        <image name="privacyBeerButton" width="295" height="60"/>
+        <image name="privacyIcon" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
