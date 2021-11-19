@@ -97,16 +97,17 @@ extension LoginViewController {
         print("response 내용 : \(result)")
         
         
-        print("jwt 값 : \(result.result!.jwt)")
-        print("userId 값 : \(result.result!.userId)")
-        print("nickname 값 : \(result.result!.nickname)")
-        print("kakaoId 값 : \(result.result!.kakaoId)")
+//        print("jwt 값 : \(result.result!.jwt)")
+//        print("userId 값 : \(result.result!.userId)")
+//        print("nickname 값 : \(result.result!.nickname)")
+//        print("kakaoId 값 : \(result.result!.kakaoId)")
         
         
         if result.result!.kakaoId != nil { // kakaoId값이 있으면 -> 신규 가입.
             // 닉네임 설정 페이지로 이동.
             let goHowToCall = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-            let howToCallVC = goHowToCall.instantiateViewController(withIdentifier: "LoginHowToCallVC")
+            let howToCallVC = goHowToCall.instantiateViewController(withIdentifier: "LoginHowToCallVC") as! LoginHowToCallViewController
+            howToCallVC.kakaoId = (result.result?.kakaoId)! // // PrivacySettingViewController로 kakaoId값 전달하기 위해.
             howToCallVC.modalPresentationStyle = .overFullScreen
             self.present(howToCallVC, animated: true, completion: nil)
         }

@@ -106,19 +106,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		743031DD274272B800B7657B /* Sources */ = {
+		741B17EE2747E66C00B2AC31 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				74C1B6002742671400AFD7BF /* ViewController.swift */,
-				743031DE274272DB00B7657B /* Login */,
+				74E730012743B4AF00697460 /* HomeStoryboard.storyboard */,
 				743031E0274273AF00B7657B /* Home */,
 				743031E1274273DB00B7657B /* Refrigerator */,
 				743031DF2742738600B7657B /* MyPage */,
 			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		743031DD274272B800B7657B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				74C1B6002742671400AFD7BF /* ViewController.swift */,
+				743031DE274272DB00B7657B /* LoginPage */,
+				741B17EE2747E66C00B2AC31 /* MainPage */,
+			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		743031DE274272DB00B7657B /* Login */ = {
+		743031DE274272DB00B7657B /* LoginPage */ = {
 			isa = PBXGroup;
 			children = (
 				74C1B6022742671400AFD7BF /* LoginStoryboard.storyboard */,
@@ -126,7 +135,7 @@
 				747561BA2744D56E0015BFC9 /* Nickname */,
 				747561C52745255D0015BFC9 /* PrivacySetting */,
 			);
-			path = Login;
+			path = LoginPage;
 			sourceTree = "<group>";
 		};
 		743031DF2742738600B7657B /* MyPage */ = {
@@ -139,7 +148,6 @@
 		743031E0274273AF00B7657B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				74E730012743B4AF00697460 /* HomeStoryboard.storyboard */,
 				74E730032743B4C100697460 /* HomeViewController.swift */,
 				74E72FFE2743B44400697460 /* HomeEntity */,
 			);

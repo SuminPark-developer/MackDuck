@@ -178,7 +178,7 @@
                                     <fontDescription key="titleFontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="didTapNextButton:" destination="Q5h-aR-2Lk" eventType="touchUpInside" id="zZB-sO-5j4"/>
+                                    <action selector="didTabSignUpButton:" destination="z7n-MA-ovd" eventType="touchUpInside" id="mM9-ms-UpC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인 정보를 선택하면 끝!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-bK-i84">
@@ -187,7 +187,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1F-Jq-d6f">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1F-Jq-d6f">
                                 <rect key="frame" x="20" y="157.5" width="374" height="577.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWZ-wB-Mt6">
@@ -741,7 +741,7 @@
                         <outlet property="navigationBar" destination="MCf-X0-ze4" id="HBj-GR-Nj2"/>
                         <outlet property="sexBtn1" destination="dCw-sF-MLf" id="418-hn-Mgj"/>
                         <outlet property="sexBtn2" destination="xLD-VI-rGW" id="3hp-ND-gfe"/>
-                        <outlet property="signUpButton" destination="vi9-VL-l6G" id="RWc-x8-TUd"/>
+                        <outlet property="signUpButton" destination="vi9-VL-l6G" id="iAm-WN-7Vb"/>
                         <outlet property="tasteBtn1" destination="ZKZ-Km-LFe" id="YyO-7u-tC0"/>
                         <outlet property="tasteBtn2" destination="xhh-73-GA8" id="bWB-sy-4pZ"/>
                         <outlet property="tasteBtn3" destination="5j0-Pl-Qak" id="jXv-8T-ud1"/>
@@ -755,6 +755,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thg-xN-cyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1802.8985507246377" y="115.84821428571428"/>
+        </scene>
+        <!--HomeTabBarController-->
+        <scene sceneID="b98-tn-QWW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HomeStoryboard" referencedIdentifier="HomeTabBarController" id="FAs-E2-Z1v" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C0b-rv-cx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2459" y="139"/>
         </scene>
     </scenes>
     <resources>

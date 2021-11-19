@@ -19,6 +19,8 @@ class LoginHowToCallViewController: UIViewController {
     
     var nicknameValidateCheck: Bool = false
     
+    var kakaoId: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +44,8 @@ class LoginHowToCallViewController: UIViewController {
         nicknameTF.addLeftPadding() // 텍스트필드 좌측 패딩 - https://developer-fury.tistory.com/46
         nextButton.isUserInteractionEnabled = false // 다음 버튼 비활성화.
         nextButton.layer.cornerRadius = 10
+        
+        print(kakaoId)
     }
     
 
@@ -139,7 +143,9 @@ extension LoginHowToCallViewController {
         if result.isSuccess == true { // 닉네임 설정 성공시,
             
             let goPrivacySetting = UIStoryboard(name: "LoginStoryboard", bundle: nil)
-            let privacySettingVC = goPrivacySetting.instantiateViewController(withIdentifier: "PrivacySettingVC")
+            let privacySettingVC = goPrivacySetting.instantiateViewController(withIdentifier: "PrivacySettingVC") as! PrivacySettingViewController
+            privacySettingVC.kakaoId = kakaoId // PrivacySettingViewController로 kakaoId값 전달.
+            privacySettingVC.nickName = nicknameTF.text!
             privacySettingVC.modalPresentationStyle = .overFullScreen
             self.present(privacySettingVC, animated: true, completion: nil)
         }
