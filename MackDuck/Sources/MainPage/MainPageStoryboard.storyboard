@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--HomeStoryboard-->
+        <!--HomeStoryboardNavigationController-->
         <scene sceneID="IKA-xl-vps">
             <objects>
-                <viewControllerPlaceholder storyboardName="HomeStoryboard" id="UMk-PS-D2b" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HomeStoryboard" referencedIdentifier="HomeStoryboardNavigationController" id="UMk-PS-D2b" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="j7l-tq-zsY"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGZ-Yc-LeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

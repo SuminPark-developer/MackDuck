@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5FA54F34B7E9D36E586B9623 /* Pods_MackDuck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C25B540D7C8FF090DA3027E /* Pods_MackDuck.framework */; };
+		742E6464274BF17F00F6B72A /* HomeRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E6463274BF17F00F6B72A /* HomeRecommendViewController.swift */; };
+		742E6467274BF1A900F6B72A /* HomeSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E6466274BF1A900F6B72A /* HomeSearchViewController.swift */; };
+		742E646A274BF1D100F6B72A /* HomeDictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742E6469274BF1D100F6B72A /* HomeDictionaryViewController.swift */; };
 		743031DC274270DE00B7657B /* jwtToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743031DB274270DE00B7657B /* jwtToken.swift */; };
 		743031E3274281AB00B7657B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743031E2274281AB00B7657B /* LoginViewController.swift */; };
 		743031F12742A25E00B7657B /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 743031EE2742A25D00B7657B /* GmarketSansLight.otf */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		0C25B540D7C8FF090DA3027E /* Pods_MackDuck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MackDuck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27850282F683B342079493F0 /* Pods-MackDuck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackDuck.release.xcconfig"; path = "Target Support Files/Pods-MackDuck/Pods-MackDuck.release.xcconfig"; sourceTree = "<group>"; };
+		742E6463274BF17F00F6B72A /* HomeRecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendViewController.swift; sourceTree = "<group>"; };
+		742E6466274BF1A900F6B72A /* HomeSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchViewController.swift; sourceTree = "<group>"; };
+		742E6469274BF1D100F6B72A /* HomeDictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDictionaryViewController.swift; sourceTree = "<group>"; };
 		743031DB274270DE00B7657B /* jwtToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jwtToken.swift; sourceTree = "<group>"; };
 		743031E2274281AB00B7657B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		743031EE2742A25D00B7657B /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
@@ -130,6 +136,30 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
+		742E6462274BF15E00F6B72A /* HomeRecommend */ = {
+			isa = PBXGroup;
+			children = (
+				742E6463274BF17F00F6B72A /* HomeRecommendViewController.swift */,
+			);
+			path = HomeRecommend;
+			sourceTree = "<group>";
+		};
+		742E6465274BF19800F6B72A /* HomeSearch */ = {
+			isa = PBXGroup;
+			children = (
+				742E6466274BF1A900F6B72A /* HomeSearchViewController.swift */,
+			);
+			path = HomeSearch;
+			sourceTree = "<group>";
+		};
+		742E6468274BF1B000F6B72A /* HomeDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				742E6469274BF1D100F6B72A /* HomeDictionaryViewController.swift */,
+			);
+			path = HomeDictionary;
+			sourceTree = "<group>";
+		};
 		743031DD274272B800B7657B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +196,9 @@
 				74EF99C2274B9C030037A166 /* HomeStoryboard.storyboard */,
 				74E730032743B4C100697460 /* HomeViewController.swift */,
 				74E72FFE2743B44400697460 /* HomeEntity */,
+				742E6465274BF19800F6B72A /* HomeSearch */,
+				742E6462274BF15E00F6B72A /* HomeRecommend */,
+				742E6468274BF1B000F6B72A /* HomeDictionary */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -462,6 +495,7 @@
 				747561D62746571B0015BFC9 /* UIView.swift in Sources */,
 				74C1B6072742671400AFD7BF /* MackDuck.xcdatamodeld in Sources */,
 				743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */,
+				742E6464274BF17F00F6B72A /* HomeRecommendViewController.swift in Sources */,
 				747561C7274525FE0015BFC9 /* PrivacySettingViewController.swift in Sources */,
 				7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */,
 				747561CE274526750015BFC9 /* PrivacySettingDataManager.swift in Sources */,
@@ -470,8 +504,10 @@
 				747561D02745268B0015BFC9 /* PrivacySettingRequest.swift in Sources */,
 				74E730042743B4C100697460 /* HomeViewController.swift in Sources */,
 				74C1B61727426F1200AFD7BF /* Constant.swift in Sources */,
+				742E646A274BF1D100F6B72A /* HomeDictionaryViewController.swift in Sources */,
 				743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */,
 				74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */,
+				742E6467274BF1A900F6B72A /* HomeSearchViewController.swift in Sources */,
 				74C1B61C27426F7E00AFD7BF /* String.swift in Sources */,
 				74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */,
 				747561B92743E4D20015BFC9 /* UITextField.swift in Sources */,

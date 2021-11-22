@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var recommendButton: UIButton!
     @IBOutlet weak var tabBar: UITabBarItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,26 +21,34 @@ class HomeViewController: UIViewController {
         mainTitle.text = "맥주 이름이\n무엇인가요?"
         mainTitle.textColor = .mainWhite
         
+       
         
-        
-        //텍스트 필드 돋보기 표시
-//        let magnifyingGlassButton = UIButton()
-//        let image = UIImage(named: "mainSearchIcon")
-//        magnifyingGlassButton.setBackgroundImage(image, for: .normal)
-//        magnifyingGlassButton.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
-//        searchTF.rightView = magnifyingGlassButton
-//        searchTF.rightViewMode = UITextField.ViewMode.always
         
         
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        recommendButton.subtitleLabel?.textColor = .mainGray // 추천버튼 subtitle 색상 변경
+    }
     
-
-//
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.searchTF.resignFirstResponder()
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        recommendButton.subtitleLabel?.textColor = .mainGray // 추천버튼 subtitle 색상 변경
+    }
+    
+    
+    // 검색창 클릭 시,
+    @IBAction func didTabSearchButton(_ sender: UIButton) {
+        let homeSearchVC = (self.storyboard?.instantiateViewController(withIdentifier: "HomeSearchVC"))
+        self.navigationController?.pushViewController(homeSearchVC!, animated: true)
+    }
+    
+    
+    // 추천 탭 클릭 시,
+    @IBAction func didTabRecommendButton(_ sender: UIButton) {
+        let homeRecommendVC = (self.storyboard?.instantiateViewController(withIdentifier: "HomeRecommendVC"))
+        self.navigationController?.pushViewController(homeRecommendVC!, animated: true)
+    }
     
 
 }
