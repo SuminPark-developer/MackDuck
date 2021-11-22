@@ -756,10 +756,10 @@
             </objects>
             <point key="canvasLocation" x="1802.8985507246377" y="115.84821428571428"/>
         </scene>
-        <!--HomeTabBarController-->
+        <!--MainPageTabBarController-->
         <scene sceneID="b98-tn-QWW">
             <objects>
-                <viewControllerPlaceholder storyboardName="HomeStoryboard" referencedIdentifier="HomeTabBarController" id="FAs-E2-Z1v" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MainPageStoryboard" referencedIdentifier="MainPageTabBarController" id="FAs-E2-Z1v" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0b-rv-cx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2459" y="139"/>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IAW-8X-fav">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansKR-Bold.otf">
+            <string>NotoSansKR-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--홈-->
+        <scene sceneID="fOi-ip-hc1">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IAW-8X-fav" customClass="HomeViewController" customModule="MackDuck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9y2-kc-jMi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맥주 이름이 무엇인가요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFr-FF-KDt">
+                                <rect key="frame" x="20" y="94" width="308.5" height="43.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6gb-wj-mpq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BFr-FF-KDt" firstAttribute="leading" secondItem="6gb-wj-mpq" secondAttribute="leading" constant="20" id="7t2-4a-twu"/>
+                            <constraint firstItem="BFr-FF-KDt" firstAttribute="top" secondItem="6gb-wj-mpq" secondAttribute="top" constant="50" id="YBX-1c-uOd"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="홈" image="mainHome" selectedImage="mainHomeClicked" id="hPt-l9-vFI"/>
+                    <navigationItem key="navigationItem" id="X5F-RE-2s2"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mainTitle" destination="BFr-FF-KDt" id="DAf-YN-y9F"/>
+                        <outlet property="tabBar" destination="hPt-l9-vFI" id="xqD-2S-3DO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chI-E0-I5q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="979.71014492753636" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mainHome" width="24" height="24"/>
+        <image name="mainHomeClicked" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

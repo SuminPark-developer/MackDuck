@@ -114,8 +114,9 @@ extension LoginViewController {
         
         else { // kakaoId값이 없으면 -> 재로그인.
             // Home - Home 페이지로 이동.
-            let goHome = UIStoryboard(name: "HomeStoryboard", bundle: nil)
-            let goHomeVC = goHome.instantiateViewController(withIdentifier: "HomeVC")
+            
+            let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
+            let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")
             goHomeVC.modalPresentationStyle = .overFullScreen
             self.present(goHomeVC, animated: true, completion: nil)
         }

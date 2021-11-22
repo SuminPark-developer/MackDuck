@@ -198,8 +198,8 @@ extension PrivacySettingViewController {
         print("response 내용 : \(result)")
         
         if result.isSuccess == true { // 회원정보 설정 성공시, // 홈(메인) 페이지로 이동.
-            let goHome = UIStoryboard(name: "HomeStoryboard", bundle: nil)
-            let goHomeVC = goHome.instantiateViewController(withIdentifier: "HomeTabBarController")
+            let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
+            let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")
             goHomeVC.modalPresentationStyle = .overFullScreen
             self.present(goHomeVC, animated: true, completion: nil)
         }
