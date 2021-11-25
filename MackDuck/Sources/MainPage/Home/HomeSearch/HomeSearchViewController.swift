@@ -17,7 +17,7 @@ class HomeSearchViewController: UIViewController {
     
     
     @IBAction func clickBackButton(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
 }
