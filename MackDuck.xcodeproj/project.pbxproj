@@ -45,6 +45,8 @@
 		74C1B61727426F1200AFD7BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61627426F1200AFD7BF /* Constant.swift */; };
 		74C1B61A27426F5100AFD7BF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61927426F5100AFD7BF /* Color.swift */; };
 		74C1B61C27426F7E00AFD7BF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61B27426F7E00AFD7BF /* String.swift */; };
+		74D110972754EAA500184C1F /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D110962754EAA500184C1F /* BaseTextField.swift */; };
+		74D110992754EAB000184C1F /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D110982754EAB000184C1F /* SearchTextField.swift */; };
 		74E730022743B4AF00697460 /* MainPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E730012743B4AF00697460 /* MainPageStoryboard.storyboard */; };
 		74E730042743B4C100697460 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E730032743B4C100697460 /* HomeViewController.swift */; };
 		74EF99C3274B9C030037A166 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74EF99C2274B9C030037A166 /* HomeStoryboard.storyboard */; };
@@ -95,6 +97,8 @@
 		74C1B61627426F1200AFD7BF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		74C1B61927426F5100AFD7BF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		74C1B61B27426F7E00AFD7BF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		74D110962754EAA500184C1F /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		74D110982754EAB000184C1F /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		74E730012743B4AF00697460 /* MainPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPageStoryboard.storyboard; sourceTree = "<group>"; };
 		74E730032743B4C100697460 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		74EF99C2274B9C030037A166 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -334,6 +338,7 @@
 				74C1B61B27426F7E00AFD7BF /* String.swift */,
 				747561B82743E4D20015BFC9 /* UITextField.swift */,
 				747561D52746571B0015BFC9 /* UIView.swift */,
+				74D110952754E9BD00184C1F /* searchTextField */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -344,6 +349,15 @@
 				743031DB274270DE00B7657B /* jwtToken.swift */,
 			);
 			path = Secret;
+			sourceTree = "<group>";
+		};
+		74D110952754E9BD00184C1F /* searchTextField */ = {
+			isa = PBXGroup;
+			children = (
+				74D110962754EAA500184C1F /* BaseTextField.swift */,
+				74D110982754EAB000184C1F /* SearchTextField.swift */,
+			);
+			path = searchTextField;
 			sourceTree = "<group>";
 		};
 		74E72FFE2743B44400697460 /* HomeEntity */ = {
@@ -494,6 +508,7 @@
 				743031E3274281AB00B7657B /* LoginViewController.swift in Sources */,
 				747561D62746571B0015BFC9 /* UIView.swift in Sources */,
 				74C1B6072742671400AFD7BF /* MackDuck.xcdatamodeld in Sources */,
+				74D110992754EAB000184C1F /* SearchTextField.swift in Sources */,
 				743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */,
 				742E6464274BF17F00F6B72A /* HomeRecommendViewController.swift in Sources */,
 				747561C7274525FE0015BFC9 /* PrivacySettingViewController.swift in Sources */,
@@ -506,6 +521,7 @@
 				74C1B61727426F1200AFD7BF /* Constant.swift in Sources */,
 				742E646A274BF1D100F6B72A /* HomeDictionaryViewController.swift in Sources */,
 				743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */,
+				74D110972754EAA500184C1F /* BaseTextField.swift in Sources */,
 				74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */,
 				742E6467274BF1A900F6B72A /* HomeSearchViewController.swift in Sources */,
 				74C1B61C27426F7E00AFD7BF /* String.swift in Sources */,
