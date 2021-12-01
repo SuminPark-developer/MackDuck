@@ -20,6 +20,9 @@
         <array key="Montserrat-Bold.ttf">
             <string>Montserrat-Bold</string>
         </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
         <array key="NotoSansKR-Bold.otf">
             <string>NotoSansKR-Bold</string>
         </array>
@@ -917,17 +920,157 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbi-WM-c0W">
+                                <rect key="frame" x="35" y="198" width="78.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkl-Ud-3O1">
+                                <rect key="frame" x="325.5" y="195.5" width="68.5" height="31.5"/>
+                                <color key="tintColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="전체삭제">
+                                    <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                </buttonConfiguration>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y08-ip-Ybf">
+                                <rect key="frame" x="35" y="241.5" width="344" height="107.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-h2-WIH">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="17.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="퇴근길" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1W-yA-s4N">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.07" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="277-lm-u0C">
+                                                <rect key="frame" x="275" y="0.0" width="69" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="N1W-yA-s4N" firstAttribute="width" secondItem="KBW-h2-WIH" secondAttribute="width" multiplier="0.8" id="bSA-Pw-hpv"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqk-sD-IRK">
+                                        <rect key="frame" x="0.0" y="22.5" width="344" height="17.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호가든" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-BJ-yn4">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oz-Fg-GBQ">
+                                                <rect key="frame" x="275" y="0.0" width="69" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="B8k-BJ-yn4" firstAttribute="width" secondItem="Cqk-sD-IRK" secondAttribute="width" multiplier="0.8" id="lD1-we-zeq"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eDH-Qa-KJm">
+                                        <rect key="frame" x="0.0" y="45" width="344" height="17.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제주 펠롱 에일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsK-22-Fan">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.03" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdU-8Y-Wq8">
+                                                <rect key="frame" x="275" y="0.0" width="69" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="NsK-22-Fan" firstAttribute="width" secondItem="eDH-Qa-KJm" secondAttribute="width" multiplier="0.8" id="tB0-nx-cTh"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8t-yT-v3E">
+                                        <rect key="frame" x="0.0" y="67.5" width="344" height="17.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버드와이저" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lni-WA-hTm">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLn-B5-KkM">
+                                                <rect key="frame" x="275" y="0.0" width="69" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Lni-WA-hTm" firstAttribute="width" secondItem="T8t-yT-v3E" secondAttribute="width" multiplier="0.8" id="7xA-FX-dRB"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lgr-ty-Peg">
+                                        <rect key="frame" x="0.0" y="90" width="344" height="17.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버드와이저" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymC-xe-qGl">
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbS-TA-Fhk">
+                                                <rect key="frame" x="275" y="0.0" width="69" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="10"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ymC-xe-qGl" firstAttribute="width" secondItem="lgr-ty-Peg" secondAttribute="width" multiplier="0.8" id="Sfs-d3-eso"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기 검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVV-Ow-hLo">
+                                <rect key="frame" x="35" y="369" width="78.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="z77-r4-vAG">
+                                <rect key="frame" x="20" y="503" width="374" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WSi-jG-bSv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Tbi-WM-c0W" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="30" id="2Rf-dl-obl"/>
+                            <constraint firstItem="Y08-ip-Ybf" firstAttribute="top" secondItem="Tbi-WM-c0W" secondAttribute="bottom" constant="20" id="2fj-n7-EGo"/>
                             <constraint firstItem="0TH-A5-20K" firstAttribute="top" secondItem="WSi-jG-bSv" secondAttribute="top" constant="20" id="3oX-Mz-ukP"/>
+                            <constraint firstItem="Y08-ip-Ybf" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="35" id="4kX-sN-alc"/>
                             <constraint firstItem="0TH-A5-20K" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="AcZ-rp-93O"/>
+                            <constraint firstItem="bVV-Ow-hLo" firstAttribute="top" secondItem="Y08-ip-Ybf" secondAttribute="bottom" constant="20" id="D95-0I-iBv"/>
+                            <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="Y08-ip-Ybf" secondAttribute="trailing" constant="35" id="EB0-dq-r9c"/>
+                            <constraint firstItem="Tbi-WM-c0W" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="35" id="Ft8-EZ-EiZ"/>
+                            <constraint firstItem="bVV-Ow-hLo" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="35" id="IYu-9W-m7C"/>
+                            <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="Mkl-Ud-3O1" secondAttribute="trailing" constant="20" id="J4X-1R-kFW"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="0TH-A5-20K" secondAttribute="trailing" constant="20" id="KIy-vn-2x9"/>
+                            <constraint firstItem="Mkl-Ud-3O1" firstAttribute="firstBaseline" secondItem="Tbi-WM-c0W" secondAttribute="firstBaseline" id="fbd-zF-wtA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="It5-xO-owe">
                         <barButtonItem key="leftBarButtonItem" image="backButtonGray" id="vqK-A5-Tau">
+                            <inset key="imageInsets" minX="-7" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" red="0.3803921938" green="0.3803921938" blue="0.3803921938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="clickBackButton:" destination="ZTg-Gz-wv4" id="gza-L3-TKD"/>
@@ -938,11 +1081,21 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="0TH-A5-20K" id="I67-s3-vJ2"/>
+                        <outletCollection property="recentSearchLabels" destination="N1W-yA-s4N" collectionClass="NSMutableArray" id="G4S-BH-kCv"/>
+                        <outletCollection property="recentSearchLabels" destination="B8k-BJ-yn4" collectionClass="NSMutableArray" id="xWG-18-rsS"/>
+                        <outletCollection property="recentSearchLabels" destination="NsK-22-Fan" collectionClass="NSMutableArray" id="WFr-iV-uuf"/>
+                        <outletCollection property="recentSearchLabels" destination="Lni-WA-hTm" collectionClass="NSMutableArray" id="6lu-Yt-zS1"/>
+                        <outletCollection property="recentSearchLabels" destination="ymC-xe-qGl" collectionClass="NSMutableArray" id="2zw-Mm-WCH"/>
+                        <outletCollection property="recentSearchDates" destination="277-lm-u0C" collectionClass="NSMutableArray" id="pBP-z2-Jvu"/>
+                        <outletCollection property="recentSearchDates" destination="9oz-Fg-GBQ" collectionClass="NSMutableArray" id="p5U-dT-ZCQ"/>
+                        <outletCollection property="recentSearchDates" destination="GdU-8Y-Wq8" collectionClass="NSMutableArray" id="mzV-TU-C9H"/>
+                        <outletCollection property="recentSearchDates" destination="GLn-B5-KkM" collectionClass="NSMutableArray" id="llf-aR-aeh"/>
+                        <outletCollection property="recentSearchDates" destination="FbS-TA-Fhk" collectionClass="NSMutableArray" id="Ffy-hR-Ab3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEz-9I-UnG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2863.768115942029" y="-325.44642857142856"/>
+            <point key="canvasLocation" x="2862.3188405797105" y="-325.44642857142856"/>
         </scene>
         <!--홈-->
         <scene sceneID="3Ft-dt-gsx">

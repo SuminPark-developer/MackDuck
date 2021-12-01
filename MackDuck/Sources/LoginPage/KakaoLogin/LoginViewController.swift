@@ -96,6 +96,8 @@ extension LoginViewController {
         print("서버에 POST 성공!")
         print("response 내용 : \(result)")
         
+        // UserDefaults에 jwt값(x-access-token) 저장.
+        UserDefaults.standard.set(result.result?.jwt, forKey: "x-access-token")
         
 //        print("jwt 값 : \(result.result!.jwt)")
 //        print("userId 값 : \(result.result!.userId)")
@@ -114,7 +116,6 @@ extension LoginViewController {
         
         else { // kakaoId값이 없으면 -> 재로그인.
             // Home - Home 페이지로 이동.
-            
             let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
             let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")
             goHomeVC.modalPresentationStyle = .overFullScreen

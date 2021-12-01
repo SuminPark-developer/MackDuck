@@ -9,7 +9,13 @@ import UIKit
 
 class HomeSearchViewController: UIViewController {
 
+    var dataManager: HomeRecentPopularDataManager = HomeRecentPopularDataManager()
+    
     @IBOutlet weak var searchBar: UITextField! // 검색창
+    
+    @IBOutlet var recentSearchLabels: [UILabel]!
+    @IBOutlet var recentSearchDates: [UILabel]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +64,9 @@ class HomeSearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
 //        self.tabBarController?.tabBar.isHidden = true
+        
+        self.dataManager.postHomeRecentPopularInfo(delegate: self) // 최근검색어, 인기검색어 api 호출.
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -133,4 +142,59 @@ extension HomeSearchViewController: UITextFieldDelegate {
 //        infoSendButton.isHidden = false
         return true
     }
+}
+
+
+extension HomeSearchViewController {
+    
+    // jwt(x-access-token)가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에 최근검색어, 인기검색어 값들 보이게 설정.
+    func didSuccessRecentPopular(_ result: HomeRecentPopularResponse) {
+        print("서버에서 최근검색어, 인기검색어 GET 성공!")
+        print("response 내용 : \(result)")
+        
+//        if result.isSuccess == true { // GET 성공시, 최근검색어, 인기검색어 값들 보이게 설정.
+//            if result.result.recentKeyword.isEmpty == true { // 최근검색어가 0개라면,
+//                print("최근검색어 없음!")
+//            }
+//            else { // 최근검색어 1개 이상
+//                DispatchQueue.main.async {
+//                    for keyword in result.result.recentKeyword {
+//                        <#code#>
+//                    }
+//                }
+//            }
+//        }
+        var recentKeywordArray: [String] = [] // 최근 검색어 저장할 배열
+        var recentDateArray: [String] = [] // 최근 검색어 날짜 저장할 배열
+        DispatchQueue.main.async {
+            for keyword in result.result.recentKeyword {
+                recentKeywordArray.append(keyword.keyword) // 최근 검색어 저장
+                recentDateArray.append(keyword.createdAt) // 최근 검색어 날짜 저장
+            }
+            
+            for i in 0..<5 {
+                if i < recentKeywordArray.count { // 받아온 것들 중 값이 있는 index까진,
+                    self.recentSearchLabels[i].text = recentKeywordArray[i]
+                    self.recentSearchDates[i].text = recentDateArray[i]
+                }
+                else { // 값이 없을 땐 숨김.
+                    self.recentSearchLabels[i].isHidden = true
+                    self.recentSearchDates[i].isHidden = true
+                }
+            }
+            
+        }
+        
+    }
+
+    func failedToRequest(message: String, code: Int) { // 오류메시지 & code번호 몇인지
+        print("서버 Request 실패...")
+        print("실패 이유 : \(message)")
+        print("오류 코드 : \(code)")
+        
+        if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
+//            showAlert(title: message, message: "")
+        }
+    }
+    
 }
