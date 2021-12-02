@@ -10,6 +10,10 @@ import UIKit
 class BestSearchTableViewCell: UITableViewCell {
 
     static let identifier = "BestSearchTableViewCell"
+    @IBOutlet weak var beerImageView: UIImageView! // 맥주 이미지
+    @IBOutlet weak var beerName: UILabel! // 맥주 이름
+    @IBOutlet weak var beerClassification: UILabel! // 맥주 종류, 알콜도수
+    @IBOutlet weak var beerFeature: UILabel! // 맥주 특징
     
     static func nib() -> UINib {
         return UINib(nibName: "BestSearchTableViewCell", bundle: nil)

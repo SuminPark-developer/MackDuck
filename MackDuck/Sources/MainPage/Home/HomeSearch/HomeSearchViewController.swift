@@ -9,13 +9,17 @@ import UIKit
 
 class HomeSearchViewController: UIViewController {
 
-    var dataManager: HomeRecentPopularDataManager = HomeRecentPopularDataManager()
+    var dataManager: HomeRecentPopularDataManager = HomeRecentPopularDataManager() // 최근검색어, 인기검색어 dataManager
+    var deleteDataManager: HomeRecentDeleteDataManager = HomeRecentDeleteDataManager() // 최근검색어 지우는 dataManager
     
     @IBOutlet weak var searchBar: UITextField! // 검색창
     
     @IBOutlet var recentSearchLabels: [UILabel]!
     @IBOutlet var recentSearchDates: [UILabel]!
+    @IBOutlet weak var deleteAllButton: UIButton! // 전체삭제 버튼
     
+    @IBOutlet weak var popularTableView: UITableView! // 인기검색어 테이블뷰
+    var BestSearchModels = [BestSearchModel]() // 인기검색어 데이터(모델)들
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,9 @@ class HomeSearchViewController: UIViewController {
 //        UIView.animate(withDuration: 0.3, animations: ({
 //            self.searchBar.transform = CGAffineTransform(translationX: 0, y: -94)
 //        }))
+        
+//        popularTableView.estimatedRowHeight = UITableView.automaticDimension // 테이블뷰 cell self sizing
+//        popularTableView.rowHeight = UITableView.automaticDimension
         
     }
     
@@ -64,9 +71,7 @@ class HomeSearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
 //        self.tabBarController?.tabBar.isHidden = true
-        
         self.dataManager.postHomeRecentPopularInfo(delegate: self) // 최근검색어, 인기검색어 api 호출.
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -90,6 +95,11 @@ class HomeSearchViewController: UIViewController {
 //        tableView.reloadData()
 //    }
 
+    // 전체삭제 버튼 클릭 시,
+    @IBAction func clickDeleteAllButton(_ sender: UIButton) {
+        let userId = UserDefaults.standard.integer(forKey: "userId") // UserDefaults에서 userId값 불러옴.
+        self.deleteDataManager.postHomeRecentDeleteInfo(userId: userId, delegate: self) // 최근검색어 지우는 api 호출.
+    }
     
     
     @IBAction func clickBackButton(_ sender: UIBarButtonItem) {
@@ -98,6 +108,7 @@ class HomeSearchViewController: UIViewController {
     
 }
 
+// MARK: - 최상단 searchBar(textField) 검색 부분
 extension HomeSearchViewController: UITextFieldDelegate {
     
     @objc func textFieldDidchange(textField: UITextField){
@@ -145,6 +156,7 @@ extension HomeSearchViewController: UITextFieldDelegate {
 }
 
 
+// MARK: - 중상단 최근검색어, 인기검색어 Api
 extension HomeSearchViewController {
     
     // jwt(x-access-token)가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에 최근검색어, 인기검색어 값들 보이게 설정.
@@ -182,8 +194,9 @@ extension HomeSearchViewController {
                     self.recentSearchDates[i].isHidden = true
                 }
             }
-            
         }
+        
+        // TODO: - 여기부분에서, 가져온 값들을 BestSearchModels에 데이터 넣어야 함.
         
     }
 
@@ -195,6 +208,72 @@ extension HomeSearchViewController {
         if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
 //            showAlert(title: message, message: "")
         }
+    }
+    
+}
+
+
+// MARK: - 중상단 최근검색어 Delete Api
+extension HomeSearchViewController {
+    
+    // userId가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에서 최근검색어 삭제하게 설정.
+    func didSuccessDeleteRecent(_ result: HomeRecentDeleteResponse) {
+        print("서버에 최근검색어 삭제 PATCH 성공!")
+        print("response 내용 : \(result)")
+        
+        // 서버에 지웠으니 -> 앱에서도 최근검색어&날짜 지움(가림).
+        DispatchQueue.main.async {
+            for i in 0..<5 {
+                self.recentSearchLabels[i].isHidden = true
+                self.recentSearchDates[i].isHidden = true
+            }
+        }
+        
+    }
+
+    func failedToDeleteRequest(message: String, code: Int) { // 오류메시지 & code번호 몇인지
+        print("서버 Request 실패...")
+        print("실패 이유 : \(message)")
+        print("오류 코드 : \(code)")
+        
+        if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
+//            showAlert(title: message, message: "")
+        }
+        else if code == 2016 { // 실패 이유 : "유저 아이디값을 확인해주세요."
+            
+        }
+        else if code == 3022 { // 실패 이유 : "최근검색어가 존재하지 않습니다."
+            
+        }
+    }
+    
+}
+
+
+// MARK: - 최하단 인기검색어 테이블뷰 부분
+extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return BestSearchModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as? BestSearchTableViewCell else {
+            return UITableViewCell()
+        }
+        
+//        cell.configure(with: BestSearchModels)
+        // TODO: - 바로 윗부분 cell.configure함수부터 만들면 됨.
+        
+//        let myData: MyData = myList[indexPath.row]
+//        cell.uiName.text = myData.name
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(BestSearchModels[indexPath.row])
     }
     
 }

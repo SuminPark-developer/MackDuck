@@ -197,7 +197,10 @@ extension PrivacySettingViewController {
         print("서버에 POST 성공!")
         print("response 내용 : \(result)")
         
-        if result.isSuccess == true { // 회원정보 설정 성공시, // 홈(메인) 페이지로 이동.
+        if result.isSuccess == true { // 회원정보 설정 성공시, 홈(메인) 페이지로 이동.
+            
+            UserDefaults.standard.set(result.result?.userId, forKey: "userId") // UserDefaults에 userId값 저장.
+            
             let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
             let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")
             goHomeVC.modalPresentationStyle = .overFullScreen

@@ -49,6 +49,9 @@
 		74C1B61727426F1200AFD7BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61627426F1200AFD7BF /* Constant.swift */; };
 		74C1B61A27426F5100AFD7BF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61927426F5100AFD7BF /* Color.swift */; };
 		74C1B61C27426F7E00AFD7BF /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61B27426F7E00AFD7BF /* String.swift */; };
+		74DE2F9F2758AD7200424301 /* HomeRecentDeleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE2F9E2758AD7200424301 /* HomeRecentDeleteResponse.swift */; };
+		74DE2FA12758AD8000424301 /* HomeRecentDeleteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE2FA02758AD8000424301 /* HomeRecentDeleteDataManager.swift */; };
+		74DE2FA32758EB6F00424301 /* BestSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DE2FA22758EB6F00424301 /* BestSearchModel.swift */; };
 		74E730022743B4AF00697460 /* MainPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E730012743B4AF00697460 /* MainPageStoryboard.storyboard */; };
 		74E730042743B4C100697460 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E730032743B4C100697460 /* HomeViewController.swift */; };
 		74EF99C3274B9C030037A166 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74EF99C2274B9C030037A166 /* HomeStoryboard.storyboard */; };
@@ -103,6 +106,9 @@
 		74C1B61627426F1200AFD7BF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		74C1B61927426F5100AFD7BF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		74C1B61B27426F7E00AFD7BF /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		74DE2F9E2758AD7200424301 /* HomeRecentDeleteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentDeleteResponse.swift; sourceTree = "<group>"; };
+		74DE2FA02758AD8000424301 /* HomeRecentDeleteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentDeleteDataManager.swift; sourceTree = "<group>"; };
+		74DE2FA22758EB6F00424301 /* BestSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSearchModel.swift; sourceTree = "<group>"; };
 		74E730012743B4AF00697460 /* MainPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainPageStoryboard.storyboard; sourceTree = "<group>"; };
 		74E730032743B4C100697460 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		74EF99C2274B9C030037A166 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 				742E6466274BF1A900F6B72A /* HomeSearchViewController.swift */,
 				74B11ECC27560198003C3E02 /* Table Cell Best */,
 				7403CAC727574EF500E6B2DF /* HomeRecentPopularEntity */,
+				74DE2F9B2758ACB900424301 /* HomeRecentDeleteEntity */,
 				7403CACE275750F200E6B2DF /* HomeSearchEntity */,
 			);
 			path = HomeSearch;
@@ -313,6 +320,7 @@
 		74B11ECC27560198003C3E02 /* Table Cell Best */ = {
 			isa = PBXGroup;
 			children = (
+				74DE2FA22758EB6F00424301 /* BestSearchModel.swift */,
 				74B11ED12756034D003C3E02 /* BestSearchTableViewCell.swift */,
 				74B11ED22756034D003C3E02 /* BestSearchTableViewCell.xib */,
 			);
@@ -380,6 +388,15 @@
 				743031DB274270DE00B7657B /* jwtToken.swift */,
 			);
 			path = Secret;
+			sourceTree = "<group>";
+		};
+		74DE2F9B2758ACB900424301 /* HomeRecentDeleteEntity */ = {
+			isa = PBXGroup;
+			children = (
+				74DE2F9E2758AD7200424301 /* HomeRecentDeleteResponse.swift */,
+				74DE2FA02758AD8000424301 /* HomeRecentDeleteDataManager.swift */,
+			);
+			path = HomeRecentDeleteEntity;
 			sourceTree = "<group>";
 		};
 		74E72FFE2743B44400697460 /* HomeEntity */ = {
@@ -532,6 +549,7 @@
 				747561D62746571B0015BFC9 /* UIView.swift in Sources */,
 				74C1B6072742671400AFD7BF /* MackDuck.xcdatamodeld in Sources */,
 				743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */,
+				74DE2FA12758AD8000424301 /* HomeRecentDeleteDataManager.swift in Sources */,
 				7403CAD02757512600E6B2DF /* HomeRecentPopularResponse.swift in Sources */,
 				742E6464274BF17F00F6B72A /* HomeRecommendViewController.swift in Sources */,
 				747561C7274525FE0015BFC9 /* PrivacySettingViewController.swift in Sources */,
@@ -553,6 +571,8 @@
 				747561B92743E4D20015BFC9 /* UITextField.swift in Sources */,
 				74EF99CB274BB2370037A166 /* MainPageViewController.swift in Sources */,
 				74C1B61A27426F5100AFD7BF /* Color.swift in Sources */,
+				74DE2F9F2758AD7200424301 /* HomeRecentDeleteResponse.swift in Sources */,
+				74DE2FA32758EB6F00424301 /* BestSearchModel.swift in Sources */,
 				747561C22744D6910015BFC9 /* NicknameResponse.swift in Sources */,
 				743032072742C24C00B7657B /* KakaoLoginDataManager.swift in Sources */,
 				743031DC274270DE00B7657B /* jwtToken.swift in Sources */,

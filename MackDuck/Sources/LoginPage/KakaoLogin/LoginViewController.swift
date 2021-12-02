@@ -96,13 +96,14 @@ extension LoginViewController {
         print("서버에 POST 성공!")
         print("response 내용 : \(result)")
         
-        // UserDefaults에 jwt값(x-access-token) 저장.
-        UserDefaults.standard.set(result.result?.jwt, forKey: "x-access-token")
         
-//        print("jwt 값 : \(result.result!.jwt)")
-//        print("userId 값 : \(result.result!.userId)")
-//        print("nickname 값 : \(result.result!.nickname)")
-//        print("kakaoId 값 : \(result.result!.kakaoId)")
+        UserDefaults.standard.set(result.result?.jwt, forKey: "x-access-token") // UserDefaults에 jwt값(x-access-token) 저장.
+        UserDefaults.standard.set(result.result?.userId, forKey: "userId") // UserDefaults에 userId값 저장.
+        
+//        print("jwt 값 : \(result.result?.jwt)")
+//        print("userId 값 : \(result.result?.userId)")
+//        print("nickname 값 : \(result.result?.nickname)")
+//        print("kakaoId 값 : \(result.result?.kakaoId)")
         
         
         if result.result!.kakaoId != nil { // kakaoId값이 있으면 -> 신규 가입.
