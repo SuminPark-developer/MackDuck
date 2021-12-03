@@ -30,4 +30,18 @@ class BestSearchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+//    public func configure(with BestSearchModel: BestSearchModel) {
+        
+//        self.beerImageView.image = UIImage(named: BestSearchModel.beerImageUrl)
+//        self.beerImageView.contentMode = .scaleAspectFit
+//
+//        self.beerName.text = BestSearchModel.beerName
+//
+//        let beerClassAlcohol = BestSearchModel.beerKind + " / " + BestSearchModel.beerAlcohol // 맥주 종류 & 알콜 도수 text 합침.
+//        self.beerClassification.text = beerClassAlcohol
+//
+//        self.beerFeature.text = BestSearchModel.beerFeature
+
+//    }
+    
 }

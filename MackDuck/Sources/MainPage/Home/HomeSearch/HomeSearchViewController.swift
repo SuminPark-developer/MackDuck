@@ -19,7 +19,7 @@ class HomeSearchViewController: UIViewController {
     @IBOutlet weak var deleteAllButton: UIButton! // 전체삭제 버튼
     
     @IBOutlet weak var popularTableView: UITableView! // 인기검색어 테이블뷰
-    var BestSearchModels = [BestSearchModel]() // 인기검색어 데이터(모델)들
+    var BestSearchList: [BestSearchModel] = [] // 인기검색어 데이터(모델)들
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,16 @@ class HomeSearchViewController: UIViewController {
 //            self.searchBar.transform = CGAffineTransform(translationX: 0, y: -94)
 //        }))
         
-//        popularTableView.estimatedRowHeight = UITableView.automaticDimension // 테이블뷰 cell self sizing
+//        popularTableView.estimatedRowHeight = 100 // 테이블뷰 cell self sizing
 //        popularTableView.rowHeight = UITableView.automaticDimension
+        
+        popularTableView.showsHorizontalScrollIndicator = false // 테이블뷰 스크롤바 숨김
+        popularTableView.showsVerticalScrollIndicator = false
+    
+        popularTableView.delegate = self
+        popularTableView.dataSource = self
+        
+        popularTableView.register(BestSearchTableViewCell.nib(), forCellReuseIdentifier: BestSearchTableViewCell.identifier) // 테이블뷰(최하단 인기검색어) cell 등록
         
     }
     
@@ -117,6 +125,8 @@ extension HomeSearchViewController: UITextFieldDelegate {
         } else {
             print("입력 없는상태.")
         }
+        
+        popularTableView.reloadData()
 //        infoSendButton.isEnabled = true
 //        infoSendButton.layer.cornerRadius = 20
 //        infoSendButton.layer.borderColor = UIColor(red: 68/255, green: 68/255, blue: 68/255, alpha: 1).cgColor
@@ -176,6 +186,8 @@ extension HomeSearchViewController {
 //                }
 //            }
 //        }
+        
+        // 가져온 값들을 최근 검색어 Stack에 데이터 넣음.
         var recentKeywordArray: [String] = [] // 최근 검색어 저장할 배열
         var recentDateArray: [String] = [] // 최근 검색어 날짜 저장할 배열
         DispatchQueue.main.async {
@@ -196,7 +208,17 @@ extension HomeSearchViewController {
             }
         }
         
-        // TODO: - 여기부분에서, 가져온 값들을 BestSearchModels에 데이터 넣어야 함.
+
+        // 가져온 값들을 BestSearchList에 데이터 넣음.
+        DispatchQueue.main.async {
+            for popularSearchData in result.result.popularBeer {
+                self.BestSearchList.append(BestSearchModel(beerId: popularSearchData.beerID, beerImageUrl: popularSearchData.beerImgURL, beerName: popularSearchData.nameKr, beerKind: popularSearchData.beerKind, beerAlcohol: popularSearchData.alcohol, beerFeature: popularSearchData.feature, beerReviewCount: popularSearchData.reviewCount))
+            }
+            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+        }
+        
+        
+        
         
     }
 
@@ -253,27 +275,49 @@ extension HomeSearchViewController {
 // MARK: - 최하단 인기검색어 테이블뷰 부분
 extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BestSearchModels.count
+        return BestSearchList.count // 최대 5개임
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as? BestSearchTableViewCell else {
-            return UITableViewCell()
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as! BestSearchTableViewCell
+        
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as? BestSearchTableViewCell else {
+//            return UITableViewCell()
+//        }
         
 //        cell.configure(with: BestSearchModels)
-        // TODO: - 바로 윗부분 cell.configure함수부터 만들면 됨.
         
-//        let myData: MyData = myList[indexPath.row]
-//        cell.uiName.text = myData.name
+        let bestSearchModel: BestSearchModel = BestSearchList[indexPath.row]
+        
+        let url = URL(string: bestSearchModel.beerImageUrl)
+        // DispatchQueue를 쓰는 이유 -> 이미지가 클 경우 이미지를 다운로드 받기 까지 잠깐의 멈춤이 생길수 있다. (이유 : 싱글 쓰레드로 작동되기때문에)
+        DispatchQueue.global(qos: .background).async { // DispatchQueue를 쓰면 멀티 쓰레드로 이미지가 클경우에도 멈춤이 생기지 않는다.
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                cell.beerImageView.image = UIImage(data: data!) // 만약 url이 없다면(안 들어온다면) try-catch로 확인해줘야 함.
+                cell.beerImageView.contentMode = .scaleAspectFit
+            }
+        }
+        
+        
+        cell.beerName.text = "\(indexPath.row + 1). " + bestSearchModel.beerName // ex) 1. 호가든
+        
+        let beerClassAlcohol = "맥주 종류 : " + bestSearchModel.beerKind + " / " + "알콜 도수 : " + bestSearchModel.beerAlcohol // 맥주 종류 & 알콜 도수 text 합침.
+        cell.beerClassification.text = beerClassAlcohol
+
+        cell.beerFeature.text = "특징 : " + bestSearchModel.beerFeature
         
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(BestSearchModels[indexPath.row])
+        print(BestSearchList[indexPath.row].beerName)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
 }
