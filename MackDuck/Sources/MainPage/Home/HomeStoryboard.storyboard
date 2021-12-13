@@ -1088,6 +1088,9 @@
                     <connections>
                         <outlet property="deleteAllButton" destination="Mkl-Ud-3O1" id="ucv-Fl-m3V"/>
                         <outlet property="popularTableView" destination="z77-r4-vAG" id="8G5-cu-GZZ"/>
+                        <outlet property="popularTitle" destination="bVV-Ow-hLo" id="dYO-0P-t47"/>
+                        <outlet property="recentStackView" destination="Y08-ip-Ybf" id="Ekd-gk-mJF"/>
+                        <outlet property="recentTitle" destination="Tbi-WM-c0W" id="Zh7-iv-yKu"/>
                         <outlet property="searchBar" destination="0TH-A5-20K" id="I67-s3-vJ2"/>
                         <outletCollection property="recentSearchLabels" destination="N1W-yA-s4N" collectionClass="NSMutableArray" id="G4S-BH-kCv"/>
                         <outletCollection property="recentSearchLabels" destination="B8k-BJ-yn4" collectionClass="NSMutableArray" id="xWG-18-rsS"/>

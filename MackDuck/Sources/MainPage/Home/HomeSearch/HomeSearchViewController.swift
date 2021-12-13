@@ -14,10 +14,13 @@ class HomeSearchViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UITextField! // 검색창
     
+    @IBOutlet weak var recentTitle: UILabel! // 최근 검색어 라벨
+    @IBOutlet weak var deleteAllButton: UIButton! // 전체삭제 버튼
+    @IBOutlet weak var recentStackView: UIStackView! // 최근 검색어 라벨들 모은 스택뷰
     @IBOutlet var recentSearchLabels: [UILabel]!
     @IBOutlet var recentSearchDates: [UILabel]!
-    @IBOutlet weak var deleteAllButton: UIButton! // 전체삭제 버튼
     
+    @IBOutlet weak var popularTitle: UILabel! // 인기 검색어 라벨
     @IBOutlet weak var popularTableView: UITableView! // 인기검색어 테이블뷰
     var BestSearchList: [BestSearchModel] = [] // 인기검색어 데이터(모델)들
     
@@ -120,13 +123,23 @@ class HomeSearchViewController: UIViewController {
 extension HomeSearchViewController: UITextFieldDelegate {
     
     @objc func textFieldDidchange(textField: UITextField){
-        if textField.text!.count > 0 {
+        if textField.text!.count > 0 { // 검색어 입력 중일 시 -> 기존 화면들 숨기기. & 검색 테이블뷰 띄우기.
+            recentTitle.isHidden = true
+            deleteAllButton.isHidden = true
+            recentStackView.isHidden = true
+            popularTitle.isHidden = true
+            popularTableView.isHidden = true
             print(textField.text)
-        } else {
+            
+        } else { // 검색어 입력 중 아닐 시 -> 숨겼던 기존의 화면들 다시 띄우기. & 검색 테이블뷰 숨기기.
+            recentTitle.isHidden = false
+            deleteAllButton.isHidden = false
+            recentStackView.isHidden = false
+            popularTitle.isHidden = false
+            popularTableView.isHidden = false
             print("입력 없는상태.")
         }
         
-        popularTableView.reloadData()
 //        infoSendButton.isEnabled = true
 //        infoSendButton.layer.cornerRadius = 20
 //        infoSendButton.layer.borderColor = UIColor(red: 68/255, green: 68/255, blue: 68/255, alpha: 1).cgColor
