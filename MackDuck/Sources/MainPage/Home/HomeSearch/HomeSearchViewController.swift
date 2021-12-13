@@ -201,11 +201,20 @@ extension HomeSearchViewController {
                     self.recentSearchLabels[i].text = recentKeywordArray[i]
                     self.recentSearchDates[i].text = recentDateArray[i]
                 }
-                else { // 값이 없을 땐 숨김.
+                else { // 값이 없는 라벨들은 숨김.
                     self.recentSearchLabels[i].isHidden = true
                     self.recentSearchDates[i].isHidden = true
                 }
             }
+            
+            if recentKeywordArray.count == 0 { // 최근 검색어가 0개라면,
+                self.recentSearchLabels[0].isHidden = false // 일단 가려진거 다시 풂.
+                self.recentSearchDates[0].isHidden = false // 일단 가려진거 다시 풂.
+                self.recentSearchLabels[0].text = "최근 검색어가 없습니다."
+                self.recentSearchDates[0].text = ""
+            }
+            
+            
         }
         
 
@@ -245,7 +254,11 @@ extension HomeSearchViewController {
         
         // 서버에 지웠으니 -> 앱에서도 최근검색어&날짜 지움(가림).
         DispatchQueue.main.async {
-            for i in 0..<5 {
+            
+            self.recentSearchLabels[0].text = "최근 검색어가 없습니다." // 0번째 라벨엔 최근 검색어가 없다고 표시해줌.
+            self.recentSearchDates[0].text = ""
+            
+            for i in 1..<5 {
                 self.recentSearchLabels[i].isHidden = true
                 self.recentSearchDates[i].isHidden = true
             }
