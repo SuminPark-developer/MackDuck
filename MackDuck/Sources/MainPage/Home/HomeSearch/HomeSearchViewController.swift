@@ -11,6 +11,8 @@ class HomeSearchViewController: UIViewController {
 
     var dataManager: HomeRecentPopularDataManager = HomeRecentPopularDataManager() // 최근검색어, 인기검색어 dataManager
     var deleteDataManager: HomeRecentDeleteDataManager = HomeRecentDeleteDataManager() // 최근검색어 지우는 dataManager
+    var searchResultDataManager: HomeSearchResultDataManager = HomeSearchResultDataManager() // 검색 결과 가져오는 dataManager
+    
     
     @IBOutlet weak var searchBar: UITextField! // 검색창
     
@@ -23,6 +25,9 @@ class HomeSearchViewController: UIViewController {
     @IBOutlet weak var popularTitle: UILabel! // 인기 검색어 라벨
     @IBOutlet weak var popularTableView: UITableView! // 인기검색어 테이블뷰
     var BestSearchList: [BestSearchModel] = [] // 인기검색어 데이터(모델)들
+    var SearchResultList: [SearchResultModel] = [] // 검색결과(keyword) 데이터(모델)들
+    
+    @IBOutlet weak var searchResultTableView: UITableView! // 검색 결과 보여줄 테이블뷰
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +49,21 @@ class HomeSearchViewController: UIViewController {
 //        popularTableView.estimatedRowHeight = 100 // 테이블뷰 cell self sizing
 //        popularTableView.rowHeight = UITableView.automaticDimension
         
-        popularTableView.showsHorizontalScrollIndicator = false // 테이블뷰 스크롤바 숨김
+        searchResultTableView.isHidden = true
+        
+        popularTableView.showsHorizontalScrollIndicator = false // 인기 검색어 - 테이블뷰 스크롤바 숨김
         popularTableView.showsVerticalScrollIndicator = false
+
+        searchResultTableView.showsHorizontalScrollIndicator = false // 검색결과 - 테이블뷰 스크롤바 숨김
+        searchResultTableView.showsVerticalScrollIndicator = false
     
         popularTableView.delegate = self
         popularTableView.dataSource = self
+        searchResultTableView.delegate = self
+        searchResultTableView.dataSource = self
         
         popularTableView.register(BestSearchTableViewCell.nib(), forCellReuseIdentifier: BestSearchTableViewCell.identifier) // 테이블뷰(최하단 인기검색어) cell 등록
+        searchResultTableView.register(SearchResultTableViewCell.nib(), forCellReuseIdentifier: SearchResultTableViewCell.identifier) // 테이블뷰(검색 결과) cell 등록
         
     }
     
@@ -129,7 +142,10 @@ extension HomeSearchViewController: UITextFieldDelegate {
             recentStackView.isHidden = true
             popularTitle.isHidden = true
             popularTableView.isHidden = true
-            print(textField.text)
+            searchResultTableView.isHidden = false // 검색테이블뷰 띄움.
+            print(textField.text!)
+            
+            self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색 api 호출.
             
         } else { // 검색어 입력 중 아닐 시 -> 숨겼던 기존의 화면들 다시 띄우기. & 검색 테이블뷰 숨기기.
             recentTitle.isHidden = false
@@ -137,6 +153,7 @@ extension HomeSearchViewController: UITextFieldDelegate {
             recentStackView.isHidden = false
             popularTitle.isHidden = false
             popularTableView.isHidden = false
+            searchResultTableView.isHidden = true // 검색테이블뷰 숨김.
             print("입력 없는상태.")
         }
         
@@ -239,9 +256,6 @@ extension HomeSearchViewController {
             self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
         }
         
-        
-        
-        
     }
 
     func failedToRequest(message: String, code: Int) { // 오류메시지 & code번호 몇인지
@@ -297,53 +311,111 @@ extension HomeSearchViewController {
     
 }
 
+// MARK: - 검색 Keyword Api
+extension HomeSearchViewController {
+    
+    // jwt(x-access-token)와 검색어(keyword)가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에 검색결과 값들 보이게 설정.
+    func didSuccessSearchResult(_ result: HomeSearchResultResponse) {
+        print("서버에서 검색결과 GET 성공!")
+        print("response 내용 : \(result)")
+        
+        // 가져온 값들을 SearchResultList에 데이터 넣음.
+        DispatchQueue.main.async {
+            for searchKeywordData in result.result {
+                self.SearchResultList.append(SearchResultModel(beerId: searchKeywordData.beerID, beerImageUrl: searchKeywordData.beerImgURL, beerNameEn: searchKeywordData.nameEn, beerNameKr: searchKeywordData.nameKr, beerReviewAverage: searchKeywordData.reviewAverage, beerReviewCount: searchKeywordData.reviewCount))
+            }
+            self.searchResultTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+        }
+        // TODO: - 아래 code==에러 작업해주고, 밑 테이블뷰에 return SearchResultList.count랑 cell 데이터 넣어줘야함.
+    }
 
-// MARK: - 최하단 인기검색어 테이블뷰 부분
+    func failedToRequest2(message: String, code: Int) { // 오류메시지 & code번호 몇인지
+        print("서버 Request 실패...")
+        print("실패 이유 : \(message)")
+        print("오류 코드 : \(code)")
+        
+        if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
+//            showAlert(title: message, message: "")
+        }
+    }
+    
+}
+
+// MARK: - 최하단 인기검색어 테이블뷰 부분 & 상단 검색어 입력시 검색결과 테이블뷰 부분
 extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BestSearchList.count // 최대 5개임
+        
+        if tableView == popularTableView {
+            return BestSearchList.count // 최대 5개임
+        }
+        if tableView == searchResultTableView {
+            
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        // TODO: - cell 밑 안에 집어 넣고, 데이터 가져와서 searchResultTableView에 값 연결해줘야 함.
         let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as! BestSearchTableViewCell
         
+        if tableView == popularTableView {
+            
+            
+            let bestSearchModel: BestSearchModel = BestSearchList[indexPath.row]
+            
+            let url = URL(string: bestSearchModel.beerImageUrl)
+            // DispatchQueue를 쓰는 이유 -> 이미지가 클 경우 이미지를 다운로드 받기 까지 잠깐의 멈춤이 생길수 있다. (이유 : 싱글 쓰레드로 작동되기때문에)
+            DispatchQueue.global(qos: .background).async { // DispatchQueue를 쓰면 멀티 쓰레드로 이미지가 클경우에도 멈춤이 생기지 않는다.
+                let data = try? Data(contentsOf: url!)
+                DispatchQueue.main.async {
+                    cell.beerImageView.image = UIImage(data: data!) // 만약 url이 없다면(안 들어온다면) try-catch로 확인해줘야 함.
+                    cell.beerImageView.contentMode = .scaleAspectFit
+                }
+            }
+            
+            cell.beerName.text = "\(indexPath.row + 1). " + bestSearchModel.beerName // ex) 1. 호가든
+            
+            let beerClassAlcohol = "맥주 종류 : " + bestSearchModel.beerKind + " / " + "알콜 도수 : " + bestSearchModel.beerAlcohol // 맥주 종류 & 알콜 도수 text 합침.
+            cell.beerClassification.text = beerClassAlcohol
+
+            cell.beerFeature.text = "특징 : " + bestSearchModel.beerFeature
+            
+            
+        }
+        if tableView == searchResultTableView {
+            
+        }
+        
+        return cell
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as? BestSearchTableViewCell else {
 //            return UITableViewCell()
 //        }
         
 //        cell.configure(with: BestSearchModels)
         
-        let bestSearchModel: BestSearchModel = BestSearchList[indexPath.row]
         
-        let url = URL(string: bestSearchModel.beerImageUrl)
-        // DispatchQueue를 쓰는 이유 -> 이미지가 클 경우 이미지를 다운로드 받기 까지 잠깐의 멈춤이 생길수 있다. (이유 : 싱글 쓰레드로 작동되기때문에)
-        DispatchQueue.global(qos: .background).async { // DispatchQueue를 쓰면 멀티 쓰레드로 이미지가 클경우에도 멈춤이 생기지 않는다.
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                cell.beerImageView.image = UIImage(data: data!) // 만약 url이 없다면(안 들어온다면) try-catch로 확인해줘야 함.
-                cell.beerImageView.contentMode = .scaleAspectFit
-            }
-        }
-        
-        
-        cell.beerName.text = "\(indexPath.row + 1). " + bestSearchModel.beerName // ex) 1. 호가든
-        
-        let beerClassAlcohol = "맥주 종류 : " + bestSearchModel.beerKind + " / " + "알콜 도수 : " + bestSearchModel.beerAlcohol // 맥주 종류 & 알콜 도수 text 합침.
-        cell.beerClassification.text = beerClassAlcohol
-
-        cell.beerFeature.text = "특징 : " + bestSearchModel.beerFeature
-        
-        return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(BestSearchList[indexPath.row].beerName)
+        if tableView == popularTableView {
+            print(BestSearchList[indexPath.row].beerName)
+        }
+        if tableView == searchResultTableView {
+            print("HAHA")
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        if tableView == popularTableView {
+            return 150
+        }
+        if tableView == searchResultTableView {
+            return 300
+        }
+        return 0
     }
     
 }
+

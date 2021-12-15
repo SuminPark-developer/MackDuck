@@ -1052,12 +1052,17 @@
                                 <rect key="frame" x="20" y="402.5" width="374" height="410.5"/>
                                 <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="H2Z-Ae-POD">
+                                <rect key="frame" x="20" y="176" width="374" height="637"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WSi-jG-bSv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tbi-WM-c0W" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="30" id="2Rf-dl-obl"/>
                             <constraint firstItem="Y08-ip-Ybf" firstAttribute="top" secondItem="Tbi-WM-c0W" secondAttribute="bottom" constant="20" id="2fj-n7-EGo"/>
+                            <constraint firstItem="H2Z-Ae-POD" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="8" id="35d-SP-kkM"/>
                             <constraint firstItem="0TH-A5-20K" firstAttribute="top" secondItem="WSi-jG-bSv" secondAttribute="top" constant="20" id="3oX-Mz-ukP"/>
                             <constraint firstItem="Y08-ip-Ybf" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="35" id="4kX-sN-alc"/>
                             <constraint firstItem="0TH-A5-20K" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="AcZ-rp-93O"/>
@@ -1068,8 +1073,11 @@
                             <constraint firstItem="bVV-Ow-hLo" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="35" id="IYu-9W-m7C"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="Mkl-Ud-3O1" secondAttribute="trailing" constant="20" id="J4X-1R-kFW"/>
                             <constraint firstItem="z77-r4-vAG" firstAttribute="bottom" secondItem="WSi-jG-bSv" secondAttribute="bottom" id="Jk0-Ug-qj0"/>
+                            <constraint firstItem="H2Z-Ae-POD" firstAttribute="bottom" secondItem="WSi-jG-bSv" secondAttribute="bottom" id="KE8-8Z-QL4"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="0TH-A5-20K" secondAttribute="trailing" constant="20" id="KIy-vn-2x9"/>
                             <constraint firstItem="Mkl-Ud-3O1" firstAttribute="firstBaseline" secondItem="Tbi-WM-c0W" secondAttribute="firstBaseline" id="fbd-zF-wtA"/>
+                            <constraint firstItem="H2Z-Ae-POD" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="pzb-kX-GvU"/>
+                            <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="H2Z-Ae-POD" secondAttribute="trailing" constant="20" id="qsQ-NR-VVu"/>
                             <constraint firstItem="z77-r4-vAG" firstAttribute="top" secondItem="bVV-Ow-hLo" secondAttribute="bottom" constant="10" id="r3L-ob-zAQ"/>
                             <constraint firstItem="z77-r4-vAG" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="veX-Ub-iOF"/>
                         </constraints>
@@ -1092,6 +1100,7 @@
                         <outlet property="recentStackView" destination="Y08-ip-Ybf" id="Ekd-gk-mJF"/>
                         <outlet property="recentTitle" destination="Tbi-WM-c0W" id="Zh7-iv-yKu"/>
                         <outlet property="searchBar" destination="0TH-A5-20K" id="I67-s3-vJ2"/>
+                        <outlet property="searchResultTableView" destination="H2Z-Ae-POD" id="Xp2-LL-5pC"/>
                         <outletCollection property="recentSearchLabels" destination="N1W-yA-s4N" collectionClass="NSMutableArray" id="G4S-BH-kCv"/>
                         <outletCollection property="recentSearchLabels" destination="B8k-BJ-yn4" collectionClass="NSMutableArray" id="xWG-18-rsS"/>
                         <outletCollection property="recentSearchLabels" destination="NsK-22-Fan" collectionClass="NSMutableArray" id="WFr-iV-uuf"/>

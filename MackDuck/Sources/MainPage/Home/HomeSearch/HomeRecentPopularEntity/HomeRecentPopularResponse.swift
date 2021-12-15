@@ -41,11 +41,11 @@ struct HomeRecentPopularResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: Result // 최근&인기 검색어
+    let result: HomeRecentPopularResult // 최근&인기 검색어
 }
 
 // MARK: - Result(최근&인기 검색어)
-struct Result: Codable {
+struct HomeRecentPopularResult: Codable {
     let recentKeyword: [RecentKeyword] // 최근 검색어
     let popularBeer: [PopularBeer] // 인기 검색어
 
