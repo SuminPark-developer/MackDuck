@@ -145,7 +145,10 @@ extension HomeSearchViewController: UITextFieldDelegate {
             searchResultTableView.isHidden = false // 검색테이블뷰 띄움.
             print(textField.text!)
             
+            SearchResultList.removeAll() // 검색 결과 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
+            
             self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색 api 호출.
+            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
             
         } else { // 검색어 입력 중 아닐 시 -> 숨겼던 기존의 화면들 다시 띄우기. & 검색 테이블뷰 숨기기.
             recentTitle.isHidden = false
@@ -154,6 +157,10 @@ extension HomeSearchViewController: UITextFieldDelegate {
             popularTitle.isHidden = false
             popularTableView.isHidden = false
             searchResultTableView.isHidden = true // 검색테이블뷰 숨김.
+            
+            SearchResultList.removeAll() // 검색 결과 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
+            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+            
             print("입력 없는상태.")
         }
         
@@ -319,23 +326,34 @@ extension HomeSearchViewController {
         print("서버에서 검색결과 GET 성공!")
         print("response 내용 : \(result)")
         
+        
+        
         // 가져온 값들을 SearchResultList에 데이터 넣음.
         DispatchQueue.main.async {
             for searchKeywordData in result.result {
-                self.SearchResultList.append(SearchResultModel(beerId: searchKeywordData.beerID, beerImageUrl: searchKeywordData.beerImgURL, beerNameEn: searchKeywordData.nameEn, beerNameKr: searchKeywordData.nameKr, beerReviewAverage: searchKeywordData.reviewAverage, beerReviewCount: searchKeywordData.reviewCount))
+                self.SearchResultList.append(SearchResultModel(beerId: searchKeywordData.beerId, beerImageUrl: searchKeywordData.beerImgUrl, beerNameEn: searchKeywordData.nameEn, beerNameKr: searchKeywordData.nameKr, beerReviewAverage: searchKeywordData.reviewAverage, beerReviewCount: searchKeywordData.reviewCount))
             }
             self.searchResultTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
         }
-        // TODO: - 아래 code==에러 작업해주고, 밑 테이블뷰에 return SearchResultList.count랑 cell 데이터 넣어줘야함.
+        
     }
 
     func failedToRequest2(message: String, code: Int) { // 오류메시지 & code번호 몇인지
-        print("서버 Request 실패...")
+        print("서버 Request2 실패...")
         print("실패 이유 : \(message)")
         print("오류 코드 : \(code)")
         
+        self.searchResultTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+        
         if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
 //            showAlert(title: message, message: "")
+            print(message)
+        }
+        else if code == 2030 { // 실패 이유 : "keyword를 입력해주세요."
+            print(message)
+        }
+        else if code == 3020 { // 실패 이유 : "해당 키워드에 대한 맥주 정보가 없어요...."
+            print(message)
         }
     }
     
@@ -349,17 +367,17 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
             return BestSearchList.count // 최대 5개임
         }
         if tableView == searchResultTableView {
-            
+            return SearchResultList.count // 검색 결과 개수만큼
         }
         return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // TODO: - cell 밑 안에 집어 넣고, 데이터 가져와서 searchResultTableView에 값 연결해줘야 함.
-        let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as! BestSearchTableViewCell
         
         if tableView == popularTableView {
             
+            let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as! BestSearchTableViewCell
             
             let bestSearchModel: BestSearchModel = BestSearchList[indexPath.row]
             
@@ -372,7 +390,6 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
                     cell.beerImageView.contentMode = .scaleAspectFit
                 }
             }
-            
             cell.beerName.text = "\(indexPath.row + 1). " + bestSearchModel.beerName // ex) 1. 호가든
             
             let beerClassAlcohol = "맥주 종류 : " + bestSearchModel.beerKind + " / " + "알콜 도수 : " + bestSearchModel.beerAlcohol // 맥주 종류 & 알콜 도수 text 합침.
@@ -380,19 +397,37 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
 
             cell.beerFeature.text = "특징 : " + bestSearchModel.beerFeature
             
-            
+            return cell
         }
-        if tableView == searchResultTableView {
-            
+        else { // 검색결과 테이블 뷰 일땐, (어쩔 수 없이 else로 함. -> xcode에서 예외 return 상황 발생한다고(안그렇지만..) 경고 해서. )
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as! SearchResultTableViewCell
+            if tableView == searchResultTableView {
+                let searchResultModel: SearchResultModel = SearchResultList[indexPath.row]
+                
+                let url = URL(string: searchResultModel.beerImageUrl)
+                // DispatchQueue를 쓰는 이유 -> 이미지가 클 경우 이미지를 다운로드 받기 까지 잠깐의 멈춤이 생길수 있다. (이유 : 싱글 쓰레드로 작동되기때문에)
+                DispatchQueue.global(qos: .background).async { // DispatchQueue를 쓰면 멀티 쓰레드로 이미지가 클경우에도 멈춤이 생기지 않는다.
+                    let data = try? Data(contentsOf: url!)
+                    DispatchQueue.main.async {
+                        cell.beerImage.image = UIImage(data: data!) // 만약 url이 없다면(안 들어온다면) try-catch로 확인해줘야 함.
+                        cell.beerImage.contentMode = .scaleAspectFit
+                    }
+                }
+                cell.beerNameEn.text = searchResultModel.beerNameEn // ex) JEJU Wit ale
+                cell.beerNameKr.text = searchResultModel.beerNameKr // ex) 제주 위트 에일
+                cell.starScore.text = searchResultModel.beerReviewAverage // ex) 4(리뷰 점수)
+                // TODO: - 소수점 score를 정수로 바꾸고 그 점수까지 스타 yellow이미지로 바꾸게 추가해줘야 함.
+                let score: Int = Int(floor(Double(searchResultModel.beerReviewAverage)!))
+                
+                for i in 0..<score {
+                    cell.starImages[i].image = UIImage(named: "searchResultStarYellow.png")
+                }
+                
+                cell.reviewCount.text = String(searchResultModel.beerReviewCount) + "개의 리뷰" // ex) 235개의 리뷰
+                self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+            }
+            return cell
         }
-        
-        return cell
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as? BestSearchTableViewCell else {
-//            return UITableViewCell()
-//        }
-        
-//        cell.configure(with: BestSearchModels)
-        
         
     }
     
@@ -402,6 +437,7 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
             print(BestSearchList[indexPath.row].beerName)
         }
         if tableView == searchResultTableView {
+            // TODO: - 상세 설명 페이지로 연결시켜줘야 함.
             print("HAHA")
         }
         
@@ -412,7 +448,7 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
             return 150
         }
         if tableView == searchResultTableView {
-            return 300
+            return 150
         }
         return 0
     }

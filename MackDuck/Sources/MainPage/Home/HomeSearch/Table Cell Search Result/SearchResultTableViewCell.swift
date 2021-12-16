@@ -18,6 +18,17 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet weak var starScore: UILabel! // 별점 점수
     @IBOutlet weak var reviewCount: UILabel! // 리뷰 개수
     
+    override func prepareForReuse() { // 재사용 가능한 셀을 준비하는 메서드 - cell 중복오류 방지.
+        beerImage.image = nil
+        for i in 0..<starImages.count {
+            starImages[i].image = UIImage(named: "searchResultStarGray.png")
+        }
+    }
+    
+    override func layoutSubviews() { // tableView cell 간 간격 설정 - https://ios-development.tistory.com/655
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
+    }
     
     static func nib() -> UINib {
         return UINib(nibName: "SearchResultTableViewCell", bundle: nil)

@@ -43,7 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="235개의 리뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQm-c1-imv">
-                        <rect key="frame" x="209.5" y="94" width="67" height="15"/>
+                        <rect key="frame" x="209.5" y="94" width="66.5" height="15"/>
                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
                         <color key="textColor" red="0.96470588450000005" green="0.84313726430000002" blue="0.28627452250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -114,8 +114,20 @@
                     <constraint firstItem="fgZ-Rg-mPA" firstAttribute="top" secondItem="jjk-Cc-1Xf" secondAttribute="bottom" constant="10" id="t0T-Qr-FIN"/>
                     <constraint firstItem="fBH-Rv-raK" firstAttribute="leading" secondItem="HQW-Sy-JGK" secondAttribute="trailing" constant="2" id="u1a-2U-1NS"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                        <color key="value" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                        <real key="value" value="1"/>
+                    </userDefinedRuntimeAttribute>
+                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                        <real key="value" value="10"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <connections>
                 <outlet property="beerImage" destination="Yhf-Fh-NIl" id="Z5x-sx-SfT"/>
                 <outlet property="beerNameEn" destination="jjk-Cc-1Xf" id="W4e-TN-uhb"/>

@@ -16,8 +16,8 @@ struct HomeSearchResultResponse: Decodable {
 }
 
 struct HomeSearchResultResult: Decodable {
-    let beerID: Int
-    let beerImgURL: String
+    let beerId: Int
+    let beerImgUrl: String
     let nameEn, nameKr, reviewAverage: String
     let reviewCount: Int
 }
