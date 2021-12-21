@@ -11,7 +11,9 @@ class HomeSearchViewController: UIViewController {
 
     var dataManager: HomeRecentPopularDataManager = HomeRecentPopularDataManager() // 최근검색어, 인기검색어 dataManager
     var deleteDataManager: HomeRecentDeleteDataManager = HomeRecentDeleteDataManager() // 최근검색어 지우는 dataManager
-    var searchResultDataManager: HomeSearchResultDataManager = HomeSearchResultDataManager() // 검색 결과 가져오는 dataManager
+    
+    var searchingDataManager: HomeSearchingDataManager = HomeSearchingDataManager() // 검색중 가져오는 dataManager
+    var searchResultDataManager: HomeSearchResultDataManager = HomeSearchResultDataManager() // 검색 결과 가져오는     dataManager
     
     
     @IBOutlet weak var searchBar: UITextField! // 검색창
@@ -25,8 +27,10 @@ class HomeSearchViewController: UIViewController {
     @IBOutlet weak var popularTitle: UILabel! // 인기 검색어 라벨
     @IBOutlet weak var popularTableView: UITableView! // 인기검색어 테이블뷰
     var BestSearchList: [BestSearchModel] = [] // 인기검색어 데이터(모델)들
+    var SearchingList: [SearchingModel] = [] // 검색결과(keyword) 데이터(모델)들
     var SearchResultList: [SearchResultModel] = [] // 검색결과(keyword) 데이터(모델)들
     
+    @IBOutlet weak var searchingTableView: UITableView! // 검색중인 것 보여줄 테이블뷰
     @IBOutlet weak var searchResultTableView: UITableView! // 검색 결과 보여줄 테이블뷰
     
     override func viewDidLoad() {
@@ -50,19 +54,29 @@ class HomeSearchViewController: UIViewController {
 //        popularTableView.rowHeight = UITableView.automaticDimension
         
         searchResultTableView.isHidden = true
+        searchingTableView.isHidden = true
         
         popularTableView.showsHorizontalScrollIndicator = false // 인기 검색어 - 테이블뷰 스크롤바 숨김
         popularTableView.showsVerticalScrollIndicator = false
 
+        searchingTableView.showsHorizontalScrollIndicator = false // 검색중 - 테이블뷰 스크롤바 숨김
+        searchingTableView.showsVerticalScrollIndicator = false
+        
         searchResultTableView.showsHorizontalScrollIndicator = false // 검색결과 - 테이블뷰 스크롤바 숨김
         searchResultTableView.showsVerticalScrollIndicator = false
     
         popularTableView.delegate = self
         popularTableView.dataSource = self
+        searchingTableView.delegate = self
+        searchingTableView.dataSource = self
         searchResultTableView.delegate = self
         searchResultTableView.dataSource = self
         
+        searchingTableView.separatorStyle = .none // 검색중 밑줄 없애기
+        searchResultTableView.separatorStyle = .none // 검색결과 밑줄 없애기
+        
         popularTableView.register(BestSearchTableViewCell.nib(), forCellReuseIdentifier: BestSearchTableViewCell.identifier) // 테이블뷰(최하단 인기검색어) cell 등록
+        searchingTableView.register(SearchingTableViewCell.nib(), forCellReuseIdentifier: SearchingTableViewCell.identifier) // 테이블뷰(검색중) cell 등록
         searchResultTableView.register(SearchResultTableViewCell.nib(), forCellReuseIdentifier: SearchResultTableViewCell.identifier) // 테이블뷰(검색 결과) cell 등록
         
     }
@@ -142,13 +156,17 @@ extension HomeSearchViewController: UITextFieldDelegate {
             recentStackView.isHidden = true
             popularTitle.isHidden = true
             popularTableView.isHidden = true
-            searchResultTableView.isHidden = false // 검색테이블뷰 띄움.
+            searchingTableView.isHidden = false // 검색중 테이블뷰 띄움.
+            searchResultTableView.isHidden = true // 검색결과 테이블뷰 가림.
             print(textField.text!)
             
-            SearchResultList.removeAll() // 검색 결과 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
+            SearchingList.removeAll() // 검색 중 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
+            SearchResultList.removeAll() // 검색 결과 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
             
-            self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색 api 호출.
-            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+            self.searchingDataManager.postHomeSearchingKeyword(keyword: textField.text!, delegate: self) // 검색중 api 호출.
+            
+//            self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색결과 api 호출.
+//            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
             
         } else { // 검색어 입력 중 아닐 시 -> 숨겼던 기존의 화면들 다시 띄우기. & 검색 테이블뷰 숨기기.
             recentTitle.isHidden = false
@@ -156,10 +174,11 @@ extension HomeSearchViewController: UITextFieldDelegate {
             recentStackView.isHidden = false
             popularTitle.isHidden = false
             popularTableView.isHidden = false
-            searchResultTableView.isHidden = true // 검색테이블뷰 숨김.
+            searchingTableView.isHidden = true // 검색중 테이블뷰 가림.
+            searchResultTableView.isHidden = true // 검색결과 테이블뷰 가림.
             
-            SearchResultList.removeAll() // 검색 결과 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
-            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+//            SearchResultList.removeAll() // 검색 결과 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
+//            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
             
             print("입력 없는상태.")
         }
@@ -184,6 +203,10 @@ extension HomeSearchViewController: UITextFieldDelegate {
     // 키보드 Return(앤터) 처리
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("Return 엔터 클릭")
+        searchingTableView.isHidden = true // 검색중 테이블뷰 가림.
+        searchResultTableView.isHidden = false // 검색결과 테이블뷰 띄움.
+        self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색 api 호출.
+        
 //        searchState = 2
 //        tableView.reloadData()
 //        tableView.isHidden = true
@@ -318,15 +341,47 @@ extension HomeSearchViewController {
     
 }
 
-// MARK: - 검색 Keyword Api
+// MARK: - 검색중 Keyword Api
+extension HomeSearchViewController {
+    // 검색어(keyword)가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에 검색결과 값들 보이게 설정.
+    func didSuccessSearching(_ result: HomeSearchingResponse) {
+        print("서버에서 검색결과 GET 성공!")
+        print("response 내용 : \(result)")
+        
+        // 가져온 값들을 SearchingList에 데이터 넣음.
+        DispatchQueue.main.async {
+            for searchKeywordData in result.result {
+                self.SearchingList.append(SearchingModel(beerId: searchKeywordData.beerId, beerNameEn: searchKeywordData.nameEn, beerNameKr: searchKeywordData.nameKr))
+            }
+            self.searchingTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+        }
+        
+    }
+
+    func failedToRequest2(message: String, code: Int) { // 오류메시지 & code번호 몇인지
+        print("서버 Request2 실패...")
+        print("실패 이유 : \(message)")
+        print("오류 코드 : \(code)")
+        
+        self.searchingTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+        
+        if code == 2030 { // 실패 이유 : "keyword를 입력해주세요."
+            print(message)
+        }
+        else if code == 3007 { // 실패 이유 : "해당 키워드에 대한 맥주 정보가 없어요...."
+            print(message)
+        }
+    }
+    
+}
+
+// MARK: - 검색결과 Keyword Api
 extension HomeSearchViewController {
     
     // jwt(x-access-token)와 검색어(keyword)가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에 검색결과 값들 보이게 설정.
     func didSuccessSearchResult(_ result: HomeSearchResultResponse) {
         print("서버에서 검색결과 GET 성공!")
         print("response 내용 : \(result)")
-        
-        
         
         // 가져온 값들을 SearchResultList에 데이터 넣음.
         DispatchQueue.main.async {
@@ -338,8 +393,8 @@ extension HomeSearchViewController {
         
     }
 
-    func failedToRequest2(message: String, code: Int) { // 오류메시지 & code번호 몇인지
-        print("서버 Request2 실패...")
+    func failedToRequest3(message: String, code: Int) { // 오류메시지 & code번호 몇인지
+        print("서버 Request3 실패...")
         print("실패 이유 : \(message)")
         print("오류 코드 : \(code)")
         
@@ -359,12 +414,16 @@ extension HomeSearchViewController {
     
 }
 
+
 // MARK: - 최하단 인기검색어 테이블뷰 부분 & 상단 검색어 입력시 검색결과 테이블뷰 부분
 extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if tableView == popularTableView {
             return BestSearchList.count // 최대 5개임
+        }
+        if tableView == searchingTableView {
+            return SearchingList.count // 검색중 개수만큼
         }
         if tableView == searchResultTableView {
             return SearchResultList.count // 검색 결과 개수만큼
@@ -373,8 +432,7 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: - cell 밑 안에 집어 넣고, 데이터 가져와서 searchResultTableView에 값 연결해줘야 함.
-        
+
         if tableView == popularTableView {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: BestSearchTableViewCell.identifier, for: indexPath) as! BestSearchTableViewCell
@@ -399,12 +457,25 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
             
             return cell
         }
-        else { // 검색결과 테이블 뷰 일땐, (어쩔 수 없이 else로 함. -> xcode에서 예외 return 상황 발생한다고(안그렇지만..) 경고 해서. )
+        
+        else if tableView == searchingTableView { // 검색중 테이블뷰 일 때
+            // TODO: - 검색중일 때 겹치는 부분 노란글씨 변경, cell 클릭 시 textfield에 추가되고 검색되게 추가 작업 필요.
+            let cell = tableView.dequeueReusableCell(withIdentifier: SearchingTableViewCell.identifier, for: indexPath) as! SearchingTableViewCell
+            
+            let searchingModel: SearchingModel = SearchingList[indexPath.row]
+            
+            cell.beerName.text = "\(searchingModel.beerNameKr)(\(searchingModel.beerNameEn))" // ex) 제주 위트 에일(JEJU Wit ale)
+            
+            return cell
+        }
+        
+        else { // 검색결과 테이블뷰 일때, (어쩔 수 없이 else로 함. -> xcode에서 예외 return 상황 발생한다고(안그렇지만..) 경고 해서. )
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as! SearchResultTableViewCell
             if tableView == searchResultTableView {
                 let searchResultModel: SearchResultModel = SearchResultList[indexPath.row]
                 
                 let url = URL(string: searchResultModel.beerImageUrl)
+                
                 // DispatchQueue를 쓰는 이유 -> 이미지가 클 경우 이미지를 다운로드 받기 까지 잠깐의 멈춤이 생길수 있다. (이유 : 싱글 쓰레드로 작동되기때문에)
                 DispatchQueue.global(qos: .background).async { // DispatchQueue를 쓰면 멀티 쓰레드로 이미지가 클경우에도 멈춤이 생기지 않는다.
                     let data = try? Data(contentsOf: url!)
@@ -413,6 +484,8 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
                         cell.beerImage.contentMode = .scaleAspectFit
                     }
                 }
+                
+                
                 cell.beerNameEn.text = searchResultModel.beerNameEn // ex) JEJU Wit ale
                 cell.beerNameKr.text = searchResultModel.beerNameKr // ex) 제주 위트 에일
                 cell.starScore.text = searchResultModel.beerReviewAverage // ex) 4(리뷰 점수)
@@ -424,6 +497,7 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 
                 cell.reviewCount.text = String(searchResultModel.beerReviewCount) + "개의 리뷰" // ex) 235개의 리뷰
+                cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41
                 self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
             }
             return cell
@@ -436,6 +510,9 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
         if tableView == popularTableView {
             print(BestSearchList[indexPath.row].beerName)
         }
+        if tableView == searchingTableView {
+            print(SearchingList[indexPath.row].beerNameKr)
+        }
         if tableView == searchResultTableView {
             // TODO: - 상세 설명 페이지로 연결시켜줘야 함.
             print("HAHA")
@@ -446,6 +523,9 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == popularTableView {
             return 150
+        }
+        if tableView == searchingTableView {
+            return 50
         }
         if tableView == searchResultTableView {
             return 150
