@@ -27,4 +27,5 @@ extension UIColor {
     class var mainWhite: UIColor { UIColor(hex: 0xF9F9FD) }
     class var mainGray: UIColor { UIColor(hex: 0x888888) } // (136, 136, 136)
     class var mainYellow: UIColor { UIColor(hex: 0xFCD602) }
+    class var subYellow: UIColor { UIColor(hex: 0xFAD225) } // (250, 210, 37)
 }

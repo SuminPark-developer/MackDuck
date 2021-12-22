@@ -15,7 +15,6 @@ class HomeSearchViewController: UIViewController {
     var searchingDataManager: HomeSearchingDataManager = HomeSearchingDataManager() // 검색중 가져오는 dataManager
     var searchResultDataManager: HomeSearchResultDataManager = HomeSearchResultDataManager() // 검색 결과 가져오는     dataManager
     
-    
     @IBOutlet weak var searchBar: UITextField! // 검색창
     
     @IBOutlet weak var recentTitle: UILabel! // 최근 검색어 라벨
@@ -32,6 +31,8 @@ class HomeSearchViewController: UIViewController {
     
     @IBOutlet weak var searchingTableView: UITableView! // 검색중인 것 보여줄 테이블뷰
     @IBOutlet weak var searchResultTableView: UITableView! // 검색 결과 보여줄 테이블뷰
+    
+    var searchingKeyword: String = "" // 검색하는 키워드 저장할 변수
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -163,6 +164,7 @@ extension HomeSearchViewController: UITextFieldDelegate {
             SearchingList.removeAll() // 검색 중 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
             SearchResultList.removeAll() // 검색 결과 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
             
+            searchingKeyword = textField.text! // 검색하는 내용을 변수에 저장.
             self.searchingDataManager.postHomeSearchingKeyword(keyword: textField.text!, delegate: self) // 검색중 api 호출.
             
 //            self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색결과 api 호출.
@@ -464,7 +466,18 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
             
             let searchingModel: SearchingModel = SearchingList[indexPath.row]
             
-            cell.beerName.text = "\(searchingModel.beerNameKr)(\(searchingModel.beerNameEn))" // ex) 제주 위트 에일(JEJU Wit ale)
+            let text: String = "\(searchingModel.beerNameKr)(\(searchingModel.beerNameEn))" // ex) 제주 위트 에일(JEJU Wit ale)
+            let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
+            // 문자열에서 원하는 문자의 인덱스 찾는 방법 - t.ly/ci4z
+            var textFirstIndex: Int = 0 // 검색중인 키워드가 가장 처음으로 나온 인덱스를 저장할 변수 선언.
+            if let textFirstRange = text.range(of: "\(searchingKeyword)", options: .caseInsensitive) { // 검색중인 키워드가 있을 때에만 색상 변경 - 검색중인 키워드가 가장 처음으로 일치하는 문자열의 범위를 알아낼 수 있음. (caseInsensitive:대소문자 구분X)
+                textFirstIndex = text.distance(from: text.startIndex, to: textFirstRange.lowerBound) // 거리(인덱스) 구해서 저장.
+                
+                attributeString.addAttribute(.foregroundColor, value: UIColor.subYellow, range: NSRange(location: textFirstIndex, length: searchingKeyword.count)) // 텍스트 색상(yellow) 변경.
+                attributeString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: cell.beerName.font.pointSize), range: NSRange(location: textFirstIndex, length: searchingKeyword.count)) // 기존 사이즈 변경 없이 bold처리 : https://stackoverflow.com/questions/39999093/swift-programmatically-make-uilabel-bold-without-changing-its-size
+                cell.beerName.attributedText = attributeString // ex) "제주" 위트 에일(JEJU Wit ale)
+                cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
+            }
             
             return cell
         }
@@ -497,7 +510,7 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
                 }
                 
                 cell.reviewCount.text = String(searchResultModel.beerReviewCount) + "개의 리뷰" // ex) 235개의 리뷰
-                cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41
+                cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
                 self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
             }
             return cell
