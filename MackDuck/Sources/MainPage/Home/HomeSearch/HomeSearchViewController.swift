@@ -202,8 +202,14 @@ extension HomeSearchViewController: UITextFieldDelegate {
 //        }
     }
     
-    // 키보드 Return(앤터) 처리
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//    func textFieldDidEndEditing(_ textField: UITextField) { // searchBar.endEditing()시 작동.
+//        print("검색중 cell 클릭 - 자동 Return")
+//        searchingTableView.isHidden = true // 검색중 테이블뷰 가림.
+//        searchResultTableView.isHidden = false // 검색결과 테이블뷰 띄움.
+//        self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색 api 호출.
+//    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool { // 키보드 Return(앤터) 버튼 클릭시 작동.
         print("Return 엔터 클릭")
         searchingTableView.isHidden = true // 검색중 테이블뷰 가림.
         searchResultTableView.isHidden = false // 검색결과 테이블뷰 띄움.
@@ -385,6 +391,8 @@ extension HomeSearchViewController {
         print("서버에서 검색결과 GET 성공!")
         print("response 내용 : \(result)")
         
+        SearchResultList.removeAll() // 검색 결과 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
+        
         // 가져온 값들을 SearchResultList에 데이터 넣음.
         DispatchQueue.main.async {
             for searchKeywordData in result.result {
@@ -461,7 +469,6 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         else if tableView == searchingTableView { // 검색중 테이블뷰 일 때
-            // TODO: - 검색중일 때 겹치는 부분 노란글씨 변경, cell 클릭 시 textfield에 추가되고 검색되게 추가 작업 필요.
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchingTableViewCell.identifier, for: indexPath) as! SearchingTableViewCell
             
             let searchingModel: SearchingModel = SearchingList[indexPath.row]
@@ -522,9 +529,12 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == popularTableView {
             print(BestSearchList[indexPath.row].beerName)
+            searchBar.text = BestSearchList[indexPath.row].beerName // 인기검색어 - cell 클릭 시 textfield에 추가.
         }
         if tableView == searchingTableView {
             print(SearchingList[indexPath.row].beerNameKr)
+            searchBar.text = SearchingList[indexPath.row].beerNameKr // 검색중 - cell 클릭 시 textfield에 추가되고,
+//            searchBar.endEditing(true) // 작성 끝내게 하고 -> func textFieldDidEndEditing 으로 -> 검색(return)되게 함.
         }
         if tableView == searchResultTableView {
             // TODO: - 상세 설명 페이지로 연결시켜줘야 함.
