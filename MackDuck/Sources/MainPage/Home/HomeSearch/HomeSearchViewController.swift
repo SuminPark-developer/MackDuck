@@ -13,7 +13,8 @@ class HomeSearchViewController: UIViewController {
     var deleteDataManager: HomeRecentDeleteDataManager = HomeRecentDeleteDataManager() // 최근검색어 지우는 dataManager
     
     var searchingDataManager: HomeSearchingDataManager = HomeSearchingDataManager() // 검색중 가져오는 dataManager
-    var searchResultDataManager: HomeSearchResultDataManager = HomeSearchResultDataManager() // 검색 결과 가져오는     dataManager
+    var searchResultDataManager: HomeSearchResultDataManager = HomeSearchResultDataManager() // 검색 결과 가져오는 dataManager
+    var sendBeerInfoDataManager: SendBeerInfoDataManager = SendBeerInfoDataManager() // 없는 맥주 정보 전송하는 dataManager
     
     @IBOutlet weak var searchBar: UITextField! // 검색창
     
@@ -32,7 +33,10 @@ class HomeSearchViewController: UIViewController {
     @IBOutlet weak var searchingTableView: UITableView! // 검색중인 것 보여줄 테이블뷰
     @IBOutlet weak var searchResultTableView: UITableView! // 검색 결과 보여줄 테이블뷰
     
-    var searchingKeyword: String = "" // 검색하는 키워드 저장할 변수
+    @IBOutlet weak var notInfoLabel: UILabel! // 맥주 정보 없다고 안내하는 라벨.
+    @IBOutlet weak var sendInfoButton: UIButton! // 맥덕이에게 맥주 이름 서버에 전송하는 버튼.
+    
+    var searchingKeyword: String = "" // 검색하는 키워드 저장할 변수 선언.
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +60,17 @@ class HomeSearchViewController: UIViewController {
         
         searchResultTableView.isHidden = true
         searchingTableView.isHidden = true
+        notInfoLabel.isHidden = true // 검색결과 없다는 라벨 가림.
+        
+        // TODO: - 맥덕이에게 전송하는 버튼 디자인 작업 필요.
+        sendInfoButton.isHidden = true // 맥덕이에게 전송하는 버튼 가림.
+        sendInfoButton.isUserInteractionEnabled = true // 맥덕이에게 전송버튼 - 제한 풀어둠.
+        sendInfoButton.borderColor = UIColor.subGray1
+        sendInfoButton.backgroundColor = nil
+        sendInfoButton.tintColor = UIColor.mainGray
+        sendInfoButton.setTitle("+ 맥덕이에게 맥주 정보 추가 요청을 해보세요!", for: .normal)
+        sendInfoButton.titleLabel?.font = UIFont(name: "NotoSansKR-Regular", size: 12)
+
         
         popularTableView.showsHorizontalScrollIndicator = false // 인기 검색어 - 테이블뷰 스크롤바 숨김
         popularTableView.showsVerticalScrollIndicator = false
@@ -145,6 +160,21 @@ class HomeSearchViewController: UIViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    // 맥덕이에게 맥주정보 전송버튼 클릭 시,
+    @IBAction func clickSendInfoButton(_ sender: UIButton) {
+        sendInfoButton.isUserInteractionEnabled = false // 맥덕이에게 전송버튼 - 한번만 누를 수 있게.
+        // TODO: - 맥덕이에게 전송 버튼 클릭시 화이트로 변경작업 필요.
+//        sendInfoButton.borderColor = UIColor.subGray2
+        sendInfoButton.backgroundColor = UIColor.subGray2
+        sendInfoButton.tintColor = UIColor.mainWhite
+        sendInfoButton.setTitle(" 맥덕이에게 전달 되었어요!", for: .normal)
+        sendInfoButton.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 12)
+        
+        let userId = UserDefaults.standard.integer(forKey: "userId") // UserDefaults에서 userId값 불러옴.
+        let input = SendBeerInfoRequest(keyword: searchingKeyword)
+        self.sendBeerInfoDataManager.postBeerInfo(userId: userId, parameters: input, delegate: self) // 맥덕이에게 맥주이름 전송하는 api 호출.
+    }
+    
 }
 
 // MARK: - 최상단 searchBar(textField) 검색 부분
@@ -159,7 +189,15 @@ extension HomeSearchViewController: UITextFieldDelegate {
             popularTableView.isHidden = true
             searchingTableView.isHidden = false // 검색중 테이블뷰 띄움.
             searchResultTableView.isHidden = true // 검색결과 테이블뷰 가림.
+            notInfoLabel.isHidden = true // 검색결과없다는 라벨 가림.
             print(textField.text!)
+            
+            sendInfoButton.isHidden = true // 검색결과없는거 전송하는 버튼 가림.
+            sendInfoButton.isUserInteractionEnabled = true // 맥덕이에게 전송버튼 - 제한 다시 풀어줌.
+            sendInfoButton.borderColor = UIColor.subGray1
+            sendInfoButton.backgroundColor = nil
+            sendInfoButton.tintColor = UIColor.mainGray
+            sendInfoButton.setTitle("+ 맥덕이에게 맥주 정보 추가 요청을 해보세요!", for: .normal)
             
             SearchingList.removeAll() // 검색 중 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
             SearchResultList.removeAll() // 검색 결과 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
@@ -210,7 +248,9 @@ extension HomeSearchViewController: UITextFieldDelegate {
 //    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool { // 키보드 Return(앤터) 버튼 클릭시 작동.
-        print("Return 엔터 클릭")
+        print("검색창 Return 엔터 클릭.")
+        searchingKeyword = textField.text! // 검색단어 저장.
+        
         searchingTableView.isHidden = true // 검색중 테이블뷰 가림.
         searchResultTableView.isHidden = false // 검색결과 테이블뷰 띄움.
         self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색 api 호출.
@@ -403,12 +443,20 @@ extension HomeSearchViewController {
         
     }
 
-    func failedToRequest3(message: String, code: Int) { // 오류메시지 & code번호 몇인지
+    func failedToRequest3(message: String, code: Int) { // 맥주에 대한 정보가 없을 때 - 오류메시지 & code번호 몇인지
         print("서버 Request3 실패...")
         print("실패 이유 : \(message)")
         print("오류 코드 : \(code)")
         
         self.searchResultTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
+        
+        notInfoLabel.isHidden = false // ex) '포도' 맥주에 대한 정보가 없어요..! 띄움.
+        sendInfoButton.isHidden = false // 검색결과없는거 전송하는 버튼 띄움.
+        
+        let text: String = "'\(searchBar.text!)' 맥주에 대한 정보가 없어요..!" // ex) '포도' 맥주에 대한 정보가 없어요..!
+        let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
+        attributeString.addAttribute(.foregroundColor, value: UIColor.subYellow, range: (text as NSString).range(of: "'\(searchBar.text!)'")) // '포도' 부분 색상 변경.
+        self.notInfoLabel.attributedText = attributeString // ex) '포도' 맥주에 대한 정보가 없어요..!
         
         if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
 //            showAlert(title: message, message: "")
@@ -419,6 +467,36 @@ extension HomeSearchViewController {
         }
         else if code == 3020 { // 실패 이유 : "해당 키워드에 대한 맥주 정보가 없어요...."
             print(message)
+        }
+    }
+    
+}
+
+// MARK: - 맥덕이에게 맥주이름 전송 Api
+extension HomeSearchViewController {
+    
+    // keyword가 서버에 제대로 보내졌다면
+    func didSuccessPostBeerInfo(_ result: SendBeerInfoResponse) {
+        print("맥덕이에게 맥주이름 전송 성공!")
+        print("response 내용 : \(result)")
+        
+        // TODO: - 버튼 변경작업 필요.
+        
+    }
+
+    func failedToPostBeerInfo(message: String, code: Int) { // 오류메시지 & code번호 몇인지
+        print("서버 Request 실패...")
+        print("실패 이유 : \(message)")
+        print("오류 코드 : \(code)")
+        
+        if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
+//            showAlert(title: message, message: "")
+        }
+        else if code == 2016 { // 실패 이유 : "유저 아이디값을 확인해주세요."
+            
+        }
+        else if code == 2034 { // 실패 이유 : "맥덕이에게 전달할 keyword를 입력해주세요."
+            
         }
     }
     
@@ -480,6 +558,7 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
             if let textFirstRange = text.range(of: "\(searchingKeyword)", options: .caseInsensitive) { // 검색중인 키워드가 있을 때에만 색상 변경 - 검색중인 키워드가 가장 처음으로 일치하는 문자열의 범위를 알아낼 수 있음. (caseInsensitive:대소문자 구분X)
                 textFirstIndex = text.distance(from: text.startIndex, to: textFirstRange.lowerBound) // 거리(인덱스) 구해서 저장.
                 
+//                attributeString.addAttribute(.foregroundColor, value: UIColor.subYellow, range: (text as NSString).range(of: "\(searchBar.text!)")) // 텍스트 색상(yellow) 변경. - 아래 코드가 아닌, 이 코드로 진행한다면 영어 대소문자 미구분 기능 추가 필요.
                 attributeString.addAttribute(.foregroundColor, value: UIColor.subYellow, range: NSRange(location: textFirstIndex, length: searchingKeyword.count)) // 텍스트 색상(yellow) 변경.
                 attributeString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: cell.beerName.font.pointSize), range: NSRange(location: textFirstIndex, length: searchingKeyword.count)) // 기존 사이즈 변경 없이 bold처리 : https://stackoverflow.com/questions/39999093/swift-programmatically-make-uilabel-bold-without-changing-its-size
                 cell.beerName.attributedText = attributeString // ex) "제주" 위트 에일(JEJU Wit ale)

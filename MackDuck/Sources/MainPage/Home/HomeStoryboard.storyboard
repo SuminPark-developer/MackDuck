@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zNq-W3-APL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zNq-W3-APL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1065,6 +1065,43 @@
                                 <rect key="frame" x="20" y="176" width="374" height="637"/>
                                 <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'포도' 맥주에 대한 정보가 없어요..!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="001-Re-4Zp">
+                                <rect key="frame" x="82" y="203" width="250" height="25"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="17"/>
+                                <color key="textColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.99215668440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUY-4y-i7E">
+                                <rect key="frame" x="41.5" y="248" width="331" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Vcc-Hz-Tye"/>
+                                </constraints>
+                                <color key="tintColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="+ 맥덕에게 맥주 정보를 추가 요청해보세요!">
+                                            <attributes>
+                                                <font key="NSFont" size="12" name="NotoSansKR-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickSendInfoButton:" destination="ZTg-Gz-wv4" eventType="touchUpInside" id="Ew7-mn-adA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WSi-jG-bSv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1077,7 +1114,9 @@
                             <constraint firstItem="0TH-A5-20K" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="AcZ-rp-93O"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="z77-r4-vAG" secondAttribute="trailing" constant="20" id="CLH-41-fU9"/>
                             <constraint firstItem="bVV-Ow-hLo" firstAttribute="top" secondItem="Y08-ip-Ybf" secondAttribute="bottom" constant="20" id="D95-0I-iBv"/>
+                            <constraint firstItem="rUY-4y-i7E" firstAttribute="width" secondItem="nnG-GA-kla" secondAttribute="width" multiplier="0.8" id="DXc-79-cei"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="Y08-ip-Ybf" secondAttribute="trailing" constant="35" id="EB0-dq-r9c"/>
+                            <constraint firstItem="rUY-4y-i7E" firstAttribute="top" secondItem="001-Re-4Zp" secondAttribute="bottom" constant="20" id="EYx-QT-ixQ"/>
                             <constraint firstItem="Tbi-WM-c0W" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="35" id="Ft8-EZ-EiZ"/>
                             <constraint firstItem="bVV-Ow-hLo" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="35" id="IYu-9W-m7C"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="Mkl-Ud-3O1" secondAttribute="trailing" constant="20" id="J4X-1R-kFW"/>
@@ -1085,10 +1124,13 @@
                             <constraint firstItem="H2Z-Ae-POD" firstAttribute="bottom" secondItem="WSi-jG-bSv" secondAttribute="bottom" id="KE8-8Z-QL4"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="0TH-A5-20K" secondAttribute="trailing" constant="20" id="KIy-vn-2x9"/>
                             <constraint firstItem="Flm-aP-4t4" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="KLE-4d-bBb"/>
+                            <constraint firstItem="rUY-4y-i7E" firstAttribute="centerX" secondItem="WSi-jG-bSv" secondAttribute="centerX" id="SH8-Wb-2Pz"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="Flm-aP-4t4" secondAttribute="trailing" constant="20" id="X1M-F5-SFj"/>
                             <constraint firstItem="Flm-aP-4t4" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="8" id="ZnC-h7-MeT"/>
                             <constraint firstItem="Mkl-Ud-3O1" firstAttribute="firstBaseline" secondItem="Tbi-WM-c0W" secondAttribute="firstBaseline" id="fbd-zF-wtA"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="bottom" secondItem="Flm-aP-4t4" secondAttribute="bottom" id="ftf-ls-5yN"/>
+                            <constraint firstItem="001-Re-4Zp" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="35" id="mFt-GZ-cVN"/>
+                            <constraint firstItem="001-Re-4Zp" firstAttribute="centerX" secondItem="WSi-jG-bSv" secondAttribute="centerX" id="nwE-H0-0aN"/>
                             <constraint firstItem="H2Z-Ae-POD" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="pzb-kX-GvU"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="H2Z-Ae-POD" secondAttribute="trailing" constant="20" id="qsQ-NR-VVu"/>
                             <constraint firstItem="z77-r4-vAG" firstAttribute="top" secondItem="bVV-Ow-hLo" secondAttribute="bottom" constant="10" id="r3L-ob-zAQ"/>
@@ -1108,6 +1150,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deleteAllButton" destination="Mkl-Ud-3O1" id="ucv-Fl-m3V"/>
+                        <outlet property="notInfoLabel" destination="001-Re-4Zp" id="dT7-jf-NBO"/>
                         <outlet property="popularTableView" destination="z77-r4-vAG" id="8G5-cu-GZZ"/>
                         <outlet property="popularTitle" destination="bVV-Ow-hLo" id="dYO-0P-t47"/>
                         <outlet property="recentStackView" destination="Y08-ip-Ybf" id="Ekd-gk-mJF"/>
@@ -1115,6 +1158,7 @@
                         <outlet property="searchBar" destination="0TH-A5-20K" id="I67-s3-vJ2"/>
                         <outlet property="searchResultTableView" destination="H2Z-Ae-POD" id="Xp2-LL-5pC"/>
                         <outlet property="searchingTableView" destination="Flm-aP-4t4" id="l13-H6-6vx"/>
+                        <outlet property="sendInfoButton" destination="rUY-4y-i7E" id="ejp-cp-4gS"/>
                         <outletCollection property="recentSearchLabels" destination="N1W-yA-s4N" collectionClass="NSMutableArray" id="G4S-BH-kCv"/>
                         <outletCollection property="recentSearchLabels" destination="B8k-BJ-yn4" collectionClass="NSMutableArray" id="xWG-18-rsS"/>
                         <outletCollection property="recentSearchLabels" destination="NsK-22-Fan" collectionClass="NSMutableArray" id="WFr-iV-uuf"/>

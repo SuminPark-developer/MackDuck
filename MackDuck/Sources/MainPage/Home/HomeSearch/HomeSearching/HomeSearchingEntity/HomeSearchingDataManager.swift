@@ -37,7 +37,7 @@ class HomeSearchingDataManager {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                    delegate.failedToRequest2(message: "서버와의 연결이 원활하지 않습니다.", code: 4444)
+                    delegate.failedToRequest2(message: "해당 키워드에 대한 맥주 정보가 없음 - 서버와의 연결이 원활하지 않습니다.", code: 4444)
                 }
             }
     }

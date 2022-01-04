@@ -38,7 +38,7 @@ class HomeSearchResultDataManager {
                     }
                 case .failure(let error):
                     print(error.localizedDescription)
-                    delegate.failedToRequest3(message: "서버와의 연결이 원활하지 않습니다.", code: 4444)
+                    delegate.failedToRequest3(message: "맥덕이에게 전달하기 띄워야 함. - 서버와의 연결이 원활하지 않습니다.", code: 4444)
                 }
             }
     }

@@ -27,6 +27,9 @@
 		743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032022742C22A00B7657B /* KakaoLoginRequest.swift */; };
 		743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032042742C23C00B7657B /* KakaoLoginResponse.swift */; };
 		743032072742C24C00B7657B /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743032062742C24C00B7657B /* KakaoLoginDataManager.swift */; };
+		7441F49D27844EB3005265EA /* SendBeerInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F49C27844EB3005265EA /* SendBeerInfoDataManager.swift */; };
+		7441F49F27844F21005265EA /* SendBeerInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F49E27844F21005265EA /* SendBeerInfoResponse.swift */; };
+		7441F4A127846378005265EA /* SendBeerInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F4A027846378005265EA /* SendBeerInfoRequest.swift */; };
 		7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */; };
 		7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */; };
 		747561B92743E4D20015BFC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561B82743E4D20015BFC9 /* UITextField.swift */; };
@@ -92,6 +95,9 @@
 		743032022742C22A00B7657B /* KakaoLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginRequest.swift; sourceTree = "<group>"; };
 		743032042742C23C00B7657B /* KakaoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginResponse.swift; sourceTree = "<group>"; };
 		743032062742C24C00B7657B /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
+		7441F49C27844EB3005265EA /* SendBeerInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoDataManager.swift; sourceTree = "<group>"; };
+		7441F49E27844F21005265EA /* SendBeerInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoResponse.swift; sourceTree = "<group>"; };
+		7441F4A027846378005265EA /* SendBeerInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoRequest.swift; sourceTree = "<group>"; };
 		7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorViewController.swift; sourceTree = "<group>"; };
 		7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		747561B82743E4D20015BFC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -294,6 +300,16 @@
 			path = KakaoLoginEntity;
 			sourceTree = "<group>";
 		};
+		7441F49B27844E60005265EA /* SendBeerInfoEntity */ = {
+			isa = PBXGroup;
+			children = (
+				7441F4A027846378005265EA /* SendBeerInfoRequest.swift */,
+				7441F49E27844F21005265EA /* SendBeerInfoResponse.swift */,
+				7441F49C27844EB3005265EA /* SendBeerInfoDataManager.swift */,
+			);
+			path = SendBeerInfoEntity;
+			sourceTree = "<group>";
+		};
 		747561BA2744D56E0015BFC9 /* Nickname */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +390,7 @@
 			children = (
 				7403CACE275750F200E6B2DF /* HomeSearchResultEntity */,
 				7498008E2769B89E008284DC /* Table Cell Search Result */,
+				7441F49B27844E60005265EA /* SendBeerInfoEntity */,
 			);
 			path = HomeSearchResult;
 			sourceTree = "<group>";
@@ -627,17 +644,20 @@
 				747561C7274525FE0015BFC9 /* PrivacySettingViewController.swift in Sources */,
 				7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */,
 				747561CE274526750015BFC9 /* PrivacySettingDataManager.swift in Sources */,
+				7441F4A127846378005265EA /* SendBeerInfoRequest.swift in Sources */,
 				7403CAD22757513300E6B2DF /* HomeRecentPopularDataManager.swift in Sources */,
 				747561D2274526970015BFC9 /* PrivacySettingResponse.swift in Sources */,
 				74C1B6012742671400AFD7BF /* ViewController.swift in Sources */,
 				74B11ED32756034D003C3E02 /* BestSearchTableViewCell.swift in Sources */,
 				74B791482771B6F000D31EE2 /* SearchingTableViewCell.swift in Sources */,
 				747561D02745268B0015BFC9 /* PrivacySettingRequest.swift in Sources */,
+				7441F49D27844EB3005265EA /* SendBeerInfoDataManager.swift in Sources */,
 				74B791412771B67B00D31EE2 /* HomeSearchingResponse.swift in Sources */,
 				74E730042743B4C100697460 /* HomeViewController.swift in Sources */,
 				74C1B61727426F1200AFD7BF /* Constant.swift in Sources */,
 				742E646A274BF1D100F6B72A /* HomeDictionaryViewController.swift in Sources */,
 				74B791452771B6A200D31EE2 /* SearchingModel.swift in Sources */,
+				7441F49F27844F21005265EA /* SendBeerInfoResponse.swift in Sources */,
 				743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */,
 				74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */,
 				742E6467274BF1A900F6B72A /* HomeSearchViewController.swift in Sources */,
