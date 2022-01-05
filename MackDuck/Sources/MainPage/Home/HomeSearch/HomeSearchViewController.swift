@@ -215,9 +215,6 @@ extension HomeSearchViewController: UITextFieldDelegate {
             searchingKeyword = textField.text! // 검색하는 내용을 변수에 저장.
             self.searchingDataManager.postHomeSearchingKeyword(keyword: textField.text!, delegate: self) // 검색중 api 호출.
             
-//            self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색결과 api 호출.
-//            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
-            
         } else { // 검색어 입력 중 아닐 시 -> 숨겼던 기존의 화면들 다시 띄우기. & 검색 테이블뷰 숨기기.
             recentTitle.isHidden = false
             deleteAllButton.isHidden = false
@@ -227,27 +224,9 @@ extension HomeSearchViewController: UITextFieldDelegate {
             searchingTableView.isHidden = true // 검색중 테이블뷰 가림.
             searchResultTableView.isHidden = true // 검색결과 테이블뷰 가림.
             
-//            SearchResultList.removeAll() // 검색 결과 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
-//            self.popularTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
-            
             print("입력 없는상태.")
         }
         
-//        infoSendButton.isEnabled = true
-//        infoSendButton.layer.cornerRadius = 20
-//        infoSendButton.layer.borderColor = UIColor(red: 68/255, green: 68/255, blue: 68/255, alpha: 1).cgColor
-//        infoSendButton.layer.borderWidth = 1
-//        infoSendButton.backgroundColor = UIColor.clear
-//        tableView.isHidden = false
-//        if textField.text?.count == 0 {
-//            print("검색 중이 아닙니다")
-//            searchState = 0
-//            tableView.reloadData()
-//        }else{
-//            print("검색 중")
-//            searchState = 1
-//            tableView.reloadData()
-//        }
     }
     
 //    func textFieldDidEndEditing(_ textField: UITextField) { // searchBar.endEditing()시 작동.
@@ -265,20 +244,7 @@ extension HomeSearchViewController: UITextFieldDelegate {
         searchResultTableView.isHidden = false // 검색결과 테이블뷰 띄움.
         self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색 api 호출.
         
-//        searchState = 2
-//        tableView.reloadData()
-//        tableView.isHidden = true
-//
-//        noinfoLabel.text = "'\(textField.text!)' 맥주에 대한 정보가 없어요..!"
-//        let attributedString = NSMutableAttributedString(string: noinfoLabel.text!)
-//
-//        attributedString.addAttribute(.foregroundColor, value: UIColor(red: 252/255, green: 214/255, blue: 2/255, alpha: 1), range: (noinfoLabel.text! as NSString).range(of:"'\(textField.text!)'"))
-//
-//        noinfoLabel.attributedText = attributedString
-//
-//
-//        noinfoLabel.isHidden = false
-//        infoSendButton.isHidden = false
+        searchBar.resignFirstResponder() // Return(앤터) 버튼 클릭시 키보드 내리기
         return true
     }
 }
@@ -291,19 +257,6 @@ extension HomeSearchViewController {
     func didSuccessRecentPopular(_ result: HomeRecentPopularResponse) {
         print("서버에서 최근검색어, 인기검색어 GET 성공!")
         print("response 내용 : \(result)")
-        
-//        if result.isSuccess == true { // GET 성공시, 최근검색어, 인기검색어 값들 보이게 설정.
-//            if result.result.recentKeyword.isEmpty == true { // 최근검색어가 0개라면,
-//                print("최근검색어 없음!")
-//            }
-//            else { // 최근검색어 1개 이상
-//                DispatchQueue.main.async {
-//                    for keyword in result.result.recentKeyword {
-//                        <#code#>
-//                    }
-//                }
-//            }
-//        }
         
         // 가져온 값들을 최근 검색어 Stack에 데이터 넣음.
         var recentKeywordArray: [String] = [] // 최근 검색어 저장할 배열
@@ -332,10 +285,9 @@ extension HomeSearchViewController {
                 self.recentSearchDates[0].text = ""
             }
             
-            
         }
         
-
+        BestSearchList.removeAll() // 인기검색어 리스트 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
         // 가져온 값들을 BestSearchList에 데이터 넣음.
         DispatchQueue.main.async {
             for popularSearchData in result.result.popularBeer {
@@ -627,7 +579,10 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if tableView == searchResultTableView {
             // TODO: - 상세 설명 페이지로 연결시켜줘야 함.
-            print("HAHA")
+            print(SearchResultList[indexPath.row].beerNameKr)
+            let beerDetailVC = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVC"))
+            self.navigationController?.pushViewController(beerDetailVC!, animated: true)
+            
         }
         
     }

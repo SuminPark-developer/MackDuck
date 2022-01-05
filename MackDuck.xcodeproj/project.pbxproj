@@ -32,6 +32,7 @@
 		7441F4A127846378005265EA /* SendBeerInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F4A027846378005265EA /* SendBeerInfoRequest.swift */; };
 		7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */; };
 		7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */; };
+		74541BCD2785B7B20073749A /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74541BCC2785B7B20073749A /* BeerDetailViewController.swift */; };
 		747561B92743E4D20015BFC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561B82743E4D20015BFC9 /* UITextField.swift */; };
 		747561BE2744D6760015BFC9 /* NicknameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561BD2744D6760015BFC9 /* NicknameDataManager.swift */; };
 		747561C22744D6910015BFC9 /* NicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561C12744D6910015BFC9 /* NicknameResponse.swift */; };
@@ -100,6 +101,7 @@
 		7441F4A027846378005265EA /* SendBeerInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoRequest.swift; sourceTree = "<group>"; };
 		7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorViewController.swift; sourceTree = "<group>"; };
 		7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		74541BCC2785B7B20073749A /* BeerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
 		747561B82743E4D20015BFC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		747561BD2744D6760015BFC9 /* NicknameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameDataManager.swift; sourceTree = "<group>"; };
 		747561C12744D6910015BFC9 /* NicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameResponse.swift; sourceTree = "<group>"; };
@@ -258,8 +260,8 @@
 			children = (
 				74EF99C2274B9C030037A166 /* HomeStoryboard.storyboard */,
 				74E730032743B4C100697460 /* HomeViewController.swift */,
-				74E72FFE2743B44400697460 /* HomeEntity */,
 				742E6465274BF19800F6B72A /* HomeSearch */,
+				74541BCB2785B6D90073749A /* HomeSearchBeerDetail */,
 				742E6462274BF15E00F6B72A /* HomeRecommend */,
 				742E6468274BF1B000F6B72A /* HomeDictionary */,
 			);
@@ -308,6 +310,14 @@
 				7441F49C27844EB3005265EA /* SendBeerInfoDataManager.swift */,
 			);
 			path = SendBeerInfoEntity;
+			sourceTree = "<group>";
+		};
+		74541BCB2785B6D90073749A /* HomeSearchBeerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				74541BCC2785B7B20073749A /* BeerDetailViewController.swift */,
+			);
+			path = HomeSearchBeerDetail;
 			sourceTree = "<group>";
 		};
 		747561BA2744D56E0015BFC9 /* Nickname */ = {
@@ -484,13 +494,6 @@
 				74DE2FA02758AD8000424301 /* HomeRecentDeleteDataManager.swift */,
 			);
 			path = HomeRecentDeleteEntity;
-			sourceTree = "<group>";
-		};
-		74E72FFE2743B44400697460 /* HomeEntity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HomeEntity;
 			sourceTree = "<group>";
 		};
 		9A2E0D22973E0B2A07E26D6A /* Pods */ = {
@@ -671,6 +674,7 @@
 				74C1B61A27426F5100AFD7BF /* Color.swift in Sources */,
 				74DE2F9F2758AD7200424301 /* HomeRecentDeleteResponse.swift in Sources */,
 				74DE2FA32758EB6F00424301 /* BestSearchModel.swift in Sources */,
+				74541BCD2785B7B20073749A /* BeerDetailViewController.swift in Sources */,
 				747561C22744D6910015BFC9 /* NicknameResponse.swift in Sources */,
 				743032072742C24C00B7657B /* KakaoLoginDataManager.swift in Sources */,
 				743031DC274270DE00B7657B /* jwtToken.swift in Sources */,
