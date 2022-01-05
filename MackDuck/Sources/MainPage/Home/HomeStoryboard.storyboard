@@ -1176,8 +1176,37 @@
                     <view key="view" contentMode="scaleToFill" id="W8p-ag-3ST">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNr-MW-OGg">
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkn-u5-8hK">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="3000"/>
+                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3000" id="SlM-gY-uaX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gkn-u5-8hK" firstAttribute="top" secondItem="xox-3S-avv" secondAttribute="top" id="0m7-5J-eZ9"/>
+                                    <constraint firstItem="gkn-u5-8hK" firstAttribute="bottom" secondItem="xox-3S-avv" secondAttribute="bottom" constant="774" id="342-bp-8SG"/>
+                                    <constraint firstItem="gkn-u5-8hK" firstAttribute="leading" secondItem="xox-3S-avv" secondAttribute="leading" id="ImZ-fS-UHs"/>
+                                    <constraint firstItem="gkn-u5-8hK" firstAttribute="width" secondItem="H35-KN-tkH" secondAttribute="width" id="ZZ7-YV-8MS"/>
+                                    <constraint firstItem="gkn-u5-8hK" firstAttribute="trailing" secondItem="xox-3S-avv" secondAttribute="trailing" constant="374" id="i4O-SF-W3U"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="xox-3S-avv"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="H35-KN-tkH"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tg2-aN-Xwb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LNr-MW-OGg" firstAttribute="bottom" secondItem="tg2-aN-Xwb" secondAttribute="bottom" id="CBa-j5-5eV"/>
+                            <constraint firstItem="LNr-MW-OGg" firstAttribute="top" secondItem="tg2-aN-Xwb" secondAttribute="top" id="GqY-wB-d3E"/>
+                            <constraint firstItem="LNr-MW-OGg" firstAttribute="leading" secondItem="tg2-aN-Xwb" secondAttribute="leading" constant="20" id="QDF-lU-iiB"/>
+                            <constraint firstItem="tg2-aN-Xwb" firstAttribute="trailing" secondItem="LNr-MW-OGg" secondAttribute="trailing" constant="20" id="fLi-RG-mb3"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Iee-gM-Abw">
@@ -1195,10 +1224,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollViewBackground" destination="gkn-u5-8hK" id="hIQ-1D-xLG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3eH-gv-AZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3751" y="-325"/>
+            <point key="canvasLocation" x="3750.7246376811595" y="-325.44642857142856"/>
         </scene>
         <!--홈-->
         <scene sceneID="3Ft-dt-gsx">
@@ -1243,6 +1276,9 @@
         <image name="mainSearchBackground" width="335" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

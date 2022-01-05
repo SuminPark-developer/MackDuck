@@ -42,7 +42,9 @@ class HomeSearchViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .mainBlack
-        
+        self.navigationController?.navigationBar.backgroundColor = .mainBlack // 이걸 해줘야 네비게이션바 색 바뀌는듯.
+        self.navigationController?.navigationBar.barTintColor = .mainBlack // 상단 네비게이션 바 색상 변경
+        self.navigationController?.navigationBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
         
         searchBar.delegate = self
         searchBar.addTarget(self, action: #selector(textFieldDidchange(textField:)), for: UIControl.Event.editingChanged)
@@ -578,8 +580,8 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
 //            searchBar.endEditing(true) // 작성 끝내게 하고 -> func textFieldDidEndEditing 으로 -> 검색(return)되게 함.
         }
         if tableView == searchResultTableView {
-            // TODO: - 상세 설명 페이지로 연결시켜줘야 함.
             print(SearchResultList[indexPath.row].beerNameKr)
+            // 상세 설명 페이지로 연결.
             let beerDetailVC = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVC"))
             self.navigationController?.pushViewController(beerDetailVC!, animated: true)
             
