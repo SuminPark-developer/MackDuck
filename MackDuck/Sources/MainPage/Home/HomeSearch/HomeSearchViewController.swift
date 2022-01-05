@@ -62,15 +62,17 @@ class HomeSearchViewController: UIViewController {
         searchingTableView.isHidden = true
         notInfoLabel.isHidden = true // 검색결과 없다는 라벨 가림.
         
-        // TODO: - 맥덕이에게 전송하는 버튼 디자인 작업 필요.
+        // 맥덕이에게 전송하는 버튼 디자인.
         sendInfoButton.isHidden = true // 맥덕이에게 전송하는 버튼 가림.
         sendInfoButton.isUserInteractionEnabled = true // 맥덕이에게 전송버튼 - 제한 풀어둠.
         sendInfoButton.borderColor = UIColor.subGray1
         sendInfoButton.backgroundColor = nil
         sendInfoButton.tintColor = UIColor.mainGray
-        sendInfoButton.setTitle("+ 맥덕이에게 맥주 정보 추가 요청을 해보세요!", for: .normal)
-        sendInfoButton.titleLabel?.font = UIFont(name: "NotoSansKR-Regular", size: 12)
-
+        let text: String = "+ 맥덕이에게 맥주 정보를 추가 요청해보세요!"
+        let attributeString = NSMutableAttributedString(string: text)
+        let font = UIFont(name: "NotoSansKR-Regular", size: 12)
+        attributeString.addAttribute(.font, value: font!, range: (text as NSString).range(of: "\(text)"))
+        sendInfoButton.setAttributedTitle(attributeString, for: .normal)
         
         popularTableView.showsHorizontalScrollIndicator = false // 인기 검색어 - 테이블뷰 스크롤바 숨김
         popularTableView.showsVerticalScrollIndicator = false
@@ -163,12 +165,15 @@ class HomeSearchViewController: UIViewController {
     // 맥덕이에게 맥주정보 전송버튼 클릭 시,
     @IBAction func clickSendInfoButton(_ sender: UIButton) {
         sendInfoButton.isUserInteractionEnabled = false // 맥덕이에게 전송버튼 - 한번만 누를 수 있게.
-        // TODO: - 맥덕이에게 전송 버튼 클릭시 화이트로 변경작업 필요.
-//        sendInfoButton.borderColor = UIColor.subGray2
+        // 맥덕이에게 전송 버튼 클릭시 화이트로 디자인 변경.
+        sendInfoButton.borderColor = UIColor.subGray2
         sendInfoButton.backgroundColor = UIColor.subGray2
         sendInfoButton.tintColor = UIColor.mainWhite
-        sendInfoButton.setTitle(" 맥덕이에게 전달 되었어요!", for: .normal)
-        sendInfoButton.titleLabel?.font = UIFont(name: "NotoSansKR-Bold", size: 12)
+        let text: String = "✓  맥덕이에게 전달 되었어요!"
+        let attributeString = NSMutableAttributedString(string: text)
+        let font = UIFont(name: "NotoSansKR-Bold", size: 13)
+        attributeString.addAttribute(.font, value: font!, range: (text as NSString).range(of: "\(text)"))
+        sendInfoButton.setAttributedTitle(attributeString, for: .normal)
         
         let userId = UserDefaults.standard.integer(forKey: "userId") // UserDefaults에서 userId값 불러옴.
         let input = SendBeerInfoRequest(keyword: searchingKeyword)
@@ -192,12 +197,17 @@ extension HomeSearchViewController: UITextFieldDelegate {
             notInfoLabel.isHidden = true // 검색결과없다는 라벨 가림.
             print(textField.text!)
             
-            sendInfoButton.isHidden = true // 검색결과없는거 전송하는 버튼 가림.
-            sendInfoButton.isUserInteractionEnabled = true // 맥덕이에게 전송버튼 - 제한 다시 풀어줌.
+            // 맥덕이에게 전송하는 버튼 다시 세팅.
+            sendInfoButton.isHidden = true // 맥덕이에게 전송하는 버튼 가림.
+            sendInfoButton.isUserInteractionEnabled = true // 맥덕이에게 전송버튼 - 제한 풀어둠.
             sendInfoButton.borderColor = UIColor.subGray1
             sendInfoButton.backgroundColor = nil
             sendInfoButton.tintColor = UIColor.mainGray
-            sendInfoButton.setTitle("+ 맥덕이에게 맥주 정보 추가 요청을 해보세요!", for: .normal)
+            let text: String = "+ 맥덕이에게 맥주 정보를 추가 요청해보세요!"
+            let attributeString = NSMutableAttributedString(string: text)
+            let font = UIFont(name: "NotoSansKR-Regular", size: 12)
+            attributeString.addAttribute(.font, value: font!, range: (text as NSString).range(of: "\(text)"))
+            sendInfoButton.setAttributedTitle(attributeString, for: .normal)
             
             SearchingList.removeAll() // 검색 중 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
             SearchResultList.removeAll() // 검색 결과 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
