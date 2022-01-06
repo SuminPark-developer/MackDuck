@@ -203,7 +203,7 @@ extension PrivacySettingViewController {
             
             let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
             let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")
-            goHomeVC.modalPresentationStyle = .overFullScreen
+            goHomeVC.modalPresentationStyle = .fullScreen
             self.present(goHomeVC, animated: true, completion: nil)
         }
         

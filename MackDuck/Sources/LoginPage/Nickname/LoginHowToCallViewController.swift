@@ -146,7 +146,7 @@ extension LoginHowToCallViewController {
             let privacySettingVC = goPrivacySetting.instantiateViewController(withIdentifier: "PrivacySettingVC") as! PrivacySettingViewController
             privacySettingVC.kakaoId = kakaoId // PrivacySettingViewController로 kakaoId값 전달.
             privacySettingVC.nickName = nicknameTF.text!
-            privacySettingVC.modalPresentationStyle = .overFullScreen
+            privacySettingVC.modalPresentationStyle = .fullScreen
             self.present(privacySettingVC, animated: true, completion: nil)
         }
         

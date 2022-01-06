@@ -58,7 +58,6 @@
 		74C1B6012742671400AFD7BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B6002742671400AFD7BF /* ViewController.swift */; };
 		74C1B6042742671400AFD7BF /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C1B6022742671400AFD7BF /* LoginStoryboard.storyboard */; };
 		74C1B6072742671400AFD7BF /* MackDuck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B6052742671400AFD7BF /* MackDuck.xcdatamodeld */; };
-		74C1B6092742671600AFD7BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74C1B6082742671600AFD7BF /* Assets.xcassets */; };
 		74C1B60C2742671600AFD7BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C1B60A2742671600AFD7BF /* LaunchScreen.storyboard */; };
 		74C1B61727426F1200AFD7BF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61627426F1200AFD7BF /* Constant.swift */; };
 		74C1B61A27426F5100AFD7BF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C1B61927426F5100AFD7BF /* Color.swift */; };
@@ -72,6 +71,9 @@
 		74EF99C5274B9C160037A166 /* RefrigeratorStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74EF99C4274B9C160037A166 /* RefrigeratorStoryboard.storyboard */; };
 		74EF99C7274B9C260037A166 /* MyPageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74EF99C6274B9C260037A166 /* MyPageStoryboard.storyboard */; };
 		74EF99CB274BB2370037A166 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EF99CA274BB2370037A166 /* MainPageViewController.swift */; };
+		74F0B4372786DD3500ED9B61 /* IntroBeerDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0B4362786DD3500ED9B61 /* IntroBeerDetailResponse.swift */; };
+		74F0B4392786DD4900ED9B61 /* IntroBeerDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F0B4382786DD4900ED9B61 /* IntroBeerDetailDataManager.swift */; };
+		74F0B43A2787238F00ED9B61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74C1B6082742671600AFD7BF /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +145,8 @@
 		74EF99C4274B9C160037A166 /* RefrigeratorStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RefrigeratorStoryboard.storyboard; sourceTree = "<group>"; };
 		74EF99C6274B9C260037A166 /* MyPageStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPageStoryboard.storyboard; sourceTree = "<group>"; };
 		74EF99CA274BB2370037A166 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		74F0B4362786DD3500ED9B61 /* IntroBeerDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroBeerDetailResponse.swift; sourceTree = "<group>"; };
+		74F0B4382786DD4900ED9B61 /* IntroBeerDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroBeerDetailDataManager.swift; sourceTree = "<group>"; };
 		D7AABEFCB9CD09A5833E0A93 /* Pods-MackDuck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MackDuck.debug.xcconfig"; path = "Target Support Files/Pods-MackDuck/Pods-MackDuck.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -316,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				74541BCC2785B7B20073749A /* BeerDetailViewController.swift */,
+				74F0B4352786DCC700ED9B61 /* IntroBeerDetailEntity */,
 			);
 			path = HomeSearchBeerDetail;
 			sourceTree = "<group>";
@@ -496,6 +501,15 @@
 			path = HomeRecentDeleteEntity;
 			sourceTree = "<group>";
 		};
+		74F0B4352786DCC700ED9B61 /* IntroBeerDetailEntity */ = {
+			isa = PBXGroup;
+			children = (
+				74F0B4362786DD3500ED9B61 /* IntroBeerDetailResponse.swift */,
+				74F0B4382786DD4900ED9B61 /* IntroBeerDetailDataManager.swift */,
+			);
+			path = IntroBeerDetailEntity;
+			sourceTree = "<group>";
+		};
 		9A2E0D22973E0B2A07E26D6A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,7 +585,6 @@
 				743031FC2742A26900B7657B /* NotoSansKR-Medium.otf in Resources */,
 				743031F92742A26900B7657B /* Montserrat-Regular.ttf in Resources */,
 				749800942769CC6A008284DC /* SearchResultTableViewCell.xib in Resources */,
-				74C1B6092742671600AFD7BF /* Assets.xcassets in Resources */,
 				74EF99C7274B9C260037A166 /* MyPageStoryboard.storyboard in Resources */,
 				743031FB2742A26900B7657B /* NotoSansKR-Bold.otf in Resources */,
 				74B11ED42756034D003C3E02 /* BestSearchTableViewCell.xib in Resources */,
@@ -582,6 +595,7 @@
 				74EF99C3274B9C030037A166 /* HomeStoryboard.storyboard in Resources */,
 				743031FD2742A26900B7657B /* Montserrat-Bold.ttf in Resources */,
 				74B791492771B6F000D31EE2 /* SearchingTableViewCell.xib in Resources */,
+				74F0B43A2787238F00ED9B61 /* Assets.xcassets in Resources */,
 				743031F22742A25E00B7657B /* GmarketSansMedium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +659,7 @@
 				7403CAD02757512600E6B2DF /* HomeRecentPopularResponse.swift in Sources */,
 				742E6464274BF17F00F6B72A /* HomeRecommendViewController.swift in Sources */,
 				747561C7274525FE0015BFC9 /* PrivacySettingViewController.swift in Sources */,
+				74F0B4392786DD4900ED9B61 /* IntroBeerDetailDataManager.swift in Sources */,
 				7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */,
 				747561CE274526750015BFC9 /* PrivacySettingDataManager.swift in Sources */,
 				7441F4A127846378005265EA /* SendBeerInfoRequest.swift in Sources */,
@@ -672,6 +687,7 @@
 				74EF99CB274BB2370037A166 /* MainPageViewController.swift in Sources */,
 				7498009A276A1925008284DC /* HomeSearchResultDataManager.swift in Sources */,
 				74C1B61A27426F5100AFD7BF /* Color.swift in Sources */,
+				74F0B4372786DD3500ED9B61 /* IntroBeerDetailResponse.swift in Sources */,
 				74DE2F9F2758AD7200424301 /* HomeRecentDeleteResponse.swift in Sources */,
 				74DE2FA32758EB6F00424301 /* BestSearchModel.swift in Sources */,
 				74541BCD2785B7B20073749A /* BeerDetailViewController.swift in Sources */,
@@ -838,6 +854,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = LoginStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -867,6 +884,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = LoginStoryboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

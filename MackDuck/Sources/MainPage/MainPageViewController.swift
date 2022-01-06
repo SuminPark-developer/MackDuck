@@ -13,8 +13,6 @@ class MainPageViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     // 탭바 height 변경 - https://stackoverflow.com/questions/58078821/change-tabbar-height-in-swift-5-for-ios-13

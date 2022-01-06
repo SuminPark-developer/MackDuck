@@ -126,9 +126,11 @@ class HomeSearchViewController: UIViewController {
         
     }
     
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//            return .lightContent
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.tabBarController?.tabBar.isHidden = true
         self.dataManager.postHomeRecentPopularInfo(delegate: self) // 최근검색어, 인기검색어 api 호출.
     }
     
@@ -196,10 +198,10 @@ extension HomeSearchViewController: UITextFieldDelegate {
             popularTableView.isHidden = true
             searchingTableView.isHidden = false // 검색중 테이블뷰 띄움.
             searchResultTableView.isHidden = true // 검색결과 테이블뷰 가림.
-            notInfoLabel.isHidden = true // 검색결과없다는 라벨 가림.
             print(textField.text!)
             
             // 맥덕이에게 전송하는 버튼 다시 세팅.
+            notInfoLabel.isHidden = true // 검색결과없다는 라벨 가림.
             sendInfoButton.isHidden = true // 맥덕이에게 전송하는 버튼 가림.
             sendInfoButton.isUserInteractionEnabled = true // 맥덕이에게 전송버튼 - 제한 풀어둠.
             sendInfoButton.borderColor = UIColor.subGray1
@@ -226,6 +228,8 @@ extension HomeSearchViewController: UITextFieldDelegate {
             searchingTableView.isHidden = true // 검색중 테이블뷰 가림.
             searchResultTableView.isHidden = true // 검색결과 테이블뷰 가림.
             
+            notInfoLabel.isHidden = true // 검색결과없다는 라벨 가림. - 여기 부분에 가리는거 안넣어주면 1글자짜리 입력후 글자 지우면 맥덕이에게 전송 버튼 남아 있음.
+            sendInfoButton.isHidden = true // 맥덕이에게 전송하는 버튼 가림.
             print("입력 없는상태.")
         }
         
@@ -582,8 +586,13 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
         if tableView == searchResultTableView {
             print(SearchResultList[indexPath.row].beerNameKr)
             // 상세 설명 페이지로 연결.
-            let beerDetailVC = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVC"))
-            self.navigationController?.pushViewController(beerDetailVC!, animated: true)
+            let beerDetail = UIStoryboard(name: "HomeStoryboard", bundle: nil)
+            let beerDetailVC = beerDetail.instantiateViewController(withIdentifier: "BeerDetailVC") as! BeerDetailViewController
+            beerDetailVC.beerId = SearchResultList[indexPath.row].beerId // beerId 전달.
+            beerDetailVC.modalPresentationStyle = .fullScreen
+            self.present(beerDetailVC, animated: true, completion: nil)
+//            let beerDetailVC = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVC"))
+//            self.navigationController?.pushViewController(beerDetailVC!, animated: true)
             
         }
         

@@ -111,7 +111,7 @@ extension LoginViewController {
             let goHowToCall = UIStoryboard(name: "LoginStoryboard", bundle: nil)
             let howToCallVC = goHowToCall.instantiateViewController(withIdentifier: "LoginHowToCallVC") as! LoginHowToCallViewController
             howToCallVC.kakaoId = (result.result?.kakaoId)! // // PrivacySettingViewController로 kakaoId값 전달하기 위해.
-            howToCallVC.modalPresentationStyle = .overFullScreen
+            howToCallVC.modalPresentationStyle = .fullScreen
             self.present(howToCallVC, animated: true, completion: nil)
         }
         
@@ -119,7 +119,7 @@ extension LoginViewController {
             // Home - Home 페이지로 이동.
             let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
             let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")
-            goHomeVC.modalPresentationStyle = .overFullScreen
+            goHomeVC.modalPresentationStyle = .fullScreen
             self.present(goHomeVC, animated: true, completion: nil)
         }
         

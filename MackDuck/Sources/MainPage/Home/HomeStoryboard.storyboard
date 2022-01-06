@@ -1133,7 +1133,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="It5-xO-owe">
                         <barButtonItem key="leftBarButtonItem" image="backButtonGray" id="vqK-A5-Tau">
-                            <inset key="imageInsets" minX="-7" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" red="0.3803921938" green="0.3803921938" blue="0.3803921938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="clickBackButton:" destination="ZTg-Gz-wv4" id="gza-L3-TKD"/>
@@ -1198,34 +1197,42 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="xox-3S-avv"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="H35-KN-tkH"/>
                             </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOY-6u-0BT">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="ZK5-G2-Vmx">
+                                        <barButtonItem key="leftBarButtonItem" image="mainHome" id="vh4-qf-ow8">
+                                            <color key="tintColor" red="0.44313728810000003" green="0.44313728810000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="clickHomeButton:" destination="c04-8i-8HH" id="4VV-XC-VSJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="magnifyingGlassGray" id="4a2-qN-JZN">
+                                            <color key="tintColor" red="0.44313728810000003" green="0.44313728810000003" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="clickSearchButton:" destination="c04-8i-8HH" id="mKW-sy-7EP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tg2-aN-Xwb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="FOY-6u-0BT" firstAttribute="trailing" secondItem="tg2-aN-Xwb" secondAttribute="trailing" id="3ud-hB-nWV"/>
                             <constraint firstItem="LNr-MW-OGg" firstAttribute="bottom" secondItem="tg2-aN-Xwb" secondAttribute="bottom" id="CBa-j5-5eV"/>
-                            <constraint firstItem="LNr-MW-OGg" firstAttribute="top" secondItem="tg2-aN-Xwb" secondAttribute="top" id="GqY-wB-d3E"/>
+                            <constraint firstItem="LNr-MW-OGg" firstAttribute="top" secondItem="FOY-6u-0BT" secondAttribute="bottom" id="GqY-wB-d3E"/>
                             <constraint firstItem="LNr-MW-OGg" firstAttribute="leading" secondItem="tg2-aN-Xwb" secondAttribute="leading" constant="20" id="QDF-lU-iiB"/>
+                            <constraint firstItem="FOY-6u-0BT" firstAttribute="top" secondItem="tg2-aN-Xwb" secondAttribute="top" id="WoH-Mm-lNL"/>
                             <constraint firstItem="tg2-aN-Xwb" firstAttribute="trailing" secondItem="LNr-MW-OGg" secondAttribute="trailing" constant="20" id="fLi-RG-mb3"/>
+                            <constraint firstItem="FOY-6u-0BT" firstAttribute="leading" secondItem="tg2-aN-Xwb" secondAttribute="leading" id="kJi-hJ-ASZ"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Iee-gM-Abw">
-                        <barButtonItem key="leftBarButtonItem" image="mainHome" id="DUk-Wr-aQf">
-                            <color key="tintColor" red="0.3803921938" green="0.3803921938" blue="0.3803921938" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="clickHomeButton:" destination="c04-8i-8HH" id="pPc-nm-M5B"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="magnifyingGlassGray" id="WwN-tF-T3A">
-                            <color key="tintColor" red="0.44313728810000003" green="0.44313728810000003" blue="0.44705885649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="clickSearchButton:" destination="c04-8i-8HH" id="0zT-rc-lKx"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navBar" destination="FOY-6u-0BT" id="syk-Cq-ngf"/>
                         <outlet property="scrollViewBackground" destination="gkn-u5-8hK" id="hIQ-1D-xLG"/>
                     </connections>
                 </viewController>
