@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var mainTitle: UILabel! // 맥주 이름이 무엇인가요?
     @IBOutlet weak var searchButton: UIButton!
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         dictionaryButtonTitle.text = "이게\n무슨 맥주지?"
         dictionaryButtonSubTitle.text = "#알면 쓸모있는 맥주 상식\n#라거, 필스너, 스타우트 등"
         
-        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self // 네비게이션바 뒤로가기 제스쳐 - https://devsc.tistory.com/96
         
     }
     
