@@ -20,7 +20,7 @@ class BeerDetailViewController: UIViewController {
 
 //        self.tabBarController?.tabBar.isHidden = true // 하단 탭바 가리기
         
-        self.view.backgroundColor = .mainYellow
+        self.view.backgroundColor = .mainBlack
         self.navBar.backgroundColor = .mainBlack
         self.navBar.barTintColor = .mainBlack
         self.navBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거

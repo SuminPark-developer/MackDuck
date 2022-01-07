@@ -1181,9 +1181,20 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkn-u5-8hK">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="3000"/>
-                                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1gB-oq-qoU">
+                                                <rect key="frame" x="140.5" y="20" width="93.5" height="210.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="1gB-oq-qoU" secondAttribute="height" multiplier="80:180" id="b88-Lg-6ut"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstItem="1gB-oq-qoU" firstAttribute="centerX" secondItem="gkn-u5-8hK" secondAttribute="centerX" id="3tR-oL-Y4c"/>
+                                            <constraint firstItem="1gB-oq-qoU" firstAttribute="top" secondItem="gkn-u5-8hK" secondAttribute="top" constant="20" id="EhE-5I-owJ"/>
                                             <constraint firstAttribute="height" constant="3000" id="SlM-gY-uaX"/>
+                                            <constraint firstItem="1gB-oq-qoU" firstAttribute="width" secondItem="gkn-u5-8hK" secondAttribute="width" multiplier="0.25" id="p8U-A1-3To"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1283,9 +1294,6 @@
         <image name="mainSearchBackground" width="335" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
