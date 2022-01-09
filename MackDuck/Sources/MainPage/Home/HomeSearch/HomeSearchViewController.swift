@@ -99,6 +99,22 @@ class HomeSearchViewController: UIViewController {
         searchingTableView.register(SearchingTableViewCell.nib(), forCellReuseIdentifier: SearchingTableViewCell.identifier) // 테이블뷰(검색중) cell 등록
         searchResultTableView.register(SearchResultTableViewCell.nib(), forCellReuseIdentifier: SearchResultTableViewCell.identifier) // 테이블뷰(검색 결과) cell 등록
         
+        // uiLabel 클릭되도록 하는 방법 -  https://stackoverflow.com/questions/33658521/how-to-make-a-uilabel-clickable
+        let tapRecent0 = UITapGestureRecognizer(target: self, action: #selector(HomeSearchViewController.tapRecentSearch0))
+        let tapRecent1 = UITapGestureRecognizer(target: self, action: #selector(HomeSearchViewController.tapRecentSearch1))
+        let tapRecent2 = UITapGestureRecognizer(target: self, action: #selector(HomeSearchViewController.tapRecentSearch2))
+        let tapRecent3 = UITapGestureRecognizer(target: self, action: #selector(HomeSearchViewController.tapRecentSearch3))
+        let tapRecent4 = UITapGestureRecognizer(target: self, action: #selector(HomeSearchViewController.tapRecentSearch4))
+        for i in 0..<recentSearchLabels.count {
+            recentSearchLabels[i].isUserInteractionEnabled = true
+        }
+        recentSearchLabels[0].addGestureRecognizer(tapRecent0)
+        recentSearchLabels[1].addGestureRecognizer(tapRecent1)
+        recentSearchLabels[2].addGestureRecognizer(tapRecent2)
+        recentSearchLabels[3].addGestureRecognizer(tapRecent3)
+        recentSearchLabels[4].addGestureRecognizer(tapRecent4)
+        
+        
     }
     
     func searchBarCustom(){
@@ -126,9 +142,6 @@ class HomeSearchViewController: UIViewController {
         
     }
     
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//            return .lightContent
-//    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.dataManager.postHomeRecentPopularInfo(delegate: self) // 최근검색어, 인기검색어 api 호출.
@@ -155,7 +168,7 @@ class HomeSearchViewController: UIViewController {
 //        tableView.reloadData()
 //    }
 
-    // 전체삭제 버튼 클릭 시,
+    // 최근검색어 - 전체삭제 버튼 클릭 시,
     @IBAction func clickDeleteAllButton(_ sender: UIButton) {
         let userId = UserDefaults.standard.integer(forKey: "userId") // UserDefaults에서 userId값 불러옴.
         self.deleteDataManager.postHomeRecentDeleteInfo(userId: userId, delegate: self) // 최근검색어 지우는 api 호출.
@@ -182,6 +195,22 @@ class HomeSearchViewController: UIViewController {
         let userId = UserDefaults.standard.integer(forKey: "userId") // UserDefaults에서 userId값 불러옴.
         let input = SendBeerInfoRequest(keyword: searchingKeyword)
         self.sendBeerInfoDataManager.postBeerInfo(userId: userId, parameters: input, delegate: self) // 맥덕이에게 맥주이름 전송하는 api 호출.
+    }
+    
+    @objc func tapRecentSearch0(sender: UITapGestureRecognizer) {
+        searchBar.text = recentSearchLabels[0].text
+    }
+    @objc func tapRecentSearch1(sender: UITapGestureRecognizer) {
+        searchBar.text = recentSearchLabels[1].text
+    }
+    @objc func tapRecentSearch2(sender: UITapGestureRecognizer) {
+        searchBar.text = recentSearchLabels[2].text
+    }
+    @objc func tapRecentSearch3(sender: UITapGestureRecognizer) {
+        searchBar.text = recentSearchLabels[3].text
+    }
+    @objc func tapRecentSearch4(sender: UITapGestureRecognizer) {
+        searchBar.text = recentSearchLabels[4].text
     }
     
 }
@@ -556,7 +585,7 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.beerNameEn.text = searchResultModel.beerNameEn // ex) JEJU Wit ale
                 cell.beerNameKr.text = searchResultModel.beerNameKr // ex) 제주 위트 에일
                 cell.starScore.text = searchResultModel.beerReviewAverage // ex) 4(리뷰 점수)
-                // TODO: - 소수점 score를 정수로 바꾸고 그 점수까지 스타 yellow이미지로 바꾸게 추가해줘야 함.
+                // 소수점 score를 정수로 바꾸고 그 점수까지 스타 yellow이미지로 바꾸게 함.
                 let score: Int = Int(floor(Double(searchResultModel.beerReviewAverage)!))
                 
                 for i in 0..<score {

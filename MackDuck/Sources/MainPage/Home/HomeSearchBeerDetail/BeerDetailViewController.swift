@@ -14,11 +14,19 @@ class BeerDetailViewController: UIViewController {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var scrollViewBackground: UIView! // scrollView의 View
-
+    // 맥주 정보
+    @IBOutlet weak var beerImage: UIImageView! // 맥주 이미지뷰
+    @IBOutlet weak var beerNameEng: UILabel! // 맥주 (영어) 이름 - JEJU Wit ale
+    @IBOutlet weak var beerNameKor: UILabel! // 맥주 (한글) 이름 - 제주 위트 에일
+    @IBOutlet weak var shareButton: UIButton! // 공유 버튼
+    @IBOutlet weak var bookMarkButton: UIButton! // 북마크(즐겨찾기) 버튼
+    @IBOutlet var starImages: [UIImageView]! // 별 이미지 모음
+    @IBOutlet weak var starScore: UILabel! // 별점(소수점)
+    @IBOutlet weak var reviewCount: UILabel! // 리뷰 개수
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.tabBarController?.tabBar.isHidden = true // 하단 탭바 가리기
         
         self.view.backgroundColor = .mainBlack
         self.navBar.backgroundColor = .mainBlack
@@ -55,6 +63,28 @@ extension BeerDetailViewController {
     func didSuccessGetBeerInfo(_ result: IntroBeerDetailResponse) {
         print("서버로부터 맥주정보 GET 성공!")
         print("response 내용 : \(result)")
+        
+        // 맥주 정보 ui 작업
+        let url = URL(string: result.result.beerImgUrl)
+        // DispatchQueue를 쓰는 이유 -> 이미지가 클 경우 이미지를 다운로드 받기 까지 잠깐의 멈춤이 생길수 있다. (이유 : 싱글 쓰레드로 작동되기때문에)
+        DispatchQueue.global(qos: .background).async { // DispatchQueue를 쓰면 멀티 쓰레드로 이미지가 클경우에도 멈춤이 생기지 않는다.
+            let data = try? Data(contentsOf: url!)
+            DispatchQueue.main.async {
+                self.beerImage.image = UIImage(data: data!) // 만약 url이 없다면(안 들어온다면) try-catch로 확인해줘야 함.
+                self.beerImage.contentMode = .scaleAspectFit
+            }
+        }
+        beerNameEng.text = result.result.nameEn // 맥주 (영어) 이름 설정.
+        beerNameKor.text = result.result.nameKr // 맥주 (한글) 이름 설정.
+        starScore.text = result.result.reviewAverage // 별점
+        reviewCount.text = String(result.result.reviewCount) + "개의 리뷰" // ex) 0개의 리뷰
+        
+        // 소수점 score를 정수로 바꾸고 그 점수까지 스타 yellow이미지로 바꾸게 함.
+        let score: Int = Int(floor(Double(result.result.reviewAverage)!))
+        
+        for i in 0..<score {
+            starImages[i].image = UIImage(named: "searchResultStarYellow.png")
+        }
         
         
     }
