@@ -23,7 +23,12 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet var starImages: [UIImageView]! // 별 이미지 모음
     @IBOutlet weak var starScore: UILabel! // 별점(소수점)
     @IBOutlet weak var reviewCount: UILabel! // 리뷰 개수
-    
+    @IBOutlet weak var labelCountry: UILabel! // 원산지 : 벨기에산
+    @IBOutlet weak var labelManufacturer: UILabel! // 제조사 : 제주 맥주
+    @IBOutlet weak var labelBeerKind: UILabel! // 맥주 종류 : 에일
+    @IBOutlet weak var labelAlcohol: UILabel! // 알콜 도수 : 5.3%
+    @IBOutlet weak var labelIngredient: UILabel! // 재료 : 보리, 맥아, 홉, 감귤피, 오렌지 껍질
+    @IBOutlet weak var labelFeature: UILabel! // 특징 : 오렌지 껍질과 ~~
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +90,13 @@ extension BeerDetailViewController {
         for i in 0..<score {
             starImages[i].image = UIImage(named: "searchResultStarYellow.png")
         }
+        
+        labelCountry.text = "원산지 : \(result.result.country)"
+        labelManufacturer.text = "제조사 : \(result.result.manufacturer)"
+        labelBeerKind.text = "맥주 종류 : \(result.result.beerKind)"
+        labelAlcohol.text = "알콜 도수 : \(result.result.alcohol)"
+        labelIngredient.text = "재료 : \(result.result.ingredient)"
+        labelFeature.text = "특징 : \(result.result.feature)"
         
         
     }

@@ -1176,7 +1176,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LNr-MW-OGg">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNr-MW-OGg">
                                 <rect key="frame" x="20" y="88" width="374" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkn-u5-8hK">
@@ -1221,6 +1221,18 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="bookMarkButtonGray"/>
                                                     </button>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerDetailBubble" translatesAutoresizingMaskIntoConstraints="NO" id="Utx-qe-8Ns">
+                                                        <rect key="frame" x="294" y="29.5" width="60" height="26"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Utx-qe-8Ns" secondAttribute="height" multiplier="60:26" id="lyT-Oy-bjh"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="냉장고에 담기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5a-A4-rZj">
+                                                        <rect key="frame" x="300.5" y="33.5" width="47" height="12"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="8"/>
+                                                        <color key="textColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0개의 리뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPc-6l-NAd">
                                                         <rect key="frame" x="121.5" y="96" width="53.5" height="15"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
@@ -1268,6 +1280,44 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원산지 : 벨기에산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMk-np-pw6">
+                                                        <rect key="frame" x="20" y="136" width="94" height="19"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                        <color key="textColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.99215668440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제조사 : 제주 맥주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3J-2H-rnE">
+                                                        <rect key="frame" x="20" y="161" width="97" height="19"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                        <color key="textColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.99215668440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맥주 종류 : 에일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pen-vr-Kq0">
+                                                        <rect key="frame" x="20" y="186" width="85" height="19"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                        <color key="textColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.99215668440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알콜 도수 : 5.3%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87A-TT-FWL">
+                                                        <rect key="frame" x="20" y="211" width="91" height="19"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                        <color key="textColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.99215668440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재료 : 보리, 맥아, 홉, 감귤피, 오렌지 껍질" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8i9-ji-rnr">
+                                                        <rect key="frame" x="20" y="236" width="334" height="19"/>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                        <color key="textColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.99215668440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1p-P0-bE1">
+                                                        <rect key="frame" x="20" y="261" width="334" height="38"/>
+                                                        <string key="text">특징 : 오렌지 껍질과 고수 씨앗을 넣어 만든 향긋한
+산미가 더해진 밀맥주</string>
+                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                        <color key="textColor" red="0.97647064920000004" green="0.97647064920000004" blue="0.99215668440000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
@@ -1276,30 +1326,55 @@
                                                     <constraint firstItem="hXM-V2-T8c" firstAttribute="top" secondItem="itd-WU-CvW" secondAttribute="top" id="2jh-O0-oGh"/>
                                                     <constraint firstItem="3nj-8a-xi0" firstAttribute="centerY" secondItem="MAN-ul-rJr" secondAttribute="centerY" id="3PK-Bm-xpz"/>
                                                     <constraint firstItem="MAN-ul-rJr" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="6Fk-Aq-cNV"/>
+                                                    <constraint firstItem="8i9-ji-rnr" firstAttribute="top" secondItem="87A-TT-FWL" secondAttribute="bottom" constant="6" id="6IZ-NS-laV"/>
+                                                    <constraint firstItem="e1p-P0-bE1" firstAttribute="top" secondItem="8i9-ji-rnr" secondAttribute="bottom" constant="6" id="8oD-qT-6k0"/>
                                                     <constraint firstItem="MAN-ul-rJr" firstAttribute="top" secondItem="3C9-R4-7f2" secondAttribute="bottom" constant="1" id="9N2-jV-U6j"/>
                                                     <constraint firstItem="Kkq-NH-lYv" firstAttribute="leading" secondItem="3nj-8a-xi0" secondAttribute="trailing" constant="14" id="Ad5-rZ-6l2"/>
                                                     <constraint firstItem="3C9-R4-7f2" firstAttribute="top" secondItem="fMi-Jm-ob2" secondAttribute="top" constant="40" id="BH1-TJ-mwy"/>
+                                                    <constraint firstItem="BMk-np-pw6" firstAttribute="top" secondItem="mI0-fr-Q7k" secondAttribute="bottom" constant="25" id="BKr-4k-czQ"/>
                                                     <constraint firstItem="COh-be-d8D" firstAttribute="leading" secondItem="W7Q-DX-T2r" secondAttribute="trailing" constant="2" id="Cy9-op-1rD"/>
                                                     <constraint firstItem="nUI-Ay-nB8" firstAttribute="leading" secondItem="hXM-V2-T8c" secondAttribute="trailing" constant="2" id="EFt-QA-8bI"/>
+                                                    <constraint firstItem="Kkq-NH-lYv" firstAttribute="top" secondItem="Utx-qe-8Ns" secondAttribute="bottom" constant="6" id="EUz-ve-478"/>
+                                                    <constraint firstItem="d3J-2H-rnE" firstAttribute="top" secondItem="BMk-np-pw6" secondAttribute="bottom" constant="6" id="Eax-Af-HFn"/>
                                                     <constraint firstItem="3C9-R4-7f2" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="GNv-fw-GY6"/>
+                                                    <constraint firstItem="87A-TT-FWL" firstAttribute="top" secondItem="Pen-vr-Kq0" secondAttribute="bottom" constant="6" id="Ilf-n7-Cpg"/>
+                                                    <constraint firstItem="BMk-np-pw6" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="KhX-Al-nfi"/>
+                                                    <constraint firstItem="e1p-P0-bE1" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="LhK-Aa-PLa"/>
+                                                    <constraint firstItem="Pen-vr-Kq0" firstAttribute="top" secondItem="d3J-2H-rnE" secondAttribute="bottom" constant="6" id="Mwm-ff-li0"/>
                                                     <constraint firstItem="W7Q-DX-T2r" firstAttribute="leading" secondItem="nUI-Ay-nB8" secondAttribute="trailing" constant="2" id="QW7-6C-xQK"/>
+                                                    <constraint firstItem="Pen-vr-Kq0" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="R54-WS-bcP"/>
                                                     <constraint firstItem="QPc-6l-NAd" firstAttribute="centerY" secondItem="mI0-fr-Q7k" secondAttribute="centerY" id="Ud6-q1-eYv"/>
+                                                    <constraint firstItem="v5a-A4-rZj" firstAttribute="centerX" secondItem="Utx-qe-8Ns" secondAttribute="centerX" id="WND-iW-spv"/>
                                                     <constraint firstItem="QPc-6l-NAd" firstAttribute="leading" secondItem="mI0-fr-Q7k" secondAttribute="trailing" constant="21" id="WwM-9v-vOW"/>
                                                     <constraint firstItem="Kkq-NH-lYv" firstAttribute="centerY" secondItem="MAN-ul-rJr" secondAttribute="centerY" id="XDH-3W-AM8"/>
+                                                    <constraint firstItem="87A-TT-FWL" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="XgZ-Qj-k9s"/>
                                                     <constraint firstItem="COh-be-d8D" firstAttribute="top" secondItem="itd-WU-CvW" secondAttribute="top" id="Xpf-hT-lSb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8i9-ji-rnr" secondAttribute="trailing" constant="20" id="a5S-Zv-mDn"/>
                                                     <constraint firstItem="hXM-V2-T8c" firstAttribute="leading" secondItem="itd-WU-CvW" secondAttribute="trailing" constant="2" id="blq-kR-HVW"/>
                                                     <constraint firstAttribute="width" secondItem="fMi-Jm-ob2" secondAttribute="height" multiplier="335:334" id="bpz-U6-zdi"/>
                                                     <constraint firstItem="mI0-fr-Q7k" firstAttribute="leading" secondItem="COh-be-d8D" secondAttribute="trailing" constant="4" id="f0m-91-svm"/>
                                                     <constraint firstAttribute="trailing" secondItem="Kkq-NH-lYv" secondAttribute="trailing" constant="20" id="hoD-TG-0hU"/>
+                                                    <constraint firstItem="8i9-ji-rnr" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="lYU-OE-lIQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="e1p-P0-bE1" secondAttribute="trailing" constant="20" id="o3D-rr-gbI"/>
                                                     <constraint firstItem="nUI-Ay-nB8" firstAttribute="top" secondItem="itd-WU-CvW" secondAttribute="top" id="oHQ-9O-Kkm"/>
+                                                    <constraint firstItem="Utx-qe-8Ns" firstAttribute="trailing" secondItem="Kkq-NH-lYv" secondAttribute="trailing" id="oTk-yF-hfR"/>
                                                     <constraint firstItem="itd-WU-CvW" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="rjl-d6-SGI"/>
+                                                    <constraint firstItem="v5a-A4-rZj" firstAttribute="centerY" secondItem="Utx-qe-8Ns" secondAttribute="centerY" constant="-3" id="t7N-An-fBh"/>
+                                                    <constraint firstItem="d3J-2H-rnE" firstAttribute="leading" secondItem="fMi-Jm-ob2" secondAttribute="leading" constant="20" id="w7g-zu-zr5"/>
                                                     <constraint firstItem="mI0-fr-Q7k" firstAttribute="top" secondItem="itd-WU-CvW" secondAttribute="top" id="wRf-J9-3UU"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="5"/>
+                                                        <real key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VQB-54-KXl">
+                                                <rect key="frame" x="0.0" y="648.5" width="374" height="10"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="9cm-i7-Pma"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1307,10 +1382,13 @@
                                             <constraint firstItem="1gB-oq-qoU" firstAttribute="centerX" secondItem="gkn-u5-8hK" secondAttribute="centerX" id="3tR-oL-Y4c"/>
                                             <constraint firstItem="fMi-Jm-ob2" firstAttribute="top" secondItem="1gB-oq-qoU" secondAttribute="bottom" constant="15" id="4d7-IV-uIn"/>
                                             <constraint firstItem="1gB-oq-qoU" firstAttribute="top" secondItem="gkn-u5-8hK" secondAttribute="top" constant="20" id="EhE-5I-owJ"/>
+                                            <constraint firstItem="VQB-54-KXl" firstAttribute="leading" secondItem="gkn-u5-8hK" secondAttribute="leading" id="Lhk-TJ-skB"/>
+                                            <constraint firstAttribute="trailing" secondItem="VQB-54-KXl" secondAttribute="trailing" id="MIM-RV-1bZ"/>
                                             <constraint firstAttribute="trailing" secondItem="fMi-Jm-ob2" secondAttribute="trailing" id="RSR-IW-pxc"/>
                                             <constraint firstAttribute="height" constant="3000" id="SlM-gY-uaX"/>
                                             <constraint firstItem="fMi-Jm-ob2" firstAttribute="leading" secondItem="gkn-u5-8hK" secondAttribute="leading" id="bQE-xA-Zsj"/>
                                             <constraint firstItem="1gB-oq-qoU" firstAttribute="width" secondItem="gkn-u5-8hK" secondAttribute="width" multiplier="0.25" id="p8U-A1-3To"/>
+                                            <constraint firstItem="VQB-54-KXl" firstAttribute="top" secondItem="fMi-Jm-ob2" secondAttribute="bottom" constant="30" id="z1b-vR-E8I"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1363,6 +1441,12 @@
                         <outlet property="beerNameEng" destination="3C9-R4-7f2" id="TaU-JQ-wfh"/>
                         <outlet property="beerNameKor" destination="MAN-ul-rJr" id="iKq-U0-rmJ"/>
                         <outlet property="bookMarkButton" destination="Kkq-NH-lYv" id="eQh-NR-fb6"/>
+                        <outlet property="labelAlcohol" destination="87A-TT-FWL" id="2KG-gQ-uoE"/>
+                        <outlet property="labelBeerKind" destination="Pen-vr-Kq0" id="Gfs-1I-XaV"/>
+                        <outlet property="labelCountry" destination="BMk-np-pw6" id="jtk-18-DZz"/>
+                        <outlet property="labelFeature" destination="e1p-P0-bE1" id="Trz-uR-uyg"/>
+                        <outlet property="labelIngredient" destination="8i9-ji-rnr" id="H4J-U7-ZM1"/>
+                        <outlet property="labelManufacturer" destination="d3J-2H-rnE" id="baB-6U-giU"/>
                         <outlet property="navBar" destination="FOY-6u-0BT" id="syk-Cq-ngf"/>
                         <outlet property="reviewCount" destination="QPc-6l-NAd" id="wRC-8X-ddd"/>
                         <outlet property="scrollViewBackground" destination="gkn-u5-8hK" id="hIQ-1D-xLG"/>
@@ -1402,6 +1486,7 @@
     <resources>
         <image name="backButtonGray" width="25" height="25"/>
         <image name="beerAle" width="325" height="200"/>
+        <image name="beerDetailBubble" width="60" height="26"/>
         <image name="beerDunkel" width="325" height="200"/>
         <image name="beerIpa" width="325" height="200"/>
         <image name="beerLager" width="325" height="200"/>
