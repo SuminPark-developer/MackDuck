@@ -6,6 +6,8 @@
 //
 
 import UIKit
+//import Tabman
+//import Pageboy
 
 class BeerDetailViewController: UIViewController {
 
@@ -38,7 +40,6 @@ class BeerDetailViewController: UIViewController {
         self.navBar.barTintColor = .mainBlack
         self.navBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
         scrollViewBackground.backgroundColor = .mainBlack
-        
         
     }
 
@@ -115,3 +116,4 @@ extension BeerDetailViewController {
     }
     
 }
+
