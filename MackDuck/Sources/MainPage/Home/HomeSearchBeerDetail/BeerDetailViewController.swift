@@ -32,6 +32,11 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var labelIngredient: UILabel! // 재료 : 보리, 맥아, 홉, 감귤피, 오렌지 껍질
     @IBOutlet weak var labelFeature: UILabel! // 특징 : 오렌지 껍질과 ~~
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tasteFlavorView: UIView! // 맛/향 뷰
+    @IBOutlet weak var reviewView: UIView! // 리뷰 235 뷰
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +45,9 @@ class BeerDetailViewController: UIViewController {
         self.navBar.barTintColor = .mainBlack
         self.navBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
         scrollViewBackground.backgroundColor = .mainBlack
+        
+        segmentedControl.addUnderlineForSelectedSegment() // segmentedControl 설정하는 메소드 호출.
+        
         
     }
 
@@ -59,8 +67,26 @@ class BeerDetailViewController: UIViewController {
     @IBAction func clickSearchButton(_ sender: UIBarButtonItem) { // 검색 버튼 클릭 시,
         self.dismiss(animated: true, completion: nil)
     }
+ 
+    @IBAction func switchViews(_ sender: UISegmentedControl) { // 세그먼트 클릭 시, 뷰 변경.
+        
+        segmentedControl.changeUnderlinePosition()
+        
+        if sender.selectedSegmentIndex == 0 { // 맛향 탭 클릭 시, 맛향페이지 보이게 세팅. (리뷰페이지 가림)
+            tasteFlavorView.alpha = 1.0
+            reviewView.alpha = 0.0
+        }
+        else if sender.selectedSegmentIndex == 1 { // 리뷰 탭 클릭 시, 리뷰페이지 보이게 세팅. (맛향페이지 가림)
+            tasteFlavorView.alpha = 0.0
+            reviewView.alpha = 1.0
+        }
+
+    }
+    
     
 }
+
+
 
 // MARK: - intro 맥주정보 GET Api
 extension BeerDetailViewController {
@@ -99,6 +125,7 @@ extension BeerDetailViewController {
         labelIngredient.text = "재료 : \(result.result.ingredient)"
         labelFeature.text = "특징 : \(result.result.feature)"
         
+        segmentedControl.setTitle("리뷰 \(result.result.reviewCount)", forSegmentAt: 1) // 리뷰 개수 텍스트 세팅
         
     }
 
