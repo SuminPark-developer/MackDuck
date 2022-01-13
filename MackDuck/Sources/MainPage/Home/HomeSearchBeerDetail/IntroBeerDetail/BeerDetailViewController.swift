@@ -6,8 +6,6 @@
 //
 
 import UIKit
-//import Tabman
-//import Pageboy
 
 class BeerDetailViewController: UIViewController {
 
@@ -33,7 +31,7 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var labelFeature: UILabel! // 특징 : 오렌지 껍질과 ~~
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var tasteFlavorView: UIView! // 맛/향 뷰
+    @IBOutlet weak var tasteSmellView: UIView! // 맛/향 뷰
     @IBOutlet weak var reviewView: UIView! // 리뷰 235 뷰
     
     
@@ -46,7 +44,7 @@ class BeerDetailViewController: UIViewController {
         self.navBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
         scrollViewBackground.backgroundColor = .mainBlack
         
-        segmentedControl.addUnderlineForSelectedSegment() // segmentedControl 설정하는 메소드 호출.
+        segmentedControl.addUnderlineForSelectedSegment() // segmentedControl 설정하는 메소드 호출(1)
         
         
     }
@@ -54,7 +52,6 @@ class BeerDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.introBeerDetailDataManager.getBeerDetailInfo(beerId: beerId, delegate: self) // 맥주정보 가져오는 api 호출.
-        
     }
     
     @IBAction func clickHomeButton(_ sender: UIBarButtonItem) { // 홈 버튼 클릭 시,
@@ -70,14 +67,14 @@ class BeerDetailViewController: UIViewController {
  
     @IBAction func switchViews(_ sender: UISegmentedControl) { // 세그먼트 클릭 시, 뷰 변경.
         
-        segmentedControl.changeUnderlinePosition()
+        segmentedControl.changeUnderlinePosition() // segmentedControl 설정하는 메소드 호출(2)
         
         if sender.selectedSegmentIndex == 0 { // 맛향 탭 클릭 시, 맛향페이지 보이게 세팅. (리뷰페이지 가림)
-            tasteFlavorView.alpha = 1.0
+            tasteSmellView.alpha = 1.0
             reviewView.alpha = 0.0
         }
         else if sender.selectedSegmentIndex == 1 { // 리뷰 탭 클릭 시, 리뷰페이지 보이게 세팅. (맛향페이지 가림)
-            tasteFlavorView.alpha = 0.0
+            tasteSmellView.alpha = 0.0
             reviewView.alpha = 1.0
         }
 
@@ -138,6 +135,34 @@ extension BeerDetailViewController {
 //            showAlert(title: message, message: "")
         }
         else if code == 3011 { // 실패 이유 : "상품에 관한 상세화면이 없어요."
+            
+        }
+    }
+    
+}
+
+// MARK: - 맥주정보 맛/향 GET Api
+extension BeerDetailViewController {
+    
+    // beerId가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에서 맥주 맛/향 설정.
+    func didSuccessGetBeerTasteSmellInfo(_ result: BeerDetailTasteResponse) {
+        print("서버로부터 맥주 맛/향 GET 성공!")
+        print("response 내용 : \(result)")
+        
+        // 맥주 정보 ui 작업
+        
+        
+    }
+
+    func failedToGetBeerTasteSmellInfo(message: String, code: Int) { // 오류메시지 & code번호 몇인지
+        print("서버 Request 실패...")
+        print("실패 이유 : \(message)")
+        print("오류 코드 : \(code)")
+        
+        if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
+//            showAlert(title: message, message: "")
+        }
+        else if code == 2016 { // 실패 이유 : "맥주 beerId 값 확인해주세요."
             
         }
     }

@@ -274,7 +274,7 @@ extension HomeSearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool { // 키보드 Return(앤터) 버튼 클릭시 작동.
         print("검색창 Return 엔터 클릭.")
         searchingKeyword = textField.text! // 검색단어 저장.
-        
+//        popularTableView.isHidden = true // 검색결과테이블뷰 밑공간 띄운뒤 -> 인기검색 테이블뷰 안가려주면 작은휴대폰에서 밑에 보임.
         searchingTableView.isHidden = true // 검색중 테이블뷰 가림.
         searchResultTableView.isHidden = false // 검색결과 테이블뷰 띄움.
         self.searchResultDataManager.postHomeRecentKeywordResult(keyword: textField.text!, delegate: self) // 검색 api 호출.
@@ -614,14 +614,15 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if tableView == searchResultTableView {
             print(SearchResultList[indexPath.row].beerNameKr)
-            // 상세 설명 페이지로 연결.
+            // 맥주 상세 설명 페이지로 연결.
             let beerDetail = UIStoryboard(name: "HomeStoryboard", bundle: nil)
             let beerDetailVC = beerDetail.instantiateViewController(withIdentifier: "BeerDetailVC") as! BeerDetailViewController
-            beerDetailVC.beerId = SearchResultList[indexPath.row].beerId // beerId 전달.
+            beerDetailVC.beerId = SearchResultList[indexPath.row].beerId // (맥주 intro VC에) beerId 전달.
             beerDetailVC.modalPresentationStyle = .fullScreen
+            
+            BeerData.details.beerId = SearchResultList[indexPath.row].beerId // 맥주 beerId 저장. -> 맛향 VC에서 사용함.
+            
             self.present(beerDetailVC, animated: true, completion: nil)
-//            let beerDetailVC = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVC"))
-//            self.navigationController?.pushViewController(beerDetailVC!, animated: true)
             
         }
         
