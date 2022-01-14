@@ -2386,17 +2386,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="374" height="1729"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="리뷰 @ 입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRA-Ki-zrc">
-                                <rect key="frame" x="173" y="121" width="103" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qBh-qN-jac">
+                                <rect key="frame" x="20" y="84" width="78" height="24"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="reviewIcon" translatesAutoresizingMaskIntoConstraints="NO" id="3cm-CY-4Ng">
+                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niM-Mh-PeO">
+                                        <rect key="frame" x="29" y="0.0" width="31.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhV-Mb-d1f">
+                                        <rect key="frame" x="65.5" y="0.0" width="12.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
+                                        <color key="textColor" red="0.96470588450000005" green="0.84313726430000002" blue="0.28627452250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="kU5-3g-t44"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNS-fW-A4v" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="128" width="374" height="259.5"/>
+                                <color key="backgroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gJM-uU-Nua"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qBh-qN-jac" firstAttribute="leading" secondItem="gJM-uU-Nua" secondAttribute="leading" constant="20" id="Aa6-IQ-u3M"/>
+                            <constraint firstItem="oNS-fW-A4v" firstAttribute="height" secondItem="lDd-Pq-eUf" secondAttribute="height" multiplier="0.15" id="BFP-r0-Dwv"/>
+                            <constraint firstItem="oNS-fW-A4v" firstAttribute="top" secondItem="qBh-qN-jac" secondAttribute="bottom" constant="20" id="C9s-n8-ngX"/>
+                            <constraint firstItem="oNS-fW-A4v" firstAttribute="leading" secondItem="gJM-uU-Nua" secondAttribute="leading" id="Ef3-VN-HJD"/>
+                            <constraint firstItem="qBh-qN-jac" firstAttribute="top" secondItem="gJM-uU-Nua" secondAttribute="top" constant="40" id="FVh-xe-cWt"/>
+                            <constraint firstItem="gJM-uU-Nua" firstAttribute="trailing" secondItem="oNS-fW-A4v" secondAttribute="trailing" id="hxx-wM-WMK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="barChartView" destination="oNS-fW-A4v" id="6d0-xB-Exc"/>
+                        <outlet property="reviewCountLabel" destination="xhV-Mb-d1f" id="qO5-cN-tt6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pbe-mn-WRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2426,15 +2458,13 @@
         <image name="mainRecommendBackground" width="335" height="82"/>
         <image name="mainRecommendIcon" width="26" height="52"/>
         <image name="mainSearchBackground" width="335" height="60"/>
+        <image name="reviewIcon" width="24" height="24"/>
         <image name="searchResultStarGray" width="13" height="12"/>
         <image name="shareButtonGray" width="24" height="24"/>
         <image name="smellLabelIcon" width="24" height="24"/>
         <image name="tasteLabelIcon" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

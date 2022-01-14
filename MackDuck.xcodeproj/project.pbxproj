@@ -33,6 +33,8 @@
 		7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */; };
 		7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */; };
 		74541BCD2785B7B20073749A /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74541BCC2785B7B20073749A /* BeerDetailViewController.swift */; };
+		745D624027906D7500F9FDD1 /* BeerDetailReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D623F27906D7500F9FDD1 /* BeerDetailReviewResponse.swift */; };
+		745D624227906D9000F9FDD1 /* BeerDetailReviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D624127906D9000F9FDD1 /* BeerDetailReviewDataManager.swift */; };
 		747561B92743E4D20015BFC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561B82743E4D20015BFC9 /* UITextField.swift */; };
 		747561BE2744D6760015BFC9 /* NicknameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561BD2744D6760015BFC9 /* NicknameDataManager.swift */; };
 		747561C22744D6910015BFC9 /* NicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561C12744D6910015BFC9 /* NicknameResponse.swift */; };
@@ -110,6 +112,8 @@
 		7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorViewController.swift; sourceTree = "<group>"; };
 		7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		74541BCC2785B7B20073749A /* BeerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
+		745D623F27906D7500F9FDD1 /* BeerDetailReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailReviewResponse.swift; sourceTree = "<group>"; };
+		745D624127906D9000F9FDD1 /* BeerDetailReviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailReviewDataManager.swift; sourceTree = "<group>"; };
 		747561B82743E4D20015BFC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		747561BD2744D6760015BFC9 /* NicknameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameDataManager.swift; sourceTree = "<group>"; };
 		747561C12744D6910015BFC9 /* NicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameResponse.swift; sourceTree = "<group>"; };
@@ -424,6 +428,8 @@
 		747E90F1278EFD17009F00CB /* BeerDetailReviewEntity */ = {
 			isa = PBXGroup;
 			children = (
+				745D623F27906D7500F9FDD1 /* BeerDetailReviewResponse.swift */,
+				745D624127906D9000F9FDD1 /* BeerDetailReviewDataManager.swift */,
 			);
 			path = BeerDetailReviewEntity;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 				749800902769CC3F008284DC /* SearchResultModel.swift in Sources */,
 				74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */,
 				749800932769CC6A008284DC /* SearchResultTableViewCell.swift in Sources */,
+				745D624227906D9000F9FDD1 /* BeerDetailReviewDataManager.swift in Sources */,
 				747561B92743E4D20015BFC9 /* UITextField.swift in Sources */,
 				74CE16A8278C8274008F4A90 /* BeerDetailReviewViewController.swift in Sources */,
 				74EF99CB274BB2370037A166 /* MainPageViewController.swift in Sources */,
@@ -752,6 +759,7 @@
 				74DE2F9F2758AD7200424301 /* HomeRecentDeleteResponse.swift in Sources */,
 				74DE2FA32758EB6F00424301 /* BestSearchModel.swift in Sources */,
 				74541BCD2785B7B20073749A /* BeerDetailViewController.swift in Sources */,
+				745D624027906D7500F9FDD1 /* BeerDetailReviewResponse.swift in Sources */,
 				747561C22744D6910015BFC9 /* NicknameResponse.swift in Sources */,
 				743032072742C24C00B7657B /* KakaoLoginDataManager.swift in Sources */,
 				74CE16A6278C8261008F4A90 /* BeerDetailTasteViewController.swift in Sources */,

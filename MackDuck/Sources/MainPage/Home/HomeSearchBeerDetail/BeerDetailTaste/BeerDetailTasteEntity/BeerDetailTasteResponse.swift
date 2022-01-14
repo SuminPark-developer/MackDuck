@@ -11,11 +11,11 @@ struct BeerDetailTasteResponse: Decodable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: Result
+    let result: BeerDetailTasteResult
 }
 
 // MARK: - Result
-struct Result: Decodable {
+struct BeerDetailTasteResult: Decodable {
     let favorList: [FavorList]
     let smellList: [SmellList]
 }
