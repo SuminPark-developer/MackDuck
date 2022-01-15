@@ -12,8 +12,8 @@ class BeerDetailReviewViewController: UIViewController {
 
     var beerDetailReviewDataManager: BeerDetailReviewDataManager = BeerDetailReviewDataManager() // 맥주 리뷰 정보(6개) 가져오는 dataManager
     
-    var months: [String]!
-    var unitsSold: [Double]!
+    var scorePoints: [String] = ["5점", "4점", "3점", "2점", "1점"]
+    var reviewCount: [Int] = [0, 0, 0, 0, 0]
     
     @IBOutlet weak var reviewCountLabel: UILabel! // 리뷰 개수 라벨.
     @IBOutlet weak var barChartView: BarChartView!
@@ -21,31 +21,26 @@ class BeerDetailReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-        unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0, 18.0, 2.0, 4.0, 5.0, 4.0]
         
         barChartView.noDataText = "아직 작성된 리뷰가 없어요ㅠㅠ"
-//        barChartView.noDataFont = .systemFont(ofSize: 20)
         barChartView.noDataFont = UIFont(name: "NotoSansKR-Bold", size: 24)!
         barChartView.noDataTextColor = .mainGray
         
-        
-        setChart(dataPoints: months, values: unitsSold)
-        
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(dataPoints: [String], values: [Int]) {
         
         // 데이터 생성
         var dataEntries: [BarChartDataEntry] = []
         for i in 0..<dataPoints.count {
-            let dataEntry = BarChartDataEntry(x: Double(i), y: values[i])
+            let dataEntry = BarChartDataEntry(x: Double(i), y: Double(values[i]))
             dataEntries.append(dataEntry)
         }
+        
+        
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "별점")
 
-        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "판매량")
-
-        chartDataSet.colors = [.systemBlue] // 차트 컬러
+        chartDataSet.colors = [.mainYellow] // 차트 컬러
         chartDataSet.highlightEnabled = false // 선택 안되게
         barChartView.doubleTapToZoomEnabled = false // 줌 안되게
 
@@ -53,8 +48,14 @@ class BeerDetailReviewViewController: UIViewController {
         let chartData = BarChartData(dataSet: chartDataSet)
         barChartView.data = chartData
         
+        // double형표시 -> Int형표시로 전환 - https://stackoverflow.com/questions/44786924/swift-charts-chart-value-int-instead-of-double
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        chartData.setValueFormatter(DefaultValueFormatter(formatter:formatter))
+        
         barChartView.xAxis.labelPosition = .bottom // X축 레이블 위치 조정
-        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: months) // X축 레이블 포맷 지정
+        barChartView.xAxis.labelTextColor = .mainGray
+        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: scorePoints) // X축 레이블 포맷 지정
         barChartView.rightAxis.enabled = false // 오른쪽 레이블 제거
         barChartView.leftAxis.enabled = false // 왼쪽 레이블 제거
         
@@ -88,8 +89,16 @@ extension BeerDetailReviewViewController {
         print("서버로부터 맥주 리뷰 정보(6개) GET 성공!")
         print("response 내용 : \(result)")
         
-        // TODO: - api 데이터 가져온거로 우선 리뷰 ui부터 구성.
+        // api 데이터 가져온거로 리뷰 ui 구성.
         reviewCountLabel.text = String(result.result.reviewStatics.reviewCount)
+        
+        reviewCount[0] = result.result.reviewStatics.five
+        reviewCount[1] = result.result.reviewStatics.four
+        reviewCount[2] = result.result.reviewStatics.three
+        reviewCount[3] = result.result.reviewStatics.two
+        reviewCount[4] = result.result.reviewStatics.one
+        
+        setChart(dataPoints: scorePoints, values: reviewCount)
         
     }
 
