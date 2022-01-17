@@ -12,8 +12,17 @@ class BeerDetailReviewViewController: UIViewController {
 
     var beerDetailReviewDataManager: BeerDetailReviewDataManager = BeerDetailReviewDataManager() // 맥주 리뷰 정보(6개) 가져오는 dataManager
     
+    @IBOutlet weak var noReviewLabel: UILabel! // 아직 작성된 리뷰가 없어요 ㅠㅠ
+    @IBOutlet weak var noReviewButton: UIButton! // 이 맥주를 마셔보셨다면 영광의 첫 리뷰를....
+    
+    @IBOutlet weak var reviewStaticsBackground: UIView! // 리뷰 요약본 배경.
     @IBOutlet weak var reviewScore: UILabel! // 총 평점( ex - 0.0)
     @IBOutlet var starImages: [UIImageView]! // 별 이미지들
+    
+    @IBOutlet weak var allImageStackView: UIStackView! // 리뷰 요악본 밑에 있는 스택뷰.
+    @IBOutlet var allImageViews: [UIImageView]! // 리뷰 요약본 밑에 있는 스택뷰 안에 담긴 이미지뷰(4개).
+    @IBOutlet weak var seeMoreImageButton: UIButton! // 더보기 버튼.
+    @IBOutlet weak var seeMoreImageLabel: UILabel! // 더보기 라벨.
     
     var scorePoints: [String] = ["5점", "4점", "3점", "2점", "1점"]
     var reviewCount: [Int] = [0, 0, 0, 0, 0]
@@ -24,12 +33,26 @@ class BeerDetailReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        noReviewLabel.isHidden = true // 리뷰 없을 때 쓰이는 것 숨겨 놓음.
+        noReviewButton.isHidden = true // 리뷰 없을 때 쓰이는 것 숨겨 놓음.
+        noReviewButton.isUserInteractionEnabled = false // 리뷰 없을 때 쓰이는 것 숨겨 놓음.
         
         barChartView.noDataText = "아직 작성된 리뷰가 없어요ㅠㅠ"
         barChartView.noDataFont = UIFont(name: "NotoSansKR-Bold", size: 24)!
         barChartView.noDataTextColor = .mainGray
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.beerDetailReviewDataManager.getBeerReviewInfo(rowNumber: BeerData.details.rowNumber, beerId: BeerData.details.beerId, delegate: self) // 맥주 리뷰 정보(6개) 가져오는 api 호출.
+    }
+    
+    @IBAction func clickNoReviewWriteButton(_ sender: UIButton) { // 리뷰 없을 때 - 첫 리뷰 남기는 버튼 클릭 시,
+        print("리뷰 작성 버튼 클릭.")
+        // TODO: - 여기에 리뷰 작성하는 내용 필요.
+    }
+    
     
     func setChart(dataPoints: [String], values: [Int]) {
         var dataEntries: [BarChartDataEntry] = [] // 데이터 생성
@@ -91,10 +114,13 @@ class BeerDetailReviewViewController: UIViewController {
         barChartView.xAxis.setLabelCount(dataPoints.count, force: false)
     }
     
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.beerDetailReviewDataManager.getBeerReviewInfo(rowNumber: BeerData.details.rowNumber, beerId: BeerData.details.beerId, delegate: self) // 맥주 리뷰 정보(6개) 가져오는 api 호출.
+    @IBAction func clickMoreImageButton(_ sender: UIButton) { // 더보기 버튼 클릭 시,
+        print("더보기 버튼 클릭")
+        
+        // TODO: - reviewIamgeList가 4개일 때에만 더보기view 생성 및 api 연결.
+        
+        let seeReviewMoreImageVC = (self.storyboard?.instantiateViewController(withIdentifier: "SeeReviewMoreImageVC"))
+        self.navigationController?.pushViewController(seeReviewMoreImageVC!, animated: true)
     }
     
     
@@ -104,8 +130,8 @@ class BeerDetailReviewViewController: UIViewController {
 // MARK: - 맥주 리뷰 정보(6개) GET Api
 extension BeerDetailReviewViewController {
     
-    // beerId가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에서 맥주 맛/향 설정.
-    func didSuccessGetBeerReviewInfo(_ result: BeerDetailReviewResponse) {
+    // MARK: - 리뷰 있을 때,
+    func didSuccessGetBeerReviewInfo(_ result: BeerDetailReviewResponse) { // beerId가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에서 리뷰 ui 작업.
         print("서버로부터 맥주 리뷰 정보(6개) GET 성공!")
         print("response 내용 : \(result)")
         
@@ -127,13 +153,49 @@ extension BeerDetailReviewViewController {
         reviewCount[4] = result.result.reviewStatics.one
         
         setChart(dataPoints: scorePoints, values: reviewCount)
+
+        // 리뷰 요약본 밑에 있는 이미지뷰(4개) 세팅.
+        for (i, imageUrl) in result.result.reviewImageList.enumerated() { // enumberated()는 열거형
+            let url = URL(string: imageUrl.reviewImgUrl)
+            DispatchQueue.global(qos: .background).async {
+                let data = try? Data(contentsOf: url!)
+                DispatchQueue.main.async {
+                    self.allImageViews[i].image = UIImage(data: data!)
+                    self.allImageViews[i].contentMode = .scaleAspectFill
+                }
+            }
+        }
+        
+        if result.result.reviewImageList.count == 4 { // 이미지가 4개일 땐,
+            self.seeMoreImageLabel.isHidden = false // 더보기 라벨 띄움.
+            self.seeMoreImageButton.isHidden = false // 더보기 버튼 띄움.
+            self.seeMoreImageButton.backgroundColor = UIColor.mainBlack
+            self.seeMoreImageButton.alpha = 0.6
+        } else { // 이미지가 0개 ~ 3개일 땐,
+            self.seeMoreImageLabel.isHidden = true // 더보기 라벨 숨김.
+            self.seeMoreImageButton.isHidden = true // 더보기 버튼 숨김.
+        }
+        
+        
         
     }
 
-    func failedToGetBeerReviewInfo(message: String, code: Int) { // 오류메시지 & code번호 몇인지
-        print("서버 Request 실패...")
+    // MARK: - 리뷰 없을 때,
+    func failedToGetBeerReviewInfo(message: String, code: Int) { // 해당 상품에 관한 리뷰가 없을 때
+        print("리뷰 정보 GET 실패...")
         print("실패 이유 : \(message)")
         print("오류 코드 : \(code)")
+        
+        // TODO: - 나머지 view들 다 없애는 코드 계속 추가 필요함.
+        reviewStaticsBackground.removeFromSuperview() // 리뷰 상태 삭제.
+        allImageStackView.removeFromSuperview() // 이미지뷰 4개 담은 스택뷰 삭제.
+        seeMoreImageLabel.removeFromSuperview() // 더보기 라벨 삭제.
+        seeMoreImageButton.removeFromSuperview() // 더보기 버튼 삭제.
+        
+        
+        noReviewLabel.isHidden = false // 리뷰 없을 때 안내 문구 보이게.
+        noReviewButton.isHidden = false // 리뷰 없을 때 안내 버튼 보이게.
+        noReviewButton.isUserInteractionEnabled = true
         
         if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
 //            showAlert(title: message, message: "")

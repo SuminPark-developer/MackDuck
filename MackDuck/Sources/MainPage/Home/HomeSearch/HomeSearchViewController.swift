@@ -614,16 +614,13 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if tableView == searchResultTableView {
             print(SearchResultList[indexPath.row].beerNameKr)
-            // 맥주 상세 설명 페이지로 연결.
-            let beerDetail = UIStoryboard(name: "HomeStoryboard", bundle: nil)
-            let beerDetailVC = beerDetail.instantiateViewController(withIdentifier: "BeerDetailVC") as! BeerDetailViewController
-            beerDetailVC.beerId = SearchResultList[indexPath.row].beerId // (맥주 intro VC에) beerId 전달.
-            beerDetailVC.modalPresentationStyle = .fullScreen
             
             BeerData.details.beerId = SearchResultList[indexPath.row].beerId // 맥주 beerId 저장. -> 맛향 VC에서 사용함.
             
-            self.present(beerDetailVC, animated: true, completion: nil)
-            
+            // 맥주 상세 설명 페이지로 연결.
+            let beerDetailVC = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVC")) as! BeerDetailViewController
+            beerDetailVC.beerId = SearchResultList[indexPath.row].beerId
+            self.navigationController?.pushViewController(beerDetailVC, animated: true)
         }
         
     }

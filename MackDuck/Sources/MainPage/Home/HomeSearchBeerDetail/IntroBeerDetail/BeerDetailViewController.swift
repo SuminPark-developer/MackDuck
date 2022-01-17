@@ -12,7 +12,6 @@ class BeerDetailViewController: UIViewController {
     var introBeerDetailDataManager: IntroBeerDetailDataManager = IntroBeerDetailDataManager() // 맥주 디테일 정보 가져오는 dataManager
     var beerId: Int = 0
     
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var scrollViewBackground: UIView! // scrollView의 View
     // 맥주 정보
     @IBOutlet weak var beerImage: UIImageView! // 맥주 이미지뷰
@@ -39,9 +38,13 @@ class BeerDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = .mainBlack
-        self.navBar.backgroundColor = .mainBlack
-        self.navBar.barTintColor = .mainBlack
-        self.navBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
+//        self.navBar.backgroundColor = .mainBlack
+//        self.navBar.barTintColor = .mainBlack
+//        self.navBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
+        self.navigationController?.navigationBar.backgroundColor = .mainBlack // 이걸 해줘야 네비게이션바 색 바뀌는듯.
+        self.navigationController?.navigationBar.barTintColor = .mainBlack // 상단 네비게이션 바 색상 변경
+        self.navigationController?.navigationBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
+        
         scrollViewBackground.backgroundColor = .mainBlack
         
         segmentedControl.addUnderlineForSelectedSegment() // segmentedControl 설정하는 메소드 호출(1)
@@ -55,14 +58,16 @@ class BeerDetailViewController: UIViewController {
     }
     
     @IBAction func clickHomeButton(_ sender: UIBarButtonItem) { // 홈 버튼 클릭 시,
-        let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
-        let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")
-        goHomeVC.modalPresentationStyle = .fullScreen
-        self.present(goHomeVC, animated: true, completion: nil)
+//        let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
+//        let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")
+//        goHomeVC.modalPresentationStyle = .fullScreen
+//        self.present(goHomeVC, animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBAction func clickSearchButton(_ sender: UIBarButtonItem) { // 검색 버튼 클릭 시,
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
  
     @IBAction func switchViews(_ sender: UISegmentedControl) { // 세그먼트 클릭 시, 뷰 변경.
