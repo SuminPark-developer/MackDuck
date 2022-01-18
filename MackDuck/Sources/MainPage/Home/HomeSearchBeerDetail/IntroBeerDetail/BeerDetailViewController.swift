@@ -57,6 +57,12 @@ class BeerDetailViewController: UIViewController {
         self.introBeerDetailDataManager.getBeerDetailInfo(beerId: beerId, delegate: self) // 맥주정보 가져오는 api 호출.
     }
     
+    
+    @IBAction func clickWriteReviewButton(_ sender: UIButton) { // 리뷰쓰기 버튼 클릭 시,
+        print("리뷰쓰기 버튼 클릭됨. (플로팅)")
+        // TODO: - 리뷰쓰기 페이지 연결 작업 필요.
+    }
+    
     @IBAction func clickHomeButton(_ sender: UIBarButtonItem) { // 홈 버튼 클릭 시,
 //        let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)
 //        let goHomeVC = goHome.instantiateViewController(withIdentifier: "MainPageTabBarController")

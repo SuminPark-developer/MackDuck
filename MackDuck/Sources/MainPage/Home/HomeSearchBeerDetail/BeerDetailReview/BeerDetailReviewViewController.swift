@@ -115,14 +115,10 @@ class BeerDetailReviewViewController: UIViewController {
     }
     
     @IBAction func clickMoreImageButton(_ sender: UIButton) { // 더보기 버튼 클릭 시,
-        print("더보기 버튼 클릭")
-        
-        // TODO: - reviewIamgeList가 4개일 때에만 더보기view 생성 및 api 연결.
-        
+        print("더보기 버튼 클릭.")
         let seeReviewMoreImageVC = (self.storyboard?.instantiateViewController(withIdentifier: "SeeReviewMoreImageVC"))
         self.navigationController?.pushViewController(seeReviewMoreImageVC!, animated: true)
     }
-    
     
 
 }
