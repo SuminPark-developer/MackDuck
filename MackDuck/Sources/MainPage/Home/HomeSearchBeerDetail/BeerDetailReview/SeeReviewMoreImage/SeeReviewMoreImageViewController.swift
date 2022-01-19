@@ -11,6 +11,9 @@ class SeeReviewMoreImageViewController: UIViewController {
 
     var seeReviewMoreImageDataManager: SeeReviewMoreImageDataManager = SeeReviewMoreImageDataManager() // 더보기버튼 - 모든 이미지정보 가져오는 dataManager
     var imageResult: [SeeReviewMoreImageResult] = [] // 이미지 string 저장해놓을 배열 선언.
+    var isFirstTime: Bool = true // 첫번째일때만 전체count 저장할 변수 선언.
+    var isLoading: Bool = false // 컬렉션뷰 인디케이터에 쓰임.
+    var loadingView: LoadingReusableView? // 인디케이터 있는 뷰.(CollectionReusableView)
     
     @IBOutlet weak var navigationBarItem: UINavigationItem! // 상단 네비게이션바 아이템
     @IBOutlet weak var imageCollectionView: UICollectionView! // 이미지 컬렉션뷰
@@ -27,13 +30,10 @@ class SeeReviewMoreImageViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .mainBlack // 상단 네비게이션 바 색상 변경
         self.navigationController?.navigationBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
         
-        
-//        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
-//        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-12)/3, height: UIScreen.main.bounds.width/3)
-//        layout.minimumInteritemSpacing = 6
-//        layout.minimumLineSpacing = 0
-//        imageCollectionView!.collectionViewLayout = layout
+        // Register Loading Reuseable View
+        let loadingReusableNib = UINib(nibName: "LoadingReusableView", bundle: nil)
+        imageCollectionView.register(loadingReusableNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "loadingreusableviewid")
+
         
         imageCollectionView.register(SeeReviewMoreImageCollectionViewCell.nib(), forCellWithReuseIdentifier: SeeReviewMoreImageCollectionViewCell.identifier) // 이미지 컬렉션뷰
         imageCollectionView.delegate = self
@@ -47,6 +47,8 @@ class SeeReviewMoreImageViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        imageResult = [] // 콜렉션 뷰 초기화.
+        BeerData.details.rowNumber = "0" // 페이지 입장시 rowNumber값 초기화.
         self.seeReviewMoreImageDataManager.getBeerReviewImageInfo(rowNumber: BeerData.details.rowNumber, beerId: BeerData.details.beerId, delegate: self) // 모든 이미지정보 가져오는 api 호출.
     }
     
@@ -66,14 +68,24 @@ extension SeeReviewMoreImageViewController {
         print("response 내용 : \(result)")
         
         // api 데이터 가져온거로 모든 이미지(컬렉션뷰) ui 구성.
-       
-        imageResult = [] // 콜렉션 뷰 초기화
         imageCollectionView?.reloadData()
-        imageResult = result.result // 모든 이미지 배열에 저장.
         
-//        print("################# 값 변경 전 : \(BeerData.details.rowNumber)#####################")
-//        BeerData.details.rowNumber = result.result[0].rowNumber
-//        print("################# 값 변경 후 : \(BeerData.details.rowNumber)#####################")
+        if isFirstTime == true { // 이 화면에 들어온지 처음이라면,
+            BeerData.details.seeReviewMoreImageCount = result.result.count // 서버에 있는 모든 리뷰 이미지의 개수를 저장해 놓음.
+            isFirstTime = false // 이유: 맨 마지막 이미지에 도달했을 때, (imageResult데이터 개수 = 전체 개수)와 같다면 더이상 로딩할 필요 없으니깐.
+        }
+        
+        var count: Int = 0
+        for data in result.result { // 모든 이미지 배열 중 30개씩만 저장.
+            imageResult.append(data)
+            count = count + 1
+            if count == 30 { // 30개 저장하면 break 하고, 스크롤 다 하면 또 불러와서 보여줌.
+                count = 0
+                break
+            }
+        }
+        
+        BeerData.details.rowNumber = imageResult.last!.rowNumber // 배열의 마지막 rowNumber를 저장.(인덱싱을 위해)
         
         
     }
@@ -129,5 +141,71 @@ extension SeeReviewMoreImageViewController: UICollectionViewDelegate, UICollecti
         return CGSize(width: UIScreen.main.bounds.width/3-3, height: UIScreen.main.bounds.width/3) // 각 cell 3만큼 공백 줌.
     }
     
+
+    // 컬렉션뷰 footer(인디케이터) 사이즈 설정.
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if self.isLoading == true || imageResult.count == BeerData.details.seeReviewMoreImageCount { // 로딩중이거나 || 서버의 모든 이미지 다 불러왔다면,
+            return CGSize.zero // 로딩하면 안됨.
+        } else {
+            return CGSize(width: collectionView.bounds.size.width, height: 55)
+        }
+    }
+    // footer(인디케이터) 배경색 등 상세 설정.
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionFooter {
+            let aFooterView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "loadingreusableviewid", for: indexPath) as! LoadingReusableView
+            loadingView = aFooterView
+            loadingView?.backgroundColor = UIColor.clear
+            return aFooterView
+        }
+        return UICollectionReusableView()
+    }
+    
+    // 인디케이터 로딩 애니메이션 시작. (footer appears)
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            if self.isLoading {
+                self.loadingView?.activityIndicator.startAnimating()
+            } else {
+                self.loadingView?.activityIndicator.stopAnimating()
+            }
+        }
+    }
+    // 인디케이터 로딩 애니메이션 끝. (footer disappears)
+    func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            self.loadingView?.activityIndicator.stopAnimating()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if imageResult.count == BeerData.details.seeReviewMoreImageCount { // 서버의 모든 이미지 다 불러왔다면,
+            print("더 이상 로딩하면 X.") //  더이상 로딩하면 안됨.
+        }
+        else { // 서버의 모든 이미지를 다 불러온 게 아닌 상황이고,
+            if indexPath.row == imageResult.count-1 && self.isLoading == false { // 사용자 스크롤이 마지막 index면서 로딩중이 아닐 때,
+                loadMoreData()
+                print("로딩 more Data.")
+            }
+        }
+        
+    }
+
+    func loadMoreData() {
+        if !self.isLoading {
+            self.isLoading = true
+            DispatchQueue.global().async {
+                // Fake background loading task for 2 seconds
+                sleep(2)
+                // Download more data here
+                DispatchQueue.main.async {
+                    self.seeReviewMoreImageDataManager.getBeerReviewImageInfo(rowNumber: BeerData.details.rowNumber, beerId: BeerData.details.beerId, delegate: self) // 모든 이미지정보 가져오는 api 호출.
+                    
+//                    self.imageCollectionView.reloadData()
+                    self.isLoading = false
+                }
+            }
+        }
+    }
     
 }

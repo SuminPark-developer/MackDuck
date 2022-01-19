@@ -32,6 +32,8 @@
 		7441F4A127846378005265EA /* SendBeerInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F4A027846378005265EA /* SendBeerInfoRequest.swift */; };
 		7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */; };
 		7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */; };
+		745238342797E23B007FE846 /* LoadingReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745238322797E23B007FE846 /* LoadingReusableView.swift */; };
+		745238352797E23B007FE846 /* LoadingReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 745238332797E23B007FE846 /* LoadingReusableView.xib */; };
 		74541BCD2785B7B20073749A /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74541BCC2785B7B20073749A /* BeerDetailViewController.swift */; };
 		745D624027906D7500F9FDD1 /* BeerDetailReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D623F27906D7500F9FDD1 /* BeerDetailReviewResponse.swift */; };
 		745D624227906D9000F9FDD1 /* BeerDetailReviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D624127906D9000F9FDD1 /* BeerDetailReviewDataManager.swift */; };
@@ -119,6 +121,8 @@
 		7441F4A027846378005265EA /* SendBeerInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoRequest.swift; sourceTree = "<group>"; };
 		7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorViewController.swift; sourceTree = "<group>"; };
 		7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		745238322797E23B007FE846 /* LoadingReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingReusableView.swift; sourceTree = "<group>"; };
+		745238332797E23B007FE846 /* LoadingReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingReusableView.xib; sourceTree = "<group>"; };
 		74541BCC2785B7B20073749A /* BeerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
 		745D623F27906D7500F9FDD1 /* BeerDetailReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailReviewResponse.swift; sourceTree = "<group>"; };
 		745D624127906D9000F9FDD1 /* BeerDetailReviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailReviewDataManager.swift; sourceTree = "<group>"; };
@@ -348,6 +352,15 @@
 			path = SendBeerInfoEntity;
 			sourceTree = "<group>";
 		};
+		7452382D2797DF51007FE846 /* CollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				745238332797E23B007FE846 /* LoadingReusableView.xib */,
+				745238322797E23B007FE846 /* LoadingReusableView.swift */,
+			);
+			path = CollectionReusableView;
+			sourceTree = "<group>";
+		};
 		74541BCB2785B6D90073749A /* HomeSearchBeerDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +469,7 @@
 			children = (
 				749671A627968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.xib */,
 				749671A527968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.swift */,
+				7452382D2797DF51007FE846 /* CollectionReusableView */,
 			);
 			path = "More Image Collection Cell";
 			sourceTree = "<group>";
@@ -707,6 +721,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745238352797E23B007FE846 /* LoadingReusableView.xib in Resources */,
 				74C1B60C2742671600AFD7BF /* LaunchScreen.storyboard in Resources */,
 				743031F32742A25E00B7657B /* GmarketSansBold.otf in Resources */,
 				74E730022743B4AF00697460 /* MainPageStoryboard.storyboard in Resources */,
@@ -778,6 +793,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				745238342797E23B007FE846 /* LoadingReusableView.swift in Sources */,
 				7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */,
 				743031FF2742B8EB00B7657B /* LoginHowToCallViewController.swift in Sources */,
 				743031E3274281AB00B7657B /* LoginViewController.swift in Sources */,

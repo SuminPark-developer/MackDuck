@@ -14,4 +14,5 @@ struct BeerData {
     
     var beerId: Int = 0 // 맛향 VC(BeerDetailTasteViewController)에서 사용함.
     var rowNumber: String = "" // 리뷰탭 VC에서 사용함.
+    var seeReviewMoreImageCount: Int = 0
 }
