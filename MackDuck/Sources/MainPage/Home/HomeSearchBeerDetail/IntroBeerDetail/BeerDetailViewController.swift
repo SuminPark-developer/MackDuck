@@ -12,6 +12,7 @@ class BeerDetailViewController: UIViewController {
     var introBeerDetailDataManager: IntroBeerDetailDataManager = IntroBeerDetailDataManager() // 맥주 디테일 정보 가져오는 dataManager
     var beerId: Int = 0
     
+    @IBOutlet weak var scrollView: UIScrollView! // scrollView
     @IBOutlet weak var scrollViewBackground: UIView! // scrollView의 View
     // 맥주 정보
     @IBOutlet weak var beerImage: UIImageView! // 맥주 이미지뷰
@@ -46,6 +47,7 @@ class BeerDetailViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false // 상단 네비게이션 바 반투명 제거
         
         scrollViewBackground.backgroundColor = .mainBlack
+//        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
         
         segmentedControl.addUnderlineForSelectedSegment() // segmentedControl 설정하는 메소드 호출(1)
         

@@ -24,6 +24,7 @@ class BeerDetailReviewViewController: UIViewController {
     @IBOutlet weak var seeMoreImageButton: UIButton! // 더보기 버튼.
     @IBOutlet weak var seeMoreImageLabel: UILabel! // 더보기 라벨.
     @IBOutlet weak var introReviewTableView: UITableView! // 리뷰(6개) 테이블뷰
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
     var scorePoints: [String] = ["5점", "4점", "3점", "2점", "1점"]
     var reviewCount: [Int] = [0, 0, 0, 0, 0]
@@ -44,6 +45,8 @@ class BeerDetailReviewViewController: UIViewController {
         barChartView.noDataFont = UIFont(name: "NotoSansKR-Bold", size: 24)!
         barChartView.noDataTextColor = .mainGray
         
+//        introReviewTableView.rowHeight = UITableView.automaticDimension
+        
         introReviewTableView.delegate = self
         introReviewTableView.dataSource = self
         
@@ -51,6 +54,9 @@ class BeerDetailReviewViewController: UIViewController {
         
         introReviewTableView.register(IntroReviewTableViewCell.nib(), forCellReuseIdentifier: IntroReviewTableViewCell.identifier) // 리뷰테이블뷰 cell 등록.
         
+//        self.tableViewHeight.constant = self.introReviewTableView.contentSize.height
+//        print("#############\(self.introReviewTableView.contentSize)")
+        self.tableViewHeight.constant = 1800
         
         
         
@@ -60,6 +66,7 @@ class BeerDetailReviewViewController: UIViewController {
         super.viewWillAppear(animated)
         self.beerDetailReviewDataManager.getBeerReviewInfo(rowNumber: BeerData.details.rowNumber, beerId: BeerData.details.beerId, delegate: self) // 맥주 리뷰 정보(6개) 가져오는 api 호출.
     }
+    
     
     @IBAction func clickNoReviewWriteButton(_ sender: UIButton) { // 리뷰 없을 때 - 첫 리뷰 남기는 버튼 클릭 시,
         print("리뷰 작성 버튼 클릭.")
@@ -269,9 +276,6 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
         cell.reviewName.text = introReviewModel.nickname // ex) 박수민
         cell.reviewUserInfo.text = "\(introReviewModel.age)/\(introReviewModel.gender)/\(beerKindString)"
         
-        print(introReviewModel.nickname)
-        print("\(introReviewModel.age)/\(introReviewModel.gender)/\(beerKindString)")
-        
 //        if introReviewModel.userCheck == "Y" { // 본인의 리뷰라면,
 //            cell.reviewTripleDot.isHidden = false // (우측상단) 점 3개 보이게.
 //            cell.reviewReportButton.isHidden = true // (우측중단) 신고하기 버튼 안보이게.
@@ -283,8 +287,6 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
         
         cell.starScore.text = String(introReviewModel.score) // ex) 4(리뷰 점수)
         
-        print(String(introReviewModel.score))
-        
         // 소수점 score를 정수로 바꾸고 그 점수까지 스타 yellow이미지로 바꾸게 함. - 여기선 score가 이미 Int라서 안해도 되긴 함.
         let score: Int = Int(floor(Double(introReviewModel.score)))
         for i in 0..<score {
@@ -292,8 +294,7 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
         }
         
         cell.reviewDescription.text = introReviewModel.description // 리뷰 내용 - ex) 생각보다 에일의 쓴맛이 덜합니다 ...
-        
-        print(introReviewModel.description)
+        cell.reviewDate.text = introReviewModel.updatedAt // 날짜 - 2022.03.06
         
         cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
         
@@ -319,9 +320,9 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        if tableView == introReviewTableView {
-        return 500
+        return 300
 //        }
-//        return 0
+//        return tableView.rowHeight
     }
     
 }

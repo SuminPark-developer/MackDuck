@@ -44,7 +44,7 @@ class IntroReviewTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -53,4 +53,7 @@ class IntroReviewTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func clickLikeButton(_ sender: UIButton) {
+        print("도움이 됐어요 클릭.")
+    }
 }
