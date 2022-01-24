@@ -618,9 +618,16 @@ extension HomeSearchViewController: UITableViewDataSource, UITableViewDelegate {
             BeerData.details.beerId = SearchResultList[indexPath.row].beerId // 맥주 beerId 저장. -> 맛향 VC에서 사용함.
             
             // 맥주 상세 설명 페이지로 연결.
-            let beerDetailVC = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVC")) as! BeerDetailViewController
-            beerDetailVC.beerId = SearchResultList[indexPath.row].beerId
-            self.navigationController?.pushViewController(beerDetailVC, animated: true)
+//            let beerDetailVC = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVC")) as! BeerDetailViewController
+//            beerDetailVC.beerId = SearchResultList[indexPath.row].beerId
+//            self.navigationController?.pushViewController(beerDetailVC, animated: true)
+
+            // 맥주 상세 설명 페이지 Example로 연결.
+            let beerDetailVCExample = (self.storyboard?.instantiateViewController(withIdentifier: "BeerDetailVCExample")) as! BeerDetailViewControllerExample
+            beerDetailVCExample.beerId = SearchResultList[indexPath.row].beerId
+            self.navigationController?.pushViewController(beerDetailVCExample, animated: true)
+            
+            
         }
         
     }

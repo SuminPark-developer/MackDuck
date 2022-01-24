@@ -14,7 +14,7 @@ import Alamofire
 
 class IntroBeerDetailDataManager {
     // 맥주디테일정보 서버에서 GET하는 함수.
-    func getBeerDetailInfo(beerId: Int, delegate: BeerDetailViewController) {
+    func getBeerDetailInfo(beerId: Int, delegate: BeerDetailViewControllerExample) {
         let pathVariable: String = String(beerId) // pathVariable - https://stackoverflow.com/questions/63041566/alamofire-add-path-variable-to-url
         
         AF.request("\(Constant.BASE_URL)/beers/\(pathVariable)", method: .get, parameters: nil, encoding: URLEncoding.queryString, headers: headers)

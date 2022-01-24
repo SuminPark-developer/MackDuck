@@ -32,6 +32,7 @@
 		7441F4A127846378005265EA /* SendBeerInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F4A027846378005265EA /* SendBeerInfoRequest.swift */; };
 		7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */; };
 		7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */; };
+		74490CD6279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74490CD5279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift */; };
 		745238342797E23B007FE846 /* LoadingReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745238322797E23B007FE846 /* LoadingReusableView.swift */; };
 		745238352797E23B007FE846 /* LoadingReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 745238332797E23B007FE846 /* LoadingReusableView.xib */; };
 		74541BCD2785B7B20073749A /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74541BCC2785B7B20073749A /* BeerDetailViewController.swift */; };
@@ -39,7 +40,6 @@
 		745D624227906D9000F9FDD1 /* BeerDetailReviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745D624127906D9000F9FDD1 /* BeerDetailReviewDataManager.swift */; };
 		746C376D2799626100ABAA58 /* IntroReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C376C2799626100ABAA58 /* IntroReviewModel.swift */; };
 		746C37702799629300ABAA58 /* IntroReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746C376E2799629300ABAA58 /* IntroReviewTableViewCell.swift */; };
-		746C37712799629400ABAA58 /* IntroReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 746C376F2799629300ABAA58 /* IntroReviewTableViewCell.xib */; };
 		747561B92743E4D20015BFC9 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561B82743E4D20015BFC9 /* UITextField.swift */; };
 		747561BE2744D6760015BFC9 /* NicknameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561BD2744D6760015BFC9 /* NicknameDataManager.swift */; };
 		747561C22744D6910015BFC9 /* NicknameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747561C12744D6910015BFC9 /* NicknameResponse.swift */; };
@@ -124,6 +124,7 @@
 		7441F4A027846378005265EA /* SendBeerInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoRequest.swift; sourceTree = "<group>"; };
 		7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorViewController.swift; sourceTree = "<group>"; };
 		7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		74490CD5279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewControllerExample.swift; sourceTree = "<group>"; };
 		745238322797E23B007FE846 /* LoadingReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingReusableView.swift; sourceTree = "<group>"; };
 		745238332797E23B007FE846 /* LoadingReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingReusableView.xib; sourceTree = "<group>"; };
 		74541BCC2785B7B20073749A /* BeerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 		745D624127906D9000F9FDD1 /* BeerDetailReviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailReviewDataManager.swift; sourceTree = "<group>"; };
 		746C376C2799626100ABAA58 /* IntroReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroReviewModel.swift; sourceTree = "<group>"; };
 		746C376E2799629300ABAA58 /* IntroReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroReviewTableViewCell.swift; sourceTree = "<group>"; };
-		746C376F2799629300ABAA58 /* IntroReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroReviewTableViewCell.xib; sourceTree = "<group>"; };
 		747561B82743E4D20015BFC9 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		747561BD2744D6760015BFC9 /* NicknameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameDataManager.swift; sourceTree = "<group>"; };
 		747561C12744D6910015BFC9 /* NicknameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameResponse.swift; sourceTree = "<group>"; };
@@ -383,7 +383,6 @@
 			children = (
 				746C376C2799626100ABAA58 /* IntroReviewModel.swift */,
 				746C376E2799629300ABAA58 /* IntroReviewTableViewCell.swift */,
-				746C376F2799629300ABAA58 /* IntroReviewTableViewCell.xib */,
 			);
 			name = "Table Cell Intro Review";
 			path = BeerDetailReviewEntity;
@@ -439,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				74541BCC2785B7B20073749A /* BeerDetailViewController.swift */,
+				74490CD5279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift */,
 				74F0B4352786DCC700ED9B61 /* IntroBeerDetailEntity */,
 			);
 			path = IntroBeerDetail;
@@ -743,7 +743,6 @@
 				74C1B60C2742671600AFD7BF /* LaunchScreen.storyboard in Resources */,
 				743031F32742A25E00B7657B /* GmarketSansBold.otf in Resources */,
 				74E730022743B4AF00697460 /* MainPageStoryboard.storyboard in Resources */,
-				746C37712799629400ABAA58 /* IntroReviewTableViewCell.xib in Resources */,
 				743031FC2742A26900B7657B /* NotoSansKR-Medium.otf in Resources */,
 				743031F92742A26900B7657B /* Montserrat-Regular.ttf in Resources */,
 				749800942769CC6A008284DC /* SearchResultTableViewCell.xib in Resources */,
@@ -849,6 +848,7 @@
 				743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */,
 				74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */,
 				742E6467274BF1A900F6B72A /* HomeSearchViewController.swift in Sources */,
+				74490CD6279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift in Sources */,
 				74C1B61C27426F7E00AFD7BF /* String.swift in Sources */,
 				749800902769CC3F008284DC /* SearchResultModel.swift in Sources */,
 				74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */,

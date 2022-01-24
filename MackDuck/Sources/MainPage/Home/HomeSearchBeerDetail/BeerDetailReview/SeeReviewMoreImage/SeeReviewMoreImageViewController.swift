@@ -48,8 +48,8 @@ class SeeReviewMoreImageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         imageResult = [] // 콜렉션 뷰 초기화.
-        BeerData.details.rowNumber = "0" // 페이지 입장시 rowNumber값 초기화.
-        self.seeReviewMoreImageDataManager.getBeerReviewImageInfo(rowNumber: BeerData.details.rowNumber, beerId: BeerData.details.beerId, delegate: self) // 모든 이미지정보 가져오는 api 호출.
+        BeerData.details.seeReviewMoreImageRowNumber = "0" // 페이지 입장시 rowNumber값 초기화.
+        self.seeReviewMoreImageDataManager.getBeerReviewImageInfo(rowNumber: BeerData.details.seeReviewMoreImageRowNumber, beerId: BeerData.details.beerId, delegate: self) // 모든 이미지정보 가져오는 api 호출.
     }
     
     @IBAction func clickBackButton(_ sender: UIBarButtonItem) {
@@ -85,7 +85,7 @@ extension SeeReviewMoreImageViewController {
             }
         }
         
-        BeerData.details.rowNumber = imageResult.last!.rowNumber // 배열의 마지막 rowNumber를 저장.(인덱싱을 위해)
+        BeerData.details.seeReviewMoreImageRowNumber = imageResult.last!.rowNumber // 배열의 마지막 rowNumber를 저장.(인덱싱을 위해)
         
         
     }
@@ -199,7 +199,7 @@ extension SeeReviewMoreImageViewController: UICollectionViewDelegate, UICollecti
                 sleep(2)
                 // Download more data here
                 DispatchQueue.main.async {
-                    self.seeReviewMoreImageDataManager.getBeerReviewImageInfo(rowNumber: BeerData.details.rowNumber, beerId: BeerData.details.beerId, delegate: self) // 모든 이미지정보 가져오는 api 호출.
+                    self.seeReviewMoreImageDataManager.getBeerReviewImageInfo(rowNumber: BeerData.details.seeReviewMoreImageRowNumber, beerId: BeerData.details.beerId, delegate: self) // 모든 이미지정보 가져오는 api 호출.
                     
 //                    self.imageCollectionView.reloadData()
                     self.isLoading = false

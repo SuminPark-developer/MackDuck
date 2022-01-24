@@ -10,7 +10,7 @@ import UIKit
 class IntroReviewTableViewCell: UITableViewCell {
 
     static let identifier = "IntroReviewTableViewCell"
-
+    // MARK: - BeerDetailViewControllerExample에 있는 테이블뷰의 Prototype Cell과 연결됨. - https://www.youtube.com/watch?v=l2Ld-EA9FAU
     @IBOutlet weak var reviewName: UILabel! // 박수민
     @IBOutlet weak var reviewTripleDot: UIButton! // 우측상단 점3개 버튼.
     @IBOutlet weak var reviewUserInfo: UILabel! // 나이/성별/필스너
@@ -33,10 +33,10 @@ class IntroReviewTableViewCell: UITableViewCell {
         }
     }
     
-    override func layoutSubviews() { // tableView cell 간 간격 설정 - https://ios-development.tistory.com/655
-        super.layoutSubviews()
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
-    }
+//    override func layoutSubviews() { // tableView cell 간 간격 설정 - https://ios-development.tistory.com/655
+//        super.layoutSubviews()
+//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
+//    }
     
     static func nib() -> UINib {
         return UINib(nibName: "IntroReviewTableViewCell", bundle: nil)
@@ -54,6 +54,20 @@ class IntroReviewTableViewCell: UITableViewCell {
     }
     
     @IBAction func clickLikeButton(_ sender: UIButton) {
+        // TODO: - 도움이 됐어요 api 작업 필요.
+        // TODO: - 글자 증가 작업 필요.
         print("도움이 됐어요 클릭.")
+    }
+    
+    @IBAction func clickTripleDot(_ sender: UIButton) {
+        // TODO: - 점3개 api 작업 필요.
+        print("점3개 클릭.")
+
+    }
+    
+    @IBAction func clickReportButton(_ sender: UIButton) {
+        // TODO: - 신고버튼 api 작업 필요.
+        print("신고버튼 클릭.")
+
     }
 }
