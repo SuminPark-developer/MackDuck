@@ -25,6 +25,7 @@ class BeerDetailReviewViewController: UIViewController {
     @IBOutlet weak var seeMoreImageLabel: UILabel! // 더보기 라벨.
     @IBOutlet weak var introReviewTableView: UITableView! // 리뷰(6개) 테이블뷰
 //    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var seeAllReviewButton: UIButton! // (최하단) 리뷰 전체보기 버튼
     
     var scorePoints: [String] = ["5점", "4점", "3점", "2점", "1점"]
     var reviewCount: [Int] = [0, 0, 0, 0, 0]
@@ -33,6 +34,7 @@ class BeerDetailReviewViewController: UIViewController {
     
     @IBOutlet weak var reviewCountLabel: UILabel! // 리뷰 개수 라벨.
     @IBOutlet weak var barChartView: BarChartView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +55,6 @@ class BeerDetailReviewViewController: UIViewController {
 //        introReviewTableView.separatorStyle = .none // 리뷰테이블뷰 밑줄 없애기
         
 //        introReviewTableView.register(IntroReviewTableViewCell.nib(), forCellReuseIdentifier: IntroReviewTableViewCell.identifier) // 리뷰테이블뷰 cell 등록.
-        
-//        self.tableViewHeight.constant = self.introReviewTableView.contentSize.height
-//        print("#############\(self.introReviewTableView.contentSize)")
-//        self.tableViewHeight.constant = 1200
-//        self.tableViewHeight.constant = CGFloat(Double(6) * 250)
         
         
         
@@ -142,7 +139,12 @@ class BeerDetailReviewViewController: UIViewController {
         self.navigationController?.pushViewController(seeReviewMoreImageVC!, animated: true)
     }
     
-
+    
+    @IBAction func clickAllReviewButton(_ sender: UIButton) {
+        // TODO: - 리뷰 전체보기 화면 연결 필요.
+        print("리뷰 전체보기 버튼 클릭.")
+    }
+    
 }
 
 // MARK: - 맥주 리뷰 정보(6개) GET Api
@@ -210,13 +212,19 @@ extension BeerDetailReviewViewController {
             print(test.description)
         }
         
-        
+        // (최하단) 리뷰 전체보기 버튼 꾸미기
+        let reviewCountText = String(result.result.reviewStatics.reviewCount)
+        let text: String = "리뷰 \(reviewCountText)개 전체보기    ▼"
+        let attributeString = NSMutableAttributedString(string: text)
+        let font = UIFont(name: "NotoSansKR-Bold", size: 14)
+        attributeString.addAttribute(.font, value: font!, range: (text as NSString).range(of: "\(reviewCountText)"))
+        seeAllReviewButton.setAttributedTitle(attributeString, for: .normal)
         
     }
 
     // MARK: - 리뷰 없을 때,
     func failedToGetBeerReviewInfo(message: String, code: Int) { // 해당 상품에 관한 리뷰가 없을 때
-        print("리뷰 정보 GET 실패...")
+        print("리뷰가 없음 - 리뷰 GET 실패...")
         print("실패 이유 : \(message)")
         print("오류 코드 : \(code)")
         
@@ -225,7 +233,8 @@ extension BeerDetailReviewViewController {
         allImageStackView.removeFromSuperview() // 이미지뷰 4개 담은 스택뷰 삭제.
         seeMoreImageLabel.removeFromSuperview() // 더보기 라벨 삭제.
         seeMoreImageButton.removeFromSuperview() // 더보기 버튼 삭제.
-        
+        introReviewTableView.removeFromSuperview() // 리뷰(최대6개) 테이블뷰 삭제.
+        seeAllReviewButton.removeFromSuperview() // 리뷰 0개 전체보기 버튼 삭제.
         
         noReviewLabel.isHidden = false // 리뷰 없을 때 안내 문구 보이게.
         noReviewButton.isHidden = false // 리뷰 없을 때 안내 버튼 보이게.
@@ -245,7 +254,6 @@ extension BeerDetailReviewViewController {
 extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("리뷰 개수 테스트 : \(introReviewList.count)")
-        print("리뷰 개수 테스트 : \(BeerData.details.introReviewCount)")
         return introReviewList.count // 리뷰 개수(최대6개)만큼
     }
     
@@ -259,7 +267,12 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IntroReviewTableViewCell
         let introReviewModel: IntroReviewModel = introReviewList[indexPath.row]
 
-
+        BeerData.details.introReviewModel = introReviewModel // (테스트) 저장.
+        cell.configure(with: introReviewModel) // 리뷰안에 있는 컬렉션뷰에 데이터 전달.
+//        cell.reviewCollectionView.reloadData() // 추가
+        
+//        print("#########\(indexPath.row) : \(introReviewModel.reviewImgUrlList)###############")
+        
         // TODO: - 이미지쪽은 컬렉션뷰로 작업해줘야 함. (introReviewModel.reviewImgUrlList.count가 0이면 컬렉션뷰 숨김. / 아니면 작업들어감.)
 //            let url = URL(string: introReviewModel.reviewImgUrlList[0].reviewImageUrl)
 
@@ -298,7 +311,6 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
 
         cell.reviewDescription.text = introReviewModel.description // 리뷰 내용 - ex) 생각보다 에일의 쓴맛이 덜합니다
         cell.reviewDate.text = introReviewModel.updatedAt // 날짜 - 2022.03.06
-        
 
         cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
 
@@ -330,4 +342,3 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
     }
     
 }
-

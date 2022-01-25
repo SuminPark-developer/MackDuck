@@ -21,7 +21,7 @@ class IntroReviewModel { // 검색결과 테이블뷰 모델
     let reviewLikeCount: Int // 리뷰 좋아요 개수
     let rowNumber: String // 페이징을 위한 rowNumber
     
-//    let beerImageUrl: String // 맥주 이미지 url
+//    let beerImageUrl: [String] // 맥주 이미지 url
     
     let reviewImgUrlList: [ReviewImgURLList] // 리뷰 이미지 배열
     

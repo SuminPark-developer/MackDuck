@@ -61,6 +61,8 @@
 		749800942769CC6A008284DC /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749800922769CC6A008284DC /* SearchResultTableViewCell.xib */; };
 		74980098276A1915008284DC /* HomeSearchResultResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74980097276A1915008284DC /* HomeSearchResultResponse.swift */; };
 		7498009A276A1925008284DC /* HomeSearchResultDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74980099276A1925008284DC /* HomeSearchResultDataManager.swift */; };
+		74A4FD3A279FECA900A91856 /* IntroReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A4FD38279FECA800A91856 /* IntroReviewCollectionViewCell.swift */; };
+		74A4FD3B279FECA900A91856 /* IntroReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74A4FD39279FECA800A91856 /* IntroReviewCollectionViewCell.xib */; };
 		74B11ED32756034D003C3E02 /* BestSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B11ED12756034D003C3E02 /* BestSearchTableViewCell.swift */; };
 		74B11ED42756034D003C3E02 /* BestSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B11ED22756034D003C3E02 /* BestSearchTableViewCell.xib */; };
 		74B791412771B67B00D31EE2 /* HomeSearchingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B791402771B67B00D31EE2 /* HomeSearchingResponse.swift */; };
@@ -153,6 +155,8 @@
 		749800922769CC6A008284DC /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		74980097276A1915008284DC /* HomeSearchResultResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultResponse.swift; sourceTree = "<group>"; };
 		74980099276A1925008284DC /* HomeSearchResultDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchResultDataManager.swift; sourceTree = "<group>"; };
+		74A4FD38279FECA800A91856 /* IntroReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		74A4FD39279FECA800A91856 /* IntroReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntroReviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		74B11ED12756034D003C3E02 /* BestSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSearchTableViewCell.swift; sourceTree = "<group>"; };
 		74B11ED22756034D003C3E02 /* BestSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestSearchTableViewCell.xib; sourceTree = "<group>"; };
 		74B791402771B67B00D31EE2 /* HomeSearchingResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchingResponse.swift; sourceTree = "<group>"; };
@@ -383,6 +387,7 @@
 			children = (
 				746C376C2799626100ABAA58 /* IntroReviewModel.swift */,
 				746C376E2799629300ABAA58 /* IntroReviewTableViewCell.swift */,
+				74A4FD37279FEC5100A91856 /* Collection Cell In Table Cell */,
 			);
 			name = "Table Cell Intro Review";
 			path = BeerDetailReviewEntity;
@@ -518,6 +523,15 @@
 				749800922769CC6A008284DC /* SearchResultTableViewCell.xib */,
 			);
 			path = "Table Cell Search Result";
+			sourceTree = "<group>";
+		};
+		74A4FD37279FEC5100A91856 /* Collection Cell In Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				74A4FD38279FECA800A91856 /* IntroReviewCollectionViewCell.swift */,
+				74A4FD39279FECA800A91856 /* IntroReviewCollectionViewCell.xib */,
+			);
+			path = "Collection Cell In Table Cell";
 			sourceTree = "<group>";
 		};
 		74B11ECC27560198003C3E02 /* Table Cell Best */ = {
@@ -745,6 +759,7 @@
 				74E730022743B4AF00697460 /* MainPageStoryboard.storyboard in Resources */,
 				743031FC2742A26900B7657B /* NotoSansKR-Medium.otf in Resources */,
 				743031F92742A26900B7657B /* Montserrat-Regular.ttf in Resources */,
+				74A4FD3B279FECA900A91856 /* IntroReviewCollectionViewCell.xib in Resources */,
 				749800942769CC6A008284DC /* SearchResultTableViewCell.xib in Resources */,
 				74EF99C7274B9C260037A166 /* MyPageStoryboard.storyboard in Resources */,
 				749671A827968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.xib in Resources */,
@@ -838,6 +853,7 @@
 				74B791482771B6F000D31EE2 /* SearchingTableViewCell.swift in Sources */,
 				747561D02745268B0015BFC9 /* PrivacySettingRequest.swift in Sources */,
 				7441F49D27844EB3005265EA /* SendBeerInfoDataManager.swift in Sources */,
+				74A4FD3A279FECA900A91856 /* IntroReviewCollectionViewCell.swift in Sources */,
 				74B791412771B67B00D31EE2 /* HomeSearchingResponse.swift in Sources */,
 				74E730042743B4C100697460 /* HomeViewController.swift in Sources */,
 				74C1B61727426F1200AFD7BF /* Constant.swift in Sources */,

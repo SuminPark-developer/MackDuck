@@ -11,6 +11,7 @@ class BeerDetailViewControllerExample: UIViewController {
 
     var introBeerDetailDataManager: IntroBeerDetailDataManager = IntroBeerDetailDataManager() // 맥주 디테일 정보 가져오는 dataManager
     var beerId: Int = 0
+    var reviewCountSave: Int = 0 // 리뷰개수 0개면, 스크롤뷰 사이즈 줄일 용도로 쓰임.
     
 //    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollViewBackground: UIView! // scrollView의 View
@@ -34,6 +35,8 @@ class BeerDetailViewControllerExample: UIViewController {
     @IBOutlet weak var tasteSmellView: UIView! // 맛/향 뷰
     @IBOutlet weak var reviewView: UIView! // 리뷰 235 뷰
     
+    @IBOutlet weak var scrollViewBackgroundHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +54,9 @@ class BeerDetailViewControllerExample: UIViewController {
         
         segmentedControl.addUnderlineForSelectedSegment() // segmentedControl 설정하는 메소드 호출(1)
         reviewView.alpha = 0.0 // 상세페이지 시작 시 리뷰페이지 가림.
+        
+        scrollViewBackgroundHeight.constant = CGFloat(Double(500) * 4) // 스크롤뷰 사이즈 - 기본.
+        
         
         
     }
@@ -86,10 +92,20 @@ class BeerDetailViewControllerExample: UIViewController {
         if sender.selectedSegmentIndex == 0 { // 맛향 탭 클릭 시, 맛향페이지 보이게 세팅. (리뷰페이지 가림)
             tasteSmellView.alpha = 1.0
             reviewView.alpha = 0.0
+            scrollViewBackgroundHeight.constant = CGFloat(Double(500) * 4) // 스크롤뷰 사이즈 - 기본.
         }
         else if sender.selectedSegmentIndex == 1 { // 리뷰 탭 클릭 시, 리뷰페이지 보이게 세팅. (맛향페이지 가림)
             tasteSmellView.alpha = 0.0
             reviewView.alpha = 1.0
+            
+            if reviewCountSave == 0 { // 리뷰개수 0개면, 스크롤뷰 사이즈 줄일 용도로 쓰임.
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3) // 스크롤뷰 사이즈 - 줄임.
+            }
+            else { // 리뷰가 있으면, 스크롤뷰 사이즈 길게.
+                scrollViewBackgroundHeight.constant = CGFloat(Double(500) * 6) // 스크롤뷰 사이즈 - 늘림.
+            }
+            
+            
         }
 
     }
@@ -138,6 +154,7 @@ extension BeerDetailViewControllerExample {
         
         segmentedControl.setTitle("리뷰 \(result.result.reviewCount)", forSegmentAt: 1) // 리뷰 개수 텍스트 세팅
         
+        reviewCountSave = result.result.reviewCount // 리뷰개수 0개면, 스크롤뷰 사이즈 줄일 용도로 쓰임.
     }
 
     func failedToGetBeerInfo(message: String, code: Int) { // 오류메시지 & code번호 몇인지
