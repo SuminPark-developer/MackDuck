@@ -55,7 +55,7 @@ class BeerDetailViewControllerExample: UIViewController {
         segmentedControl.addUnderlineForSelectedSegment() // segmentedControl 설정하는 메소드 호출(1)
         reviewView.alpha = 0.0 // 상세페이지 시작 시 리뷰페이지 가림.
         
-        scrollViewBackgroundHeight.constant = CGFloat(Double(500) * 4) // 스크롤뷰 사이즈 - 기본.
+        scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 5 - 200) // 스크롤뷰 사이즈 - 기본.
         
         
         
@@ -92,17 +92,30 @@ class BeerDetailViewControllerExample: UIViewController {
         if sender.selectedSegmentIndex == 0 { // 맛향 탭 클릭 시, 맛향페이지 보이게 세팅. (리뷰페이지 가림)
             tasteSmellView.alpha = 1.0
             reviewView.alpha = 0.0
-            scrollViewBackgroundHeight.constant = CGFloat(Double(500) * 4) // 스크롤뷰 사이즈 - 기본.
+            scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 5 - 200) // 스크롤뷰 사이즈 - 기본.
         }
         else if sender.selectedSegmentIndex == 1 { // 리뷰 탭 클릭 시, 리뷰페이지 보이게 세팅. (맛향페이지 가림)
             tasteSmellView.alpha = 0.0
             reviewView.alpha = 1.0
             
-            if reviewCountSave == 0 { // 리뷰개수 0개면, 스크롤뷰 사이즈 줄일 용도로 쓰임.
-                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3) // 스크롤뷰 사이즈 - 줄임.
-            }
-            else { // 리뷰가 있으면, 스크롤뷰 사이즈 길게.
-                scrollViewBackgroundHeight.constant = CGFloat(Double(500) * 6) // 스크롤뷰 사이즈 - 늘림.
+            // 리뷰개수에 맞게 스크롤뷰 사이즈 조절함.
+            switch reviewCountSave { // 360값은 cell의 크기 380에서 살짝 작게 설정함.
+            case 0:
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 0) // 스크롤뷰 사이즈 - 줄임.
+            case 1:
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 1) // 스크롤뷰 사이즈
+            case 2:
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 2) // 스크롤뷰 사이즈
+            case 3:
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 3) // 스크롤뷰 사이즈
+            case 4:
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 4) // 스크롤뷰 사이즈
+            case 5:
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 5) // 스크롤뷰 사이즈
+            case 6:
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 6) // 스크롤뷰 사이즈 - 늘림.
+            default:
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 5 - 200) // 스크롤뷰 사이즈 - 기본.
             }
             
             

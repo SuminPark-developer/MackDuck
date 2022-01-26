@@ -23,12 +23,9 @@ class IntroReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewCollectionView: UICollectionView! // 맥주이미지 컬렉션뷰
     @IBOutlet weak var reviewLikeButton: UIButton! // 도움이 됐어요!
     
-    var introReviewModels: IntroReviewModel? // 리뷰 안에 있는 컬렉션뷰의 이미지를 채우기 위한 데이터 전달받기 위해 선언한 변수.
+    var imageModel = [ReviewImgURLList]() // 리뷰 안에 있는 컬렉션뷰의 이미지를 채우기 위한 데이터 전달받기 위해 선언한 변수.
     
     override func prepareForReuse() { // 재사용 가능한 셀을 준비하는 메서드 - cell 중복오류 방지.
-//        reviewCollectionView = nil
-        reviewCollectionView.reloadData()
-//        reviewCollectionView.isHidden = true
         for i in 0..<starImages.count {
             starImages[i].image = UIImage(named: "searchResultStarGray.png")
         }
@@ -62,9 +59,16 @@ class IntroReviewTableViewCell: UITableViewCell {
         
     }
 
-    func configure(with introReviewModels: IntroReviewModel) { // 리뷰에 있는 컬렉션뷰
-        self.introReviewModels = introReviewModels
-//        collectionView.reloadData()
+    func configure(with introReviewModel: IntroReviewModel) { // 리뷰에 있는 컬렉션뷰
+        self.imageModel = introReviewModel.reviewImgUrlList
+        
+        reviewCollectionView.reloadData() // 컬렉션뷰 reloadData() 안해주면 cell 뒤죽박죽됨. - prepareForReuse에 있어도 되긴 함.
+        
+//        if imageModel.count == 0 { // 만약 리뷰cell의 컬렉션뷰에 들어갈 이미지가 없는 상황이라면,
+//            reviewCollectionView.isHidden = true
+//            print("!!!컬렉션뷰 숨김")
+//        }
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -97,12 +101,7 @@ extension IntroReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDa
     
     // CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if introReviewModels?.reviewImgUrlList.count == 0 { // 컬렉션뷰에 들어갈 이미지 데이터가 0개라면,
-            return 0
-        }
-        else { // 컬렉션뷰에 들어갈 이미지 데이터가 0개가 아니라면,
-            return (introReviewModels?.reviewImgUrlList.count)! // 컬렉션뷰에 들어갈 이미지 개수 반환
-        }
+        return imageModel.count // 컬렉션뷰에 들어갈 이미지 개수 반환
     }
         
     
@@ -110,8 +109,14 @@ extension IntroReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IntroReviewCollectionViewCell.identifier, for: indexPath) as! IntroReviewCollectionViewCell
 //        cell.collectionImageView.image = nil
         
-//        cell.configure(with: introReviewModels!)
-        cell.configure(with: BeerData.details.introReviewModel!)
+        cell.configure(with: imageModel[indexPath.row])
+        
+//        for imageUrl in introReviewModels!.reviewImgUrlList {
+//            print("@@@@@@@@@@@\(imageUrl.reviewImageUrl)@@@@@@@@@@@@@@@@@")
+//        }
+        
+        
+//        cell.configure(with: BeerData.details.introReviewModel!)
         
         return cell
     }

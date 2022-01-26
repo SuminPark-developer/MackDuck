@@ -31,6 +31,7 @@ class BeerDetailReviewViewController: UIViewController {
     var reviewCount: [Int] = [0, 0, 0, 0, 0]
     
     var introReviewList: [IntroReviewModel] = [] // 리뷰(6개) 데이터(모델)들
+//    var imageModel: [IntroReviewModel] = [] // 리뷰cell 컬렉션뷰 이미지 리스트 모음.
     
     @IBOutlet weak var reviewCountLabel: UILabel! // 리뷰 개수 라벨.
     @IBOutlet weak var barChartView: BarChartView!
@@ -47,7 +48,7 @@ class BeerDetailReviewViewController: UIViewController {
         barChartView.noDataFont = UIFont(name: "NotoSansKR-Bold", size: 24)!
         barChartView.noDataTextColor = .mainGray
         
-        introReviewTableView.rowHeight = UITableView.automaticDimension
+//        introReviewTableView.rowHeight = UITableView.automaticDimension
         
         introReviewTableView.delegate = self
         introReviewTableView.dataSource = self
@@ -201,8 +202,11 @@ extension BeerDetailReviewViewController {
         // 가져온 값들을 introReviewList에 데이터 넣음.
 //        DispatchQueue.main.async {
         for reviewData in result.result.reviewList {
-            self.introReviewList.append(IntroReviewModel(userCheck: reviewData.userCheck, reviewId: reviewData.reviewId, nickname: reviewData.nickname, age: reviewData.age, gender: reviewData.gender, beerKindId: reviewData.beerKindId, score: reviewData.score, updatedAt: reviewData.updatedAt, description: reviewData.description, reviewLikeCount: reviewData.reviewLikeCount, rowNumber: reviewData.rowNumber, reviewImgUrlList: reviewData.reviewImgUrlList))
+            self.introReviewList.append(IntroReviewModel(userCheck: reviewData.userCheck, reviewId: reviewData.reviewId, nickname: reviewData.nickname, age: reviewData.age, gender: reviewData.gender, beerKindId: reviewData.beerKindId, score: reviewData.score, updatedAt: reviewData.updatedAt, description: reviewData.description, reviewLikeCount: reviewData.reviewLikeCount, rowNumber: reviewData.rowNumber, reviewImgUrlList: reviewData.reviewImgUrlList)) // 리뷰 cell 정보 전체적으로 저장.
         }
+        
+//        imageModel = introReviewList // 복사
+        
         self.introReviewTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
 //        }
         
@@ -259,31 +263,11 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        
 //        let cell = tableView.dequeueReusableCell(withIdentifier: IntroReviewTableViewCell.identifier, for: indexPath) as! IntroReviewTableViewCell
-
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! IntroReviewTableViewCell
         let introReviewModel: IntroReviewModel = introReviewList[indexPath.row]
-
-        BeerData.details.introReviewModel = introReviewModel // (테스트) 저장.
+        
         cell.configure(with: introReviewModel) // 리뷰안에 있는 컬렉션뷰에 데이터 전달.
-//        cell.reviewCollectionView.reloadData() // 추가
-        
-//        print("#########\(indexPath.row) : \(introReviewModel.reviewImgUrlList)###############")
-        
-        // TODO: - 이미지쪽은 컬렉션뷰로 작업해줘야 함. (introReviewModel.reviewImgUrlList.count가 0이면 컬렉션뷰 숨김. / 아니면 작업들어감.)
-//            let url = URL(string: introReviewModel.reviewImgUrlList[0].reviewImageUrl)
-
-        // DispatchQueue를 쓰는 이유 -> 이미지가 클 경우 이미지를 다운로드 받기 까지 잠깐의 멈춤이 생길수 있다. (이유 : 싱글 쓰레드로 작동되기때문에)
-//            DispatchQueue.global(qos: .background).async { // DispatchQueue를 쓰면 멀티 쓰레드로 이미지가 클경우에도 멈춤이 생기지 않는다.
-//                let data = try? Data(contentsOf: url!)
-//                DispatchQueue.main.async {
-//                    cell.beerImage.image = UIImage(data: data!) // 만약 url이 없다면(안 들어온다면) try-catch로 확인해줘야 함.
-//                    cell.beerImage.contentMode = .scaleAspectFit
-//                }
-//            }
 
         let beerKindDict: [Int: String] = [1: "라거", 2: "필스너", 3: "둔켈", 4: "에일", 5: "IPA", 6: "밀맥주", 7: "스타우트", 8: "포터"]
         let beerKindString: String = beerKindDict[introReviewModel.beerKindId]!
@@ -335,10 +319,16 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if tableView == introReviewTableView {
-        return 300
-//        }
-//        return tableView.rowHeight
+        
+        let introReviewModel: IntroReviewModel = introReviewList[indexPath.row]
+        
+        if introReviewModel.reviewImgUrlList.count == 0 { // 만약 이미지가 없다면 -> 컬렉션뷰 제거 -> cell 높이 줄임.
+            return 380 - 88 // 컬렉션뷰 높이(=88)만큼 Cell 축소.
+        }
+        else { // 이미지가 1개라도 있다면 -> 컬렉션뷰 있는 상황.
+            return 380 // 기존 cell 높이 return.
+        }
+        
     }
     
 }
