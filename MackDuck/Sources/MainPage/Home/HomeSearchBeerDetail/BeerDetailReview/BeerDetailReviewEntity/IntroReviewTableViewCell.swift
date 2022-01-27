@@ -23,6 +23,8 @@ class IntroReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewCollectionView: UICollectionView! // 맥주이미지 컬렉션뷰
     @IBOutlet weak var reviewLikeButton: UIButton! // 도움이 됐어요!
     
+    @IBOutlet weak var blurView: UIView! // 리뷰 1번이라도 작성 유무에 따라 가려줄 블러뷰.
+    
     var imageModel = [ReviewImgURLList]() // 리뷰 안에 있는 컬렉션뷰의 이미지를 채우기 위한 데이터 전달받기 위해 선언한 변수.
     
     override func prepareForReuse() { // 재사용 가능한 셀을 준비하는 메서드 - cell 중복오류 방지.
@@ -48,6 +50,7 @@ class IntroReviewTableViewCell: UITableViewCell {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.itemSize = CGSize(width: 90, height: 80)
+
         reviewCollectionView.collectionViewLayout = layout // 셀 크기 지정 - https://k-elon.tistory.com/26
         
         reviewCollectionView.register(IntroReviewCollectionViewCell.nib(), forCellWithReuseIdentifier: IntroReviewCollectionViewCell.identifier) // 리뷰에 있는 컬렉션뷰
@@ -57,18 +60,20 @@ class IntroReviewTableViewCell: UITableViewCell {
         reviewCollectionView.showsHorizontalScrollIndicator = false // 컬렉션뷰 스크롤바 숨김
         reviewCollectionView.showsVerticalScrollIndicator = false
         
+        // blur뷰에 블러 효과 줌.
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        visualEffectView.frame = blurView.bounds
+        blurView.addSubview(visualEffectView)
+        
+//        blurView.backgroundColor = UIColor.mainBlack
+//        blurView.alpha = 0.9
+        
+        
     }
 
     func configure(with introReviewModel: IntroReviewModel) { // 리뷰에 있는 컬렉션뷰
         self.imageModel = introReviewModel.reviewImgUrlList
-        
         reviewCollectionView.reloadData() // 컬렉션뷰 reloadData() 안해주면 cell 뒤죽박죽됨. - prepareForReuse에 있어도 되긴 함.
-        
-//        if imageModel.count == 0 { // 만약 리뷰cell의 컬렉션뷰에 들어갈 이미지가 없는 상황이라면,
-//            reviewCollectionView.isHidden = true
-//            print("!!!컬렉션뷰 숨김")
-//        }
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

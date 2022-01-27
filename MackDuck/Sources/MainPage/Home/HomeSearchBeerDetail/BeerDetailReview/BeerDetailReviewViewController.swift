@@ -23,9 +23,9 @@ class BeerDetailReviewViewController: UIViewController {
     @IBOutlet var allImageViews: [UIImageView]! // 리뷰 요약본 밑에 있는 스택뷰 안에 담긴 이미지뷰(4개).
     @IBOutlet weak var seeMoreImageButton: UIButton! // 더보기 버튼.
     @IBOutlet weak var seeMoreImageLabel: UILabel! // 더보기 라벨.
-    @IBOutlet weak var introReviewTableView: UITableView! // 리뷰(6개) 테이블뷰
+    @IBOutlet weak var introReviewTableView: UITableView! // 리뷰(6개) 테이블뷰.
 //    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var seeAllReviewButton: UIButton! // (최하단) 리뷰 전체보기 버튼
+    @IBOutlet weak var seeAllReviewButton: UIButton! // (최하단) 리뷰 전체보기 버튼.
     
     var scorePoints: [String] = ["5점", "4점", "3점", "2점", "1점"]
     var reviewCount: [Int] = [0, 0, 0, 0, 0]
@@ -142,8 +142,63 @@ class BeerDetailReviewViewController: UIViewController {
     
     
     @IBAction func clickAllReviewButton(_ sender: UIButton) {
-        // TODO: - 리뷰 전체보기 화면 연결 필요.
         print("리뷰 전체보기 버튼 클릭.")
+        
+        // 리뷰 1번이라도 작성했는지 유무에 따라,
+        if BeerData.details.userReviewWrite == "Y" { // 리뷰를 1번이라도 작성했다면,
+            // TODO: - 리뷰 전체보기 화면 연결 필요.
+            print("리뷰 전체보기 화면 연결 필요.")
+        }
+        else if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번도 작성하지 않았다면,
+            // TODO: - 리뷰 작성 시 볼 수 있다는 화면 띄우는 작업 필요.
+            print("리뷰 작성 시 볼 수 있다는 화면 띄우는 작업 필요.")
+            
+            
+            let text: String = "먹어봤던 맥주 리뷰 1개만 남기면 모든 리뷰를 보실 수 있어요!"
+            let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
+            let font = UIFont(name: "NotoSansKR-Medium", size: 16)
+            attributeString.addAttribute(.font, value: font!, range: (text as NSString).range(of: "\(text)")) // 폰트 적용.
+            attributeString.addAttribute(.foregroundColor, value: UIColor.mainYellow, range: (text as NSString).range(of: "먹어봤던 맥주 리뷰 1개")) // '먹어봤던 맥주 리뷰 1개' 부분 색상 옐로우 변경.
+            attributeString.addAttribute(.foregroundColor, value: UIColor.mainWhite, range: (text as NSString).range(of: "만 남기면 모든 리뷰를 보실 수 있어요!")) // 나머지 부분 색상 화이트 변경.
+            
+            let alertController = UIAlertController(title: text, message: "", preferredStyle: UIAlertController.Style.alert)
+            alertController.setValue(attributeString, forKey: "attributedTitle") // 폰트 및 색상 적용.
+            
+            let text2: String = "리뷰쓰기"
+            let attributeString2 = NSMutableAttributedString(string: text2) // 텍스트 일부분 색상, 폰트 변경
+            attributeString2.addAttribute(.font, value: font!, range: (text2 as NSString).range(of: "\(text2)")) // 폰트 적용.
+            attributeString2.addAttribute(.foregroundColor, value: UIColor.mainYellow, range: (text2 as NSString).range(of: "\(text2)")) // '리뷰쓰기' 부분 색상 옐로우 변경.
+            
+            let reviewWrite = UIAlertAction(title: "리뷰쓰기", style: .destructive, handler: {
+                action in
+                //특정기능 수행 넣기
+            })
+//            reviewWrite.setValue(attributeString2, forKey: "attributedTitle") // 폰트 및 색상 적용.
+            
+            
+            let cancle = UIAlertAction(title: "나중에하기", style: .default, handler: nil)
+            
+            cancle.setValue(UIColor.subBlack3, forKey: "titleTextColor")
+            
+            alertController.addAction(reviewWrite)
+            alertController.addAction(cancle)
+            
+            
+            
+            
+            // 배경색 변경
+            alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = .subBlack3
+            
+            
+            
+//            alertController.setValue(NSAttributedString(string: attributeString, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 29, weight: UIFont.Weight.medium), NSAttributedString.Key.foregroundColor : UIColor.red]), forKey: "attributedTitle")
+            
+//            let subview = (alertController.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
+//            subview.backgroundColor = .subBlack3
+            
+            present(alertController, animated: true, completion: nil)
+        }
+        
     }
     
 }
@@ -205,16 +260,9 @@ extension BeerDetailReviewViewController {
             self.introReviewList.append(IntroReviewModel(userCheck: reviewData.userCheck, reviewId: reviewData.reviewId, nickname: reviewData.nickname, age: reviewData.age, gender: reviewData.gender, beerKindId: reviewData.beerKindId, score: reviewData.score, updatedAt: reviewData.updatedAt, description: reviewData.description, reviewLikeCount: reviewData.reviewLikeCount, rowNumber: reviewData.rowNumber, reviewImgUrlList: reviewData.reviewImgUrlList)) // 리뷰 cell 정보 전체적으로 저장.
         }
         
-//        imageModel = introReviewList // 복사
-        
         self.introReviewTableView.reloadData() // 테이블뷰 .reloadData()를 해줘야 데이터가 반영됨.
 //        }
         
-        print("##########HAHA##################################################################")
-        print(introReviewList)
-        for test in introReviewList {
-            print(test.description)
-        }
         
         // (최하단) 리뷰 전체보기 버튼 꾸미기
         let reviewCountText = String(result.result.reviewStatics.reviewCount)
@@ -296,6 +344,19 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
         cell.reviewDescription.text = introReviewModel.description // 리뷰 내용 - ex) 생각보다 에일의 쓴맛이 덜합니다
         cell.reviewDate.text = introReviewModel.updatedAt // 날짜 - 2022.03.06
 
+        // 리뷰 1번이라도 작성했는지 유무에 따라,
+        if BeerData.details.userReviewWrite == "Y" { // 리뷰를 1번이라도 작성했다면,
+            cell.blurView.isHidden = true // 가림막 치움.
+        }
+        else if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번도 작성하지 않았다면,
+            if indexPath.row == 0 { // 0번째 cell이라면,
+                cell.blurView.isHidden = true // 가림막 치움.
+            }
+            else { // 1~5번째 cell이라면,
+                cell.blurView.isHidden = false // 가림막 보이게.
+            }
+        }
+        
         cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
 
         return cell
@@ -320,14 +381,7 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let introReviewModel: IntroReviewModel = introReviewList[indexPath.row]
-        
-        if introReviewModel.reviewImgUrlList.count == 0 { // 만약 이미지가 없다면 -> 컬렉션뷰 제거 -> cell 높이 줄임.
-            return 380 - 88 // 컬렉션뷰 높이(=88)만큼 Cell 축소.
-        }
-        else { // 이미지가 1개라도 있다면 -> 컬렉션뷰 있는 상황.
-            return 380 // 기존 cell 높이 return.
-        }
+        return 380 // 기존 cell 높이 return.
         
     }
     

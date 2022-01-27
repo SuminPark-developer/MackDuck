@@ -3632,6 +3632,9 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjm-hO-FNC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="434" height="380"/>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
@@ -3647,6 +3650,7 @@
                                                 <constraint firstItem="sU2-rf-saN" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="EL2-2a-Sew"/>
                                                 <constraint firstItem="er1-A9-dMb" firstAttribute="top" secondItem="za9-ss-Ser" secondAttribute="bottom" constant="7" id="IXM-LF-HPg"/>
                                                 <constraint firstItem="8Ug-Ad-DCV" firstAttribute="top" secondItem="za9-ss-Ser" secondAttribute="bottom" constant="7" id="Kkr-NX-LNE"/>
+                                                <constraint firstItem="Rjm-hO-FNC" firstAttribute="top" secondItem="YJf-hc-hW2" secondAttribute="top" id="Msy-9W-A4i"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dbg-m6-I4C" secondAttribute="trailing" id="N5U-SW-Z0T"/>
                                                 <constraint firstItem="Toi-nc-ipc" firstAttribute="leading" secondItem="ddL-9v-mhh" secondAttribute="trailing" constant="2" id="OJ9-n2-sNT"/>
                                                 <constraint firstItem="E11-rX-BCG" firstAttribute="top" secondItem="YJf-hc-hW2" secondAttribute="topMargin" id="P5S-Sh-JUw"/>
@@ -3660,17 +3664,21 @@
                                                 <constraint firstItem="CNc-Dw-6Sm" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="adJ-rQ-kAW"/>
                                                 <constraint firstItem="ddL-9v-mhh" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="ebr-96-gax"/>
                                                 <constraint firstItem="Toi-nc-ipc" firstAttribute="top" secondItem="za9-ss-Ser" secondAttribute="bottom" constant="7" id="euW-p1-cCW"/>
+                                                <constraint firstItem="Rjm-hO-FNC" firstAttribute="leading" secondItem="YJf-hc-hW2" secondAttribute="leading" id="fP8-NL-pQe"/>
                                                 <constraint firstItem="8Ug-Ad-DCV" firstAttribute="leading" secondItem="Toi-nc-ipc" secondAttribute="trailing" constant="2" id="hWT-9N-zQ5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="aCa-cs-eka" secondAttribute="bottom" constant="30" id="oi6-p7-IpK"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rjm-hO-FNC" secondAttribute="bottom" id="pxA-65-ixu"/>
                                                 <constraint firstItem="za9-ss-Ser" firstAttribute="top" secondItem="sU2-rf-saN" secondAttribute="bottom" constant="10" id="rn6-e1-zRm"/>
                                                 <constraint firstItem="blH-e5-Ft0" firstAttribute="centerY" secondItem="dnp-vt-6hc" secondAttribute="centerY" id="uR1-1Q-sut"/>
                                                 <constraint firstItem="Za0-mS-SUO" firstAttribute="leading" secondItem="8Ug-Ad-DCV" secondAttribute="trailing" constant="2" id="xC0-ze-uhi"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rjm-hO-FNC" secondAttribute="trailing" constant="-20" id="xGu-Hu-6xN"/>
                                                 <constraint firstItem="gTh-WQ-fNU" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="y2F-IV-0Gu"/>
                                                 <constraint firstItem="za9-ss-Ser" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="zzJ-iT-OSB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <outlet property="blurView" destination="Rjm-hO-FNC" id="4Ym-jL-me0"/>
                                             <outlet property="reviewCollectionView" destination="gTh-WQ-fNU" id="hfO-od-4DR"/>
                                             <outlet property="reviewDate" destination="dnp-vt-6hc" id="fNe-JN-EbR"/>
                                             <outlet property="reviewDescription" destination="CNc-Dw-6Sm" id="xVi-kf-eys"/>

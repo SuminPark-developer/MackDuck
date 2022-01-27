@@ -101,19 +101,19 @@ class BeerDetailViewControllerExample: UIViewController {
             // 리뷰개수에 맞게 스크롤뷰 사이즈 조절함.
             switch reviewCountSave { // 360값은 cell의 크기 380에서 살짝 작게 설정함.
             case 0:
-                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 0) // 스크롤뷰 사이즈 - 줄임.
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 370 * 0) // 스크롤뷰 사이즈 - 줄임.
             case 1:
-                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 1) // 스크롤뷰 사이즈
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 370 * 1) // 스크롤뷰 사이즈
             case 2:
-                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 2) // 스크롤뷰 사이즈
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 370 * 2) // 스크롤뷰 사이즈
             case 3:
-                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 3) // 스크롤뷰 사이즈
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 370 * 3) // 스크롤뷰 사이즈
             case 4:
-                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 4) // 스크롤뷰 사이즈
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 370 * 4) // 스크롤뷰 사이즈
             case 5:
-                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 5) // 스크롤뷰 사이즈
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 370 * 5) // 스크롤뷰 사이즈
             case 6:
-                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 360 * 6) // 스크롤뷰 사이즈 - 늘림.
+                scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 3 + 370 * 6) // 스크롤뷰 사이즈 - 늘림.
             default:
                 scrollViewBackgroundHeight.constant = CGFloat(Double(400) * 5 - 200) // 스크롤뷰 사이즈 - 기본.
             }
@@ -168,6 +168,8 @@ extension BeerDetailViewControllerExample {
         segmentedControl.setTitle("리뷰 \(result.result.reviewCount)", forSegmentAt: 1) // 리뷰 개수 텍스트 세팅
         
         reviewCountSave = result.result.reviewCount // 리뷰개수 0개면, 스크롤뷰 사이즈 줄일 용도로 쓰임.
+        
+        BeerData.details.userReviewWrite = result.result.userReviewWrite // 유저가 리뷰 1번이라도 작성했는지 유무 저장.
     }
 
     func failedToGetBeerInfo(message: String, code: Int) { // 오류메시지 & code번호 몇인지
