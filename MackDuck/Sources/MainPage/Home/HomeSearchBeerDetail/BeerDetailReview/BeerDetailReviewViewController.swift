@@ -150,9 +150,6 @@ class BeerDetailReviewViewController: UIViewController {
             print("리뷰 전체보기 화면 연결 필요.")
         }
         else if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번도 작성하지 않았다면,
-            // TODO: - 리뷰 작성 시 볼 수 있다는 화면 띄우는 작업 필요.
-            print("리뷰 작성 시 볼 수 있다는 화면 띄우는 작업 필요.")
-            
             
             let text: String = "먹어봤던 맥주 리뷰 1개만 남기면 모든 리뷰를 보실 수 있어요!"
             let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
@@ -164,37 +161,21 @@ class BeerDetailReviewViewController: UIViewController {
             let alertController = UIAlertController(title: text, message: "", preferredStyle: UIAlertController.Style.alert)
             alertController.setValue(attributeString, forKey: "attributedTitle") // 폰트 및 색상 적용.
             
-            let text2: String = "리뷰쓰기"
-            let attributeString2 = NSMutableAttributedString(string: text2) // 텍스트 일부분 색상, 폰트 변경
-            attributeString2.addAttribute(.font, value: font!, range: (text2 as NSString).range(of: "\(text2)")) // 폰트 적용.
-            attributeString2.addAttribute(.foregroundColor, value: UIColor.mainYellow, range: (text2 as NSString).range(of: "\(text2)")) // '리뷰쓰기' 부분 색상 옐로우 변경.
-            
-            let reviewWrite = UIAlertAction(title: "리뷰쓰기", style: .destructive, handler: {
+            let reviewWrite = UIAlertAction(title: "리뷰쓰기", style: .cancel, handler: {
                 action in
-                //특정기능 수행 넣기
+                // TODO: - 리뷰 작성 페이지로 연결 작업 필요.
+                print("리뷰쓰기 버튼 클릭함.")
             })
-//            reviewWrite.setValue(attributeString2, forKey: "attributedTitle") // 폰트 및 색상 적용.
-            
-            
             let cancle = UIAlertAction(title: "나중에하기", style: .default, handler: nil)
             
-            cancle.setValue(UIColor.subBlack3, forKey: "titleTextColor")
+            reviewWrite.setValue(UIColor.mainYellow, forKey: "titleTextColor") // 색상 적용.
+            cancle.setValue(UIColor.mainWhite, forKey: "titleTextColor") // 색상 적용.
             
             alertController.addAction(reviewWrite)
             alertController.addAction(cancle)
             
-            
-            
-            
             // 배경색 변경
             alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = .subBlack3
-            
-            
-            
-//            alertController.setValue(NSAttributedString(string: attributeString, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 29, weight: UIFont.Weight.medium), NSAttributedString.Key.foregroundColor : UIColor.red]), forKey: "attributedTitle")
-            
-//            let subview = (alertController.view.subviews.first?.subviews.first?.subviews.first!)! as UIView
-//            subview.backgroundColor = .subBlack3
             
             present(alertController, animated: true, completion: nil)
         }
