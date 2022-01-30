@@ -1,16 +1,16 @@
 //
-//  IntroReviewTableViewCell.swift
+//  AllReviewTableViewCell.swift
 //  MackDuck
 //
-//  Created by sumin on 2022/01/20.
+//  Created by sumin on 2022/01/28.
 //
 
 import UIKit
 
-class IntroReviewTableViewCell: UITableViewCell {
+class AllReviewTableViewCell: UITableViewCell {
 
-    static let identifier = "IntroReviewTableViewCell"
-    // MARK: - BeerDetailViewControllerExample에 있는 테이블뷰의 Prototype Cell과 연결됨. - https://www.youtube.com/watch?v=l2Ld-EA9FAU
+    static let identifier = "AllReviewTableViewCell"
+    // MARK: - AllReviewViewControllerExample에 있는 테이블뷰의 Prototype Cell과 연결됨. - https://www.youtube.com/watch?v=l2Ld-EA9FAU
     @IBOutlet weak var reviewName: UILabel! // 박수민
     @IBOutlet weak var reviewTripleDot: UIButton! // 우측상단 점3개 버튼.
     @IBOutlet weak var reviewUserInfo: UILabel! // 나이/성별/필스너
@@ -22,9 +22,7 @@ class IntroReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewCollectionView: UICollectionView! // 맥주이미지 컬렉션뷰
     @IBOutlet weak var reviewLikeButton: UIButton! // 도움이 됐어요!
     
-    @IBOutlet weak var blurView: UIView! // 리뷰 1번이라도 작성 유무에 따라 가려줄 블러뷰.
-    
-    var imageModel = [ReviewImgURLList]() // 리뷰 안에 있는 컬렉션뷰의 이미지를 채우기 위한 데이터 전달받기 위해 선언한 변수.
+    var imageModel = [AllReviewImgUrlList]() // 리뷰 안에 있는 컬렉션뷰의 이미지를 채우기 위한 데이터 전달받기 위해 선언한 변수.
     
     override func prepareForReuse() { // 재사용 가능한 셀을 준비하는 메서드 - cell 중복오류 방지.
         for i in 0..<starImages.count {
@@ -32,13 +30,8 @@ class IntroReviewTableViewCell: UITableViewCell {
         }
     }
     
-//    override func layoutSubviews() { // tableView cell 간 간격 설정 - https://ios-development.tistory.com/655
-//        super.layoutSubviews()
-//        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
-//    }
-    
     static func nib() -> UINib {
-        return UINib(nibName: "IntroReviewTableViewCell", bundle: nil)
+        return UINib(nibName: "AllReviewTableViewCell", bundle: nil)
     }
     
     override func awakeFromNib() {
@@ -52,26 +45,17 @@ class IntroReviewTableViewCell: UITableViewCell {
 
         reviewCollectionView.collectionViewLayout = layout // 셀 크기 지정 - https://k-elon.tistory.com/26
         
-        reviewCollectionView.register(IntroReviewCollectionViewCell.nib(), forCellWithReuseIdentifier: IntroReviewCollectionViewCell.identifier) // 리뷰에 있는 컬렉션뷰
+        reviewCollectionView.register(AllReviewCollectionViewCell.nib(), forCellWithReuseIdentifier: AllReviewCollectionViewCell.identifier) // 리뷰에 있는 컬렉션뷰
         reviewCollectionView.delegate = self
         reviewCollectionView.dataSource = self
         
         reviewCollectionView.showsHorizontalScrollIndicator = false // 컬렉션뷰 스크롤바 숨김
         reviewCollectionView.showsVerticalScrollIndicator = false
         
-        // blur뷰에 블러 효과를 줌.
-        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-        visualEffectView.frame = blurView.bounds
-        blurView.addSubview(visualEffectView)
-        
-//        blurView.backgroundColor = UIColor.mainBlack
-//        blurView.alpha = 0.9
-        
-        
     }
-
-    func configure(with introReviewModel: IntroReviewModel) { // 리뷰에 있는 컬렉션뷰
-        self.imageModel = introReviewModel.reviewImgUrlList
+    
+    func configure(with allReviewModel: AllReviewModel) { // 리뷰에 있는 컬렉션뷰
+        self.imageModel = allReviewModel.reviewImgUrlList
         reviewCollectionView.reloadData() // 컬렉션뷰 reloadData() 안해주면 cell 뒤죽박죽됨. - prepareForReuse에 있어도 되긴 함.
     }
     
@@ -98,19 +82,20 @@ class IntroReviewTableViewCell: UITableViewCell {
         print("신고버튼 클릭.")
 
     }
+
 }
 
 // MARK: - 리뷰 안에 있는 CollectionView
-extension IntroReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AllReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     // CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageModel.count // 컬렉션뷰에 들어갈 이미지 개수 반환
+        return imageModel.count // 컬렉션뷰에 들어갈 이미지 개수 반환.
     }
         
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IntroReviewCollectionViewCell.identifier, for: indexPath) as! IntroReviewCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllReviewCollectionViewCell.identifier, for: indexPath) as! AllReviewCollectionViewCell
 //        cell.collectionImageView.image = nil
         
         cell.configure(with: imageModel[indexPath.row])

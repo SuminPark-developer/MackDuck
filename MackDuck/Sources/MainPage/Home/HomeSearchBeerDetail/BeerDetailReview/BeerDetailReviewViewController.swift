@@ -31,7 +31,6 @@ class BeerDetailReviewViewController: UIViewController {
     var reviewCount: [Int] = [0, 0, 0, 0, 0]
     
     var introReviewList: [IntroReviewModel] = [] // 리뷰(6개) 데이터(모델)들
-//    var imageModel: [IntroReviewModel] = [] // 리뷰cell 컬렉션뷰 이미지 리스트 모음.
     
     @IBOutlet weak var reviewCountLabel: UILabel! // 리뷰 개수 라벨.
     @IBOutlet weak var barChartView: BarChartView!
@@ -145,11 +144,16 @@ class BeerDetailReviewViewController: UIViewController {
         print("리뷰 전체보기 버튼 클릭.")
         
         // 리뷰 1번이라도 작성했는지 유무에 따라,
-        if BeerData.details.userReviewWrite == "Y" { // 리뷰를 1번이라도 작성했다면,
+        if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번이라도 작성했다면,
             // TODO: - 리뷰 전체보기 화면 연결 필요.
             print("리뷰 전체보기 화면 연결 필요.")
+            
+            let seeallReviewVC = (self.storyboard?.instantiateViewController(withIdentifier: "AllReviewVC"))
+            self.navigationController?.pushViewController(seeallReviewVC!, animated: true)
+            
         }
-        else if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번도 작성하지 않았다면,
+        // @@@@@@@@@@@@@@ TODO: - 나중에 Y랑 N 바꿔야됨!!!!!!!!!!! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        else if BeerData.details.userReviewWrite == "Y" { // 리뷰를 1번도 작성하지 않았다면,
             
             let text: String = "먹어봤던 맥주 리뷰 1개만 남기면 모든 리뷰를 보실 수 있어요!"
             let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
@@ -283,7 +287,7 @@ extension BeerDetailReviewViewController {
     
 }
 
-// MARK: - 최하단 인기검색어 테이블뷰 부분 & 상단 검색어 입력시 검색결과 테이블뷰 부분
+// MARK: - 하단 intro 리뷰(6개) 테이블뷰 부분
 extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("리뷰 개수 테스트 : \(introReviewList.count)")

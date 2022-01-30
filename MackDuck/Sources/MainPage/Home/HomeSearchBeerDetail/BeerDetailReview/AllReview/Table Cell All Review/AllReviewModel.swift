@@ -1,14 +1,13 @@
 //
-//  IntroReviewModel.swift
+//  AllReviewModel.swift
 //  MackDuck
 //
-//  Created by sumin on 2022/01/20.
+//  Created by sumin on 2022/01/28.
 //
 
 import Foundation
 
-
-class IntroReviewModel { // intro리뷰(6개) 테이블뷰 모델
+class AllReviewModel { // 검색결과 테이블뷰 모델
     let userCheck: String // 리뷰가 유저의 것인지 아닌지
     let reviewId: Int // 리뷰 아이디
     let nickname: String // 리뷰쓴 유저 닉네임
@@ -21,11 +20,9 @@ class IntroReviewModel { // intro리뷰(6개) 테이블뷰 모델
     let reviewLikeCount: Int // 리뷰 좋아요 개수
     let rowNumber: String // 페이징을 위한 rowNumber
     
-//    let beerImageUrl: [String] // 맥주 이미지 url
+    let reviewImgUrlList: [AllReviewImgUrlList] // 리뷰 이미지 배열
     
-    let reviewImgUrlList: [ReviewImgURLList] // 리뷰 이미지 배열
-    
-    init(userCheck: String, reviewId: Int, nickname: String, age: String, gender: String, beerKindId: Int, score: Int, updatedAt: String, description: String, reviewLikeCount: Int, rowNumber: String, reviewImgUrlList: [ReviewImgURLList]) {
+    init(userCheck: String, reviewId: Int, nickname: String, age: String, gender: String, beerKindId: Int, score: Int, updatedAt: String, description: String, reviewLikeCount: Int, rowNumber: String, reviewImgUrlList: [AllReviewImgUrlList]) {
         self.userCheck = userCheck
         self.reviewId = reviewId
         self.nickname = nickname
