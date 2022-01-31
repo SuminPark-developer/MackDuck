@@ -9,6 +9,8 @@ import UIKit
 
 class AllReviewTableViewCell: UITableViewCell {
 
+    var allReviewLikeButtonDataManager: AllReviewLikeButtonDataManager = AllReviewLikeButtonDataManager() // 모든 리뷰 - 좋아요 정보 보내는 dataManager
+    
     static let identifier = "AllReviewTableViewCell"
     // MARK: - AllReviewViewControllerExample에 있는 테이블뷰의 Prototype Cell과 연결됨. - https://www.youtube.com/watch?v=l2Ld-EA9FAU
     @IBOutlet weak var reviewName: UILabel! // 박수민
@@ -23,6 +25,8 @@ class AllReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewLikeButton: UIButton! // 도움이 됐어요!
     
     var imageModel = [AllReviewImgUrlList]() // 리뷰 안에 있는 컬렉션뷰의 이미지를 채우기 위한 데이터 전달받기 위해 선언한 변수.
+    var reviewId: Int = 0 // 좋아요 버튼 클릭 시 api 연결을 위해 선언한 변수.
+    var saveReviewLikeCount: Int = 0 // 좋아요 개수 저장 -> 좋아요 버튼 클릭 시 값 증감.
     
     override func prepareForReuse() { // 재사용 가능한 셀을 준비하는 메서드 - cell 중복오류 방지.
         for i in 0..<starImages.count {
@@ -55,7 +59,19 @@ class AllReviewTableViewCell: UITableViewCell {
     }
     
     func configure(with allReviewModel: AllReviewModel) { // 리뷰에 있는 컬렉션뷰
-        self.imageModel = allReviewModel.reviewImgUrlList
+        self.imageModel = allReviewModel.reviewImgUrlList // 컬렉션뷰 이미지 리스트 저장.
+        self.reviewId = allReviewModel.reviewId // 리뷰아이디 저장. - 좋아요 버튼 api에 필요.
+        self.saveReviewLikeCount = allReviewModel.reviewLikeCount // 좋아요개수 저장. - 좋아요 버튼 클릭 시 값 증감.
+        
+        let reviewLikeCountText = String(saveReviewLikeCount) // 도움이 됐어요!버튼의 좋아요 개수부분 text bold처리.
+        let text: String = "도움이 됐어요! \(reviewLikeCountText)"
+        let attributeString = NSMutableAttributedString(string: text)
+        let font1 = UIFont(name: "NotoSansKR-Regular", size: 12) // 도움이됐어요!부분 폰트
+        let font2 = UIFont(name: "Montserrat-Bold", size: 12) // 숫자부분 폰트
+        attributeString.addAttribute(.font, value: font1!, range: (text as NSString).range(of: "도움이 됐어요! "))
+        attributeString.addAttribute(.font, value: font2!, range: (text as NSString).range(of: "\(reviewLikeCountText)"))
+        reviewLikeButton.setAttributedTitle(attributeString, for: .normal)
+        
         reviewCollectionView.reloadData() // 컬렉션뷰 reloadData() 안해주면 cell 뒤죽박죽됨. - prepareForReuse에 있어도 되긴 함.
     }
     
@@ -66,9 +82,14 @@ class AllReviewTableViewCell: UITableViewCell {
     }
     
     @IBAction func clickLikeButton(_ sender: UIButton) {
+        // TODO: - 도움이 됐어요 좋아요 값 AllReviewViewController에서 text 연결 필요.
+        
         // TODO: - 도움이 됐어요 api 작업 필요.
         // TODO: - 글자 증가 작업 필요.
-        print("도움이 됐어요 클릭.")
+        print("도움이 됐어요(좋아요) 클릭.")
+        
+        let userId = UserDefaults.standard.integer(forKey: "userId") // UserDefaults에서 userId값 불러옴.
+        self.allReviewLikeButtonDataManager.postAllReviewLike(userId: userId, reviewId: reviewId, delegate: self) // 모든 리뷰 - 좋아요 정보 보내는 api 호출.
     }
     
     @IBAction func clickTripleDot(_ sender: UIButton) {
@@ -85,6 +106,52 @@ class AllReviewTableViewCell: UITableViewCell {
 
 }
 
+// MARK: - 모든 리뷰 : 좋아요 정보 POST Api
+extension AllReviewTableViewCell {
+    
+    // MARK: - 좋아요 정보 POST 성공할 때,
+    func didSuccessPostAllReviewLike(_ result: AllReviewLikeButtonResponse) { // userId, reviewId가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에서 리뷰 ui 작업.
+        print("모든 리뷰 : 좋아요 정보 서버에 POST 성공!")
+        print("response 내용 : \(result)")
+        
+        print("HAHA")
+        // TODO: - 버튼의 text 값 증가 필요.
+        
+        
+        if result.message == "도움이 됐어요 추가 성공" || result.message == "도움이 됐어요 추가(ACTIVE로 수정) 성공" {
+            saveReviewLikeCount = saveReviewLikeCount + 1 // 좋아요 개수 증가.
+        }
+        else if result.message == "도움이 됐어요 삭제(INACTIVE로 수정) 성공" {
+            saveReviewLikeCount = saveReviewLikeCount - 1 // 좋아요 개수 감소.
+        }
+        let reviewLikeCountText = String(saveReviewLikeCount) // 도움이 됐어요!버튼의 좋아요 개수부분 text bold처리.
+        let text: String = "도움이 됐어요! \(reviewLikeCountText)"
+        let attributeString = NSMutableAttributedString(string: text)
+        let font1 = UIFont(name: "NotoSansKR-Regular", size: 12) // 도움이됐어요!부분 폰트
+        let font2 = UIFont(name: "Montserrat-Bold", size: 12) // 숫자부분 폰트
+        attributeString.addAttribute(.font, value: font1!, range: (text as NSString).range(of: "도움이 됐어요! "))
+        attributeString.addAttribute(.font, value: font2!, range: (text as NSString).range(of: "\(reviewLikeCountText)"))
+        reviewLikeButton.setAttributedTitle(attributeString, for: .normal)
+        
+    }
+
+    // MARK: - 좋아요 정보 POST 실패할 때,
+    func failedToPostAllReviewLike(message: String, code: Int) { // 좋아요 정보 POST 실패할 때
+        print("좋아요 정보 POST 실패...")
+        print("실패 이유 : \(message)")
+        print("오류 코드 : \(code)")
+        
+        if code == 2000 { // 실패 이유 : "JWT 토큰을 입력해주세요."
+//            showAlert(title: message, message: "")
+        }
+        else if code == 3024 { // 실패 이유 : "좋아요 누를 리뷰가 존재하지 않습니다."
+            
+        }
+    }
+    
+}
+
+
 // MARK: - 리뷰 안에 있는 CollectionView
 extension AllReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -96,16 +163,8 @@ extension AllReviewTableViewCell: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllReviewCollectionViewCell.identifier, for: indexPath) as! AllReviewCollectionViewCell
-//        cell.collectionImageView.image = nil
         
         cell.configure(with: imageModel[indexPath.row])
-        
-//        for imageUrl in introReviewModels!.reviewImgUrlList {
-//            print("@@@@@@@@@@@\(imageUrl.reviewImageUrl)@@@@@@@@@@@@@@@@@")
-//        }
-        
-        
-//        cell.configure(with: BeerData.details.introReviewModel!)
         
         return cell
     }

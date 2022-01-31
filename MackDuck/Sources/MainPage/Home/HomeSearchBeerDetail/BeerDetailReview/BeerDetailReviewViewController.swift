@@ -265,13 +265,21 @@ extension BeerDetailReviewViewController {
         print("실패 이유 : \(message)")
         print("오류 코드 : \(code)")
         
+        
+//        reviewStaticsBackground.removeFromSuperview() // 리뷰 상태 삭제.
+//        allImageStackView.removeFromSuperview() // 이미지뷰 4개 담은 스택뷰 삭제.
+//        seeMoreImageLabel.removeFromSuperview() // 더보기 라벨 삭제.
+//        seeMoreImageButton.removeFromSuperview() // 더보기 버튼 삭제.
+//        introReviewTableView.removeFromSuperview() // 리뷰(최대6개) 테이블뷰 삭제.
+//        seeAllReviewButton.removeFromSuperview() // 리뷰 0개 전체보기 버튼 삭제.
         // TODO: - 나머지 view들 다 없애는 코드 계속 추가 필요함.
-        reviewStaticsBackground.removeFromSuperview() // 리뷰 상태 삭제.
-        allImageStackView.removeFromSuperview() // 이미지뷰 4개 담은 스택뷰 삭제.
-        seeMoreImageLabel.removeFromSuperview() // 더보기 라벨 삭제.
-        seeMoreImageButton.removeFromSuperview() // 더보기 버튼 삭제.
-        introReviewTableView.removeFromSuperview() // 리뷰(최대6개) 테이블뷰 삭제.
-        seeAllReviewButton.removeFromSuperview() // 리뷰 0개 전체보기 버튼 삭제.
+        // .removeFromSuperview()를 쓰면 화면 나가는척(좌에서 우로 쓸기)했다가 다시 들어오면 에러남.
+        reviewStaticsBackground.isHidden = true // 리뷰 상태 가림.
+        allImageStackView.isHidden = true // 이미지뷰 4개 담은 스택뷰 가림.
+        seeMoreImageLabel.isHidden = true // 더보기 라벨 가림.
+        seeMoreImageButton.isHidden = true // 더보기 버튼 가림.
+        introReviewTableView.isHidden = true // 리뷰(최대6개) 테이블뷰 가림.
+        seeAllReviewButton.isHidden = true // 리뷰 0개 전체보기 버튼 가림.
         
         noReviewLabel.isHidden = false // 리뷰 없을 때 안내 문구 보이게.
         noReviewButton.isHidden = false // 리뷰 없을 때 안내 버튼 보이게.

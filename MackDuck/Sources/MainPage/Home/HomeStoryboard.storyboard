@@ -3907,7 +3907,7 @@
                                                         <action selector="clickReportButton:" destination="2dx-dd-NTl" eventType="touchUpInside" id="m4v-9e-a7q"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cH-We-PeJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cH-We-PeJ">
                                                     <rect key="frame" x="62" y="96" width="432.5" height="76"/>
                                                     <string key="text">생각보다 에일의 쓴맛이 덜합니다! 전 치킨과 함께 먹었는데
 궁합도 훌륭했어요! 역시 인기가 많은 이유가 있어요!
