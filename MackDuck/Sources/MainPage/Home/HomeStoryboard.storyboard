@@ -3635,6 +3635,34 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rjm-hO-FNC">
                                                     <rect key="frame" x="0.0" y="0.0" width="434" height="380"/>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1s-zv-hEY">
+                                                    <rect key="frame" x="99.5" y="147" width="215.5" height="46.5"/>
+                                                    <string key="text">먹어봤던 맥주 리뷰 1개만 남기면
+모든 리뷰를 보실 수 있어요!</string>
+                                                    <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
+                                                    <color key="textColor" red="0.97254908080000002" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCM-mG-Wjr">
+                                                    <rect key="frame" x="89" y="205.5" width="236" height="60"/>
+                                                    <color key="backgroundColor" red="0.96470588450000005" green="0.84313726430000002" blue="0.28627452250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="mbJ-Qh-uzJ"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="        리뷰 1개 쓰고 모두보기        ">
+                                                        <fontDescription key="titleFontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                                    </buttonConfiguration>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="clickBlurViewButton:" destination="abz-Aq-QKd" eventType="touchUpInside" id="a3k-zf-3FK"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
@@ -3648,7 +3676,9 @@
                                                 <constraint firstItem="CNc-Dw-6Sm" firstAttribute="height" secondItem="YJf-hc-hW2" secondAttribute="height" multiplier="0.2" id="Cab-Vz-Eat"/>
                                                 <constraint firstItem="xd7-Cq-5o9" firstAttribute="top" secondItem="er1-A9-dMb" secondAttribute="top" id="Cl2-8D-NM4"/>
                                                 <constraint firstItem="sU2-rf-saN" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="EL2-2a-Sew"/>
+                                                <constraint firstItem="uCM-mG-Wjr" firstAttribute="top" secondItem="i1s-zv-hEY" secondAttribute="bottom" constant="12" id="GCY-Tn-A15"/>
                                                 <constraint firstItem="er1-A9-dMb" firstAttribute="top" secondItem="za9-ss-Ser" secondAttribute="bottom" constant="7" id="IXM-LF-HPg"/>
+                                                <constraint firstItem="i1s-zv-hEY" firstAttribute="centerX" secondItem="YJf-hc-hW2" secondAttribute="centerX" id="IgU-iI-FqI"/>
                                                 <constraint firstItem="8Ug-Ad-DCV" firstAttribute="top" secondItem="za9-ss-Ser" secondAttribute="bottom" constant="7" id="Kkr-NX-LNE"/>
                                                 <constraint firstItem="Rjm-hO-FNC" firstAttribute="top" secondItem="YJf-hc-hW2" secondAttribute="top" id="Msy-9W-A4i"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dbg-m6-I4C" secondAttribute="trailing" id="N5U-SW-Z0T"/>
@@ -3658,6 +3688,7 @@
                                                 <constraint firstItem="gTh-WQ-fNU" firstAttribute="top" secondItem="CNc-Dw-6Sm" secondAttribute="bottom" constant="10" id="W3m-ec-Lbd"/>
                                                 <constraint firstItem="dnp-vt-6hc" firstAttribute="bottom" secondItem="xd7-Cq-5o9" secondAttribute="bottom" id="WV5-p3-RUw"/>
                                                 <constraint firstItem="dnp-vt-6hc" firstAttribute="leading" secondItem="xd7-Cq-5o9" secondAttribute="trailing" constant="10" id="WwG-Df-oni"/>
+                                                <constraint firstItem="i1s-zv-hEY" firstAttribute="centerY" secondItem="YJf-hc-hW2" secondAttribute="centerY" constant="-20" id="XMD-We-ZuB"/>
                                                 <constraint firstItem="E11-rX-BCG" firstAttribute="leading" secondItem="YJf-hc-hW2" secondAttribute="leadingMargin" id="Y4m-EH-mb1"/>
                                                 <constraint firstItem="Za0-mS-SUO" firstAttribute="top" secondItem="za9-ss-Ser" secondAttribute="bottom" constant="7" id="Zeg-nw-Cic"/>
                                                 <constraint firstItem="aCa-cs-eka" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="aHW-3C-9gz"/>
@@ -3673,12 +3704,15 @@
                                                 <constraint firstItem="Za0-mS-SUO" firstAttribute="leading" secondItem="8Ug-Ad-DCV" secondAttribute="trailing" constant="2" id="xC0-ze-uhi"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rjm-hO-FNC" secondAttribute="trailing" constant="-20" id="xGu-Hu-6xN"/>
                                                 <constraint firstItem="gTh-WQ-fNU" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="y2F-IV-0Gu"/>
+                                                <constraint firstItem="uCM-mG-Wjr" firstAttribute="centerX" secondItem="YJf-hc-hW2" secondAttribute="centerX" id="yaP-zx-jQr"/>
                                                 <constraint firstItem="za9-ss-Ser" firstAttribute="leading" secondItem="E11-rX-BCG" secondAttribute="trailing" constant="10" id="zzJ-iT-OSB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="blurView" destination="Rjm-hO-FNC" id="4Ym-jL-me0"/>
+                                            <outlet property="blurViewButton" destination="uCM-mG-Wjr" id="Dqb-dW-u2E"/>
+                                            <outlet property="blurViewText" destination="i1s-zv-hEY" id="Cwh-lO-9TY"/>
                                             <outlet property="reviewCollectionView" destination="gTh-WQ-fNU" id="hfO-od-4DR"/>
                                             <outlet property="reviewDate" destination="dnp-vt-6hc" id="fNe-JN-EbR"/>
                                             <outlet property="reviewDescription" destination="CNc-Dw-6Sm" id="xVi-kf-eys"/>
@@ -3771,7 +3805,152 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Var-x3-MGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5155" y="761"/>
+            <point key="canvasLocation" x="5153.6231884057979" y="760.71428571428567"/>
+        </scene>
+        <!--All Review Report Popup View Controller-->
+        <scene sceneID="OXE-nT-c6h">
+            <objects>
+                <viewController storyboardIdentifier="AllReviewReportPopupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HsJ-Y1-Awa" customClass="AllReviewReportPopupViewController" customModule="MackDuck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iuy-WW-q9n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-lK-YTx">
+                                <rect key="frame" x="41.5" y="206.5" width="331" height="493"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZ0-b3-B4v">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="61.5"/>
+                                        <color key="tintColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="  광고, 홍보 / 거래 시도">
+                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickReportButtonsWithSender:" destination="HsJ-Y1-Awa" eventType="touchUpInside" id="1hN-QS-5wn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2S-yz-FI5">
+                                        <rect key="frame" x="0.0" y="61.5" width="331" height="62"/>
+                                        <color key="tintColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="  과도한 오타, 반복적 표현 사용">
+                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickReportButtonsWithSender:" destination="HsJ-Y1-Awa" eventType="touchUpInside" id="Brz-De-Nl1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73z-GR-0ff">
+                                        <rect key="frame" x="0.0" y="123.5" width="331" height="61.5"/>
+                                        <color key="tintColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="  욕설, 음란어 사용">
+                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickReportButtonsWithSender:" destination="HsJ-Y1-Awa" eventType="touchUpInside" id="YR5-gy-RBC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcL-um-wGq">
+                                        <rect key="frame" x="0.0" y="185" width="331" height="61.5"/>
+                                        <color key="tintColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="  리뷰 내용과 다른 제품 선택">
+                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickReportButtonsWithSender:" destination="HsJ-Y1-Awa" eventType="touchUpInside" id="e5g-3S-Wi9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geu-xC-rpE">
+                                        <rect key="frame" x="0.0" y="246.5" width="331" height="61.5"/>
+                                        <color key="tintColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="  리뷰 내용과 무관한 사진 첨부">
+                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickReportButtonsWithSender:" destination="HsJ-Y1-Awa" eventType="touchUpInside" id="M24-zu-gJx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6V-db-XaL">
+                                        <rect key="frame" x="0.0" y="308" width="331" height="61.5"/>
+                                        <color key="tintColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="  개인 정보 노출">
+                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickReportButtonsWithSender:" destination="HsJ-Y1-Awa" eventType="touchUpInside" id="D4m-eJ-wvd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OI2-ey-0QB">
+                                        <rect key="frame" x="0.0" y="369.5" width="331" height="62"/>
+                                        <color key="tintColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="  명예훼손 / 저작권 침해">
+                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickReportButtonsWithSender:" destination="HsJ-Y1-Awa" eventType="touchUpInside" id="10d-xP-tSF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="By6-NA-y1Q">
+                                        <rect key="frame" x="0.0" y="431.5" width="331" height="61.5"/>
+                                        <color key="tintColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="  기타(에티켓 위반 등)">
+                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="clickReportButtonsWithSender:" destination="HsJ-Y1-Awa" eventType="touchUpInside" id="NyK-77-7Vi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13333332540000001" green="0.13725490870000001" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="f2S-yz-FI5" firstAttribute="height" secondItem="pZ0-b3-B4v" secondAttribute="height" id="06q-Tm-UId"/>
+                                    <constraint firstItem="J6V-db-XaL" firstAttribute="height" secondItem="pZ0-b3-B4v" secondAttribute="height" id="32u-g6-HQC"/>
+                                    <constraint firstItem="OI2-ey-0QB" firstAttribute="height" secondItem="pZ0-b3-B4v" secondAttribute="height" id="I2l-kv-jyi"/>
+                                    <constraint firstItem="Geu-xC-rpE" firstAttribute="height" secondItem="pZ0-b3-B4v" secondAttribute="height" id="Xfm-J7-9np"/>
+                                    <constraint firstItem="EcL-um-wGq" firstAttribute="height" secondItem="pZ0-b3-B4v" secondAttribute="height" id="YGR-IF-EVF"/>
+                                    <constraint firstItem="73z-GR-0ff" firstAttribute="height" secondItem="pZ0-b3-B4v" secondAttribute="height" id="deX-EZ-POl"/>
+                                    <constraint firstItem="By6-NA-y1Q" firstAttribute="height" secondItem="pZ0-b3-B4v" secondAttribute="height" id="kVV-0U-Ksh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QSC-ap-L4w"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.8030318708609272" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IOg-lK-YTx" firstAttribute="height" secondItem="iuy-WW-q9n" secondAttribute="height" multiplier="0.55" id="J8h-zq-2ID"/>
+                            <constraint firstItem="IOg-lK-YTx" firstAttribute="width" secondItem="iuy-WW-q9n" secondAttribute="width" multiplier="0.8" id="R0S-YB-U2z"/>
+                            <constraint firstItem="IOg-lK-YTx" firstAttribute="centerX" secondItem="QSC-ap-L4w" secondAttribute="centerX" id="YUo-7t-fnV"/>
+                            <constraint firstItem="IOg-lK-YTx" firstAttribute="centerY" secondItem="QSC-ap-L4w" secondAttribute="centerY" id="gH0-Nl-pNX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="iuy-WW-q9n" id="6TV-0l-1uY"/>
+                        <outletCollection property="reportButtons" destination="pZ0-b3-B4v" collectionClass="NSMutableArray" id="Eby-I6-DTQ"/>
+                        <outletCollection property="reportButtons" destination="f2S-yz-FI5" collectionClass="NSMutableArray" id="Z3c-ID-w41"/>
+                        <outletCollection property="reportButtons" destination="73z-GR-0ff" collectionClass="NSMutableArray" id="aXe-aM-8a7"/>
+                        <outletCollection property="reportButtons" destination="EcL-um-wGq" collectionClass="NSMutableArray" id="bKE-s3-rlG"/>
+                        <outletCollection property="reportButtons" destination="Geu-xC-rpE" collectionClass="NSMutableArray" id="N4c-mo-2rv"/>
+                        <outletCollection property="reportButtons" destination="J6V-db-XaL" collectionClass="NSMutableArray" id="y3y-hM-PNn"/>
+                        <outletCollection property="reportButtons" destination="OI2-ey-0QB" collectionClass="NSMutableArray" id="UKY-cO-0c4"/>
+                        <outletCollection property="reportButtons" destination="By6-NA-y1Q" collectionClass="NSMutableArray" id="Kd2-T9-AJi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K5R-ae-a4b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6006" y="1121"/>
         </scene>
         <!--전체 리뷰-->
         <scene sceneID="NX2-dU-hqf">
@@ -4652,6 +4831,9 @@
         <image name="smellLabelIcon" width="24" height="24"/>
         <image name="tasteLabelIcon" width="24" height="24"/>
         <image name="tripleDot" width="24" height="24"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

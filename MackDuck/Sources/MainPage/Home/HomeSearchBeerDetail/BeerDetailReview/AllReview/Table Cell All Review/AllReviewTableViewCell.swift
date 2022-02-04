@@ -28,6 +28,8 @@ class AllReviewTableViewCell: UITableViewCell {
     var reviewId: Int = 0 // 좋아요 버튼 클릭 시 api 연결을 위해 선언한 변수.
     var saveReviewLikeCount: Int = 0 // 좋아요 개수 저장 -> 좋아요 버튼 클릭 시 값 증감.
     
+    var delegate: AllReviewTableViewCellDelegate?
+    
     override func prepareForReuse() { // 재사용 가능한 셀을 준비하는 메서드 - cell 중복오류 방지.
         for i in 0..<starImages.count {
             starImages[i].image = UIImage(named: "searchResultStarGray.png")
@@ -82,10 +84,6 @@ class AllReviewTableViewCell: UITableViewCell {
     }
     
     @IBAction func clickLikeButton(_ sender: UIButton) {
-        // TODO: - 도움이 됐어요 좋아요 값 AllReviewViewController에서 text 연결 필요.
-        
-        // TODO: - 도움이 됐어요 api 작업 필요.
-        // TODO: - 글자 증가 작업 필요.
         print("도움이 됐어요(좋아요) 클릭.")
         
         let userId = UserDefaults.standard.integer(forKey: "userId") // UserDefaults에서 userId값 불러옴.
@@ -95,15 +93,20 @@ class AllReviewTableViewCell: UITableViewCell {
     @IBAction func clickTripleDot(_ sender: UIButton) {
         // TODO: - 점3개 api 작업 필요.
         print("점3개 클릭.")
-
     }
     
     @IBAction func clickReportButton(_ sender: UIButton) {
         // TODO: - 신고버튼 api 작업 필요.
         print("신고버튼 클릭.")
-
+        
+        delegate?.didReportButtonPressed(reviewId: reviewId) // AllReviewViewController에 있는 didReportButtonPressed메서드에 reviewId전달. -> 팝업뷰에 reviewId전달.
+        
     }
 
+}
+// MARK: - delegate 패턴 사용 : https://stackoverflow.com/questions/48334292/swift-how-call-uiviewcontroller-from-a-button-in-uitableviewcell
+protocol AllReviewTableViewCellDelegate {
+    func didReportButtonPressed(reviewId: Int) // 신고버튼 클릭 - AllReviewViewController에 있음.(팝업창 띄움.)
 }
 
 // MARK: - 모든 리뷰 : 좋아요 정보 POST Api
@@ -113,10 +116,6 @@ extension AllReviewTableViewCell {
     func didSuccessPostAllReviewLike(_ result: AllReviewLikeButtonResponse) { // userId, reviewId가 서버에 제대로 보내졌다면 -> 화면(HomeStoryboard)에서 리뷰 ui 작업.
         print("모든 리뷰 : 좋아요 정보 서버에 POST 성공!")
         print("response 내용 : \(result)")
-        
-        print("HAHA")
-        // TODO: - 버튼의 text 값 증가 필요.
-        
         
         if result.message == "도움이 됐어요 추가 성공" || result.message == "도움이 됐어요 추가(ACTIVE로 수정) 성공" {
             saveReviewLikeCount = saveReviewLikeCount + 1 // 좋아요 개수 증가.
@@ -150,7 +149,6 @@ extension AllReviewTableViewCell {
     }
     
 }
-
 
 // MARK: - 리뷰 안에 있는 CollectionView
 extension AllReviewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {

@@ -340,13 +340,19 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
         // 리뷰 1번이라도 작성했는지 유무에 따라,
         if BeerData.details.userReviewWrite == "Y" { // 리뷰를 1번이라도 작성했다면,
             cell.blurView.isHidden = true // 가림막 치움.
+            cell.blurViewText.isHidden = true // 블러텍스트 치움.
+            cell.blurViewButton.isHidden = true // 블러버튼(리뷰작성) 치움.
         }
         else if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번도 작성하지 않았다면,
             if indexPath.row == 0 { // 0번째 cell이라면,
                 cell.blurView.isHidden = true // 가림막 치움.
+                cell.blurViewText.isHidden = true // 블러텍스트 치움.
+                cell.blurViewButton.isHidden = true // 블러버튼(리뷰작성) 치움.
             }
             else { // 1~5번째 cell이라면,
                 cell.blurView.isHidden = false // 가림막 보이게.
+                cell.blurViewText.isHidden = false // 블러텍스트 보이게.
+                cell.blurViewButton.isHidden = false // 블러버튼(리뷰작성) 보이게.
             }
         }
         

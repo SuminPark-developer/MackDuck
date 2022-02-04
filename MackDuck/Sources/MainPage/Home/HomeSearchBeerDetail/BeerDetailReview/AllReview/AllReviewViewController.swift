@@ -108,7 +108,7 @@ extension AllReviewViewController {
     
 }
 
-// MARK: - 하단 intro 리뷰(6개) 테이블뷰 부분
+// MARK: - 전체 리뷰 테이블뷰 부분
 extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        print("리뷰 개수 테스트 : \(allReviewList.count)")
@@ -137,7 +137,7 @@ extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, U
             let allReviewModel: AllReviewModel = allReviewList[indexPath.row]
             
             cell.configure(with: allReviewModel) // 리뷰안에 있는 컬렉션뷰에 데이터 전달. (컬렉션뷰 연결 작업)
-
+            
             let beerKindDict: [Int: String] = [1: "라거", 2: "필스너", 3: "둔켈", 4: "에일", 5: "IPA", 6: "밀맥주", 7: "스타우트", 8: "포터"]
             let beerKindString: String = beerKindDict[allReviewModel.beerKindId]!
             
@@ -167,6 +167,8 @@ extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, U
             
             cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
 
+            cell.delegate = self
+            
             return cell
         }
         else { // 로딩 cell일 땐,
@@ -246,4 +248,19 @@ extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, U
         }
     }
     
+}
+
+// MARK: - delegate패턴 사용 - AllReviewTableViewCell의 신고하기 버튼 클릭 시,
+extension AllReviewViewController: AllReviewTableViewCellDelegate {
+    // From tableviewcell To viewcontroller :  https://stackoverflow.com/questions/48334292/swift-how-call-uiviewcontroller-from-a-button-in-uitableviewcell
+    
+    func didReportButtonPressed(reviewId: Int) { // AllReviewTableViewCell의 신고하기 버튼 클릭 시, 팝업창 띄움.
+        let popup = UIStoryboard(name: "HomeStoryboard", bundle: nil)
+        let goPopupVC = popup.instantiateViewController(withIdentifier: "AllReviewReportPopupVC") as! AllReviewReportPopupViewController
+        goPopupVC.reviewId = reviewId // AllReviewTableViewCell에서 reviewId를 가져와 팝업뷰에 전달.
+        goPopupVC.modalPresentationStyle = .overCurrentContext //  투명도가 있으면 투명도에 맞춰서 나오게 해주는 코드(뒤에있는 배경이 보일 수 있게)
+        self.present(goPopupVC, animated: false, completion: nil)
+        // Push or present your view controller
+    }
+
 }

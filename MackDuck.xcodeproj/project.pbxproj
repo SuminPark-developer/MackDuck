@@ -30,6 +30,12 @@
 		7441F49D27844EB3005265EA /* SendBeerInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F49C27844EB3005265EA /* SendBeerInfoDataManager.swift */; };
 		7441F49F27844F21005265EA /* SendBeerInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F49E27844F21005265EA /* SendBeerInfoResponse.swift */; };
 		7441F4A127846378005265EA /* SendBeerInfoRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7441F4A027846378005265EA /* SendBeerInfoRequest.swift */; };
+		7445ACC027ACE7EA00A09E8D /* IntroReviewLikeButtonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445ACBF27ACE7EA00A09E8D /* IntroReviewLikeButtonDataManager.swift */; };
+		7445ACC227ACE7F800A09E8D /* IntroReviewLikeButtonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445ACC127ACE7F800A09E8D /* IntroReviewLikeButtonResponse.swift */; };
+		7445ACC527AD125600A09E8D /* AllReviewReportButtonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445ACC427AD125600A09E8D /* AllReviewReportButtonResponse.swift */; };
+		7445ACC727AD126400A09E8D /* AllReviewReportButtonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445ACC627AD126400A09E8D /* AllReviewReportButtonDataManager.swift */; };
+		7445ACC927AD139D00A09E8D /* AllReviewReportButtonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445ACC827AD139D00A09E8D /* AllReviewReportButtonRequest.swift */; };
+		7445ACCE27AD204200A09E8D /* AllReviewReportPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445ACCD27AD204200A09E8D /* AllReviewReportPopupViewController.swift */; };
 		7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */; };
 		7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */; };
 		74490CD6279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74490CD5279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift */; };
@@ -135,6 +141,12 @@
 		7441F49C27844EB3005265EA /* SendBeerInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoDataManager.swift; sourceTree = "<group>"; };
 		7441F49E27844F21005265EA /* SendBeerInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoResponse.swift; sourceTree = "<group>"; };
 		7441F4A027846378005265EA /* SendBeerInfoRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendBeerInfoRequest.swift; sourceTree = "<group>"; };
+		7445ACBF27ACE7EA00A09E8D /* IntroReviewLikeButtonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroReviewLikeButtonDataManager.swift; sourceTree = "<group>"; };
+		7445ACC127ACE7F800A09E8D /* IntroReviewLikeButtonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroReviewLikeButtonResponse.swift; sourceTree = "<group>"; };
+		7445ACC427AD125600A09E8D /* AllReviewReportButtonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewReportButtonResponse.swift; sourceTree = "<group>"; };
+		7445ACC627AD126400A09E8D /* AllReviewReportButtonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewReportButtonDataManager.swift; sourceTree = "<group>"; };
+		7445ACC827AD139D00A09E8D /* AllReviewReportButtonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewReportButtonRequest.swift; sourceTree = "<group>"; };
+		7445ACCD27AD204200A09E8D /* AllReviewReportPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewReportPopupViewController.swift; sourceTree = "<group>"; };
 		7446ECA12748ACD4000CAC92 /* RefrigeratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorViewController.swift; sourceTree = "<group>"; };
 		7446ECA32748ACE5000CAC92 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		74490CD5279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewControllerExample.swift; sourceTree = "<group>"; };
@@ -384,6 +396,34 @@
 			path = SendBeerInfoEntity;
 			sourceTree = "<group>";
 		};
+		7445ACBE27ACE7C700A09E8D /* IntroReviewLikeButtonEntity */ = {
+			isa = PBXGroup;
+			children = (
+				7445ACC127ACE7F800A09E8D /* IntroReviewLikeButtonResponse.swift */,
+				7445ACBF27ACE7EA00A09E8D /* IntroReviewLikeButtonDataManager.swift */,
+			);
+			path = IntroReviewLikeButtonEntity;
+			sourceTree = "<group>";
+		};
+		7445ACC327AD120A00A09E8D /* AllReviewReportButtonEntity */ = {
+			isa = PBXGroup;
+			children = (
+				7445ACC827AD139D00A09E8D /* AllReviewReportButtonRequest.swift */,
+				7445ACC427AD125600A09E8D /* AllReviewReportButtonResponse.swift */,
+				7445ACC627AD126400A09E8D /* AllReviewReportButtonDataManager.swift */,
+			);
+			path = AllReviewReportButtonEntity;
+			sourceTree = "<group>";
+		};
+		7445ACCA27AD1FB900A09E8D /* AllReviewReport */ = {
+			isa = PBXGroup;
+			children = (
+				7445ACCD27AD204200A09E8D /* AllReviewReportPopupViewController.swift */,
+				7445ACC327AD120A00A09E8D /* AllReviewReportButtonEntity */,
+			);
+			path = AllReviewReport;
+			sourceTree = "<group>";
+		};
 		7452382D2797DF51007FE846 /* CollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +450,7 @@
 				746C376C2799626100ABAA58 /* IntroReviewModel.swift */,
 				746C376E2799629300ABAA58 /* IntroReviewTableViewCell.swift */,
 				74A4FD37279FEC5100A91856 /* Collection Cell In IntroReview Table Cell */,
+				7445ACBE27ACE7C700A09E8D /* IntroReviewLikeButtonEntity */,
 			);
 			name = "Table Cell Intro Review";
 			path = BeerDetailReviewEntity;
@@ -555,6 +596,7 @@
 				749957C327A3A3100014D1C6 /* AllReviewEntity */,
 				749957CA27A3A37E0014D1C6 /* Table Cell All Review */,
 				74ED85F027A7D073003C8D10 /* AllReviewLikeButtonEntity */,
+				7445ACCA27AD1FB900A09E8D /* AllReviewReport */,
 			);
 			path = AllReview;
 			sourceTree = "<group>";
@@ -901,6 +943,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7445ACC227ACE7F800A09E8D /* IntroReviewLikeButtonResponse.swift in Sources */,
 				745238342797E23B007FE846 /* LoadingReusableView.swift in Sources */,
 				749957C927A3A3560014D1C6 /* AllReviewDataManager.swift in Sources */,
 				7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */,
@@ -911,11 +954,13 @@
 				743032032742C22A00B7657B /* KakaoLoginRequest.swift in Sources */,
 				74DE2FA12758AD8000424301 /* HomeRecentDeleteDataManager.swift in Sources */,
 				7403CAD02757512600E6B2DF /* HomeRecentPopularResponse.swift in Sources */,
+				7445ACC927AD139D00A09E8D /* AllReviewReportButtonRequest.swift in Sources */,
 				742E6464274BF17F00F6B72A /* HomeRecommendViewController.swift in Sources */,
 				749957D327A3B0F70014D1C6 /* AllReviewTableViewCell.swift in Sources */,
 				749957CC27A3A39D0014D1C6 /* AllReviewModel.swift in Sources */,
 				746C376D2799626100ABAA58 /* IntroReviewModel.swift in Sources */,
 				747561C7274525FE0015BFC9 /* PrivacySettingViewController.swift in Sources */,
+				7445ACC527AD125600A09E8D /* AllReviewReportButtonResponse.swift in Sources */,
 				74ED85F427A7D0D1003C8D10 /* AllReviewLikeButtonDataManager.swift in Sources */,
 				74F0B4392786DD4900ED9B61 /* IntroBeerDetailDataManager.swift in Sources */,
 				7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */,
@@ -930,6 +975,7 @@
 				74C1B6012742671400AFD7BF /* ViewController.swift in Sources */,
 				749E743827A3B4F8005AD2EE /* AllReviewCollectionViewCell.swift in Sources */,
 				74B11ED32756034D003C3E02 /* BestSearchTableViewCell.swift in Sources */,
+				7445ACCE27AD204200A09E8D /* AllReviewReportPopupViewController.swift in Sources */,
 				74B791482771B6F000D31EE2 /* SearchingTableViewCell.swift in Sources */,
 				747561D02745268B0015BFC9 /* PrivacySettingRequest.swift in Sources */,
 				7441F49D27844EB3005265EA /* SendBeerInfoDataManager.swift in Sources */,
@@ -946,6 +992,7 @@
 				7441F49F27844F21005265EA /* SendBeerInfoResponse.swift in Sources */,
 				743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */,
 				74C1B5FD2742671400AFD7BF /* AppDelegate.swift in Sources */,
+				7445ACC727AD126400A09E8D /* AllReviewReportButtonDataManager.swift in Sources */,
 				749957C727A3A3460014D1C6 /* AllReviewResponse.swift in Sources */,
 				742E6467274BF1A900F6B72A /* HomeSearchViewController.swift in Sources */,
 				74490CD6279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift in Sources */,
@@ -960,6 +1007,7 @@
 				74BE16E42795A139001FF055 /* SeeReviewMoreImageDataManager.swift in Sources */,
 				749671B02796D64600560CD3 /* ImageDetailDataManager.swift in Sources */,
 				74CE16A8278C8274008F4A90 /* BeerDetailReviewViewController.swift in Sources */,
+				7445ACC027ACE7EA00A09E8D /* IntroReviewLikeButtonDataManager.swift in Sources */,
 				74EF99CB274BB2370037A166 /* MainPageViewController.swift in Sources */,
 				7498009A276A1925008284DC /* HomeSearchResultDataManager.swift in Sources */,
 				74C1B61A27426F5100AFD7BF /* Color.swift in Sources */,
