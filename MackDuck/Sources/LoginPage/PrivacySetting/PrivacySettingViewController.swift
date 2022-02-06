@@ -98,7 +98,7 @@ class PrivacySettingViewController: UIViewController {
         btn.layer.borderColor = UIColor(red: 136/255, green: 136/255, blue: 136/255, alpha: 136/255).cgColor
         btn.layer.borderWidth = 1
         btn.backgroundColor = UIColor(red: 34/255, green: 34/255, blue: 34/255, alpha: 1)
-//        btn.setTitleColor(.mainGray, for: .normal)
+        btn.setTitleColor(.mainGray, for: .normal) // 글자색 변경
         btn.titleLabel?.font = UIFont(name: "NotoSansKR-Regular", size: 13)
 
     }
@@ -110,6 +110,7 @@ class PrivacySettingViewController: UIViewController {
                 Btn.isSelected = true
                 Btn.backgroundColor = UIColor(red: 252/255, green: 214/255, blue: 2/255, alpha: 1)
                 Btn.titleLabel!.font = UIFont(name: "NotoSansKR-Bold", size: 13)
+                Btn.setTitleColor(UIColor(red: 26/255, green: 26/255, blue: 26/255, alpha: 1), for: .normal) // 글자색 변경
                 print(Btn.titleLabel!.text!)
                 sexBtn = Btn.titleLabel!.text!
                 chooseSexFlag = true // 성별 선택 완료.
@@ -132,6 +133,7 @@ class PrivacySettingViewController: UIViewController {
                 Btn.isSelected = true
                 Btn.backgroundColor = UIColor(red: 252/255, green: 214/255, blue: 2/255, alpha: 1)
                 Btn.titleLabel!.font = UIFont(name: "NotoSansKR-Bold", size: 13)
+                Btn.setTitleColor(UIColor(red: 26/255, green: 26/255, blue: 26/255, alpha: 1), for: .normal) // 글자색 변경
                 print(Btn.titleLabel!.text!)
                 ageBtn = Btn.titleLabel!.text!
                 chooseAgeFlag = true // 나이 선택 완료.
@@ -154,6 +156,7 @@ class PrivacySettingViewController: UIViewController {
                 Btn.isSelected = true
                 Btn.backgroundColor = UIColor(red: 252/255, green: 214/255, blue: 2/255, alpha: 1)
                 Btn.titleLabel!.font = UIFont(name: "NotoSansKR-Bold", size: 13)
+                Btn.setTitleColor(UIColor(red: 26/255, green: 26/255, blue: 26/255, alpha: 1), for: .normal) // 글자색 변경
                 print(tasteDict["\(Btn.titleLabel!.text ?? "")"]!)
                 beerTasteBtn = tasteDict["\(Btn.titleLabel!.text ?? "")"]!
                 chooseTasteFlag = true // 취향 선택 완료.
@@ -199,6 +202,7 @@ extension PrivacySettingViewController {
         
         if result.isSuccess == true { // 회원정보 설정 성공시, 홈(메인) 페이지로 이동.
             
+            UserDefaults.standard.set(result.result?.jwt, forKey: "x-access-token") // UserDefaults에 jwt값(x-access-token) 저장.
             UserDefaults.standard.set(result.result?.userId, forKey: "userId") // UserDefaults에 userId값 저장.
             
             let goHome = UIStoryboard(name: "MainPageStoryboard", bundle: nil)

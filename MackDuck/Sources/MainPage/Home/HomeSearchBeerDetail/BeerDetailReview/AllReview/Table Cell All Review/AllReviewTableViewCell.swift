@@ -96,7 +96,6 @@ class AllReviewTableViewCell: UITableViewCell {
     }
     
     @IBAction func clickReportButton(_ sender: UIButton) {
-        // TODO: - 신고버튼 api 작업 필요.
         print("신고버튼 클릭.")
         
         delegate?.didReportButtonPressed(reviewId: reviewId) // AllReviewViewController에 있는 didReportButtonPressed메서드에 reviewId전달. -> 팝업뷰에 reviewId전달.

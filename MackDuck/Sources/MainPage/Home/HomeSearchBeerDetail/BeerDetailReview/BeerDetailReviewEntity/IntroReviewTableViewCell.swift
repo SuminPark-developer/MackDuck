@@ -32,6 +32,8 @@ class IntroReviewTableViewCell: UITableViewCell {
     var reviewId: Int = 0 // 좋아요 버튼 클릭 시 api 연결을 위해 선언한 변수.
     var saveReviewLikeCount: Int = 0 // 좋아요 개수 저장 -> 좋아요 버튼 클릭 시 값 증감.
     
+    var delegate: IntroReviewTableViewCellDelegate?
+    
     override func prepareForReuse() { // 재사용 가능한 셀을 준비하는 메서드 - cell 중복오류 방지.
         for i in 0..<starImages.count {
             starImages[i].image = UIImage(named: "searchResultStarGray.png")
@@ -115,21 +117,30 @@ class IntroReviewTableViewCell: UITableViewCell {
     @IBAction func clickTripleDot(_ sender: UIButton) {
         // TODO: - 점3개 api 작업 필요.
         print("점3개 클릭.")
+        
+        delegate?.didTripleDotPressed(reviewId: reviewId) // BeerDetailReviewViewController에 있는 didTripleDotPressed메서드 호출. -> ActionSheet창 띄움.
 
     }
     
     @IBAction func clickReportButton(_ sender: UIButton) {
-        // TODO: - 신고버튼 api 작업 필요.
         print("신고버튼 클릭.")
-
+        
+        delegate?.didReportButtonPressed(reviewId: reviewId) // BeerDetailReviewViewController에 있는 didReportButtonPressed메서드에 reviewId전달. -> 팝업뷰에 reviewId전달.
     }
     
     @IBAction func clickBlurViewButton(_ sender: UIButton) {
         print("리뷰 1개 쓰고 모두보기 버튼 클릭.")
         
-        // TODO: - 리뷰 작성 페이지 연결 작업 필요.
+        delegate?.didBlurViewButtonPressed() // BeerDetailReviewViewController에 있는 didBlurViewButtonPressed메서드 호출. -> alert창 띄움.
     }
     
+}
+
+// MARK: - delegate 패턴 사용 : https://stackoverflow.com/questions/48334292/swift-how-call-uiviewcontroller-from-a-button-in-uitableviewcell
+protocol IntroReviewTableViewCellDelegate {
+    func didReportButtonPressed(reviewId: Int) // 신고버튼 클릭 - BeerDetailReviewViewController에 있음.(팝업창 띄움.)
+    func didTripleDotPressed(reviewId: Int) // 점3개버튼 클릭 - BeerDetailReviewViewController에 있음.(ActionSheet 띄움.)
+    func didBlurViewButtonPressed() // 리뷰쓰기버튼 클릭 - BeerDetailReviewViewController에 있음.(alert창 띄움.)
 }
 
 // MARK: - 모든 리뷰 : 좋아요 정보 POST Api

@@ -24,8 +24,15 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .mainBlack
-        mainTitle.text = "간편 로그인으로\n모든 맥주 정보를\n즐기세요!"
-        subTitle.text = "지금 로그인하고\n100개 이상의 맥주 정보를 얻으세요!"
+        
+        
+        // 행간 조절 : https://developer-fury.tistory.com/37
+        mainTitle.text = "환영합니다!\n간편 로그인으로\n시작해볼까요?"
+        mainTitle.setLinespace(spacing: -1.2)
+        
+        subTitle.text = "하루의 마침표. 맥주 한 캔!\n보다 퀄리티 있고 색다른 맛을 나에게 선사하세요."
+        subTitle.setLinespace(spacing: 2.5)
+        
         mainTitle.textColor = .mainWhite
         subTitle.textColor = .mainGray
         

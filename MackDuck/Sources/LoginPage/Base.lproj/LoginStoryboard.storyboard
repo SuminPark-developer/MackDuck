@@ -35,14 +35,19 @@
                                     <action selector="didTapKakaoLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFm-34-0s0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 로그인하고 100개 이상의 맥주 정보를 얻으세요!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-f0-SCo">
-                                <rect key="frame" x="20" y="191" width="331" height="17.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-f0-SCo">
+                                <rect key="frame" x="20" y="234.5" width="331" height="35"/>
+                                <string key="text">하루의 마침표. 맥주 한 캔! 
+보다 퀄리티 있고 색다른 맛을 나에게 선사하세요.</string>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간편 로그인으로 모든 맥주 정보를 즐기세요!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-5V-wWl">
-                                <rect key="frame" x="20" y="94" width="331" height="87"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-5V-wWl">
+                                <rect key="frame" x="20" y="94" width="331" height="130.5"/>
+                                <string key="text">환영합니다!
+간편 로그인으로
+시작해볼까요?</string>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,13 +61,21 @@
                                     <fontDescription key="titleFontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
                                 </buttonConfiguration>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mackDuckLoginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9MM-1V-qtU">
+                                <rect key="frame" x="122" y="329.5" width="170" height="208"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9MM-1V-qtU" secondAttribute="height" multiplier="170:208" id="aVF-WJ-i4K"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8t9-2M-qL0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3O4-Og-Hju"/>
                             <constraint firstItem="WsI-sx-gjA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EIY-6m-C0E"/>
+                            <constraint firstItem="9MM-1V-qtU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GyD-Uq-9kS"/>
                             <constraint firstItem="8t9-2M-qL0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.075" id="IfS-y7-ems"/>
+                            <constraint firstItem="9MM-1V-qtU" firstAttribute="top" secondItem="qar-f0-SCo" secondAttribute="bottom" constant="60" id="K1M-fh-ZBQ"/>
                             <constraint firstItem="Oef-5V-wWl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="VvL-b0-Lg5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8t9-2M-qL0" secondAttribute="trailing" constant="20" id="Yn5-65-V4L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WsI-sx-gjA" secondAttribute="trailing" constant="20" id="Zzq-sp-gBX"/>
@@ -232,18 +245,18 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ch2-eg-Qz1">
-                                                <rect key="frame" x="73" y="109" width="291" height="288"/>
+                                                <rect key="frame" x="73" y="109" width="291" height="278"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-hw-Zgn">
                                                         <rect key="frame" x="0.0" y="0.0" width="291" height="33"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-sF-MLf">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-sF-MLf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
-                                                                <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="남성">
-                                                                    <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                </buttonConfiguration>
+                                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="남성">
+                                                                    <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                         <real key="value" value="15"/>
@@ -259,13 +272,13 @@
                                                                     <action selector="selectedSexOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="PAC-Hx-vcn"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLD-VI-rGW">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLD-VI-rGW">
                                                                 <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
-                                                                <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="여성">
-                                                                    <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                </buttonConfiguration>
+                                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" title="여성">
+                                                                    <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </state>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                         <real key="value" value="1"/>
@@ -290,20 +303,24 @@
                                                                 </buttonConfiguration>
                                                             </button>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="xLD-VI-rGW" firstAttribute="width" secondItem="dCw-sF-MLf" secondAttribute="width" id="U3x-7e-R91"/>
+                                                            <constraint firstItem="ezh-Sf-ESv" firstAttribute="width" secondItem="dCw-sF-MLf" secondAttribute="width" id="fSc-HO-ivc"/>
+                                                        </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="53G-Bk-UgC">
-                                                        <rect key="frame" x="0.0" y="63" width="291" height="76"/>
+                                                        <rect key="frame" x="0.0" y="63" width="291" height="72"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cWP-kj-KQo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="33"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="31"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lie-Ma-opg">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="20대">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lie-Ma-opg">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="20대">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -319,13 +336,13 @@
                                                                             <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="VOm-q9-ef5"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moN-jf-KoR">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="30대">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moN-jf-KoR">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="30대">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -341,13 +358,13 @@
                                                                             <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="fkf-CJ-1Bz"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMS-0Q-u7v">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="40대">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMS-0Q-u7v">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="40대">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -364,17 +381,21 @@
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="ZMS-0Q-u7v" firstAttribute="width" secondItem="lie-Ma-opg" secondAttribute="width" id="4qe-TK-ytH"/>
+                                                                    <constraint firstItem="moN-jf-KoR" firstAttribute="width" secondItem="lie-Ma-opg" secondAttribute="width" id="bp2-3R-Ze6"/>
+                                                                </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hfW-i1-iIm">
-                                                                <rect key="frame" x="0.0" y="43" width="291" height="33"/>
+                                                                <rect key="frame" x="0.0" y="41" width="291" height="31"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ef-4l-QaV">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="50대">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ef-4l-QaV">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="50대">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -390,13 +411,13 @@
                                                                             <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="aDT-qB-9q4"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl5-jY-YeV">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="60대">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl5-jY-YeV">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="60대">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -412,13 +433,13 @@
                                                                             <action selector="selectedAgeOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="9sR-Ro-j2f"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-pv-HJs">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="70대">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-pv-HJs">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="70대">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -435,22 +456,26 @@
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="9zy-pv-HJs" firstAttribute="width" secondItem="1ef-4l-QaV" secondAttribute="width" id="dK1-lF-McZ"/>
+                                                                    <constraint firstItem="gl5-jY-YeV" firstAttribute="width" secondItem="1ef-4l-QaV" secondAttribute="width" id="pPp-Ip-5lW"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Dx-J8-Pup">
-                                                        <rect key="frame" x="0.0" y="169" width="291" height="119"/>
+                                                        <rect key="frame" x="0.0" y="165" width="291" height="113"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dMd-am-FLX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="33"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="31"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKZ-Km-LFe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="라거">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKZ-Km-LFe">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="라거">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -466,13 +491,13 @@
                                                                             <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="g2m-B3-nee"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-73-GA8">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="필스너">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-73-GA8">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="필스너">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -488,13 +513,13 @@
                                                                             <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="p9s-my-scn"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j0-Pl-Qak">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="둔켈">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j0-Pl-Qak">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="둔켈">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -511,17 +536,21 @@
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="5j0-Pl-Qak" firstAttribute="width" secondItem="ZKZ-Km-LFe" secondAttribute="width" id="aMe-tR-jRb"/>
+                                                                    <constraint firstItem="xhh-73-GA8" firstAttribute="width" secondItem="ZKZ-Km-LFe" secondAttribute="width" id="g4x-3s-31m"/>
+                                                                </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NuZ-AD-rrZ">
-                                                                <rect key="frame" x="0.0" y="43" width="291" height="33"/>
+                                                                <rect key="frame" x="0.0" y="41" width="291" height="31"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-5H-Bm8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="에일">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-5H-Bm8">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="에일">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -537,13 +566,13 @@
                                                                             <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="TpB-DC-SRA"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-nO-92T">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="IPA">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-nO-92T">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="IPA">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -559,13 +588,13 @@
                                                                             <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="ntI-V1-2Gs"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViO-Jc-WkD">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="밀맥주">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViO-Jc-WkD">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="밀맥주">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -582,17 +611,21 @@
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="Jkx-nO-92T" firstAttribute="width" secondItem="ezu-5H-Bm8" secondAttribute="width" id="T6U-37-HI2"/>
+                                                                    <constraint firstItem="ViO-Jc-WkD" firstAttribute="width" secondItem="ezu-5H-Bm8" secondAttribute="width" id="wNk-WI-T0p"/>
+                                                                </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qoe-TN-AgL">
-                                                                <rect key="frame" x="0.0" y="86" width="291" height="33"/>
+                                                                <rect key="frame" x="0.0" y="82" width="291" height="31"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRb-UA-NxN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="스타우트">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRb-UA-NxN">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="스타우트">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -608,13 +641,13 @@
                                                                             <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="tbv-1X-s6k"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCf-tf-wlZ">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="포터">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCf-tf-wlZ">
+                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="포터">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                                                 <real key="value" value="1"/>
@@ -630,22 +663,26 @@
                                                                             <action selector="selectedTasteOptionBtnAction:" destination="z7n-MA-ovd" eventType="touchUpInside" id="hGo-PA-lME"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAz-5O-dyd">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
-                                                                        <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title=" ">
-                                                                            <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
-                                                                        </buttonConfiguration>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAz-5O-dyd">
+                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title=" ">
+                                                                            <color key="titleColor" red="0.52941179279999995" green="0.53333336109999996" blue="0.52941179279999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        </state>
                                                                     </button>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="KAz-5O-dyd" firstAttribute="width" secondItem="YRb-UA-NxN" secondAttribute="width" id="rK6-i4-1xs"/>
+                                                                    <constraint firstItem="vCf-tf-wlZ" firstAttribute="width" secondItem="YRb-UA-NxN" secondAttribute="width" id="xJq-Zm-76B"/>
+                                                                </constraints>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCO-Pu-BeH">
-                                                <rect key="frame" x="20" y="442" width="334" height="60"/>
+                                                <rect key="frame" x="20" y="432" width="334" height="60"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="privacyBeerButton" translatesAutoresizingMaskIntoConstraints="NO" id="ghN-Ey-xHJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="60"/>
@@ -770,6 +807,7 @@
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="kakaoLogo" width="20" height="20"/>
+        <image name="mackDuckLoginIcon" width="170" height="208"/>
         <image name="privacyBeerButton" width="295" height="60"/>
         <image name="privacyIcon" width="24" height="24"/>
         <systemColor name="labelColor">

@@ -16,7 +16,7 @@ class AllReviewReportPopupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // MARK: - 여기 뷰컨트롤러는 AllReview뿐만 아니라 IntroReview도 같이 쓰는 신고하기 버튼 팝업임.
         let tapBackground = UITapGestureRecognizer(target: self, action: #selector(AllReviewReportPopupViewController.tapBackground)) // 밖 클릭 시 뒤로가기(dismiss).
         backgroundView.addGestureRecognizer(tapBackground)
         
@@ -80,7 +80,7 @@ extension AllReviewReportPopupViewController {
         let alertController = UIAlertController(title: text, message: "", preferredStyle: UIAlertController.Style.alert)
         alertController.setValue(attributeString, forKey: "attributedTitle") // 폰트 및 색상 적용.
         
-        let ok = UIAlertAction(title: "확인", style: .cancel, handler: {
+        let ok = UIAlertAction(title: "확인", style: .cancel, handler: { // 확인버튼 클릭 시,
             action in
             self.dismiss(animated: true, completion: nil) // 뒤로가기.
         })

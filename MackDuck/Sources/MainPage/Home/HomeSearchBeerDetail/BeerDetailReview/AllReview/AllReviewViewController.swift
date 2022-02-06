@@ -167,7 +167,7 @@ extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, U
             
             cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
 
-            cell.delegate = self
+            cell.delegate = self // 신고하기(팝업)뷰를 위해 넣어줌. : https://stackoverflow.com/questions/48334292/swift-how-call-uiviewcontroller-from-a-button-in-uitableviewcell
             
             return cell
         }
