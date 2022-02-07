@@ -91,21 +91,20 @@ class AllReviewTableViewCell: UITableViewCell {
     }
     
     @IBAction func clickTripleDot(_ sender: UIButton) {
-        // TODO: - 점3개 api 작업 필요.
         print("점3개 클릭.")
+        delegate?.didTripleDotPressed(reviewId: reviewId) // AllReviewViewController에 있는 didTripleDotPressed메서드 호출. -> 커스텀ActionSheet창 띄움.
     }
     
     @IBAction func clickReportButton(_ sender: UIButton) {
         print("신고버튼 클릭.")
-        
         delegate?.didReportButtonPressed(reviewId: reviewId) // AllReviewViewController에 있는 didReportButtonPressed메서드에 reviewId전달. -> 팝업뷰에 reviewId전달.
-        
     }
 
 }
 // MARK: - delegate 패턴 사용 : https://stackoverflow.com/questions/48334292/swift-how-call-uiviewcontroller-from-a-button-in-uitableviewcell
 protocol AllReviewTableViewCellDelegate {
     func didReportButtonPressed(reviewId: Int) // 신고버튼 클릭 - AllReviewViewController에 있음.(팝업창 띄움.)
+    func didTripleDotPressed(reviewId: Int) // 점3개버튼 클릭 - AllReviewViewController에 있음.(커스텀ActionSheet 띄움.)
 }
 
 // MARK: - 모든 리뷰 : 좋아요 정보 POST Api

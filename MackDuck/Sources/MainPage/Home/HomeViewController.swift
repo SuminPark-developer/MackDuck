@@ -25,11 +25,15 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.backgroundColor = .mainBlack
         
         mainTitle.text = "맥주 이름이\n무엇인가요?"
+        mainTitle.setLinespace(spacing: -1.2)
         mainTitle.textColor = .mainWhite
         subTitle.textColor = .mainWhite
        
-        dictionaryButtonTitle.text = "이게\n무슨 맥주지?"
+        
+        dictionaryButtonTitle.text = "맥주\n종류 사전"
         dictionaryButtonSubTitle.text = "#알면 쓸모있는 맥주 상식\n#라거, 필스너, 스타우트 등"
+        dictionaryButtonTitle.setLinespace(spacing: -70)
+        dictionaryButtonSubTitle.setLinespace(spacing: -0.24)
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self // 네비게이션바 뒤로가기 제스쳐 - https://devsc.tistory.com/96
         
@@ -48,7 +52,7 @@ class HomeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        recommendButton.subtitleLabel?.textColor = .mainGray // 추천버튼 subtitle 색상 변경
+//        recommendButton.subtitleLabel?.textColor = .mainGray // 추천버튼 subtitle 색상 변경
     }
     
     

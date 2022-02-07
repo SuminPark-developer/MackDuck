@@ -68,7 +68,7 @@ extension AllReviewViewController {
         }
         
         // api 데이터 가져온거로 리뷰 ui 구성.
-        reviewCountLabel.text = String(result.result.reviewCount)
+        reviewCountLabel.text = String(BeerData.details.seeAllReviewCount)
         
 //        allReviewList.removeAll() // 전체리뷰 - 담는 리스트의 모든 element들을 지워줘야 함. (안 지우면 계속 데이터 남아있어서 결과가 쌓임)
         
@@ -167,7 +167,7 @@ extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, U
             
             cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
 
-            cell.delegate = self // 신고하기(팝업)뷰를 위해 넣어줌. : https://stackoverflow.com/questions/48334292/swift-how-call-uiviewcontroller-from-a-button-in-uitableviewcell
+            cell.delegate = self // 팝업뷰를 위해 넣어줌. : https://stackoverflow.com/questions/48334292/swift-how-call-uiviewcontroller-from-a-button-in-uitableviewcell
             
             return cell
         }
@@ -204,7 +204,7 @@ extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, U
             return 380
         }
         else { // 로딩 cell일 때,
-            if allReviewList.count == BeerData.details.seeAllReviewCount { // 서버의 모든 리뷰 다 불러왔다면,
+            if allReviewList.count >= BeerData.details.seeAllReviewCount { // 서버의 모든 리뷰 다 불러왔다면,
                 print("더 이상 로딩하면 X.") //  더이상 로딩하면 안됨.
                 return 0 // 로딩 cell 높이 없앰.
             }
@@ -220,8 +220,8 @@ extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, U
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
 
-        if allReviewList.count == BeerData.details.seeAllReviewCount { // 서버의 모든 리뷰 다 불러왔다면,
-//            print("더 이상 로딩하면 X.") //  더이상 로딩하면 안됨.
+        if allReviewList.count >= BeerData.details.seeAllReviewCount { // 서버의 모든 리뷰 다 불러왔다면,
+            print("@@@더 이상 로딩하면 X.") //  더이상 로딩하면 안됨.
         }
         else { // 서버의 모든 리뷰를 다 불러온 게 아닌 상황이고,
             if (offsetY > contentHeight - scrollView.frame.height * 4) && self.isLoading == false { // 사용자 스크롤이 끝에 도달하면서 로딩중이 아닐 때,
@@ -236,7 +236,7 @@ extension AllReviewViewController: UITableViewDataSource, UITableViewDelegate, U
             self.isLoading = true
             DispatchQueue.global().async {
                 // Fake background loading task for 2 seconds
-                sleep(2)
+                sleep(1)
                 // Download more data here
                 DispatchQueue.main.async {
                     self.allReviewDataManager.getAllReview(rowNumber: BeerData.details.seeAllReviewRowNumber, beerId: BeerData.details.beerId, delegate: self) // 모든 맥주 리뷰 정보 가져오는 api 호출
@@ -260,7 +260,14 @@ extension AllReviewViewController: AllReviewTableViewCellDelegate {
         goPopupVC.reviewId = reviewId // AllReviewTableViewCell에서 reviewId를 가져와 팝업뷰에 전달.
         goPopupVC.modalPresentationStyle = .overCurrentContext //  투명도가 있으면 투명도에 맞춰서 나오게 해주는 코드(뒤에있는 배경이 보일 수 있게)
         self.present(goPopupVC, animated: false, completion: nil)
-        // Push or present your view controller
+    }
+    
+    func didTripleDotPressed(reviewId: Int) { // AllReviewTableViewCell의 점3개 버튼 클릭 시, 커스텀ActionSheet(popup) 띄움.
+        let tripleDotPopup = UIStoryboard(name: "HomeStoryboard", bundle: nil)
+        let goTripleDotPopupVC = tripleDotPopup.instantiateViewController(withIdentifier: "TripleDotPopupVC") as! TripleDotPopupViewController
+        goTripleDotPopupVC.reviewId = reviewId // IntroReviewTableViewCell에서 reviewId를 가져와 팝업뷰에 전달.
+        goTripleDotPopupVC.modalPresentationStyle = .overCurrentContext //  투명도가 있으면 투명도에 맞춰서 나오게 해주는 코드(뒤에있는 배경이 보일 수 있게)
+        self.present(goTripleDotPopupVC, animated: false, completion: nil)
     }
 
 }

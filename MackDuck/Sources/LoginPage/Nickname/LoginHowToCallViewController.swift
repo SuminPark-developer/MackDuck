@@ -26,6 +26,7 @@ class LoginHowToCallViewController: UIViewController {
 
         self.view.backgroundColor = .mainBlack
         mainTitle.text = "어떻게\n불러드릴까요?"
+        mainTitle.setLinespace(spacing: -1.2)
         mainTitle.textColor = .mainWhite
         
         // TF placeholder 색상 변경 -  https://jiyeonlab.tistory.com/14
@@ -174,10 +175,27 @@ extension LoginHowToCallViewController {
     
     
     func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in }
-        alert.addAction(okAction)
-        present(alert, animated: false, completion: nil)
+        
+        let text: String = title
+        let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
+        let font = UIFont(name: "NotoSansKR-Medium", size: 16)
+        attributeString.addAttribute(.font, value: font!, range: (text as NSString).range(of: "\(text)")) // 폰트 적용.
+        attributeString.addAttribute(.foregroundColor, value: UIColor.mainWhite, range: (text as NSString).range(of: "\(text)")) // 전체 글씨 색상 화이트 변경.
+        
+        let alertController = UIAlertController(title: text, message: "", preferredStyle: UIAlertController.Style.alert)
+        alertController.setValue(attributeString, forKey: "attributedTitle") // 폰트 및 색상 적용.
+        
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        
+        okAction.setValue(UIColor.mainYellow, forKey: "titleTextColor") // 색상 적용.
+        
+        alertController.addAction(okAction)
+        
+        // 배경색 변경
+        alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = .subBlack3
+        
+        present(alertController, animated: true, completion: nil)
+        
     }
     
 }

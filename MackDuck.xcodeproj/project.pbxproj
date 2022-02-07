@@ -59,6 +59,7 @@
 		747E90F3278EFE9D009F00CB /* BeerDetailTasteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747E90F2278EFE9D009F00CB /* BeerDetailTasteResponse.swift */; };
 		747E90F5278EFEAD009F00CB /* BeerDetailTasteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747E90F4278EFEAD009F00CB /* BeerDetailTasteDataManager.swift */; };
 		747E90F7278F112A009F00CB /* BeerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747E90F6278F112A009F00CB /* BeerData.swift */; };
+		74939A6827B0D06500D9E5FD /* WhatBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74939A6727B0D06400D9E5FD /* WhatBeerViewController.swift */; };
 		749671A727968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749671A527968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.swift */; };
 		749671A827968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749671A627968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.xib */; };
 		749671AA2796D5E100560CD3 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749671A92796D5E100560CD3 /* ImageDetailViewController.swift */; };
@@ -174,6 +175,7 @@
 		747E90F2278EFE9D009F00CB /* BeerDetailTasteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailTasteResponse.swift; sourceTree = "<group>"; };
 		747E90F4278EFEAD009F00CB /* BeerDetailTasteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailTasteDataManager.swift; sourceTree = "<group>"; };
 		747E90F6278F112A009F00CB /* BeerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerData.swift; sourceTree = "<group>"; };
+		74939A6727B0D06400D9E5FD /* WhatBeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatBeerViewController.swift; sourceTree = "<group>"; };
 		749671A527968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeReviewMoreImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		749671A627968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeReviewMoreImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		749671A92796D5E100560CD3 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 			children = (
 				747561C6274525FE0015BFC9 /* PrivacySettingViewController.swift */,
 				747561C8274526240015BFC9 /* PrivacySettingEntity */,
+				74939A6627B0D03700D9E5FD /* WhatBeer */,
 			);
 			path = PrivacySetting;
 			sourceTree = "<group>";
@@ -558,6 +561,14 @@
 				745D624127906D9000F9FDD1 /* BeerDetailReviewDataManager.swift */,
 			);
 			path = BeerDetailReviewEntity;
+			sourceTree = "<group>";
+		};
+		74939A6627B0D03700D9E5FD /* WhatBeer */ = {
+			isa = PBXGroup;
+			children = (
+				74939A6727B0D06400D9E5FD /* WhatBeerViewController.swift */,
+			);
+			path = WhatBeer;
 			sourceTree = "<group>";
 		};
 		749671A427968B6A00560CD3 /* More Image Collection Cell */ = {
@@ -1027,6 +1038,7 @@
 				742E646A274BF1D100F6B72A /* HomeDictionaryViewController.swift in Sources */,
 				74B791452771B6A200D31EE2 /* SearchingModel.swift in Sources */,
 				7474356D27A6DC6600E5E709 /* LoadingCell.swift in Sources */,
+				74939A6827B0D06500D9E5FD /* WhatBeerViewController.swift in Sources */,
 				7496F0A927AFCD5000F1AF43 /* ReviewTripleDotDeleteButtonResponse.swift in Sources */,
 				7441F49F27844F21005265EA /* SendBeerInfoResponse.swift in Sources */,
 				743032052742C23C00B7657B /* KakaoLoginResponse.swift in Sources */,

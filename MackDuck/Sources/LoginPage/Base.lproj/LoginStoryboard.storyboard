@@ -8,6 +8,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="GmarketSansBold.otf">
+            <string>GmarketSansBold</string>
+        </array>
+        <array key="GmarketSansLight.otf">
+            <string>GmarketSansLight</string>
+        </array>
+        <array key="GmarketSansMedium.otf">
+            <string>GmarketSansMedium</string>
+        </array>
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
         <array key="NotoSansKR-Bold.otf">
             <string>NotoSansKR-Bold</string>
         </array>
@@ -35,7 +47,7 @@
                                     <action selector="didTapKakaoLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFm-34-0s0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-f0-SCo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-f0-SCo">
                                 <rect key="frame" x="20" y="234.5" width="331" height="35"/>
                                 <string key="text">하루의 마침표. 맥주 한 캔! 
 보다 퀄리티 있고 색다른 맛을 나에게 선사하세요.</string>
@@ -43,7 +55,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-5V-wWl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-5V-wWl">
                                 <rect key="frame" x="20" y="94" width="331" height="130.5"/>
                                 <string key="text">환영합니다!
 간편 로그인으로
@@ -62,7 +74,7 @@
                                 </buttonConfiguration>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mackDuckLoginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9MM-1V-qtU">
-                                <rect key="frame" x="122" y="329.5" width="170" height="208"/>
+                                <rect key="frame" x="122" y="324.5" width="170" height="208"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9MM-1V-qtU" secondAttribute="height" multiplier="170:208" id="aVF-WJ-i4K"/>
                                 </constraints>
@@ -75,7 +87,7 @@
                             <constraint firstItem="WsI-sx-gjA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="EIY-6m-C0E"/>
                             <constraint firstItem="9MM-1V-qtU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GyD-Uq-9kS"/>
                             <constraint firstItem="8t9-2M-qL0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.075" id="IfS-y7-ems"/>
-                            <constraint firstItem="9MM-1V-qtU" firstAttribute="top" secondItem="qar-f0-SCo" secondAttribute="bottom" constant="60" id="K1M-fh-ZBQ"/>
+                            <constraint firstItem="9MM-1V-qtU" firstAttribute="top" secondItem="qar-f0-SCo" secondAttribute="bottom" constant="55" id="K1M-fh-ZBQ"/>
                             <constraint firstItem="Oef-5V-wWl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="VvL-b0-Lg5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8t9-2M-qL0" secondAttribute="trailing" constant="20" id="Yn5-65-V4L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WsI-sx-gjA" secondAttribute="trailing" constant="20" id="Zzq-sp-gBX"/>
@@ -115,7 +127,7 @@
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떻게 불러드릴까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvI-BC-nrC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="어떻게 불러드릴까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvI-BC-nrC">
                                 <rect key="frame" x="20" y="94" width="331" height="43.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -195,19 +207,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인 정보를 선택하면 끝!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ss-bK-i84">
-                                <rect key="frame" x="20" y="94" width="312.5" height="43.5"/>
+                                <rect key="frame" x="20" y="110" width="312.5" height="43.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1F-Jq-d6f">
-                                <rect key="frame" x="20" y="157.5" width="374" height="577.5"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1F-Jq-d6f">
+                                <rect key="frame" x="20" y="173.5" width="374" height="561.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWZ-wB-Mt6">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="1100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="S7m-Gi-nE4">
-                                                <rect key="frame" x="10" y="50" width="283.5" height="24"/>
+                                                <rect key="frame" x="20" y="50" width="283.5" height="24"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="privacyIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ymO-bY-hfL">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -227,31 +239,31 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dq-qg-1LK">
-                                                <rect key="frame" x="10" y="116" width="33" height="20.5"/>
+                                                <rect key="frame" x="20" y="116" width="33" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나이*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDR-w9-TX5">
-                                                <rect key="frame" x="10" y="179.5" width="33" height="20.5"/>
+                                                <rect key="frame" x="20" y="179.5" width="33" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="취향*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qG-OB-aCV">
-                                                <rect key="frame" x="10" y="285" width="33" height="20.5"/>
+                                                <rect key="frame" x="20" y="285" width="33" height="20.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ch2-eg-Qz1">
-                                                <rect key="frame" x="73" y="109" width="291" height="278"/>
+                                                <rect key="frame" x="83" y="109" width="271" height="278"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Ar-hw-Zgn">
-                                                        <rect key="frame" x="0.0" y="0.0" width="291" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="271" height="33"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCw-sF-MLf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90.5" height="33"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="33"/>
                                                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="남성">
@@ -273,7 +285,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLD-VI-rGW">
-                                                                <rect key="frame" x="100.5" y="0.0" width="90" height="33"/>
+                                                                <rect key="frame" x="93.5" y="0.0" width="84" height="33"/>
                                                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" title="여성">
@@ -295,7 +307,7 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezh-Sf-ESv">
-                                                                <rect key="frame" x="200.5" y="0.0" width="90.5" height="33"/>
+                                                                <rect key="frame" x="187.5" y="0.0" width="83.5" height="33"/>
                                                                 <color key="tintColor" red="0.53419494629999997" green="0.53419494629999997" blue="0.53419494629999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title=" ">
@@ -309,13 +321,13 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="53G-Bk-UgC">
-                                                        <rect key="frame" x="0.0" y="63" width="291" height="72"/>
+                                                        <rect key="frame" x="0.0" y="63" width="271" height="72"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cWP-kj-KQo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="271" height="31"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lie-Ma-opg">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="20대">
@@ -337,7 +349,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moN-jf-KoR">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <rect key="frame" x="93.5" y="0.0" width="84" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="30대">
@@ -359,7 +371,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMS-0Q-u7v">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="187.5" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="40대">
@@ -387,10 +399,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hfW-i1-iIm">
-                                                                <rect key="frame" x="0.0" y="41" width="291" height="31"/>
+                                                                <rect key="frame" x="0.0" y="41" width="271" height="31"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ef-4l-QaV">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="50대">
@@ -412,7 +424,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gl5-jY-YeV">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <rect key="frame" x="93.5" y="0.0" width="84" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="60대">
@@ -434,7 +446,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-pv-HJs">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="187.5" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="70대">
@@ -464,13 +476,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Dx-J8-Pup">
-                                                        <rect key="frame" x="0.0" y="165" width="291" height="113"/>
+                                                        <rect key="frame" x="0.0" y="165" width="271" height="113"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dMd-am-FLX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="291" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="271" height="31"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKZ-Km-LFe">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="라거">
@@ -492,7 +504,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhh-73-GA8">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <rect key="frame" x="93.5" y="0.0" width="84" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="필스너">
@@ -514,7 +526,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j0-Pl-Qak">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="187.5" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="둔켈">
@@ -542,10 +554,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NuZ-AD-rrZ">
-                                                                <rect key="frame" x="0.0" y="41" width="291" height="31"/>
+                                                                <rect key="frame" x="0.0" y="41" width="271" height="31"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezu-5H-Bm8">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="에일">
@@ -567,7 +579,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkx-nO-92T">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <rect key="frame" x="93.5" y="0.0" width="84" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="IPA">
@@ -589,7 +601,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViO-Jc-WkD">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="187.5" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="밀맥주">
@@ -617,10 +629,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qoe-TN-AgL">
-                                                                <rect key="frame" x="0.0" y="82" width="291" height="31"/>
+                                                                <rect key="frame" x="0.0" y="82" width="271" height="31"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRb-UA-NxN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="스타우트">
@@ -642,7 +654,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCf-tf-wlZ">
-                                                                        <rect key="frame" x="100.5" y="0.0" width="90" height="31"/>
+                                                                        <rect key="frame" x="93.5" y="0.0" width="84" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="포터">
@@ -664,7 +676,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAz-5O-dyd">
-                                                                        <rect key="frame" x="200.5" y="0.0" width="90.5" height="31"/>
+                                                                        <rect key="frame" x="187.5" y="0.0" width="83.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="13"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title=" ">
@@ -694,6 +706,9 @@
                                                         <buttonConfiguration key="configuration" style="plain" image="chevron.forward" catalog="system" title="맥주 종류를 모를땐?!  ">
                                                             <fontDescription key="titleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="clickWhatBeerButton2:" destination="z7n-MA-ovd" eventType="touchUpInside" id="0y1-x7-kXG"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -715,21 +730,21 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.13333332540000001" green="0.13333332540000001" blue="0.13333332540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Ch2-eg-Qz1" secondAttribute="trailing" constant="10" id="3Nb-Tu-R2l"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ch2-eg-Qz1" secondAttribute="trailing" constant="20" id="3Nb-Tu-R2l"/>
                                             <constraint firstItem="Ch2-eg-Qz1" firstAttribute="leading" secondItem="6Dq-qg-1LK" secondAttribute="trailing" constant="30" id="7ab-tc-H2G"/>
                                             <constraint firstItem="hCO-Pu-BeH" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="20" id="FJ5-mG-pMb"/>
-                                            <constraint firstItem="9qG-OB-aCV" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="10" id="Fas-Fi-6D3"/>
+                                            <constraint firstItem="9qG-OB-aCV" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="20" id="Fas-Fi-6D3"/>
                                             <constraint firstItem="Ch2-eg-Qz1" firstAttribute="top" secondItem="S7m-Gi-nE4" secondAttribute="bottom" constant="35" id="Kbu-3P-st0"/>
                                             <constraint firstAttribute="height" constant="1100" id="P5Y-z3-wKd"/>
                                             <constraint firstItem="9qG-OB-aCV" firstAttribute="top" secondItem="PDR-w9-TX5" secondAttribute="bottom" constant="85" id="S7v-4b-Dx8"/>
                                             <constraint firstAttribute="trailing" secondItem="hCO-Pu-BeH" secondAttribute="trailing" constant="20" id="VRy-Ex-oJ1"/>
                                             <constraint firstItem="6Dq-qg-1LK" firstAttribute="top" secondItem="S7m-Gi-nE4" secondAttribute="bottom" constant="42" id="ZwC-Xr-Vxb"/>
                                             <constraint firstItem="S7m-Gi-nE4" firstAttribute="top" secondItem="NWZ-wB-Mt6" secondAttribute="top" constant="50" id="aYs-Jt-81h"/>
-                                            <constraint firstItem="6Dq-qg-1LK" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="10" id="f9j-ZO-eWS"/>
+                                            <constraint firstItem="6Dq-qg-1LK" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="20" id="f9j-ZO-eWS"/>
                                             <constraint firstItem="hCO-Pu-BeH" firstAttribute="top" secondItem="Ch2-eg-Qz1" secondAttribute="bottom" constant="45" id="flC-qA-k1y"/>
                                             <constraint firstItem="PDR-w9-TX5" firstAttribute="top" secondItem="6Dq-qg-1LK" secondAttribute="bottom" constant="43" id="mfK-sD-47e"/>
-                                            <constraint firstItem="PDR-w9-TX5" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="10" id="mjP-6L-8uT"/>
-                                            <constraint firstItem="S7m-Gi-nE4" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="10" id="nnh-Dm-iHM"/>
+                                            <constraint firstItem="PDR-w9-TX5" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="20" id="mjP-6L-8uT"/>
+                                            <constraint firstItem="S7m-Gi-nE4" firstAttribute="leading" secondItem="NWZ-wB-Mt6" secondAttribute="leading" constant="20" id="nnh-Dm-iHM"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -763,8 +778,8 @@
                             <constraint firstItem="j1F-Jq-d6f" firstAttribute="top" secondItem="3Ss-bK-i84" secondAttribute="bottom" constant="20" id="mYf-q0-7RY"/>
                             <constraint firstItem="0nP-qU-qLB" firstAttribute="bottom" secondItem="vi9-VL-l6G" secondAttribute="bottom" constant="40" id="pcN-3r-whG"/>
                             <constraint firstItem="0nP-qU-qLB" firstAttribute="trailing" secondItem="vi9-VL-l6G" secondAttribute="trailing" constant="20" id="qh8-g6-FoO"/>
-                            <constraint firstItem="3Ss-bK-i84" firstAttribute="top" secondItem="0nP-qU-qLB" secondAttribute="top" constant="50" id="rPF-KF-jz6"/>
                             <constraint firstItem="MCf-X0-ze4" firstAttribute="trailing" secondItem="0nP-qU-qLB" secondAttribute="trailing" id="vLF-hR-7lb"/>
+                            <constraint firstItem="3Ss-bK-i84" firstAttribute="top" secondItem="MCf-X0-ze4" secondAttribute="bottom" constant="22" id="ztF-Fb-XwB"/>
                         </constraints>
                     </view>
                     <connections>
@@ -787,6 +802,7 @@
                         <outlet property="tasteBtn6" destination="ViO-Jc-WkD" id="fvl-qb-PFT"/>
                         <outlet property="tasteBtn7" destination="YRb-UA-NxN" id="vyU-3I-xQJ"/>
                         <outlet property="tasteBtn8" destination="vCf-tf-wlZ" id="XW8-3K-bXs"/>
+                        <outlet property="whatBeerButton" destination="hCO-Pu-BeH" id="4mF-tc-QmS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thg-xN-cyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -799,13 +815,705 @@
                 <viewControllerPlaceholder storyboardName="MainPageStoryboard" referencedIdentifier="MainPageTabBarController" id="FAs-E2-Z1v" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0b-rv-cx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2459" y="139"/>
+            <point key="canvasLocation" x="3154" y="139"/>
+        </scene>
+        <!--What Beer View Controller-->
+        <scene sceneID="5m2-ii-XCR">
+            <objects>
+                <viewController storyboardIdentifier="WhatBeerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4pT-UV-kQ4" customClass="WhatBeerViewController" customModule="MackDuck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DBb-hl-Udf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coq-1f-0Kv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="f9d-Xo-c2N">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="7CR-x0-wTt">
+                                            <color key="tintColor" red="0.42352938649999999" green="0.42352938649999999" blue="0.42352938649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="didTabBackButton:" destination="4pT-UV-kQ4" id="Son-t1-3NU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yT-vX-nmE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dg-Xk-B9G">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="6400"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dictionaryBackground" translatesAutoresizingMaskIntoConstraints="NO" id="moO-z2-xyD">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="690"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="moO-z2-xyD" secondAttribute="height" multiplier="375:625" id="onA-oE-u5z"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="흠..! 이게 무슨 맥주지?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoL-z0-KnZ">
+                                                <rect key="frame" x="20" y="80" width="302.5" height="30"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#라거 #필스너 #스타우트 #에일 등 맥주 종류에 대해 알아보자!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdZ-cU-jLA">
+                                                <rect key="frame" x="20" y="130" width="382.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansLight" family="Gmarket Sans" pointSize="14"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라거 LAGERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUj-zN-6q8">
+                                                <rect key="frame" x="20" y="750" width="221.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="32"/>
+                                                <color key="textColor" red="0.96470588450000005" green="0.84313726430000002" blue="0.28627452250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라거" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vz-GN-FFX">
+                                                <rect key="frame" x="20" y="914.5" width="50.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="26"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호불호 없는 대중 맥주를 원한다면?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdM-76-97f">
+                                                <rect key="frame" x="20" y="950.5" width="374" height="16"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lager" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZR-vz-VZM">
+                                                <rect key="frame" x="80.5" y="922" width="42" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필스너" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAR-Ff-8KY">
+                                                <rect key="frame" x="20" y="1414" width="75.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="26"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pilsner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJF-Fs-XiR">
+                                                <rect key="frame" x="105.5" y="1421.5" width="51" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="둔켈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZl-rd-NiW">
+                                                <rect key="frame" x="20" y="1931.5" width="50.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="26"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dunkel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLn-wM-rih">
+                                                <rect key="frame" x="80.5" y="1939" width="53" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxQ-x8-IEN">
+                                                <rect key="frame" x="20" y="802" width="322.5" height="52.5"/>
+                                                <string key="text">효모가  액체 밑으로 가라앉는 상태를 하면 발효 되는 라거로
+장기간 저온에서 만들어져 담백하고 깔끔한 맛을 가진 현대의 대중 
+맥주라고 할 수 있어요!</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대중 맥주를 대표하고 대다수 국가에서 가장 많은 사랑을 받고 있는 라거! 라거의 큰 특징은  연한 황금빛, 라이트함, 적당한 쌉쌀함, 청량감을 갖는 맥주로 입안에서 맛이 빠르게 사라지는 라이트 바디가 특징인 맥주랍니다!" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiW-e3-Nao">
+                                                <rect key="frame" x="20" y="1236.5" width="374" height="52.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시태그 : #페일라거 #필스너 #둔켈" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMk-Id-ajQ">
+                                                <rect key="frame" x="20" y="1309" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerLager" translatesAutoresizingMaskIntoConstraints="NO" id="TcU-e8-ZbA">
+                                                <rect key="frame" x="20" y="986.5" width="374" height="230"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TcU-e8-ZbA" secondAttribute="height" multiplier="325:200" id="2ez-YH-TkT"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표 맥주 : 하이네켄 / 칼스버그 / 칭따오 / 밀러 / 스텔라" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ek-OT-W3s">
+                                                <rect key="frame" x="20" y="1336.5" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홉의 맛이 느껴지는 깔끔한 라거를 원한다면?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC2-Px-qd0">
+                                                <rect key="frame" x="20" y="1450" width="374" height="16"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerPilsner" translatesAutoresizingMaskIntoConstraints="NO" id="f3b-Q8-cdC">
+                                                <rect key="frame" x="20" y="1486" width="374" height="230.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="f3b-Q8-cdC" secondAttribute="height" multiplier="325:200" id="4V9-S2-O3P"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fc-J0-njy">
+                                                <rect key="frame" x="20" y="1736.5" width="374" height="70"/>
+                                                <string key="text">라거 특유의 투명한 황금빛과 시원한 청량감에 더해 사츠(Saaz) 홉의 쌉싸름한 맛과 풍미가 강조된 것이 특징이에요! 일반 라거에 비해 더욱 강한 쓴맛과 깊은 풍미가 보리의 곡물향와 적절한 조화를 이루고, 미디엄 바디감이 특징인 맥주랍니다!</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시태그 : #라거 중급자 #약한 쓴맛이 느껴지는 라거" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpf-pk-m0S">
+                                                <rect key="frame" x="20" y="1826.5" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표맥주 : 필스너 우르켈 / 산미구엘 / 파타고니아 보헤미안" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8g-qx-FJK">
+                                                <rect key="frame" x="20" y="1854" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기네스 보다 가벼운 흑맥주를 찾고 있다면?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pc-Zu-EfF">
+                                                <rect key="frame" x="20" y="1967.5" width="374" height="16"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerDunkel" translatesAutoresizingMaskIntoConstraints="NO" id="SE7-DW-OTF">
+                                                <rect key="frame" x="20" y="1993.5" width="374" height="230"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="SE7-DW-OTF" secondAttribute="height" multiplier="325:200" id="2wE-Dt-khn"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FC-nE-EHZ">
+                                                <rect key="frame" x="20" y="2243.5" width="374" height="70"/>
+                                                <string key="text">둔켈은 우리가 흔히 말하는 흑맥주라고도 불리우는데요. 검게 볶은 보리를 사용하여 짙은 검은색 색상을 띠고있는데요!  매우 쓰고 진한 맥주로 보일 수도 있지만, 맛은 오히려 스타우트나 포터와 달리 쓴맛이 적고 가벼운 보리 맥아의 질감이 강조되어 있는 흑맥주입니다!</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시태그 : #흑맥주 #스타우트 포터보다 약한 흑맥주" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sz0-U5-MFr">
+                                                <rect key="frame" x="20" y="2333.5" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표맥주 : 코젤 / 에딩거 / 파울라너 헤페" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVF-Ca-zAJ">
+                                                <rect key="frame" x="20" y="2361" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Wm-Cw-ZTp">
+                                                <rect key="frame" x="0.0" y="2428.5" width="414" height="10"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="e9o-Vs-lhU"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에일 ALES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg8-DY-BrZ">
+                                                <rect key="frame" x="20" y="2488.5" width="167" height="32"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="32"/>
+                                                <color key="textColor" red="0.96470588450000005" green="0.84313726430000002" blue="0.28627452250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWj-KH-rrI">
+                                                <rect key="frame" x="20" y="2540.5" width="374" height="52.5"/>
+                                                <string key="text">효모가 액체의 액면상에 떠 있는 상태로 상면 발효되는 에일로
+비교적 고온에서 단기간에 제조되어 강한 맛과 향을 띠는 맥주라고 
+할 수 있어요!</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qg-X1-WxV">
+                                                <rect key="frame" x="20" y="2653" width="50.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="26"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에일 입문자로 들어서고 싶다면?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jh-nj-zrt">
+                                                <rect key="frame" x="20" y="2689" width="374" height="16"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHJ-8T-qTI">
+                                                <rect key="frame" x="80.5" y="2660.5" width="24" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerAle" translatesAutoresizingMaskIntoConstraints="NO" id="409-QH-uYf">
+                                                <rect key="frame" x="20" y="2725" width="374" height="230"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="409-QH-uYf" secondAttribute="height" multiplier="325:200" id="WRd-2V-6yL"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbE-4k-rsI">
+                                                <rect key="frame" x="20" y="2975" width="374" height="70"/>
+                                                <string key="text">에일은 꽃이나 과일 등의 향이 느껴지는 맥주로 잔에 따랐을 때 혼탁한 비쥬얼을 가진 맥주랍니다!  향과 맛은 특유의 시트러스 과일향과 날카로운 몰트 향미와 쓴맛을 내기 때문에 라거보다는 무게감이 있고 깊고 묵직한 맛을 내는 게 특징이랍니다!</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시태그 : #페일에일 #밀맥주 #IPA #두벨" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okP-ww-MHw">
+                                                <rect key="frame" x="20" y="3065" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표맥주 : 대강 / 제주 펠롱 에일 / 핸드앤몰트 / 플래티넘" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g45-Xf-dBU">
+                                                <rect key="frame" x="20" y="3092.5" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wua-hB-CkD">
+                                                <rect key="frame" x="212.5" y="3177.5" width="25" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진정한 에일을 느끼고 싶다면?  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vq-OS-yqL">
+                                                <rect key="frame" x="20" y="3206" width="374" height="16"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerIpa" translatesAutoresizingMaskIntoConstraints="NO" id="2gu-yF-esC">
+                                                <rect key="frame" x="20" y="3232" width="374" height="230.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2gu-yF-esC" secondAttribute="height" multiplier="325:200" id="IRv-pp-y6L"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tlt-gD-o28">
+                                                <rect key="frame" x="20" y="3482.5" width="374" height="70"/>
+                                                <string key="text">페일 에일 보다 홉 양을 두 배 또는 그 이상으로 많이 넣어서 홉 향미가 강렬한 것을 인디아 페일에일 (IPA)이라고 불러요! 탄산이 비교적 약하고 솔향을 연상시키는 강렬한 홉향과 시큼하고 강렬한 첫 맛 특징이며, 매우 쓴맛 때문에 에일 초보자들이 접하기는 힘든 스타일의 맥주랍니다!</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시태그 : #에일 상급자 #홉 양 두배 #솔향 #쓴맛 " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZ2-c4-SFg">
+                                                <rect key="frame" x="20" y="3572.5" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표맥주 : 구스 아일랜드 / 순창 / 볼파스 엔젤맨 IPA " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwT-63-hox">
+                                                <rect key="frame" x="20" y="3600" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인디아 페일에일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hs7-n0-Lq7">
+                                                <rect key="frame" x="20" y="3170" width="182.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="26"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wheat Beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkn-fe-yr7">
+                                                <rect key="frame" x="105.5" y="3685" width="88" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="은은한 과일향과 풍성한 거품을 원한다면?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fC-6Q-bJe">
+                                                <rect key="frame" x="20" y="3713.5" width="374" height="16"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerWheat" translatesAutoresizingMaskIntoConstraints="NO" id="HvX-o8-3Th">
+                                                <rect key="frame" x="20" y="3739.5" width="374" height="230"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="HvX-o8-3Th" secondAttribute="height" multiplier="325:200" id="Spq-40-ZPH"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiI-sr-K4t">
+                                                <rect key="frame" x="20" y="3989.5" width="374" height="104.5"/>
+                                                <string key="text">흰색에 가까운 투명한 빛깔을 자랑하는 밀맥주는 벨기에식과 독일식으로 나누어져 있으며 벨기에식은 ‘witbier’ 독일식은’weizen’으로 불립니다! 풍부한 과일향과 풍성한 거품이 특징인 밀맥주는 가벼운 맛으로 부담 없이 즐길 수 있는 맥주랍니다. 특히 밀 특유의 가벼운 풍미와 산미로 부드러운 목 넘김을 선사한다고 해요!  밀맥주는 50%의 밀맥아가 들어있지 않으면 밀맥주라고 부르지 않아요! </string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시태그 : #은은한 과일향의 밀맥주 #부드러운 목넘김" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPr-K8-6br">
+                                                <rect key="frame" x="20" y="4114" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표맥주 : 호가든 / 파울라너 / 에델바이스 / 1664 블랑 / 에딩거바이젠" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXi-Hv-4gO">
+                                                <rect key="frame" x="20" y="4141.5" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="밀맥주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1d-dE-Dib">
+                                                <rect key="frame" x="20" y="3677.5" width="75.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="26"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIH-uc-Tz0">
+                                                <rect key="frame" x="0.0" y="4209" width="414" height="10"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="10" id="hRj-CY-JHa"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="흑맥주 Black beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pez-qC-j8Y">
+                                                <rect key="frame" x="20" y="4269" width="295.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="32"/>
+                                                <color key="textColor" red="0.96470588450000005" green="0.84313726430000002" blue="0.28627452250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맥주의 원료인 맥주보리의 맥아를 까맣게 태워 검은색 또는 갈색 등 짙은 색을 한 어두운 빛깔의 맥주에요!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBt-hh-4XK">
+                                                <rect key="frame" x="20" y="4321" width="374" height="35"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A05-xs-wcQ">
+                                                <rect key="frame" x="130.5" y="4423.5" width="40" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="진정한 흑맥주를 느끼고 싶다면?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9A-Uc-UxV">
+                                                <rect key="frame" x="20" y="4452" width="374" height="16"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerStout" translatesAutoresizingMaskIntoConstraints="NO" id="go4-mL-u04">
+                                                <rect key="frame" x="20" y="4478" width="374" height="230"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="go4-mL-u04" secondAttribute="height" multiplier="325:200" id="Zpp-Qz-073"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51n-Ub-QBN">
+                                                <rect key="frame" x="20" y="4728" width="374" height="87"/>
+                                                <string key="text">스타우트의 대표적 맥주는 아일랜드의 기네스가 있는데요 까맣게 탄 맥아를 사용해 탄 맛이 나는 짙은 갈색의 맥주로 다크 초콜릿과 에스프레소를 떠올리게 하는 검은색을 갖고있으며 쓴맛도 더 강합니다! 맥주인데 독해봤자 얼마나 되겠냐고 다른 맥주처럼 퍼마시다가 꽐라 상태 에 돌입할 수도 있으니 주의하세요!!</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시태그 : #흑맥주의 최강자 #갑자기 훅감 #묵직한 맛과 크리미함" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8g-e3-WoZ">
+                                                <rect key="frame" x="20" y="4835" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표맥주 : 기네스 오리지날 / 하이트 블랙 스타우트 / 칭따오 스타우트" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kda-4d-iG5">
+                                                <rect key="frame" x="20" y="4862.5" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스타우트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t50-9l-TO3">
+                                                <rect key="frame" x="20" y="4416" width="100.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="26"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Porter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tm7-Fa-oTY">
+                                                <rect key="frame" x="80.5" y="4947.5" width="46.5" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가벼운 흑맥주를 원한다면?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4a4-71-3N1">
+                                                <rect key="frame" x="20" y="4976" width="374" height="16"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansMedium" family="Gmarket Sans" pointSize="16"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beerPorter" translatesAutoresizingMaskIntoConstraints="NO" id="K0T-jI-dXm">
+                                                <rect key="frame" x="20" y="5002" width="374" height="230"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="K0T-jI-dXm" secondAttribute="height" multiplier="325:200" id="cCq-tq-Tzc"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0E6-Jx-9c9">
+                                                <rect key="frame" x="20" y="5252" width="374" height="87"/>
+                                                <string key="text">포터는 영국의 흑맥주로 아일랜드의 스타우트 흑맥주보다 먼저 나온 맥주에요! 어두운 색깔 때문에 묵직한 술이라는 오해를 받지만, 스타우트 흑맥주보다 중간 갈색에서 짙은 갈색을 띠며 더 묽답니다! 사실 태생적으로는 벌컥벌컥 마시는 용도의 상쾌한 맥주에 가까우니 묵직한 흑맥주가 부담스러운 분은 포터를 도전해 보세요!</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해시태그 : #라이트한 흑맥주 #영국 흑맥주" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKx-zR-HRZ">
+                                                <rect key="frame" x="20" y="5359" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대표맥주 : 제주거멍에일 / 울산수제맥주포터" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBP-bU-cLV">
+                                                <rect key="frame" x="20" y="5386.5" width="374" height="17.5"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="포터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJe-Ym-o4M">
+                                                <rect key="frame" x="20" y="4940" width="50.5" height="26"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="26"/>
+                                                <color key="textColor" red="0.97647058959999999" green="0.97647058959999999" blue="0.99215686319999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOg-0w-p0x">
+                                                <rect key="frame" x="20" y="5464" width="374" height="87"/>
+                                                <string key="text">출처 
+- https://thehyundaiblog.com/entry/KorraCraftBeerShow 
+[현대백화점 공식블로그]
+- https://namu.wiki/w/맥주/종류 [구글 나무위키]
+- https://www.newiki.net/ [내위키]</string>
+                                                <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="tintColor"/>
+                                        <color key="tintColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstItem="K0T-jI-dXm" firstAttribute="top" secondItem="4a4-71-3N1" secondAttribute="bottom" constant="10" id="0a3-Tw-Ehb"/>
+                                            <constraint firstItem="SE7-DW-OTF" firstAttribute="top" secondItem="8pc-Zu-EfF" secondAttribute="bottom" constant="10" id="0dr-7t-aPN"/>
+                                            <constraint firstItem="TWj-KH-rrI" firstAttribute="top" secondItem="qg8-DY-BrZ" secondAttribute="bottom" constant="20" id="0yM-lB-BlJ"/>
+                                            <constraint firstItem="qpf-pk-m0S" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="15G-cN-7Iu"/>
+                                            <constraint firstItem="4jh-nj-zrt" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="1US-w1-Ytl"/>
+                                            <constraint firstItem="0Qg-X1-WxV" firstAttribute="top" secondItem="TWj-KH-rrI" secondAttribute="bottom" constant="60" id="1Un-Ig-1qU"/>
+                                            <constraint firstItem="DIH-uc-Tz0" firstAttribute="top" secondItem="CXi-Hv-4gO" secondAttribute="bottom" constant="50" id="1rd-mx-hXd"/>
+                                            <constraint firstItem="qpf-pk-m0S" firstAttribute="top" secondItem="0Fc-J0-njy" secondAttribute="bottom" constant="20" id="1yv-Iu-UaZ"/>
+                                            <constraint firstItem="gdM-76-97f" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="2Ha-ph-VV5"/>
+                                            <constraint firstItem="409-QH-uYf" firstAttribute="top" secondItem="4jh-nj-zrt" secondAttribute="bottom" constant="20" id="2XG-lt-xUY"/>
+                                            <constraint firstItem="BwT-63-hox" firstAttribute="top" secondItem="SZ2-c4-SFg" secondAttribute="bottom" constant="10" id="2lH-Qp-eKb"/>
+                                            <constraint firstAttribute="trailing" secondItem="1ek-OT-W3s" secondAttribute="trailing" constant="20" id="3Lx-VJ-7bx"/>
+                                            <constraint firstItem="wua-hB-CkD" firstAttribute="leading" secondItem="Hs7-n0-Lq7" secondAttribute="trailing" constant="10" id="3l5-f4-45a"/>
+                                            <constraint firstItem="BLn-wM-rih" firstAttribute="firstBaseline" secondItem="UZl-rd-NiW" secondAttribute="firstBaseline" id="3xy-QK-UHt"/>
+                                            <constraint firstItem="gAR-Ff-8KY" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="3yD-th-FVL"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Wm-Cw-ZTp" secondAttribute="trailing" id="4Y5-su-Lrq"/>
+                                            <constraint firstAttribute="trailing" secondItem="qbE-4k-rsI" secondAttribute="trailing" constant="20" id="4dc-wp-Eqa"/>
+                                            <constraint firstItem="kda-4d-iG5" firstAttribute="top" secondItem="I8g-e3-WoZ" secondAttribute="bottom" constant="10" id="5DJ-fl-uNd"/>
+                                            <constraint firstItem="1ek-OT-W3s" firstAttribute="top" secondItem="HMk-Id-ajQ" secondAttribute="bottom" constant="10" id="5QU-pO-2QY"/>
+                                            <constraint firstItem="8fC-6Q-bJe" firstAttribute="top" secondItem="o1d-dE-Dib" secondAttribute="bottom" constant="10" id="5WZ-at-F2z"/>
+                                            <constraint firstItem="HxQ-x8-IEN" firstAttribute="top" secondItem="MUj-zN-6q8" secondAttribute="bottom" constant="20" id="5bV-ff-LVl"/>
+                                            <constraint firstItem="WVF-Ca-zAJ" firstAttribute="top" secondItem="Sz0-U5-MFr" secondAttribute="bottom" constant="10" id="6Be-Cw-cWt"/>
+                                            <constraint firstItem="HiW-e3-Nao" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="6HM-gV-WuR"/>
+                                            <constraint firstAttribute="trailing" secondItem="SE7-DW-OTF" secondAttribute="trailing" constant="20" id="6Tk-hr-O7U"/>
+                                            <constraint firstItem="xkn-fe-yr7" firstAttribute="leading" secondItem="o1d-dE-Dib" secondAttribute="trailing" constant="10" id="6dY-w7-sL3"/>
+                                            <constraint firstAttribute="trailing" secondItem="2gu-yF-esC" secondAttribute="trailing" constant="20" id="6wZ-lO-lin"/>
+                                            <constraint firstItem="AHJ-8T-qTI" firstAttribute="leading" secondItem="0Qg-X1-WxV" secondAttribute="trailing" constant="10" id="7NX-mV-CqA"/>
+                                            <constraint firstAttribute="trailing" secondItem="1vq-OS-yqL" secondAttribute="trailing" constant="20" id="7Sg-Tf-PZQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="okP-ww-MHw" secondAttribute="trailing" constant="20" id="7sO-vV-EEB"/>
+                                            <constraint firstItem="0Qg-X1-WxV" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="7u3-AL-4XB"/>
+                                            <constraint firstAttribute="trailing" secondItem="aiI-sr-K4t" secondAttribute="trailing" constant="20" id="8Be-Yy-Z2x"/>
+                                            <constraint firstItem="MUj-zN-6q8" firstAttribute="top" secondItem="moO-z2-xyD" secondAttribute="bottom" constant="60" id="8D3-ch-eZf"/>
+                                            <constraint firstAttribute="trailing" secondItem="WVF-Ca-zAJ" secondAttribute="trailing" constant="20" id="8dW-DY-FPD"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sz0-U5-MFr" secondAttribute="trailing" constant="20" id="8f0-HS-752"/>
+                                            <constraint firstItem="wua-hB-CkD" firstAttribute="firstBaseline" secondItem="Hs7-n0-Lq7" secondAttribute="firstBaseline" id="9Mb-AH-Vjn"/>
+                                            <constraint firstItem="A05-xs-wcQ" firstAttribute="firstBaseline" secondItem="t50-9l-TO3" secondAttribute="firstBaseline" id="AMz-7I-xJh"/>
+                                            <constraint firstItem="kda-4d-iG5" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="Abm-tk-SZH"/>
+                                            <constraint firstAttribute="trailing" secondItem="yBP-bU-cLV" secondAttribute="trailing" constant="20" id="Acp-Qj-FVw"/>
+                                            <constraint firstItem="8FC-nE-EHZ" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="AkS-Sd-a6e"/>
+                                            <constraint firstItem="qbE-4k-rsI" firstAttribute="top" secondItem="409-QH-uYf" secondAttribute="bottom" constant="20" id="Ax3-9J-7xI"/>
+                                            <constraint firstItem="0Fc-J0-njy" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="Axm-rz-nhA"/>
+                                            <constraint firstItem="HBt-hh-4XK" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="BK8-jg-fW3"/>
+                                            <constraint firstAttribute="trailing" secondItem="4a4-71-3N1" secondAttribute="trailing" constant="20" id="By8-Wo-dg1"/>
+                                            <constraint firstItem="SZ2-c4-SFg" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="CYo-RP-4UK"/>
+                                            <constraint firstItem="WVF-Ca-zAJ" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="CcI-UE-utH"/>
+                                            <constraint firstItem="Sz0-U5-MFr" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="D9i-7Z-nPC"/>
+                                            <constraint firstAttribute="trailing" secondItem="SZ2-c4-SFg" secondAttribute="trailing" constant="20" id="DCg-bI-ZN8"/>
+                                            <constraint firstItem="zZR-vz-VZM" firstAttribute="firstBaseline" secondItem="6Vz-GN-FFX" secondAttribute="firstBaseline" id="ET7-mB-O2K"/>
+                                            <constraint firstAttribute="trailing" secondItem="I8g-e3-WoZ" secondAttribute="trailing" constant="20" id="EpR-8T-jmn"/>
+                                            <constraint firstItem="MUj-zN-6q8" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="Euk-al-fAN"/>
+                                            <constraint firstAttribute="height" constant="6400" id="EvS-NW-uVr"/>
+                                            <constraint firstItem="5Wm-Cw-ZTp" firstAttribute="top" secondItem="WVF-Ca-zAJ" secondAttribute="bottom" constant="50" id="Eyh-10-b6O"/>
+                                            <constraint firstItem="409-QH-uYf" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="FIn-qd-A6Z"/>
+                                            <constraint firstItem="qbE-4k-rsI" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="FNf-RK-9HR"/>
+                                            <constraint firstItem="aiI-sr-K4t" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="Ffp-vr-p53"/>
+                                            <constraint firstItem="yBP-bU-cLV" firstAttribute="top" secondItem="rKx-zR-HRZ" secondAttribute="bottom" constant="10" id="FkH-U8-Onr"/>
+                                            <constraint firstItem="HBt-hh-4XK" firstAttribute="top" secondItem="Pez-qC-j8Y" secondAttribute="bottom" constant="20" id="G7n-IC-qiA"/>
+                                            <constraint firstAttribute="trailing" secondItem="f3b-Q8-cdC" secondAttribute="trailing" constant="20" id="GWi-Xs-9Cr"/>
+                                            <constraint firstAttribute="trailing" secondItem="K0T-jI-dXm" secondAttribute="trailing" constant="20" id="GxN-8h-dsY"/>
+                                            <constraint firstItem="g45-Xf-dBU" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="H3V-WE-Teo"/>
+                                            <constraint firstItem="Hs7-n0-Lq7" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="Hcp-Tq-emN"/>
+                                            <constraint firstItem="yBP-bU-cLV" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="HeV-7S-K8b"/>
+                                            <constraint firstItem="RJe-Ym-o4M" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="HrP-rm-Zfk"/>
+                                            <constraint firstAttribute="trailing" secondItem="DIH-uc-Tz0" secondAttribute="trailing" id="I5h-CS-chX"/>
+                                            <constraint firstItem="BwT-63-hox" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="IGb-oX-iMP"/>
+                                            <constraint firstItem="UZl-rd-NiW" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="ILL-sx-U72"/>
+                                            <constraint firstItem="tm7-Fa-oTY" firstAttribute="leading" secondItem="RJe-Ym-o4M" secondAttribute="trailing" constant="10" id="ISJ-ZQ-FY1"/>
+                                            <constraint firstItem="JJF-Fs-XiR" firstAttribute="firstBaseline" secondItem="gAR-Ff-8KY" secondAttribute="firstBaseline" id="Igx-Xg-AIF"/>
+                                            <constraint firstItem="aPr-K8-6br" firstAttribute="top" secondItem="aiI-sr-K4t" secondAttribute="bottom" constant="20" id="Ir9-Ay-sgK"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Fc-J0-njy" secondAttribute="trailing" constant="20" id="Jvw-i4-bIL"/>
+                                            <constraint firstItem="Hs7-n0-Lq7" firstAttribute="top" secondItem="g45-Xf-dBU" secondAttribute="bottom" constant="60" id="KNL-cL-Fqb"/>
+                                            <constraint firstAttribute="trailing" secondItem="qpf-pk-m0S" secondAttribute="trailing" constant="20" id="KQO-cs-vlX"/>
+                                            <constraint firstItem="go4-mL-u04" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="L04-dY-DFB"/>
+                                            <constraint firstAttribute="trailing" secondItem="51n-Ub-QBN" secondAttribute="trailing" constant="20" id="L2b-hh-lbg"/>
+                                            <constraint firstItem="BLn-wM-rih" firstAttribute="leading" secondItem="UZl-rd-NiW" secondAttribute="trailing" constant="10" id="L4R-kb-Jdu"/>
+                                            <constraint firstAttribute="trailing" secondItem="0E6-Jx-9c9" secondAttribute="trailing" constant="20" id="LDk-Yy-uo3"/>
+                                            <constraint firstAttribute="trailing" secondItem="8pc-Zu-EfF" secondAttribute="trailing" constant="20" id="LpU-bw-gDZ"/>
+                                            <constraint firstItem="M8g-qx-FJK" firstAttribute="top" secondItem="qpf-pk-m0S" secondAttribute="bottom" constant="10" id="Lwf-65-NAT"/>
+                                            <constraint firstItem="HvX-o8-3Th" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="NGm-FA-hJ0"/>
+                                            <constraint firstAttribute="trailing" secondItem="TcU-e8-ZbA" secondAttribute="trailing" constant="20" id="NKL-oI-v7d"/>
+                                            <constraint firstItem="rKx-zR-HRZ" firstAttribute="top" secondItem="0E6-Jx-9c9" secondAttribute="bottom" constant="20" id="Nvw-t1-kio"/>
+                                            <constraint firstItem="Sz0-U5-MFr" firstAttribute="top" secondItem="8FC-nE-EHZ" secondAttribute="bottom" constant="20" id="OSs-Et-0Rp"/>
+                                            <constraint firstAttribute="trailing" secondItem="Tlt-gD-o28" secondAttribute="trailing" constant="20" id="OZY-n7-7Rh"/>
+                                            <constraint firstItem="51n-Ub-QBN" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="PCc-3b-DwA"/>
+                                            <constraint firstItem="Pez-qC-j8Y" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="PX4-iG-Hti"/>
+                                            <constraint firstAttribute="trailing" secondItem="HiW-e3-Nao" secondAttribute="trailing" constant="20" id="QGF-bd-jMS"/>
+                                            <constraint firstItem="CXi-Hv-4gO" firstAttribute="top" secondItem="aPr-K8-6br" secondAttribute="bottom" constant="10" id="QJ5-0X-8ns"/>
+                                            <constraint firstItem="1vq-OS-yqL" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="Qxc-Qb-J93"/>
+                                            <constraint firstItem="ZdZ-cU-jLA" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="RD6-jt-8Hw"/>
+                                            <constraint firstItem="4a4-71-3N1" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="RJV-Fc-ipq"/>
+                                            <constraint firstItem="t50-9l-TO3" firstAttribute="top" secondItem="HBt-hh-4XK" secondAttribute="bottom" constant="60" id="RX1-58-Sfj"/>
+                                            <constraint firstItem="8pc-Zu-EfF" firstAttribute="top" secondItem="UZl-rd-NiW" secondAttribute="bottom" constant="10" id="ReE-MK-2vl"/>
+                                            <constraint firstAttribute="trailing" secondItem="4jh-nj-zrt" secondAttribute="trailing" constant="20" id="RhJ-So-gtp"/>
+                                            <constraint firstItem="aPr-K8-6br" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="Rml-Ed-qph"/>
+                                            <constraint firstItem="xkn-fe-yr7" firstAttribute="firstBaseline" secondItem="o1d-dE-Dib" secondAttribute="firstBaseline" id="SnG-9a-B3G"/>
+                                            <constraint firstItem="SE7-DW-OTF" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="SrA-Pe-3WY"/>
+                                            <constraint firstAttribute="trailing" secondItem="rKx-zR-HRZ" secondAttribute="trailing" constant="20" id="TT5-1o-WAG"/>
+                                            <constraint firstItem="TcU-e8-ZbA" firstAttribute="top" secondItem="gdM-76-97f" secondAttribute="bottom" constant="20" id="U2j-5B-5m3"/>
+                                            <constraint firstAttribute="trailing" secondItem="moO-z2-xyD" secondAttribute="trailing" id="UCI-FY-RO9"/>
+                                            <constraint firstAttribute="trailing" secondItem="TWj-KH-rrI" secondAttribute="trailing" constant="20" id="UNA-JO-wJq"/>
+                                            <constraint firstItem="2gu-yF-esC" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="UXO-pm-lVo"/>
+                                            <constraint firstItem="g45-Xf-dBU" firstAttribute="top" secondItem="okP-ww-MHw" secondAttribute="bottom" constant="10" id="Ubo-eS-ZQr"/>
+                                            <constraint firstItem="4jh-nj-zrt" firstAttribute="top" secondItem="0Qg-X1-WxV" secondAttribute="bottom" constant="10" id="Ulh-eH-ilZ"/>
+                                            <constraint firstItem="AHJ-8T-qTI" firstAttribute="firstBaseline" secondItem="0Qg-X1-WxV" secondAttribute="firstBaseline" id="VTQ-oq-QWI"/>
+                                            <constraint firstItem="HxQ-x8-IEN" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="WPE-Pr-OZb"/>
+                                            <constraint firstItem="6Vz-GN-FFX" firstAttribute="top" secondItem="HxQ-x8-IEN" secondAttribute="bottom" constant="60" id="WdS-oi-oHC"/>
+                                            <constraint firstAttribute="trailing" secondItem="409-QH-uYf" secondAttribute="trailing" constant="20" id="WlW-nS-enr"/>
+                                            <constraint firstItem="4a4-71-3N1" firstAttribute="top" secondItem="RJe-Ym-o4M" secondAttribute="bottom" constant="10" id="WqH-vL-5I2"/>
+                                            <constraint firstItem="SZ2-c4-SFg" firstAttribute="top" secondItem="Tlt-gD-o28" secondAttribute="bottom" constant="20" id="X9Z-XF-0tc"/>
+                                            <constraint firstAttribute="trailing" secondItem="D9A-Uc-UxV" secondAttribute="trailing" constant="20" id="XhJ-nb-xOc"/>
+                                            <constraint firstAttribute="trailing" secondItem="lC2-Px-qd0" secondAttribute="trailing" constant="20" id="Y7f-0f-TmF"/>
+                                            <constraint firstItem="HiW-e3-Nao" firstAttribute="top" secondItem="TcU-e8-ZbA" secondAttribute="bottom" constant="20" id="Zjw-3Q-bHY"/>
+                                            <constraint firstItem="CXi-Hv-4gO" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="ZkF-tk-Ocl"/>
+                                            <constraint firstAttribute="trailing" secondItem="BwT-63-hox" secondAttribute="trailing" constant="20" id="ZoZ-Gt-zYl"/>
+                                            <constraint firstItem="0E6-Jx-9c9" firstAttribute="top" secondItem="K0T-jI-dXm" secondAttribute="bottom" constant="20" id="aLN-Tn-yhE"/>
+                                            <constraint firstItem="Pez-qC-j8Y" firstAttribute="top" secondItem="DIH-uc-Tz0" secondAttribute="bottom" constant="50" id="aYm-t0-ZUG"/>
+                                            <constraint firstAttribute="trailing" secondItem="uOg-0w-p0x" secondAttribute="trailing" constant="20" id="bER-Rv-va4"/>
+                                            <constraint firstItem="o1d-dE-Dib" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="bHW-3a-Yh1"/>
+                                            <constraint firstItem="Tlt-gD-o28" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="cE5-fK-nd2"/>
+                                            <constraint firstItem="t50-9l-TO3" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="cOO-zd-0wh"/>
+                                            <constraint firstAttribute="trailing" secondItem="go4-mL-u04" secondAttribute="trailing" constant="20" id="cVG-1U-7J2"/>
+                                            <constraint firstItem="HMk-Id-ajQ" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="cqQ-e1-Shn"/>
+                                            <constraint firstItem="okP-ww-MHw" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="cvt-lT-PAq"/>
+                                            <constraint firstItem="gdM-76-97f" firstAttribute="top" secondItem="6Vz-GN-FFX" secondAttribute="bottom" constant="10" id="cvy-Lc-LDa"/>
+                                            <constraint firstAttribute="trailing" secondItem="HMk-Id-ajQ" secondAttribute="trailing" constant="20" id="ddS-gz-YWE"/>
+                                            <constraint firstItem="f3b-Q8-cdC" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="eBu-Ru-pkz"/>
+                                            <constraint firstItem="ZdZ-cU-jLA" firstAttribute="top" secondItem="PoL-z0-KnZ" secondAttribute="bottom" constant="20" id="eOX-9B-cyi"/>
+                                            <constraint firstItem="lC2-Px-qd0" firstAttribute="top" secondItem="gAR-Ff-8KY" secondAttribute="bottom" constant="10" id="eww-nr-6vq"/>
+                                            <constraint firstAttribute="trailing" secondItem="M8g-qx-FJK" secondAttribute="trailing" constant="20" id="fCZ-6F-Ovc"/>
+                                            <constraint firstItem="I8g-e3-WoZ" firstAttribute="top" secondItem="51n-Ub-QBN" secondAttribute="bottom" constant="20" id="fJf-Ub-gN3"/>
+                                            <constraint firstItem="A05-xs-wcQ" firstAttribute="leading" secondItem="t50-9l-TO3" secondAttribute="trailing" constant="10" id="fZY-3o-h5z"/>
+                                            <constraint firstItem="uOg-0w-p0x" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="gd9-1c-FYD"/>
+                                            <constraint firstItem="8fC-6Q-bJe" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="ghk-6W-bf4"/>
+                                            <constraint firstItem="TcU-e8-ZbA" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="ghm-Ds-blX"/>
+                                            <constraint firstItem="TWj-KH-rrI" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="gpn-hI-haU"/>
+                                            <constraint firstItem="Tlt-gD-o28" firstAttribute="top" secondItem="2gu-yF-esC" secondAttribute="bottom" constant="20" id="grf-NH-COS"/>
+                                            <constraint firstItem="qg8-DY-BrZ" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="hBj-hd-pft"/>
+                                            <constraint firstItem="okP-ww-MHw" firstAttribute="top" secondItem="qbE-4k-rsI" secondAttribute="bottom" constant="20" id="hJx-IW-90z"/>
+                                            <constraint firstItem="RJe-Ym-o4M" firstAttribute="top" secondItem="kda-4d-iG5" secondAttribute="bottom" constant="60" id="hSu-8k-W2r"/>
+                                            <constraint firstAttribute="trailing" secondItem="HBt-hh-4XK" secondAttribute="trailing" constant="20" id="i0s-On-uCG"/>
+                                            <constraint firstItem="0Fc-J0-njy" firstAttribute="top" secondItem="f3b-Q8-cdC" secondAttribute="bottom" constant="20" id="j9Q-nW-t5F"/>
+                                            <constraint firstItem="gAR-Ff-8KY" firstAttribute="top" secondItem="1ek-OT-W3s" secondAttribute="bottom" constant="60" id="jxO-KY-5iz"/>
+                                            <constraint firstItem="2gu-yF-esC" firstAttribute="top" secondItem="1vq-OS-yqL" secondAttribute="bottom" constant="10" id="k5n-ua-xho"/>
+                                            <constraint firstAttribute="trailing" secondItem="g45-Xf-dBU" secondAttribute="trailing" constant="20" id="kb1-LB-OJg"/>
+                                            <constraint firstItem="JJF-Fs-XiR" firstAttribute="leading" secondItem="gAR-Ff-8KY" secondAttribute="trailing" constant="10" id="lVn-3G-zCn"/>
+                                            <constraint firstItem="8FC-nE-EHZ" firstAttribute="top" secondItem="SE7-DW-OTF" secondAttribute="bottom" constant="20" id="lec-gz-jhI"/>
+                                            <constraint firstAttribute="trailing" secondItem="gdM-76-97f" secondAttribute="trailing" constant="20" id="nGl-05-VeR"/>
+                                            <constraint firstItem="5Wm-Cw-ZTp" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" id="oBB-VQ-Ipy"/>
+                                            <constraint firstItem="moO-z2-xyD" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" id="oP0-Hv-6dG"/>
+                                            <constraint firstItem="UZl-rd-NiW" firstAttribute="top" secondItem="M8g-qx-FJK" secondAttribute="bottom" constant="60" id="oYf-Kd-hOc"/>
+                                            <constraint firstItem="6Vz-GN-FFX" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="q3u-58-vgs"/>
+                                            <constraint firstItem="1ek-OT-W3s" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="q74-hF-T7t"/>
+                                            <constraint firstItem="lC2-Px-qd0" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="q85-aV-ma0"/>
+                                            <constraint firstItem="1vq-OS-yqL" firstAttribute="top" secondItem="Hs7-n0-Lq7" secondAttribute="bottom" constant="10" id="qHB-xh-ox6"/>
+                                            <constraint firstItem="I8g-e3-WoZ" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="qbl-oy-O3h"/>
+                                            <constraint firstItem="PoL-z0-KnZ" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="qbw-pi-0k2"/>
+                                            <constraint firstItem="rKx-zR-HRZ" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="qkh-79-zF7"/>
+                                            <constraint firstItem="K0T-jI-dXm" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="qmX-BZ-eCs"/>
+                                            <constraint firstItem="HvX-o8-3Th" firstAttribute="top" secondItem="8fC-6Q-bJe" secondAttribute="bottom" constant="10" id="r5L-HI-w1E"/>
+                                            <constraint firstItem="aiI-sr-K4t" firstAttribute="top" secondItem="HvX-o8-3Th" secondAttribute="bottom" constant="20" id="rtT-YF-TgY"/>
+                                            <constraint firstAttribute="trailing" secondItem="aPr-K8-6br" secondAttribute="trailing" constant="20" id="sBY-BL-Wb8"/>
+                                            <constraint firstItem="go4-mL-u04" firstAttribute="top" secondItem="D9A-Uc-UxV" secondAttribute="bottom" constant="10" id="sL9-wX-loH"/>
+                                            <constraint firstItem="51n-Ub-QBN" firstAttribute="top" secondItem="go4-mL-u04" secondAttribute="bottom" constant="20" id="shO-Xr-OD0"/>
+                                            <constraint firstItem="0E6-Jx-9c9" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="sjx-tZ-hOj"/>
+                                            <constraint firstAttribute="trailing" secondItem="HvX-o8-3Th" secondAttribute="trailing" constant="20" id="tQb-Nx-CEa"/>
+                                            <constraint firstItem="o1d-dE-Dib" firstAttribute="top" secondItem="BwT-63-hox" secondAttribute="bottom" constant="60" id="tTA-HB-8Rh"/>
+                                            <constraint firstItem="D9A-Uc-UxV" firstAttribute="top" secondItem="t50-9l-TO3" secondAttribute="bottom" constant="10" id="uEb-wm-Ssj"/>
+                                            <constraint firstItem="moO-z2-xyD" firstAttribute="top" secondItem="5Dg-Xk-B9G" secondAttribute="top" id="uey-lt-iZv"/>
+                                            <constraint firstItem="D9A-Uc-UxV" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="uwv-qt-LlH"/>
+                                            <constraint firstItem="M8g-qx-FJK" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="uxa-hC-1ei"/>
+                                            <constraint firstAttribute="trailing" secondItem="8fC-6Q-bJe" secondAttribute="trailing" constant="20" id="v1j-Ka-cLZ"/>
+                                            <constraint firstItem="f3b-Q8-cdC" firstAttribute="top" secondItem="lC2-Px-qd0" secondAttribute="bottom" constant="20" id="vCY-MN-N9o"/>
+                                            <constraint firstItem="K0T-jI-dXm" firstAttribute="width" secondItem="K0T-jI-dXm" secondAttribute="height" multiplier="325:200" id="vwE-CN-ezg"/>
+                                            <constraint firstItem="zZR-vz-VZM" firstAttribute="leading" secondItem="6Vz-GN-FFX" secondAttribute="trailing" constant="10" id="wIB-kA-u7u"/>
+                                            <constraint firstItem="DIH-uc-Tz0" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" id="wPg-PI-KcC"/>
+                                            <constraint firstAttribute="trailing" secondItem="8FC-nE-EHZ" secondAttribute="trailing" constant="20" id="xJm-SX-jnm"/>
+                                            <constraint firstAttribute="trailing" secondItem="kda-4d-iG5" secondAttribute="trailing" constant="20" id="xWt-rI-fb3"/>
+                                            <constraint firstItem="tm7-Fa-oTY" firstAttribute="firstBaseline" secondItem="RJe-Ym-o4M" secondAttribute="firstBaseline" id="xgI-0s-F9L"/>
+                                            <constraint firstItem="uOg-0w-p0x" firstAttribute="top" secondItem="yBP-bU-cLV" secondAttribute="bottom" constant="60" id="yPH-XY-0MJ"/>
+                                            <constraint firstItem="qg8-DY-BrZ" firstAttribute="top" secondItem="5Wm-Cw-ZTp" secondAttribute="bottom" constant="50" id="ySe-6c-swk"/>
+                                            <constraint firstAttribute="trailing" secondItem="CXi-Hv-4gO" secondAttribute="trailing" constant="20" id="yfQ-x5-VDz"/>
+                                            <constraint firstItem="PoL-z0-KnZ" firstAttribute="top" secondItem="5Dg-Xk-B9G" secondAttribute="top" constant="80" id="zDl-eN-O8K"/>
+                                            <constraint firstItem="HMk-Id-ajQ" firstAttribute="top" secondItem="HiW-e3-Nao" secondAttribute="bottom" constant="20" id="zGt-oo-f5u"/>
+                                            <constraint firstItem="8pc-Zu-EfF" firstAttribute="leading" secondItem="5Dg-Xk-B9G" secondAttribute="leading" constant="20" id="zYZ-QP-NhF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5Dg-Xk-B9G" firstAttribute="width" secondItem="UYJ-GL-g3N" secondAttribute="width" id="AVB-HG-94r"/>
+                                    <constraint firstItem="5Dg-Xk-B9G" firstAttribute="trailing" secondItem="Dib-S6-Yjg" secondAttribute="trailing" id="ZLi-Zj-gHA"/>
+                                    <constraint firstItem="5Dg-Xk-B9G" firstAttribute="bottom" secondItem="Dib-S6-Yjg" secondAttribute="bottom" constant="725" id="bqE-hX-bDW"/>
+                                    <constraint firstItem="5Dg-Xk-B9G" firstAttribute="top" secondItem="Dib-S6-Yjg" secondAttribute="top" id="hNk-I3-xWY"/>
+                                    <constraint firstItem="5Dg-Xk-B9G" firstAttribute="leading" secondItem="Dib-S6-Yjg" secondAttribute="leading" id="uKt-uu-e9i"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Dib-S6-Yjg"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="UYJ-GL-g3N"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8d1-L5-zY6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="coq-1f-0Kv" firstAttribute="leading" secondItem="8d1-L5-zY6" secondAttribute="leading" id="2OQ-n7-AbC"/>
+                            <constraint firstItem="8d1-L5-zY6" firstAttribute="trailing" secondItem="5yT-vX-nmE" secondAttribute="trailing" id="2P0-XU-glk"/>
+                            <constraint firstItem="5yT-vX-nmE" firstAttribute="bottom" secondItem="8d1-L5-zY6" secondAttribute="bottom" id="BqA-wy-JTN"/>
+                            <constraint firstItem="coq-1f-0Kv" firstAttribute="trailing" secondItem="8d1-L5-zY6" secondAttribute="trailing" id="Xvn-5d-Fch"/>
+                            <constraint firstItem="5yT-vX-nmE" firstAttribute="leading" secondItem="8d1-L5-zY6" secondAttribute="leading" id="bTt-RB-QFm"/>
+                            <constraint firstItem="5yT-vX-nmE" firstAttribute="top" secondItem="coq-1f-0Kv" secondAttribute="bottom" id="uks-uH-ilF"/>
+                            <constraint firstItem="coq-1f-0Kv" firstAttribute="top" secondItem="8d1-L5-zY6" secondAttribute="top" id="wDA-O6-zS0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lagerExplain" destination="HiW-e3-Nao" id="XP8-wd-n9A"/>
+                        <outlet property="lagersSubTitle" destination="HxQ-x8-IEN" id="Br1-qb-Lyb"/>
+                        <outlet property="mainTitle" destination="PoL-z0-KnZ" id="dTK-NR-sZx"/>
+                        <outlet property="navigationBar" destination="coq-1f-0Kv" id="eba-ts-Vb2"/>
+                        <outlet property="scrollViewBackground" destination="5Dg-Xk-B9G" id="nU7-yr-JB2"/>
+                        <outlet property="subTitle" destination="ZdZ-cU-jLA" id="5yk-ls-VfL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AQc-TL-88w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2575" y="116"/>
         </scene>
     </scenes>
     <resources>
         <image name="appleLogo" width="20" height="20"/>
+        <image name="beerAle" width="325" height="200"/>
+        <image name="beerDunkel" width="325" height="200"/>
+        <image name="beerIpa" width="325" height="200"/>
+        <image name="beerLager" width="325" height="200"/>
+        <image name="beerPilsner" width="325" height="200"/>
+        <image name="beerPorter" width="325" height="200"/>
+        <image name="beerStout" width="325" height="200"/>
+        <image name="beerWheat" width="325" height="200"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
+        <image name="dictionaryBackground" width="375" height="626"/>
         <image name="kakaoLogo" width="20" height="20"/>
         <image name="mackDuckLoginIcon" width="170" height="208"/>
         <image name="privacyBeerButton" width="295" height="60"/>
@@ -815,6 +1523,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

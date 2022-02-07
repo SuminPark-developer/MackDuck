@@ -47,7 +47,7 @@
                                 <rect key="frame" x="20" y="88" width="374" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2n0-SQ-v13">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="1480"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="1430"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맥주 이름이 무엇인가요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cW-JF-v4T">
                                                 <rect key="frame" x="0.0" y="50" width="308.5" height="43.5"/>
@@ -56,13 +56,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="맥주 정보" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oSL-ER-xE7">
-                                                <rect key="frame" x="0.0" y="373.5" width="63.5" height="23.5"/>
+                                                <rect key="frame" x="0.0" y="368" width="63.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="fill" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHz-y4-8zm">
-                                                <rect key="frame" x="0.0" y="113.5" width="374" height="74"/>
+                                                <rect key="frame" x="0.0" y="113.5" width="374" height="71.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="14"/>
                                                 <color key="tintColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -81,20 +81,27 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-Bc-s5s">
-                                                <rect key="frame" x="0.0" y="257.5" width="374" height="96"/>
+                                                <rect key="frame" x="0.0" y="255" width="374" height="93"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="mainRecommendIcon" title="테마별 맥주 추천" subtitle="어떤 맥주를 마셔야 할지 모를 땐?!" imagePadding="10" buttonSize="large">
+                                                <buttonConfiguration key="configuration" style="plain" image="mainRecommendIcon" title="테마별 맥주 추천" imagePadding="12" buttonSize="large">
                                                     <backgroundConfiguration key="background" image="mainRecommendBackground"/>
                                                     <fontDescription key="titleFontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="16"/>
-                                                    <fontDescription key="subtitleFontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
+                                                    <attributedString key="attributedSubtitle">
+                                                        <fragment content="어떤 맥주를 마셔야 할지 모를 땐?!">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <font key="NSFont" size="12" name="NotoSansKR-Regular"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="didTabRecommendButton:" destination="IAW-8X-fav" eventType="touchUpInside" id="eGq-4g-3R3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-y9-7Dh">
-                                                <rect key="frame" x="0.0" y="409" width="374" height="266.5"/>
+                                                <rect key="frame" x="0.0" y="403.5" width="374" height="221.5"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="mainInformationIcon" imagePadding="40" buttonSize="large">
@@ -105,20 +112,26 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainRecommendArrow" translatesAutoresizingMaskIntoConstraints="NO" id="5gO-oB-emh">
-                                                <rect key="frame" x="338" y="297.5" width="16" height="16"/>
+                                                <rect key="frame" x="338" y="293.5" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="ONP-RM-FnQ"/>
                                                     <constraint firstAttribute="width" constant="16" id="RH8-fk-Ehm"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이게 무슨 맥주지?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf1-9J-r3r">
-                                                <rect key="frame" x="20" y="525" width="180.5" height="35"/>
-                                                <fontDescription key="fontDescription" name="NotoSansKR-Bold" family="Noto Sans KR" pointSize="24"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf1-9J-r3r">
+                                                <rect key="frame" x="20" y="497" width="139.5" height="35"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="맥주종류 사전">
+                                                        <attributes>
+                                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <font key="NSFont" size="24" name="NotoSansKR-Bold"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#알면 쓸모있는 맥주 상식#라거, 필스너, 스타우트 등" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4p-tg-wix">
-                                                <rect key="frame" x="20" y="566" width="260" height="17.5"/>
+                                                <rect key="frame" x="20" y="538" width="260" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKR-Regular" family="Noto Sans KR" pointSize="12"/>
                                                 <color key="textColor" red="0.53333336109999996" green="0.53333336109999996" blue="0.53333336109999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -145,8 +158,8 @@
                                             <constraint firstItem="vHz-y4-8zm" firstAttribute="leading" secondItem="2n0-SQ-v13" secondAttribute="leading" id="ghe-S1-3rW"/>
                                             <constraint firstItem="9cW-JF-v4T" firstAttribute="leading" secondItem="2n0-SQ-v13" secondAttribute="leading" id="gpj-Oc-BZi"/>
                                             <constraint firstAttribute="trailing" secondItem="Tbk-y9-7Dh" secondAttribute="trailing" id="ixY-wI-PgY"/>
-                                            <constraint firstAttribute="height" constant="1480" id="kzg-4B-ayM"/>
-                                            <constraint firstItem="Tbk-y9-7Dh" firstAttribute="height" secondItem="2n0-SQ-v13" secondAttribute="height" multiplier="0.18" id="p5X-ZL-e4Q"/>
+                                            <constraint firstAttribute="height" constant="1430" id="kzg-4B-ayM"/>
+                                            <constraint firstItem="Tbk-y9-7Dh" firstAttribute="height" secondItem="2n0-SQ-v13" secondAttribute="height" multiplier="0.155" id="p5X-ZL-e4Q"/>
                                             <constraint firstItem="9cW-JF-v4T" firstAttribute="top" secondItem="2n0-SQ-v13" secondAttribute="top" constant="50" id="pQd-pJ-kIt"/>
                                             <constraint firstItem="bgD-Bc-s5s" firstAttribute="leading" secondItem="2n0-SQ-v13" secondAttribute="leading" id="vtE-hr-PbW"/>
                                         </constraints>
@@ -1057,7 +1070,7 @@
                                 <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Flm-aP-4t4">
-                                <rect key="frame" x="20" y="176" width="374" height="637"/>
+                                <rect key="frame" x="20" y="168" width="374" height="645"/>
                                 <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1066,7 +1079,7 @@
                                 </userDefinedRuntimeAttributes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="H2Z-Ae-POD">
-                                <rect key="frame" x="20" y="176" width="374" height="637"/>
+                                <rect key="frame" x="20" y="198" width="374" height="615"/>
                                 <color key="backgroundColor" red="0.070588238540000001" green="0.070588238540000001" blue="0.070588238540000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'포도' 맥주에 대한 정보가 없어요..!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="001-Re-4Zp">
@@ -1093,7 +1106,7 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="15"/>
+                                        <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -1106,7 +1119,7 @@
                         <constraints>
                             <constraint firstItem="Tbi-WM-c0W" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="30" id="2Rf-dl-obl"/>
                             <constraint firstItem="Y08-ip-Ybf" firstAttribute="top" secondItem="Tbi-WM-c0W" secondAttribute="bottom" constant="20" id="2fj-n7-EGo"/>
-                            <constraint firstItem="H2Z-Ae-POD" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="8" id="35d-SP-kkM"/>
+                            <constraint firstItem="H2Z-Ae-POD" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="30" id="35d-SP-kkM"/>
                             <constraint firstItem="0TH-A5-20K" firstAttribute="top" secondItem="WSi-jG-bSv" secondAttribute="top" constant="20" id="3oX-Mz-ukP"/>
                             <constraint firstItem="Y08-ip-Ybf" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="35" id="4kX-sN-alc"/>
                             <constraint firstItem="0TH-A5-20K" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="AcZ-rp-93O"/>
@@ -1124,7 +1137,7 @@
                             <constraint firstItem="Flm-aP-4t4" firstAttribute="leading" secondItem="WSi-jG-bSv" secondAttribute="leading" constant="20" id="KLE-4d-bBb"/>
                             <constraint firstItem="rUY-4y-i7E" firstAttribute="centerX" secondItem="WSi-jG-bSv" secondAttribute="centerX" id="SH8-Wb-2Pz"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="trailing" secondItem="Flm-aP-4t4" secondAttribute="trailing" constant="20" id="X1M-F5-SFj"/>
-                            <constraint firstItem="Flm-aP-4t4" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="8" id="ZnC-h7-MeT"/>
+                            <constraint firstItem="Flm-aP-4t4" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" id="ZnC-h7-MeT"/>
                             <constraint firstItem="Mkl-Ud-3O1" firstAttribute="firstBaseline" secondItem="Tbi-WM-c0W" secondAttribute="firstBaseline" id="fbd-zF-wtA"/>
                             <constraint firstItem="WSi-jG-bSv" firstAttribute="bottom" secondItem="Flm-aP-4t4" secondAttribute="bottom" id="ftf-ls-5yN"/>
                             <constraint firstItem="001-Re-4Zp" firstAttribute="top" secondItem="0TH-A5-20K" secondAttribute="bottom" constant="35" id="mFt-GZ-cVN"/>
@@ -3960,40 +3973,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rRD-ld-uux">
-                                <rect key="frame" x="20" y="591" width="240" height="63"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rRD-ld-uux">
+                                <rect key="frame" x="20" y="536" width="374" height="144.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cc9-cn-emd">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUL-7D-c4N">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="71.5"/>
+                                        <color key="backgroundColor" red="0.13333323599999999" green="0.13725495339999999" blue="0.137254864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="수정하기">
+                                            <color key="titleColor" red="0.96470588450000005" green="0.84313726430000002" blue="0.28627452250000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clickModifyButton:" destination="fhD-lF-wj2" eventType="touchUpInside" id="X5e-qK-gxn"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vg7-mD-KUU">
-                                        <rect key="frame" x="0.0" y="31" width="240" height="1"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="71.5" width="374" height="1"/>
+                                        <color key="backgroundColor" red="0.25098040700000002" green="0.25490197539999998" blue="0.26274511220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Imf-i5-ta4"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPY-03-R9U">
-                                        <rect key="frame" x="0.0" y="32" width="240" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ed-Nr-GAW">
+                                        <rect key="frame" x="0.0" y="72.5" width="374" height="72"/>
+                                        <color key="backgroundColor" red="0.13333323599999999" green="0.13725495339999999" blue="0.137254864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="삭제하기"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="clickDeleteButton:" destination="fhD-lF-wj2" eventType="touchUpInside" id="Hgc-Gb-RGW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ns-hg-2dN">
-                                <rect key="frame" x="20" y="805" width="374" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ns-hg-2dN">
+                                <rect key="frame" x="20" y="690.5" width="374" height="71.5"/>
+                                <color key="backgroundColor" red="0.13333323599999999" green="0.13725495339999999" blue="0.137254864" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="NotoSansKR-Medium" family="Noto Sans KR" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="취소"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickBackButton:" destination="fhD-lF-wj2" eventType="touchUpInside" id="Cdy-DW-H1v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="36B-Yi-u5q"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.79946192052980136" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.79527110927152322" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Ns-hg-2dN" firstAttribute="leading" secondItem="36B-Yi-u5q" secondAttribute="leading" constant="20" id="9rF-ea-Dh3"/>
+                            <constraint firstItem="36B-Yi-u5q" firstAttribute="trailing" secondItem="rRD-ld-uux" secondAttribute="trailing" constant="20" id="CbT-X4-B7t"/>
+                            <constraint firstItem="7Ns-hg-2dN" firstAttribute="top" secondItem="rRD-ld-uux" secondAttribute="bottom" constant="10" id="JdS-dn-wuY"/>
+                            <constraint firstItem="rRD-ld-uux" firstAttribute="leading" secondItem="36B-Yi-u5q" secondAttribute="leading" constant="20" id="Nqg-1k-oOJ"/>
+                            <constraint firstItem="6Ed-Nr-GAW" firstAttribute="height" secondItem="7Ns-hg-2dN" secondAttribute="height" id="QEg-9C-yCt"/>
+                            <constraint firstItem="36B-Yi-u5q" firstAttribute="trailing" secondItem="7Ns-hg-2dN" secondAttribute="trailing" constant="20" id="UHF-nQ-pHm"/>
+                            <constraint firstItem="NUL-7D-c4N" firstAttribute="height" secondItem="7Ns-hg-2dN" secondAttribute="height" id="bgt-r6-oRJ"/>
+                            <constraint firstItem="36B-Yi-u5q" firstAttribute="bottom" secondItem="7Ns-hg-2dN" secondAttribute="bottom" constant="100" id="eOc-fw-Uxq"/>
+                            <constraint firstItem="7Ns-hg-2dN" firstAttribute="height" secondItem="bUB-Mx-6ZB" secondAttribute="height" multiplier="0.08" id="xUv-Ls-Eak"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="bUB-Mx-6ZB" id="JeC-Gi-bTY"/>
+                        <outlet property="deleteButton" destination="6Ed-Nr-GAW" id="rLG-C3-oSk"/>
+                        <outlet property="modifyButton" destination="NUL-7D-c4N" id="VZ9-IN-jBy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeY-lA-CJ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

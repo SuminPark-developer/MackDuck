@@ -62,6 +62,7 @@ class BeerDetailReviewViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.beerDetailReviewDataManager.getBeerReviewInfo(rowNumber: String(0), beerId: BeerData.details.beerId, delegate: self) // 맥주 리뷰 정보(6개) 가져오는 api 호출.
     }
     
@@ -135,8 +136,44 @@ class BeerDetailReviewViewController: UIViewController {
     
     @IBAction func clickMoreImageButton(_ sender: UIButton) { // 더보기 버튼 클릭 시,
         print("더보기 버튼 클릭.")
-        let seeReviewMoreImageVC = (self.storyboard?.instantiateViewController(withIdentifier: "SeeReviewMoreImageVC"))
-        self.navigationController?.pushViewController(seeReviewMoreImageVC!, animated: true)
+        
+        // 리뷰 1번이라도 작성했는지 유무에 따라,
+        if BeerData.details.userReviewWrite == "Y" { // 리뷰를 1번이라도 작성했다면,
+            // 이미지 전체보기 컬렉션뷰 화면으로 연결.
+            let seeReviewMoreImageVC = (self.storyboard?.instantiateViewController(withIdentifier: "SeeReviewMoreImageVC"))
+            self.navigationController?.pushViewController(seeReviewMoreImageVC!, animated: true)
+        }
+        // @@@@@@@@@@@@@@ TODO: - 나중에 Y랑 N 바꿔야됨!!!!!!!!!!! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        else if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번도 작성하지 않았다면,
+            
+            let text: String = "먹어봤던 맥주 리뷰 1개만 남기면 모든 리뷰를 보실 수 있어요!"
+            let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
+            let font = UIFont(name: "NotoSansKR-Medium", size: 16)
+            attributeString.addAttribute(.font, value: font!, range: (text as NSString).range(of: "\(text)")) // 폰트 적용.
+            attributeString.addAttribute(.foregroundColor, value: UIColor.mainYellow, range: (text as NSString).range(of: "먹어봤던 맥주 리뷰 1개")) // '먹어봤던 맥주 리뷰 1개' 부분 색상 옐로우 변경.
+            attributeString.addAttribute(.foregroundColor, value: UIColor.mainWhite, range: (text as NSString).range(of: "만 남기면 모든 리뷰를 보실 수 있어요!")) // 나머지 부분 색상 화이트 변경.
+            
+            let alertController = UIAlertController(title: text, message: "", preferredStyle: UIAlertController.Style.alert)
+            alertController.setValue(attributeString, forKey: "attributedTitle") // 폰트 및 색상 적용.
+            
+            let reviewWrite = UIAlertAction(title: "리뷰쓰기", style: .cancel, handler: {
+                action in
+                // TODO: - 리뷰 작성 페이지로 연결 작업 필요.
+                print("리뷰쓰기 버튼 클릭함.")
+            })
+            let cancle = UIAlertAction(title: "나중에하기", style: .default, handler: nil)
+            
+            reviewWrite.setValue(UIColor.mainYellow, forKey: "titleTextColor") // 색상 적용.
+            cancle.setValue(UIColor.mainWhite, forKey: "titleTextColor") // 색상 적용.
+            
+            alertController.addAction(reviewWrite)
+            alertController.addAction(cancle)
+            
+            // 배경색 변경
+            alertController.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = .subBlack3
+            
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     
@@ -144,16 +181,13 @@ class BeerDetailReviewViewController: UIViewController {
         print("리뷰 전체보기 버튼 클릭.")
         
         // 리뷰 1번이라도 작성했는지 유무에 따라,
-        if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번이라도 작성했다면,
-            // TODO: - 리뷰 전체보기 화면 연결 필요.
-            print("리뷰 전체보기 화면 연결 필요.")
-            
+        if BeerData.details.userReviewWrite == "Y" { // 리뷰를 1번이라도 작성했다면,
+            // 리뷰 전체보기 화면으로 연결.
             let seeallReviewVC = (self.storyboard?.instantiateViewController(withIdentifier: "AllReviewVC"))
             self.navigationController?.pushViewController(seeallReviewVC!, animated: true)
-            
         }
         // @@@@@@@@@@@@@@ TODO: - 나중에 Y랑 N 바꿔야됨!!!!!!!!!!! @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        else if BeerData.details.userReviewWrite == "Y" { // 리뷰를 1번도 작성하지 않았다면,
+        else if BeerData.details.userReviewWrite == "N" { // 리뷰를 1번도 작성하지 않았다면,
             
             let text: String = "먹어봤던 맥주 리뷰 1개만 남기면 모든 리뷰를 보실 수 있어요!"
             let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
@@ -358,7 +392,7 @@ extension BeerDetailReviewViewController: UITableViewDataSource, UITableViewDele
         
         cell.selectionStyle = .none // 테이블뷰 cell 선택시 배경색상 없애기 : https://gonslab.tistory.com/41 | https://sweetdev.tistory.com/105
 
-        cell.delegate = self // 신고하기(팝업)뷰를 위해 넣어줌.
+        cell.delegate = self // 팝업뷰를 위해 넣어줌.
         
         return cell
         
@@ -398,41 +432,23 @@ extension BeerDetailReviewViewController: IntroReviewTableViewCellDelegate {
         goPopupVC.reviewId = reviewId // IntroReviewTableViewCell에서 reviewId를 가져와 팝업뷰에 전달.
         goPopupVC.modalPresentationStyle = .overCurrentContext //  투명도가 있으면 투명도에 맞춰서 나오게 해주는 코드(뒤에있는 배경이 보일 수 있게)
         self.present(goPopupVC, animated: false, completion: nil)
-        // Push or present your view controller
     }
     
-    func didTripleDotPressed(reviewId: Int) { // IntroReviewTableViewCell의 점3개 버튼 클릭 시, ActionSheet 띄움.
-        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet) // action sheet title 지정
-
-        // 수정하기 버튼 - 스타일(default)
-        let modifyAction = UIAlertAction(title: "수정하기", style: .default, handler: {(ACTION: UIAlertAction) in
-            // TODO: - 리뷰 수정(작성)하는 페이지로 연결 작업 필요.
-            print("수정하기 버튼 클릭.")
-        })
-        // 삭제하기 버튼 - 스타일(destructive)
-        let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive, handler: {(ACTION:UIAlertAction) in
-            // TODO: - 리뷰 삭제하는 api 연결 작업 필요.
-            print("삭제하기 버튼 클릭.")
-        })
-//        // 취소 버튼 - 스타일(cancel)
-//        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        let cancelAction = UIAlertAction(title: "취소", style: .default, handler: nil)
+    func didTripleDotPressed(reviewId: Int) { // IntroReviewTableViewCell의 점3개 버튼 클릭 시, 커스텀ActionSheet(popup) 띄움.
+        let tripleDotPopup = UIStoryboard(name: "HomeStoryboard", bundle: nil)
+        let goTripleDotPopupVC = tripleDotPopup.instantiateViewController(withIdentifier: "TripleDotPopupVC") as! TripleDotPopupViewController
+        goTripleDotPopupVC.reviewId = reviewId // IntroReviewTableViewCell에서 reviewId를 가져와 팝업뷰에 전달.
+        goTripleDotPopupVC.modalPresentationStyle = .overCurrentContext // 투명도가 있으면 투명도에 맞춰서 나오게 해주는 코드(뒤에있는 배경이 보일 수 있게)
+        self.present(goTripleDotPopupVC, animated: false, completion: nil)
         
-        modifyAction.setValue(UIColor.mainYellow, forKey: "titleTextColor") // 색상 적용.
-        deleteAction.setValue(UIColor.mainWhite, forKey: "titleTextColor") // 색상 적용.
-        cancelAction.setValue(UIColor.mainWhite, forKey: "titleTextColor") // 색상 적용.
+//        let goTripleDotPopupVC = self.storyboard?.instantiateViewController(withIdentifier: "TripleDotPopupVC") as! TripleDotPopupViewController
+//        goTripleDotPopupVC.reviewId = reviewId
+//        goTripleDotPopupVC.modalPresentationStyle = .overCurrentContext // 투명도가 있으면 투명도에 맞춰서 나오게 해주는 코드(뒤에있는 배경이 보일 수 있게)
+//        self.navigationController?.pushViewController(goTripleDotPopupVC, animated: false)
         
-        optionMenu.addAction(modifyAction)
-        optionMenu.addAction(deleteAction)
-        optionMenu.addAction(cancelAction)
-        
-        // 배경색 변경
-        optionMenu.view.subviews.first?.subviews.first?.subviews.first?.backgroundColor = .subBlack3
-        
-        self.present(optionMenu, animated: true, completion: nil)
     }
     
-    func didBlurViewButtonPressed() { // IntroReviewTableViewCell의 리뷰쓰기 버튼 클릭 시, alert창 띄움.
+    func didBlurViewButtonPressed() { // IntroReviewTableViewCell의 리뷰1개쓰고모두보기 버튼 클릭 시, alert창 띄움.
         let text: String = "먹어봤던 맥주 리뷰 1개만 남기면 모든 리뷰를 보실 수 있어요!"
         let attributeString = NSMutableAttributedString(string: text) // 텍스트 일부분 색상, 폰트 변경 - https://icksw.tistory.com/152
         let font = UIFont(name: "NotoSansKR-Medium", size: 16)

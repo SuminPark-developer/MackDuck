@@ -34,6 +34,8 @@ class PrivacySettingViewController: UIViewController {
     @IBOutlet weak var tasteBtn7: UIButton!
     @IBOutlet weak var tasteBtn8: UIButton!
     
+    @IBOutlet weak var whatBeerButton: UIView! // 맥주 종류를 모를땐?! 버튼(뷰)
+    
     var sexBtnArray = [UIButton]()
     var ageBtnArray = [UIButton]()
     var tasteBtnArray = [UIButton]()
@@ -58,6 +60,7 @@ class PrivacySettingViewController: UIViewController {
         
         mainTitle.text = "개인 정보를\n선택하면 끝!"
         mainTitle.textColor = .mainWhite
+        mainTitle.setLinespace(spacing: -1.2)
         
         navigationBar.barTintColor = .mainBlack
         navigationBar?.isTranslucent = false // 네비게이션바 반투명 제거
@@ -88,6 +91,11 @@ class PrivacySettingViewController: UIViewController {
         signUpButton.layer.cornerRadius = 10
         signUpButton.backgroundColor = .mainGray
         
+        // 1. create a gesture recognizer (tap gesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(clickWhatBeerButton(sender:)))
+        // 2. add the gesture recognizer to a view
+        whatBeerButton.addGestureRecognizer(tapGesture)
+
         
     }
     
@@ -191,7 +199,22 @@ class PrivacySettingViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // 맥주 종류를 모를땐?! 뷰 클릭시,
+    @objc func clickWhatBeerButton(sender: UITapGestureRecognizer) {
+        let goWhatBeer = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+        let whatBeerVC = goWhatBeer.instantiateViewController(withIdentifier: "WhatBeerVC") as! WhatBeerViewController
+        whatBeerVC.modalPresentationStyle = .fullScreen
+        self.present(whatBeerVC, animated: true, completion: nil)
+    }
 
+    // 맥주 종류를 모를땐?! 버튼 클릭시,
+    @IBAction func clickWhatBeerButton2(_ sender: UIButton) {
+        let goWhatBeer = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+        let whatBeerVC = goWhatBeer.instantiateViewController(withIdentifier: "WhatBeerVC") as! WhatBeerViewController
+        whatBeerVC.modalPresentationStyle = .fullScreen
+        self.present(whatBeerVC, animated: true, completion: nil)
+    }
+    
 }
 
 extension PrivacySettingViewController {
