@@ -127,10 +127,11 @@ extension SeeReviewMoreImageViewController: UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Cell \(indexPath.row) 클릭.")
         let imageUrlString = imageResult[indexPath.row].reviewImgUrl // 컬렉션뷰 cell의 데이터 → 새로운 VC에 전달하는 방법. -  https://stackoverflow.com/questions/41831994/how-to-pass-collection-view-data-to-a-new-view-controller
-
+        
         let imageDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ImageDetailVC") as? ImageDetailViewController
         imageDetailVC?.navTitle = "\(indexPath.row + 1) / \(imageResult.count)"
         imageDetailVC!.imageUrlString = imageUrlString
+        imageDetailVC?.reviewId = imageResult[indexPath.row].reviewId
         self.navigationController?.pushViewController(imageDetailVC!, animated: true)
         
     }

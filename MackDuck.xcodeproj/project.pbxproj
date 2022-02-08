@@ -79,6 +79,14 @@
 		749957C927A3A3560014D1C6 /* AllReviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749957C827A3A3560014D1C6 /* AllReviewDataManager.swift */; };
 		749957CC27A3A39D0014D1C6 /* AllReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749957CB27A3A39D0014D1C6 /* AllReviewModel.swift */; };
 		749957D327A3B0F70014D1C6 /* AllReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749957D227A3B0F70014D1C6 /* AllReviewTableViewCell.swift */; };
+		749A5B9027B2185400B179B5 /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A5B8F27B2185400B179B5 /* ReviewDetailViewController.swift */; };
+		749A5B9227B2186100B179B5 /* ReviewDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A5B9127B2186100B179B5 /* ReviewDetailResponse.swift */; };
+		749A5B9527B2187E00B179B5 /* ReviewDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A5B9427B2187E00B179B5 /* ReviewDetailDataManager.swift */; };
+		749A5B9927B23BD700B179B5 /* ReviewDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A5B9727B23BD700B179B5 /* ReviewDetailCollectionViewCell.swift */; };
+		749A5B9A27B23BD700B179B5 /* ReviewDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749A5B9827B23BD700B179B5 /* ReviewDetailCollectionViewCell.xib */; };
+		749A5B9D27B25D0E00B179B5 /* ReviewDetailLikeButtonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A5B9C27B25D0E00B179B5 /* ReviewDetailLikeButtonResponse.swift */; };
+		749A5B9F27B25D1D00B179B5 /* ReviewDetailLikeButtonDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A5B9E27B25D1D00B179B5 /* ReviewDetailLikeButtonDataManager.swift */; };
+		749A5BA227B2A28F00B179B5 /* ReviewWriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749A5BA127B2A28F00B179B5 /* ReviewWriteViewController.swift */; };
 		749E743827A3B4F8005AD2EE /* AllReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749E743627A3B4F8005AD2EE /* AllReviewCollectionViewCell.swift */; };
 		749E743927A3B4F8005AD2EE /* AllReviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 749E743727A3B4F8005AD2EE /* AllReviewCollectionViewCell.xib */; };
 		74A4FD3A279FECA900A91856 /* IntroReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A4FD38279FECA800A91856 /* IntroReviewCollectionViewCell.swift */; };
@@ -195,6 +203,14 @@
 		749957C827A3A3560014D1C6 /* AllReviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewDataManager.swift; sourceTree = "<group>"; };
 		749957CB27A3A39D0014D1C6 /* AllReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewModel.swift; sourceTree = "<group>"; };
 		749957D227A3B0F70014D1C6 /* AllReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewTableViewCell.swift; sourceTree = "<group>"; };
+		749A5B8F27B2185400B179B5 /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
+		749A5B9127B2186100B179B5 /* ReviewDetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailResponse.swift; sourceTree = "<group>"; };
+		749A5B9427B2187E00B179B5 /* ReviewDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailDataManager.swift; sourceTree = "<group>"; };
+		749A5B9727B23BD700B179B5 /* ReviewDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		749A5B9827B23BD700B179B5 /* ReviewDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewDetailCollectionViewCell.xib; sourceTree = "<group>"; };
+		749A5B9C27B25D0E00B179B5 /* ReviewDetailLikeButtonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailLikeButtonResponse.swift; sourceTree = "<group>"; };
+		749A5B9E27B25D1D00B179B5 /* ReviewDetailLikeButtonDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailLikeButtonDataManager.swift; sourceTree = "<group>"; };
+		749A5BA127B2A28F00B179B5 /* ReviewWriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewWriteViewController.swift; sourceTree = "<group>"; };
 		749E743627A3B4F8005AD2EE /* AllReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllReviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		749E743727A3B4F8005AD2EE /* AllReviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllReviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		74A4FD38279FECA800A91856 /* IntroReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroReviewCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -450,6 +466,7 @@
 				747E90ED278EFCA3009F00CB /* IntroBeerDetail */,
 				747E90EE278EFCDC009F00CB /* BeerDetailTaste */,
 				747E90F0278EFD0D009F00CB /* BeerDetailReview */,
+				749A5BA027B2A18200B179B5 /* ReviewWrite */,
 			);
 			path = HomeSearchBeerDetail;
 			sourceTree = "<group>";
@@ -586,6 +603,7 @@
 			children = (
 				749671A92796D5E100560CD3 /* ImageDetailViewController.swift */,
 				749671AC2796D61500560CD3 /* ImageDetailEntity */,
+				749A5B8E27B2183200B179B5 /* ReviewDetail */,
 			);
 			path = ImageDetail;
 			sourceTree = "<group>";
@@ -675,6 +693,52 @@
 				749E743727A3B4F8005AD2EE /* AllReviewCollectionViewCell.xib */,
 			);
 			path = "Collection Cell In AllReview Table Cell";
+			sourceTree = "<group>";
+		};
+		749A5B8E27B2183200B179B5 /* ReviewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				749A5B8F27B2185400B179B5 /* ReviewDetailViewController.swift */,
+				749A5B9327B2186400B179B5 /* ReviewDetailEntity */,
+				749A5B9627B23B9300B179B5 /* Collection Cell In ReviewDetail */,
+				749A5B9B27B25CC000B179B5 /* ReviewDetailLikeButtonEntity */,
+			);
+			path = ReviewDetail;
+			sourceTree = "<group>";
+		};
+		749A5B9327B2186400B179B5 /* ReviewDetailEntity */ = {
+			isa = PBXGroup;
+			children = (
+				749A5B9127B2186100B179B5 /* ReviewDetailResponse.swift */,
+				749A5B9427B2187E00B179B5 /* ReviewDetailDataManager.swift */,
+			);
+			path = ReviewDetailEntity;
+			sourceTree = "<group>";
+		};
+		749A5B9627B23B9300B179B5 /* Collection Cell In ReviewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				749A5B9727B23BD700B179B5 /* ReviewDetailCollectionViewCell.swift */,
+				749A5B9827B23BD700B179B5 /* ReviewDetailCollectionViewCell.xib */,
+			);
+			path = "Collection Cell In ReviewDetail";
+			sourceTree = "<group>";
+		};
+		749A5B9B27B25CC000B179B5 /* ReviewDetailLikeButtonEntity */ = {
+			isa = PBXGroup;
+			children = (
+				749A5B9C27B25D0E00B179B5 /* ReviewDetailLikeButtonResponse.swift */,
+				749A5B9E27B25D1D00B179B5 /* ReviewDetailLikeButtonDataManager.swift */,
+			);
+			path = ReviewDetailLikeButtonEntity;
+			sourceTree = "<group>";
+		};
+		749A5BA027B2A18200B179B5 /* ReviewWrite */ = {
+			isa = PBXGroup;
+			children = (
+				749A5BA127B2A28F00B179B5 /* ReviewWriteViewController.swift */,
+			);
+			path = ReviewWrite;
 			sourceTree = "<group>";
 		};
 		74A4FD37279FEC5100A91856 /* Collection Cell In IntroReview Table Cell */ = {
@@ -926,6 +990,7 @@
 				74EF99C7274B9C260037A166 /* MyPageStoryboard.storyboard in Resources */,
 				749671A827968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.xib in Resources */,
 				743031FB2742A26900B7657B /* NotoSansKR-Bold.otf in Resources */,
+				749A5B9A27B23BD700B179B5 /* ReviewDetailCollectionViewCell.xib in Resources */,
 				74B11ED42756034D003C3E02 /* BestSearchTableViewCell.xib in Resources */,
 				74EF99C5274B9C160037A166 /* RefrigeratorStoryboard.storyboard in Resources */,
 				74C1B6042742671400AFD7BF /* LoginStoryboard.storyboard in Resources */,
@@ -993,6 +1058,7 @@
 				7445ACC227ACE7F800A09E8D /* IntroReviewLikeButtonResponse.swift in Sources */,
 				745238342797E23B007FE846 /* LoadingReusableView.swift in Sources */,
 				749957C927A3A3560014D1C6 /* AllReviewDataManager.swift in Sources */,
+				749A5B9927B23BD700B179B5 /* ReviewDetailCollectionViewCell.swift in Sources */,
 				7446ECA22748ACD4000CAC92 /* RefrigeratorViewController.swift in Sources */,
 				743031FF2742B8EB00B7657B /* LoginHowToCallViewController.swift in Sources */,
 				743031E3274281AB00B7657B /* LoginViewController.swift in Sources */,
@@ -1011,10 +1077,12 @@
 				74ED85F427A7D0D1003C8D10 /* AllReviewLikeButtonDataManager.swift in Sources */,
 				74F0B4392786DD4900ED9B61 /* IntroBeerDetailDataManager.swift in Sources */,
 				7446ECA42748ACE5000CAC92 /* MyPageViewController.swift in Sources */,
+				749A5B9227B2186100B179B5 /* ReviewDetailResponse.swift in Sources */,
 				747561CE274526750015BFC9 /* PrivacySettingDataManager.swift in Sources */,
 				749671A727968C5A00560CD3 /* SeeReviewMoreImageCollectionViewCell.swift in Sources */,
 				747E90F5278EFEAD009F00CB /* BeerDetailTasteDataManager.swift in Sources */,
 				747E90F3278EFE9D009F00CB /* BeerDetailTasteResponse.swift in Sources */,
+				749A5B9D27B25D0E00B179B5 /* ReviewDetailLikeButtonResponse.swift in Sources */,
 				7441F4A127846378005265EA /* SendBeerInfoRequest.swift in Sources */,
 				749671AA2796D5E100560CD3 /* ImageDetailViewController.swift in Sources */,
 				7403CAD22757513300E6B2DF /* HomeRecentPopularDataManager.swift in Sources */,
@@ -1031,8 +1099,10 @@
 				7496F0AB27AFCD5E00F1AF43 /* ReviewTripleDotDeleteButtonDataManager.swift in Sources */,
 				74ED85F227A7D0BD003C8D10 /* AllReviewLikeButtonResponse.swift in Sources */,
 				7496F0AF27AFF7B100F1AF43 /* UILabel.swift in Sources */,
+				749A5B9027B2185400B179B5 /* ReviewDetailViewController.swift in Sources */,
 				74E730042743B4C100697460 /* HomeViewController.swift in Sources */,
 				749957C527A3A32C0014D1C6 /* AllReviewViewController.swift in Sources */,
+				749A5B9F27B25D1D00B179B5 /* ReviewDetailLikeButtonDataManager.swift in Sources */,
 				74C1B61727426F1200AFD7BF /* Constant.swift in Sources */,
 				74BE16E22795A12D001FF055 /* SeeReviewMoreImageResponse.swift in Sources */,
 				742E646A274BF1D100F6B72A /* HomeDictionaryViewController.swift in Sources */,
@@ -1049,6 +1119,7 @@
 				74490CD6279E7AFA00E94C71 /* BeerDetailViewControllerExample.swift in Sources */,
 				74C1B61C27426F7E00AFD7BF /* String.swift in Sources */,
 				749800902769CC3F008284DC /* SearchResultModel.swift in Sources */,
+				749A5B9527B2187E00B179B5 /* ReviewDetailDataManager.swift in Sources */,
 				74C1B5FF2742671400AFD7BF /* SceneDelegate.swift in Sources */,
 				749800932769CC6A008284DC /* SearchResultTableViewCell.swift in Sources */,
 				749671AE2796D63800560CD3 /* ImageDetailResponse.swift in Sources */,
@@ -1076,6 +1147,7 @@
 				746C37702799629300ABAA58 /* IntroReviewTableViewCell.swift in Sources */,
 				74980098276A1915008284DC /* HomeSearchResultResponse.swift in Sources */,
 				747561BE2744D6760015BFC9 /* NicknameDataManager.swift in Sources */,
+				749A5BA227B2A28F00B179B5 /* ReviewWriteViewController.swift in Sources */,
 				74D8335A278DE0E200C8A9B7 /* UISegmentedControl.swift in Sources */,
 				7496F0A427AFCC7000F1AF43 /* TripleDotPopupViewController.swift in Sources */,
 			);

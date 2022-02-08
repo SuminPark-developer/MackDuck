@@ -8,9 +8,9 @@
 import UIKit
 
 class ImageDetailViewController: UIViewController {
-
     var navTitle: String = ""
     var imageUrlString: String = ""
+    var reviewId: Int = 0 // ReviewDetailViewController에 전달하기 위한 reviewId 변수 선언.
     
     @IBOutlet weak var navigationBarItem: UINavigationItem! // 상단 네비게이션바 아이템
     @IBOutlet weak var detailImageView: UIImageView! // 중상단 큰 이미지뷰
@@ -50,8 +50,11 @@ class ImageDetailViewController: UIViewController {
     
     
     @IBAction func clickGoReviewButton(_ sender: UIButton) { // 리뷰 보러가기 버튼 클릭시,
-        print("리뷰 보러가기 버튼 클릭됨.")
-        // TODO: - 리뷰 보러가기 페이지 연동 및 api 필요.
+        print("하단 리뷰 보러가기 버튼 클릭됨.")
+        let reviewDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ReviewDetailVC") as? ReviewDetailViewController
+        reviewDetailVC?.navTitle = "리뷰"
+        reviewDetailVC?.reviewId = reviewId
+        self.navigationController?.pushViewController(reviewDetailVC!, animated: true)
     }
     
     
